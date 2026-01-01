@@ -1,0 +1,17 @@
+# Dependencies
+/vendor/
+composer.phar
+composer.lock
+
+# Drupal core clone (large, downloaded during analysis)
+/drupal-core/
+
+# Temporary output files
+/output/
+
+# Python
+__pycache__/
+*.pyc
+
+# Local tooling
+.beads/
