@@ -38,11 +38,24 @@ Distinct extension points in Drupal. A larger surface may correlate with a steep
 
 **Prerequisites:** PHP 8.1+, Python 3, Composer
 
+### Regenerating data
+
 ```bash
 composer install              # Install dependencies
 python3 scripts/analyze.py    # Run analysis (15-30 min)
-open index.html               # View dashboard
 ```
+
+This generates `data.json`. The `index.html` file is static and does not need to be regenerated.
+
+### Viewing the dashboard
+
+The dashboard loads data via `fetch()`, which requires an HTTP server (browsers block this for local files). Start a simple server:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then open http://localhost:8000 in your browser.
 
 
 ## Contributing
