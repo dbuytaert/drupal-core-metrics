@@ -821,8 +821,8 @@ def generate_html(project_dir: Path, data: dict) -> None:
                 <p class="section-subtitle">Code patterns with known downsides. Tracks occurrences per 1k lines of code.</p>
                 <ul class="metric-list">
                     <li><strong>Magic keys</strong>: #-prefixed array keys require memorization and lack IDE support. Inherent to Drupal's render array architecture.</li>
-                    <li><strong>Deep arrays</strong>: arrays nested 3+ levels deep are hard to read and refactor</li>
-                    <li><strong>Service locators</strong>: <code>\\Drupal::service()</code> calls hide dependencies and hinder testing</li>
+                    <li><strong>Deep arrays</strong>: arrays nested 3+ levels deep are hard to read and refactor.</li>
+                    <li><strong>Service locators</strong>: <code>\\Drupal::service()</code> calls hide dependencies and hinder testing.</li>
                 </ul>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
@@ -914,7 +914,8 @@ def generate_html(project_dir: Path, data: dict) -> None:
                 magicKeys: '#eab308',       // yellow
                 events: '#22c55e',          // green
                 services: '#3b82f6',        // blue
-                yamlFormats: '#8b5cf6'      // purple
+                yamlFormats: '#8b5cf6',     // purple
+                interfaceMethods: '#ec4899' // pink
             }};
 
             new Chart(context, {{
@@ -927,7 +928,8 @@ def generate_html(project_dir: Path, data: dict) -> None:
                         {{ label: 'Magic keys', data: sortedData.map(d => d.surfaceArea?.magicKeys || 0), borderColor: saColors.magicKeys, backgroundColor: saColors.magicKeys + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 }},
                         {{ label: 'Events', data: sortedData.map(d => d.surfaceArea?.events || 0), borderColor: saColors.events, backgroundColor: saColors.events + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 }},
                         {{ label: 'Services', data: sortedData.map(d => d.surfaceArea?.services || 0), borderColor: saColors.services, backgroundColor: saColors.services + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 }},
-                        {{ label: 'YAML formats', data: sortedData.map(d => d.surfaceArea?.yamlFormats || 0), borderColor: saColors.yamlFormats, backgroundColor: saColors.yamlFormats + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 }}
+                        {{ label: 'YAML formats', data: sortedData.map(d => d.surfaceArea?.yamlFormats || 0), borderColor: saColors.yamlFormats, backgroundColor: saColors.yamlFormats + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 }},
+                        {{ label: 'Interface methods', data: sortedData.map(d => d.surfaceArea?.interfaceMethods || 0), borderColor: saColors.interfaceMethods, backgroundColor: saColors.interfaceMethods + '80', fill: true, borderWidth: 2, tension: 0.3, pointRadius: 2 }}
                     ]
                 }},
                 options: {{
@@ -1092,7 +1094,7 @@ def generate_html(project_dir: Path, data: dict) -> None:
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Features vs bugs vs maintenance</h2>
-                <p class="section-subtitle">Distribution of development work: features, bug fixes, and maintenance (tasks, documentation, tests, CI, performance). Healthy mature projects allocate 20-40% to features. A lower ratio reflects a focus on stability and reliability. Below 20% introduces the risk of the project becoming obsolete. Drupal's architecture encourages innovation in contributed modules, so core's ratio tells only part of the story.</p>
+                <p class="section-subtitle">Distribution of development work: features, bug fixes, and maintenance (tasks, documentation, tests, CI, performance). Healthy mature projects allocate 20-40% to features. A lower ratio reflects a focus on stability and reliability. Below 20% introduces the risk of a project becoming obsolete. Drupal's architecture encourages innovation in contributed modules, so core's ratio tells only part of the story.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -1208,7 +1210,8 @@ def generate_html(project_dir: Path, data: dict) -> None:
                 magicKeys: 'Magic keys',
                 events: 'Events',
                 services: 'Services',
-                yamlFormats: 'YAML formats'
+                yamlFormats: 'YAML formats',
+                interfaceMethods: 'Interface methods'
             }};
 
             const panels = Object.entries(lists)
