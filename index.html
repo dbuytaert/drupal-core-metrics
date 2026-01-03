@@ -77,7 +77,6 @@
             <p class="header-meta" id="last-updated">Loading...</p>
             <p class="executive-summary">The charts below tell the story of a changing code base.</p>
             <p class="executive-summary">Code quality has improved since Drupal 7: lower complexity, fewer anti-patterns, better architecture, and better test coverage. At the same time, the API surface area has grown: more plugin types, hooks, events, services, and YAML formats.</p>
-            <p class="executive-summary">The growth in API surface needs to be put into context. Since Drupal 7 we have absorbed significant contributed modules into core, such as Views, consolidated what were previously competing contributed APIs into a single API in core, such as Single Directory Components, and simplified previously monolothic and hard to implement APIs into smaller, more targeted ones. However the overall API surface can also represent a daunting number of things to learn for newcomers.</p>
             <p class="executive-summary">By tracking these metrics, we hope to inform decisions about both code quality and developer experience.</p>
         </header>
         <div id="dashboard"><div class="loading">Loading data...</div></div>
@@ -460,6 +459,7 @@
             section.className = 'card';
             section.innerHTML = `<h2>API surface area</h2>
                 <p class="section-subtitle">Tracks distinct extension points in Drupal Core. A larger surface area can correlate with a steeper learning curve.</p>
+                <p class="section-subtitle">The growth in API surface needs to be put into context. Since Drupal 7, Drupal Core has absorbed major contributed modules such as Views and consolidated previously competing APIs into single, shared core solutions like Single Directory Components. It has also replaced monolithic, hard-to-implement APIs with smaller, more targeted ones.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
