@@ -291,7 +291,9 @@ function findPhpFiles(string $directory): array
         if ($file->isFile()
             && in_array($file->getExtension(), $extensions)
             && !str_contains($file->getPathname(), '/vendor/')
-            && !str_contains($file->getPathname(), '/assets/')) {
+            && !str_contains($file->getPathname(), '/assets/')
+            // PHPStan baseline is generated config, not code. See https://www.drupal.org/node/3426891
+            && !str_ends_with($file->getPathname(), '.phpstan-baseline.php')) {
             $files[] = $file->getPathname();
         }
     }
