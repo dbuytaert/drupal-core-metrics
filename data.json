@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-03T01:00:05.660311",
+  "generated": "2026-01-04T00:59:15.416897",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -3221,10 +3221,10 @@
       "date": "2024-07",
       "commit": "9cd7babd",
       "production": {
-        "loc": 281367,
+        "loc": 279109,
         "ccn": 8.1,
-        "mi": 52.3,
-        "antipatterns": 74.7
+        "mi": 52.7,
+        "antipatterns": 75.3
       },
       "test": {
         "loc": 542978,
@@ -3251,10 +3251,10 @@
       "date": "2025-01",
       "commit": "7ce1914f",
       "production": {
-        "loc": 352523,
+        "loc": 290931,
         "ccn": 8,
-        "mi": 44.2,
-        "antipatterns": 60.2
+        "mi": 53.6,
+        "antipatterns": 73
       },
       "test": {
         "loc": 563727,
@@ -3281,10 +3281,10 @@
       "date": "2025-07",
       "commit": "2693f0e4",
       "production": {
-        "loc": 349090,
+        "loc": 298405,
         "ccn": 8,
-        "mi": 45.8,
-        "antipatterns": 61.2
+        "mi": 53.6,
+        "antipatterns": 71.6
       },
       "test": {
         "loc": 580729,
@@ -3311,10 +3311,10 @@
       "date": "2026-01",
       "commit": "f4830b50",
       "production": {
-        "loc": 354516,
+        "loc": 305757,
         "ccn": 7.9,
-        "mi": 46.4,
-        "antipatterns": 60.8
+        "mi": 53.8,
+        "antipatterns": 70.5
       },
       "test": {
         "loc": 666057,
@@ -3384,7 +3384,7 @@
       "date": "Dec 22, 2025",
       "type": "Maintenance",
       "message": "task: #3341042 Use only the list cache tag for block config entities",
-      "locDelta": -6,
+      "locDelta": 0,
       "ccnDelta": -1,
       "miDelta": 0,
       "antipatternsDelta": 0
@@ -3560,6 +3560,16 @@
       "antipatternsDelta": 5
     },
     {
+      "hash": "d1a5b4faa33",
+      "date": "Nov 28, 2025",
+      "type": "Maintenance",
+      "message": "task: #3502755 Deprecate migrate process plugins needed only for site upgrades",
+      "locDelta": 136,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "cc44d66537d",
       "date": "Nov 27, 2025",
       "type": "Bug",
@@ -3594,9 +3604,9 @@
       "date": "Nov 27, 2025",
       "type": "Bug",
       "message": "fix: #3557917 Remove stale implementations of WorkspaceNegotiatorInterface::getA",
-      "locDelta": -21,
+      "locDelta": -9,
       "ccnDelta": -2,
-      "miDelta": 0,
+      "miDelta": 7,
       "antipatternsDelta": 0
     },
     {
@@ -3664,9 +3674,9 @@
       "date": "Nov 27, 2025",
       "type": "Maintenance",
       "message": "task: #3548571 Deprecate functions from content_translation.admin.inc",
-      "locDelta": 51666,
-      "ccnDelta": 166,
-      "miDelta": 1,
+      "locDelta": 774,
+      "ccnDelta": 165,
+      "miDelta": 46,
       "antipatternsDelta": 169
     },
     {
@@ -3814,9 +3824,9 @@
       "date": "Nov 20, 2025",
       "type": "Feature",
       "message": "feat: #3317769 Add support for linking to entities in CKEditor 5",
-      "locDelta": 53737,
-      "ccnDelta": 331,
-      "miDelta": 2,
+      "locDelta": 2826,
+      "ccnDelta": 330,
+      "miDelta": 39,
       "antipatternsDelta": 135
     },
     {
@@ -3924,9 +3934,9 @@
       "date": "Nov 14, 2025",
       "type": "Bug",
       "message": "fix: #3205577 Form handlers should throw exception when not implementing EntityF",
-      "locDelta": -27,
+      "locDelta": 3,
       "ccnDelta": 1,
-      "miDelta": 0,
+      "miDelta": -1,
       "antipatternsDelta": 0
     },
     {
@@ -4164,9 +4174,9 @@
       "date": "Nov 10, 2025",
       "type": "Unknown",
       "message": "Issue #3006750 by phenaproxima, heddn, quietone, neclimdul, andypost, mikelutz, ",
-      "locDelta": -51295,
-      "ccnDelta": -55,
-      "miDelta": 0,
+      "locDelta": -386,
+      "ccnDelta": -54,
+      "miDelta": -22,
       "antipatternsDelta": -1
     },
     {
@@ -4314,9 +4324,9 @@
       "date": "Nov 04, 2025",
       "type": "Unknown",
       "message": "Issue #2620980 by hchonov, catch, timmillwood, amateescu, berdir, tstoeckler, vi",
-      "locDelta": 51813,
-      "ccnDelta": 202,
-      "miDelta": 0,
+      "locDelta": 898,
+      "ccnDelta": 201,
+      "miDelta": 11,
       "antipatternsDelta": 4
     },
     {
@@ -4324,19 +4334,9 @@
       "date": "Nov 04, 2025",
       "type": "Unknown",
       "message": "Issue #3554533 by longwave, andypost, quietone, godotislate: Update to Symfony 7",
-      "locDelta": 197,
+      "locDelta": 3,
       "ccnDelta": 1,
       "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "f03bab2506d",
-      "date": "Nov 04, 2025",
-      "type": "Unknown",
-      "message": "Issue #3555836 by alexpott: \\Drupal\\Core\\Menu\\MenuActiveTrail causes deprecation",
-      "locDelta": 1,
-      "ccnDelta": 1,
-      "miDelta": -1,
       "antipatternsDelta": 0
     }
   ],
@@ -23402,14 +23402,6 @@
       "ccn": 34,
       "mi": 45,
       "antipatterns": 1
-    },
-    {
-      "file": ".phpstan-baseline.php",
-      "test": false,
-      "loc": 48759,
-      "ccn": 1,
-      "mi": 0,
-      "antipatterns": 0
     },
     {
       "file": "core.api.php",
