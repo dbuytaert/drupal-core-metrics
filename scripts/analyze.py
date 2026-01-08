@@ -7,6 +7,7 @@ LOC, CCN, MI, anti-patterns, and API surface area. Uses drupalisms.php for all a
 """
 
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -38,6 +39,12 @@ def log_warn(message: str):
 
 def log_error(message: str):
     print(f"{Colors.RED}[ERROR]{Colors.NC} {message}", flush=True)
+
+
+def log_debug(message: str):
+    """Print debug message if DEBUG environment variable is set."""
+    if os.environ.get("DEBUG"):
+        print(f"[DEBUG] {message}", flush=True)
 
 
 def run_command(cmd: list[str], cwd: Optional[str] = None, capture: bool = True) -> tuple[int, str, str]:
@@ -116,17 +123,72 @@ def get_commits_per_year(drupal_dir: Path) -> list[dict]:
 
 
 def classify_commit(subject: str) -> str:
-    """Classify a commit by its message prefix.
+    """Classify a commit by its message using Conventional Commits specification.
+
+    Format: <type>[optional scope][!]: <description>
+    See: https://www.conventionalcommits.org/en/v1.0.0/
 
     Returns: 'Bug', 'Feature', 'Maintenance', or 'Unknown'
     """
     subject = subject.strip().lower()
-    if subject.startswith(("fix:", "bug:")):
+
+    # Conventional commits pattern: type(optional-scope)!: description
+    # Types that indicate bugs
+    bug_pattern = r'^(fix|bugfix|bug|hotfix)(\([^)]+\))?!?:'
+    if re.match(bug_pattern, subject):
         return "Bug"
-    elif subject.startswith("feat:"):
+
+    # Types that indicate features
+    feature_pattern = r'^(feat|feature)(\([^)]+\))?!?:'
+    if re.match(feature_pattern, subject):
         return "Feature"
-    elif subject.startswith(("task:", "docs:", "ci:", "test:", "perf:", "chore:", "refactor:")):
+
+    # Types that indicate maintenance/tasks
+    maintenance_pattern = r'^(build|chore|ci|docs|style|refactor|perf|test|task|revert)(\([^)]+\))?!?:'
+    if re.match(maintenance_pattern, subject):
         return "Maintenance"
+
+    # Drupal.org issue references - check content after issue number
+    # "Issue #123... Add something" -> check for feature/bug keywords
+    issue_match = re.match(r'^issue\s*#?\d+[^:]*:\s*(.+)', subject)
+    if issue_match:
+        # Extract the description after "Issue #XXX by authors:"
+        description = issue_match.group(1).strip()
+        # Recursively classify the description
+        return classify_commit(description)
+
+    # Merge commits
+    if subject.startswith("merge"):
+        return "Maintenance"
+
+    # Keyword-based fallback for non-conventional commits
+    # Feature keywords (from ws_feature_analyzer patterns)
+    feature_keywords = [
+        'add ', 'added ', 'adding ', 'adds ',
+        'new ', 'implement', 'introduce', 'create',
+        'support for', 'ability to', 'now supports', 'now allows',
+        'enhancement', 'enhanced', 'improved', 'improvement'
+    ]
+    if any(kw in subject for kw in feature_keywords):
+        return "Feature"
+
+    # Bug keywords
+    bug_keywords = [
+        'fix ', 'fixed ', 'fixes ', 'fixing ',
+        'bug ', 'error', 'crash', 'broken', 'wrong', 'resolve'
+    ]
+    if any(kw in subject for kw in bug_keywords):
+        return "Bug"
+
+    # Maintenance keywords
+    maintenance_keywords = [
+        'refactor', 'cleanup', 'clean up', 'update ', 'updates ', 'upgrade',
+        'docs', 'documentation', 'test', 'style', 'deprecat', 'revert',
+        'remove ', 'removed ', 'delete', 'rename', 'move '
+    ]
+    if any(kw in subject for kw in maintenance_keywords):
+        return "Maintenance"
+
     return "Unknown"
 
 
@@ -433,12 +495,48 @@ def analyze_recent_commits(drupal_dir: Path, output_dir: Path,
     return results
 
 
+def analyze_directory(directory: Path, php_script: Path) -> Optional[dict]:
+    """Analyze a directory using drupalisms.php."""
+    php_files = list(directory.rglob("*.php")) + list(directory.rglob("*.module"))
+    if not php_files:
+        log_debug(f"No PHP files found in {directory}")
+        return None
+
+    log_debug(f"Found {len(php_files)} PHP files to analyze in {directory.name}")
+
+    try:
+        result = subprocess.run(
+            ["php", "-d", "memory_limit=2G", str(php_script), str(directory)],
+            capture_output=True,
+            text=True,
+            timeout=600
+        )
+        if result.returncode != 0:
+            log_debug(f"PHP analysis failed: {result.stderr[:500] if result.stderr else 'no error output'}")
+            return None
+
+        if not result.stdout.strip():
+            log_debug("PHP analysis returned empty output")
+            return None
+
+        data = json.loads(result.stdout)
+        log_debug(f"PHP analysis returned data with keys: {list(data.keys())}")
+        return data
+    except json.JSONDecodeError as e:
+        log_debug(f"JSON decode error: {e}")
+        return None
+    except Exception as e:
+        log_debug(f"Exception during analysis: {e}")
+        return None
+
+
 def analyze_version(drupal_dir: Path, commit: str, year_month: str,
-                    output_dir: Path, current: int = 0, total: int = 0) -> Optional[dict]:
+                    output_dir: Path, current: int = 0, total: int = 0,
+                    collect_per_module: bool = False) -> Optional[dict]:
     """Analyze a single version of Drupal using drupalisms.php.
 
     Returns a snapshot dict with production, test, surfaceArea, and antipatterns.
-    hotspots and surfaceAreaLists are only kept for the latest snapshot.
+    If collect_per_module is True, also includes per-module breakdown.
     """
     work_dir = output_dir / "work"
 
@@ -449,40 +547,52 @@ def analyze_version(drupal_dir: Path, commit: str, year_month: str,
         return None
 
     # Only analyze D8+ with core/ directory
-    if not (work_dir / "core").is_dir():
+    core_dir = work_dir / "core"
+    if not core_dir.is_dir():
         log_warn(f"No core/ directory for {year_month}, skipping")
         return None
 
-    # Run drupalisms.php for all metrics
     scripts_dir = Path(__file__).parent
     php_script = scripts_dir / "drupalisms.php"
 
-    try:
-        result = subprocess.run(
-            ["php", "-d", "memory_limit=2G", str(php_script), str(work_dir / "core")],
-            capture_output=True,
-            text=True,
-            timeout=600
-        )
-        if result.returncode != 0:
-            log_warn(f"drupalisms.php failed for {year_month}")
-            return None
-
-        data = json.loads(result.stdout)
-
-        return {
-            "date": year_month,
-            "commit": commit[:8],
-            "production": data["production"],
-            "testLoc": data.get("testLoc", 0),
-            "surfaceArea": data.get("surfaceArea", {}),
-            "surfaceAreaLists": data.get("surfaceAreaLists", {}),
-            "antipatterns": data.get("antipatterns", {}),
-            "hotspots": data.get("hotspots", []),
-        }
-    except Exception as e:
-        log_warn(f"Analysis failed for {year_month}: {e}")
+    data = analyze_directory(core_dir, php_script)
+    if not data:
+        log_warn(f"Analysis returned no data for {year_month}")
         return None
+
+    result = {
+        "date": year_month,
+        "commit": commit[:8],
+        "production": data.get("production", {}),
+        "testLoc": data.get("testLoc", 0),
+        "surfaceArea": data.get("surfaceArea", {}),
+        "surfaceAreaLists": data.get("surfaceAreaLists", {}),
+        "antipatterns": data.get("antipatterns", {}),
+        "hotspots": data.get("hotspots", []),
+    }
+
+    # Collect per-module stats for current snapshot
+    if collect_per_module:
+        modules_dir = core_dir / "modules"
+        if modules_dir.is_dir():
+            per_module = []
+            for module_path in sorted(modules_dir.iterdir()):
+                if module_path.is_dir() and not module_path.name.startswith('.'):
+                    module_data = analyze_directory(module_path, php_script)
+                    if module_data:
+                        per_module.append({
+                            "name": module_path.name,
+                            "loc": module_data.get("production", {}).get("loc", 0),
+                            "ccn": module_data.get("production", {}).get("ccn", {}).get("avg", 0),
+                            "mi": module_data.get("production", {}).get("mi", {}).get("avg", 0),
+                            "antipatterns": sum(module_data.get("antipatterns", {}).values()),
+                        })
+            # Sort by LOC descending
+            per_module.sort(key=lambda x: x["loc"], reverse=True)
+            result["perModule"] = per_module
+            log_info(f"Collected stats for {len(per_module)} core modules")
+
+    return result
 
 
 def main():
@@ -530,14 +640,18 @@ def main():
             log_warn(f"No commit found for {year_month}")
 
     # Always analyze current HEAD to ensure charts are up-to-date
-    log_info("Analyzing current HEAD...")
+    # Also collect per-module stats for the current version
+    log_info("Analyzing current HEAD with per-module breakdown...")
     code, head_commit, _ = run_command(["git", "rev-parse", "HEAD"], cwd=str(drupal_dir))
+    per_module_data = []
     if code == 0 and head_commit.strip():
         current_date = datetime.now().strftime("%Y-%m")
         # Only add if not already covered by the last snapshot
         if not snapshots or snapshots[-1]["date"] != current_date:
-            result = analyze_version(drupal_dir, head_commit.strip(), current_date, output_dir)
+            result = analyze_version(drupal_dir, head_commit.strip(), current_date, output_dir,
+                                     collect_per_module=True)
             if result:
+                per_module_data = result.pop("perModule", [])
                 snapshots.append(result)
 
     # Cleanup work directory
@@ -565,11 +679,24 @@ def main():
         "snapshots": snapshots,
         "commits": commits,
         "commitsPerYear": commitsPerYear,
+        "perModule": per_module_data,
     }
 
-    # Save results as JSON
-    with open(data_file, "w") as f:
-        json.dump(data, f, indent=2)
+    # Save results as JSON with error handling
+    try:
+        json_str = json.dumps(data, indent=2)
+        if not json_str or json_str == "{}":
+            log_error("Generated JSON is empty!")
+            sys.exit(1)
+        with open(data_file, "w") as f:
+            f.write(json_str)
+        log_debug(f"Wrote {len(json_str)} bytes to {data_file}")
+    except (IOError, OSError) as e:
+        log_error(f"Failed to write data file: {e}")
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        log_error(f"JSON encoding error: {e}")
+        sys.exit(1)
 
     log_info(f"Analysis complete! Processed {len(snapshots)} snapshots.")
     log_info(f"Data saved to: {data_file}")
