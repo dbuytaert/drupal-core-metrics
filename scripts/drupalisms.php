@@ -63,6 +63,8 @@ const SERVICE_LOCATOR_WEIGHT = 1;
  * These hooks are well-documented but our analysis misses them:
  * - ModuleInstaller::invoke() for install/uninstall/schema
  * - UpdateRegistry for update_N and post_update_NAME
+ * - Install system for install_tasks
+ * - Theme registry for preprocess/process hooks
  * - Variable indirection: $hooks = ['form']; $this->alter($hooks, ...)
  */
 const IMPLICIT_HOOKS = [
@@ -72,14 +74,64 @@ const IMPLICIT_HOOKS = [
     'hook_update_N',
     'hook_post_update_NAME',
     'hook_requirements',
+    'hook_install_tasks',
+    'hook_install_tasks_alter',
+    'hook_preprocess_HOOK',
+    'hook_process_HOOK',
     'hook_form_alter',
-    'hook_form_FORM_ID_alter',
-    'hook_form_BASE_FORM_ID_alter',
     'hook_hook_info',
+    // Entity lifecycle hooks (invoked via string concatenation)
+    'hook_entity_insert',
+    'hook_entity_update',
+    'hook_entity_delete',
+    'hook_entity_presave',
+    'hook_entity_predelete',
+    'hook_entity_create',
+    'hook_entity_load',
+    'hook_entity_view',
+    'hook_entity_access',
+    // Block/query/plugin filter generics (specific instances filtered)
+    'hook_block_build_alter',
+    'hook_block_view_alter',
+    'hook_query_alter',
+    'hook_jsonapi_entity_filter_access',
+    'hook_entity_view_alter',
 ];
 
 /**
- * Patterns for identifying hook implementations.
+ * Patterns for specific hook instances (matching hook names without 'hook_' prefix).
+ *
+ * These patterns identify hooks that are specific implementations of generic patterns.
+ * For example, hook_node_insert matches this pattern and is filtered because it's
+ * covered by the generic hook_entity_insert in IMPLICIT_HOOKS.
+ *
+ * Applied globally to ALL detected hooks (from ModuleHandler, #[Hook], and implicit).
+ */
+const SPECIFIC_HOOK_PATTERNS = [
+    '/^(preprocess|process)_.+$/',           // preprocess_HOOK, process_HOOK
+    '/^form_.+_alter$/',                     // form_FORM_ID_alter, form_BASE_FORM_ID_alter
+    '/^theme_suggestions_.+$/',              // theme_suggestions_HOOK, theme_suggestions_HOOK_alter
+    '/^update_\d+$/',                        // update_N
+    '/^post_update_.+$/',                    // post_update_NAME
+    // Entity type lifecycle hooks (ENTITY_TYPE_OPERATION) - excludes generics and known false positives
+    '/^(?!entity_|field_attach_|field_storage_pre_|field_access$|file_download_|jsonapi_|views_pre_|mass_|translate_|image_style_)[a-z_]+_(insert|update|delete|presave|predelete|create|load|view|access)$/',
+    // Entity types starting with 'entity_' (entity_form_mode, entity_view_mode, entity_view_display)
+    '/^entity_(form_mode|view_mode|view_display)_(insert|update|delete|presave|predelete|create|load|view|access)$/',
+    // Block build/view specific alters (block_build_BLOCK_ID_alter, block_view_BLOCK_ID_alter)
+    '/^block_build_(?!alter$).+_alter$/',
+    '/^block_view_(?!alter$).+_alter$/',
+    // Query tag specific alters (query_TAG_alter)
+    '/^query_(?!alter$).+_alter$/',
+    // Plugin filter with consumer (plugin_filter_TYPE__CONSUMER_alter - double underscore)
+    '/^plugin_filter_[a-z_]+__[a-z_]+_alter$/',
+    // JSON API entity-type-specific filter access (jsonapi_ENTITY_TYPE_filter_access)
+    '/^jsonapi_(?!entity_filter_access$)[a-z_]+_filter_access$/',
+    // Entity-type-specific view_alter (ENTITY_TYPE_view_alter, but not entity_view_alter or block_view_alter etc.)
+    '/^(node|user|comment|taxonomy_term|media|file)_view_alter$/',
+];
+
+/**
+ * Patterns for identifying hook implementations in function names.
  *
  * Used to filter hook implementations from global functions.
  * {module} is replaced with the actual module name at runtime.
@@ -350,6 +402,34 @@ class SurfaceAreaCollector
         }
 
         return false;
+    }
+
+    /**
+     * Filter out specific hook instances covered by generic patterns.
+     *
+     * Removes hooks like hook_node_insert (covered by hook_entity_insert) and
+     * hook_preprocess_block (covered by hook_preprocess_HOOK) to avoid counting
+     * both the generic pattern and its specific implementations.
+     *
+     * Must be called after all hooks are collected (ModuleHandler, #[Hook], implicit).
+     */
+    public function filterSpecificHookInstances(): void
+    {
+        $genericHooks = [];
+        foreach (array_keys($this->hooks) as $hook) {
+            $hookName = str_starts_with($hook, 'hook_') ? substr($hook, 5) : $hook;
+            $matchesSpecificPattern = false;
+            foreach (SPECIFIC_HOOK_PATTERNS as $pattern) {
+                if (preg_match($pattern, $hookName)) {
+                    $matchesSpecificPattern = true;
+                    break;
+                }
+            }
+            if (!$matchesSpecificPattern) {
+                $genericHooks[$hook] = true;
+            }
+        }
+        $this->hooks = $genericHooks;
     }
 
     public function getCounts(): array
@@ -668,12 +748,12 @@ class HookTypeVisitor extends NodeVisitorAbstract
 
     // ModuleHandler invoke methods: method name → argument index of hook name
     private const INVOKE_METHODS = [
-        'invoke' => 0,
+        'invoke' => 1,                // invoke($module, $hook) - hook is second arg
         'invokeAll' => 0,
         'invokeAllWith' => 0,
         'hasImplementations' => 0,
-        'invokeDeprecated' => 1,      // first arg is deprecation message
-        'invokeAllDeprecated' => 1,   // first arg is deprecation message
+        'invokeDeprecated' => 2,      // invokeDeprecated($message, $module, $hook)
+        'invokeAllDeprecated' => 1,   // invokeAllDeprecated($message, $hook)
     ];
 
     // ModuleHandler alter methods: method name → argument index of alter type
@@ -698,6 +778,22 @@ class HookTypeVisitor extends NodeVisitorAbstract
 
     public function enterNode(Node $node): ?int
     {
+        // Detect hook declarations via #[Hook('name')] attributes (Drupal 11.1+)
+        if ($node instanceof Node\Stmt\Class_ || $node instanceof Node\Stmt\ClassMethod) {
+            foreach ($node->attrGroups as $attrGroup) {
+                foreach ($attrGroup->attrs as $attr) {
+                    $attrName = $attr->name->toString();
+                    // Match Hook or fully qualified Drupal\Core\Hook\Attribute\Hook
+                    if ($attrName === 'Hook' || str_ends_with($attrName, '\Hook')) {
+                        if (!empty($attr->args) && $attr->args[0]->value instanceof Node\Scalar\String_) {
+                            $hookName = $attr->args[0]->value->value;
+                            $this->surfaceArea->addHook('hook_' . $hookName);
+                        }
+                    }
+                }
+            }
+        }
+
         // Detect hook invocations via method calls
         if ($node instanceof Node\Expr\MethodCall) {
             $methodName = $node->name instanceof Node\Identifier ? $node->name->toString() : null;
@@ -1453,6 +1549,9 @@ function getHotspots(array $functions, int $limit = 50): array
 
 // Add implicit hooks that can't be detected via AST analysis
 $surfaceArea->addImplicitHooks();
+
+// Filter specific hook instances covered by generic patterns (e.g., node_insert → entity_insert)
+$surfaceArea->filterSpecificHookInstances();
 
 // Filter global functions to remove hook implementations (must run after all hooks are known)
 $surfaceArea->filterHookImplementations();
