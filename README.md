@@ -42,7 +42,7 @@ Distinct extension points in Drupal. A larger surface may correlate with a steep
 
 ```bash
 # 1. Clone and start DDEV
-git clone https://github.com/podarok/drupal-core-metrics.git
+git clone https://github.com/dbuytaert/drupal-core-metrics.git
 cd drupal-core-metrics
 ddev start
 
