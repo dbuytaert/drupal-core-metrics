@@ -487,7 +487,7 @@
 
             section.innerHTML = `
                 <h2>Recent commits</h2>
-                <p class="section-subtitle">Commits that changed code quality metrics. Green = improved, red = worsened.</p>
+                <p class="section-subtitle">Commits that changed code quality metrics. Green = improved, red = worsened. Type is classified from commit messages: Conventional Commits prefixes, Drupal.org issue descriptions, or keywords like "add" (Feature), "fix" (Bug), "refactor" (Maintenance).</p>
                 <table class="hotspots-table">
                     <thead><tr><th>Commit</th><th>Date</th><th>Type</th><th>Message</th><th>LOC Δ</th><th>CCN Δ</th><th>MI Δ</th><th>Anti-patterns Δ</th></tr></thead>
                     <tbody id="commits-tbody">${initialRows}</tbody>
@@ -795,6 +795,7 @@
             section.innerHTML = `<h2>Features vs tasks vs bugs</h2>
                 <p class="section-subtitle">Tasks include both maintenance work (documentation, tests, CI, refactoring) and innovation (smaller enhancements, new feature follow-ups). Healthy mature projects allocate 20-40% to features; a lower ratio reflects a focus on stability and reliability, while below 20% introduces the risk of becoming obsolete.</p>
                 <p class="section-subtitle">Note: these numbers undercount feature development because much of it happens across multiple commits (classified as tasks or bug fixes) and in external repositories before experimental modules are added to Core. Drupal's architecture also encourages innovation in contributed modules, so Core's ratio tells only part of the story.</p>
+                <p class="section-subtitle">Commits are classified using <a href="https://www.conventionalcommits.org/">Conventional Commits</a> format (<code>feat:</code>, <code>fix:</code>), Drupal.org issue references (<code>Issue #XXX: Add...</code>), and keyword detection (<code>add</code>, <code>fix</code>, <code>refactor</code>, etc.).</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -872,6 +873,59 @@
                     }
                 }
             });
+        }
+
+        function renderPerModule(container, perModule) {
+            if (!perModule || perModule.length < 2) return;
+
+            const section = document.createElement('div');
+            section.className = 'card';
+            const initialShow = 20;
+            let expanded = false;
+
+            const makeRow = (mod, index) => {
+                const ccnClass = mod.ccn > 10 ? 'metric-bad' : mod.ccn > 6 ? 'metric-warning' : 'metric-good';
+                const miClass = mod.mi < 65 ? 'metric-bad' : mod.mi < 85 ? 'metric-warning' : 'metric-good';
+                return `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td><code>${escapeHtml(mod.name)}</code></td>
+                        <td>${mod.loc.toLocaleString()}</td>
+                        <td class="${ccnClass}">${mod.ccn.toFixed(1)}</td>
+                        <td class="${miClass}">${mod.mi.toFixed(1)}</td>
+                        <td>${mod.antipatterns}</td>
+                    </tr>
+                `;
+            };
+
+            const initialRows = perModule.slice(0, initialShow).map(makeRow).join('');
+            const hasMore = perModule.length > initialShow;
+            const toggleButton = hasMore ? `<button id="toggle-modules" class="toggle-button">Show all ${perModule.length} modules</button>` : '';
+
+            section.innerHTML = `
+                <h2>Per-module breakdown</h2>
+                <p class="section-subtitle">Metrics for each core module (core/modules/*). Sorted by LOC descending. Identifies which modules have the most code and potential complexity hotspots. CCN &gt;10 (red) and MI &lt;65 (red) indicate modules that may benefit from refactoring.</p>
+                <table class="hotspots-table">
+                    <thead><tr><th>#</th><th>Module</th><th>LOC</th><th>CCN (avg)</th><th>MI (avg)</th><th>Anti-patterns</th></tr></thead>
+                    <tbody id="modules-tbody">${initialRows}</tbody>
+                </table>
+                ${toggleButton}
+            `;
+            container.appendChild(section);
+
+            if (hasMore) {
+                document.getElementById('toggle-modules').addEventListener('click', function() {
+                    const tableBody = document.getElementById('modules-tbody');
+                    expanded = !expanded;
+                    if (expanded) {
+                        tableBody.innerHTML = perModule.map(makeRow).join('');
+                        this.textContent = 'Show fewer modules';
+                    } else {
+                        tableBody.innerHTML = perModule.slice(0, initialShow).map(makeRow).join('');
+                        this.textContent = `Show all ${perModule.length} modules`;
+                    }
+                });
+            }
         }
 
         function renderSurfaceAreaReference(container, snapshots) {
@@ -956,6 +1010,7 @@
             createCommitsPerYearChart(container, data.commitsPerYear);
             createCommitsPerMonthChart(container, data.commitsMonthly);
             createCommitTypeDistributionChart(container, data.commitsMonthly);
+            renderPerModule(container, data.perModule);
             renderSurfaceAreaReference(container, data.snapshots);
         }
 

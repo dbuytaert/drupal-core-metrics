@@ -1,0 +1,9 @@
+name: drupal-core-metrics
+type: php
+docroot: ""
+php_version: "8.3"
+webserver_type: nginx-fpm
+database:
+  type: mariadb
+  version: "10.11"
+disable_settings_management: true
