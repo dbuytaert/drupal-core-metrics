@@ -38,9 +38,34 @@ Distinct extension points in Drupal. A larger surface may correlate with a steep
 
 ## Running locally
 
-**Prerequisites:** PHP 8.1+, Python 3, Composer
+### Option 1: DDEV (Recommended)
 
-### Regenerating data
+**Prerequisites:** [DDEV](https://ddev.readthedocs.io/en/stable/) installed
+
+```bash
+# 1. Clone and start DDEV
+git clone https://github.com/dbuytaert/drupal-core-metrics.git
+cd drupal-core-metrics
+ddev start
+
+# 2. Install PHP dependencies
+ddev composer install
+
+# 3. Run analysis (15-30 min)
+ddev exec "cd /var/www/html && python3 scripts/analyze.py"
+
+# 4. View dashboard
+ddev launch
+```
+
+For verbose output during analysis:
+```bash
+ddev exec "cd /var/www/html && DEBUG=1 python3 scripts/analyze.py"
+```
+
+### Option 2: Manual Setup
+
+**Prerequisites:** PHP 8.1+, Python 3, Composer
 
 ```bash
 composer install              # Install dependencies
@@ -49,7 +74,7 @@ python3 scripts/analyze.py    # Run analysis (15-30 min)
 
 This generates `data.json`. The `index.html` file is static and does not need to be regenerated.
 
-### Viewing the dashboard
+### Viewing the dashboard (manual)
 
 The dashboard loads data via `fetch()`, which requires an HTTP server (browsers block this for local files). Start a simple server:
 
