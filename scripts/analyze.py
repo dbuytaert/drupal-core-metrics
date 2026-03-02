@@ -125,7 +125,7 @@ def classify_commit(subject: str) -> str:
         return "Bug"
     elif subject.startswith("feat:"):
         return "Feature"
-    elif subject.startswith(("task:", "docs:", "ci:", "test:", "perf:", "chore:", "refactor:")):
+    elif re.match(r"[a-z]+:", subject):
         return "Maintenance"
     return "Unknown"
 
