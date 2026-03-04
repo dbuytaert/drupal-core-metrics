@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-03T00:53:03.982699",
+  "generated": "2026-03-04T00:52:06.778759",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 25,
-      "features": 1,
+      "total": 30,
+      "features": 2,
       "bugs": 16,
-      "maintenance": 8,
+      "maintenance": 12,
       "unknown": 0
     }
   ],
@@ -133141,30 +133141,30 @@
     },
     {
       "date": "2026-03",
-      "commit": "54e81478",
+      "commit": "589e3dd7",
       "production": {
-        "loc": 299673,
-        "functions": 23658,
+        "loc": 289888,
+        "functions": 22946,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 87.3,
+          "avg": 87.1,
           "p5": 84
         },
-        "antipatterns": 70.7
+        "antipatterns": 72.7
       },
-      "testLoc": 604331,
+      "testLoc": 456029,
       "surfaceArea": {
         "pluginTypes": 45,
-        "hooks": 224,
+        "hooks": 223,
         "magicKeys": 271,
         "events": 40,
-        "services": 242,
-        "yamlFormats": 20,
-        "interfaceMethods": 2914,
-        "globalFunctions": 288
+        "services": 241,
+        "yamlFormats": 19,
+        "interfaceMethods": 2899,
+        "globalFunctions": 286
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -133411,7 +133411,6 @@
           "hook_field_formatter_settings_summary_alter",
           "hook_field_widget_third_party_settings_form",
           "hook_field_widget_settings_summary_alter",
-          "hook_migration_plugins_alter",
           "hook_navigation_content_top",
           "hook_navigation_content_top_alter",
           "hook_navigation_menu_link_tree_alter",
@@ -133989,7 +133988,6 @@
           "element",
           "editor",
           "field_ui",
-          "migrate_drupal",
           "announcements_feed",
           "navigation",
           "layout",
@@ -134018,7 +134016,6 @@
           "ckeditor5",
           "permissions",
           "help_topics",
-          "migrate_drupal",
           "config_translation"
         ],
         "interfaceMethods": [
@@ -135000,6 +134997,7 @@
           "AccountInterface::id",
           "AccountInterface::getRoles",
           "AccountInterface::hasPermission",
+          "AccountInterface::hasRole",
           "AccountInterface::isAuthenticated",
           "AccountInterface::isAnonymous",
           "AccountInterface::getPreferredLangcode",
@@ -136561,7 +136559,6 @@
           "RoleStorageInterface::isPermissionInRoles",
           "UserAuthenticationInterface::lookupAccount",
           "UserAuthenticationInterface::authenticateAccount",
-          "UserInterface::hasRole",
           "UserInterface::addRole",
           "UserInterface::removeRole",
           "UserInterface::setUsername",
@@ -136858,21 +136855,6 @@
           "EditorPluginInterface::getDefaultSettings",
           "EditorPluginInterface::getJSSettings",
           "EditorPluginInterface::getLibraries",
-          "FieldDiscoveryInterface::addAllFieldProcesses",
-          "FieldDiscoveryInterface::addEntityFieldProcesses",
-          "FieldDiscoveryInterface::addBundleFieldProcesses",
-          "MigrateFieldPluginManagerInterface::getPluginIdFromFieldType",
-          "MigrateFieldInterface::alterFieldMigration",
-          "MigrateFieldInterface::alterFieldInstanceMigration",
-          "MigrateFieldInterface::alterFieldWidgetMigration",
-          "MigrateFieldInterface::alterFieldFormatterMigration",
-          "MigrateFieldInterface::getFieldFormatterType",
-          "MigrateFieldInterface::getFieldFormatterMap",
-          "MigrateFieldInterface::getFieldWidgetType",
-          "MigrateFieldInterface::getFieldWidgetMap",
-          "MigrateFieldInterface::defineValueProcessPipeline",
-          "MigrateFieldInterface::getFieldType",
-          "MigrationWithFollowUpInterface::generateFollowUpMigrations",
           "TopBarItemManagerInterface::getDefinitionsByRegion",
           "TopBarItemManagerInterface::getRenderedTopBarItemsByRegion",
           "TopBarItemPluginInterface::label",
@@ -137015,9 +136997,7 @@
           "drupal_find_theme_templates",
           "theme_get_setting",
           "theme_settings_convert_to_config",
-          "template_preprocess",
           "theme_get_suggestions",
-          "drupal_common_theme",
           "drupal_error_levels",
           "error_displayable",
           "module_set_weight",
@@ -137230,8 +137210,8 @@
       },
       "antipatterns": {
         "magicKeys": 10618,
-        "deepArrays": 8082,
-        "serviceLocators": 2600
+        "deepArrays": 8000,
+        "serviceLocators": 2565
       },
       "hotspots": [
         {
@@ -137283,14 +137263,6 @@
           "antipatterns": 60
         },
         {
-          "name": "ThemeManager::render",
-          "file": "lib/Drupal/Core/Theme/ThemeManager.php",
-          "ccn": 60,
-          "loc": 202,
-          "mi": 35,
-          "antipatterns": 3
-        },
-        {
           "name": "DisplayPluginBase::buildOptionsForm",
           "file": "modules/views/src/Plugin/views/display/DisplayPluginBase.php",
           "ccn": 59,
@@ -137313,6 +137285,14 @@
           "loc": 147,
           "mi": 42,
           "antipatterns": 11
+        },
+        {
+          "name": "ThemeManager::render",
+          "file": "lib/Drupal/Core/Theme/ThemeManager.php",
+          "ccn": 56,
+          "loc": 192,
+          "mi": 37,
+          "antipatterns": 3
         },
         {
           "name": "SystemRequirements::checkRequirements",
@@ -137369,14 +137349,6 @@
           "loc": 157,
           "mi": 43,
           "antipatterns": 0
-        },
-        {
-          "name": "Registry::processExtension",
-          "file": "lib/Drupal/Core/Theme/Registry.php",
-          "ccn": 45,
-          "loc": 134,
-          "mi": 47,
-          "antipatterns": 3
         },
         {
           "name": "PoStreamReader::readLine",
@@ -137531,14 +137503,6 @@
           "antipatterns": 5
         },
         {
-          "name": "EntityTranslationSettings::initializeIterator",
-          "file": "modules/content_translation/src/Plugin/migrate/source/d7/EntityTranslationSettings.php",
-          "ccn": 34,
-          "loc": 70,
-          "mi": 63,
-          "antipatterns": 0
-        },
-        {
           "name": "install_begin_request",
           "file": "includes/install.core.inc",
           "ccn": 33,
@@ -137587,6 +137551,14 @@
           "antipatterns": 0
         },
         {
+          "name": "Registry::processExtension",
+          "file": "lib/Drupal/Core/Theme/Registry.php",
+          "ccn": 31,
+          "loc": 98,
+          "mi": 57,
+          "antipatterns": 2
+        },
+        {
           "name": "PrimitiveTypeConstraintValidator::validate",
           "file": "lib/Drupal/Core/Validation/Plugin/Validation/Constraint/PrimitiveTypeConstraintValidator.php",
           "ccn": 31,
@@ -137633,11 +137605,39 @@
           "loc": 65,
           "mi": 66,
           "antipatterns": 0
+        },
+        {
+          "name": "SqlContentEntityStorage::saveToDedicatedTables",
+          "file": "lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php",
+          "ccn": 30,
+          "loc": 100,
+          "mi": 57,
+          "antipatterns": 0
         }
       ]
     }
   ],
   "commits": [
+    {
+      "hash": "4eb589c00c3",
+      "date": "Mar 03, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3575542 Remove deprecations related to the theme preprocess discovery",
+      "locDelta": -187,
+      "ccnDelta": -52,
+      "miDelta": 12,
+      "antipatternsDelta": -25
+    },
+    {
+      "hash": "7709975b7ac",
+      "date": "Mar 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3572280 Remove Migrate Drupal",
+      "locDelta": -9598,
+      "ccnDelta": -1524,
+      "miDelta": 1170,
+      "antipatternsDelta": -93
+    },
     {
       "hash": "e50aeefcecc",
       "date": "Mar 02, 2026",
@@ -138617,26 +138617,6 @@
       "ccnDelta": 2,
       "miDelta": -2,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "2b1cd68a3d7",
-      "date": "Jan 30, 2026",
-      "type": "Maintenance",
-      "message": "chore: #3537713 [12.x] Require PHP 8.5",
-      "locDelta": -43,
-      "ccnDelta": -11,
-      "miDelta": 17,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "37c7cb06045",
-      "date": "Jan 30, 2026",
-      "type": "Bug",
-      "message": "fix: #3115188 Routes fail validation in link field widgets",
-      "locDelta": 3,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138746,7 +138726,7 @@
     },
     {
       "year": 2026,
-      "commits": 336
+      "commits": 341
     }
   ]
 }
