@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-04T00:52:06.778759",
+  "generated": "2026-03-05T00:52:29.406248",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 30,
-      "features": 2,
-      "bugs": 16,
-      "maintenance": 12,
+      "total": 40,
+      "features": 4,
+      "bugs": 18,
+      "maintenance": 18,
       "unknown": 0
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "589e3dd7",
+      "commit": "aea47fe1",
       "production": {
-        "loc": 289888,
-        "functions": 22946,
+        "loc": 288393,
+        "functions": 22898,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133153,18 +133153,18 @@
           "avg": 87.1,
           "p5": 84
         },
-        "antipatterns": 72.7
+        "antipatterns": 73
       },
-      "testLoc": 456029,
+      "testLoc": 455331,
       "surfaceArea": {
         "pluginTypes": 45,
-        "hooks": 223,
+        "hooks": 221,
         "magicKeys": 271,
         "events": 40,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2899,
-        "globalFunctions": 286
+        "interfaceMethods": 2898,
+        "globalFunctions": 280
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -133236,7 +133236,6 @@
           "hook_views_pre_render",
           "hook_transliteration_overrides_alter",
           "hook_file_url_alter",
-          "hook_file_mimetype_mapping_alter",
           "hook_mail",
           "hook_mail_alter",
           "hook_cron",
@@ -133248,7 +133247,6 @@
           "hook_options_list_alter",
           "hook_config_import_steps_alter",
           "hook_system_info_alter",
-          "hook_module_implements_alter",
           "hook_themes_installed",
           "hook_themes_uninstalled",
           "hook_modules_installed",
@@ -134878,7 +134876,6 @@
           "PreviewFallbackInterface::getPreviewFallbackString",
           "RendererInterface::renderRoot",
           "RendererInterface::renderInIsolation",
-          "RendererInterface::renderPlain",
           "RendererInterface::renderPlaceholder",
           "RendererInterface::render",
           "RendererInterface::hasRenderContext",
@@ -137014,9 +137011,6 @@
           "drupal_static",
           "drupal_static_reset",
           "drupal_register_shutdown_function",
-          "twig_theme",
-          "twig_extension",
-          "twig_render_template",
           "claro_system_module_invoked_library_info_alter",
           "claro_system_module_invoked_theme_registry_alter",
           "content_translation_translate_access",
@@ -137112,13 +137106,10 @@
           "views_element_validate_tags",
           "views_field_default_views_data",
           "views_entity_field_label",
-          "file_get_content_headers",
           "file_save_upload",
-          "file_managed_file_submit",
           "file_managed_file_save_upload",
           "file_get_file_references",
           "file_field_find_file_reference_column",
-          "file_system_settings_submit",
           "block_theme_initialize",
           "system_check_directory",
           "system_region_list",
@@ -137209,9 +137200,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10618,
-        "deepArrays": 8000,
-        "serviceLocators": 2565
+        "magicKeys": 10614,
+        "deepArrays": 7997,
+        "serviceLocators": 2552
       },
       "hotspots": [
         {
@@ -137287,14 +137278,6 @@
           "antipatterns": 11
         },
         {
-          "name": "ThemeManager::render",
-          "file": "lib/Drupal/Core/Theme/ThemeManager.php",
-          "ccn": 56,
-          "loc": 192,
-          "mi": 37,
-          "antipatterns": 3
-        },
-        {
           "name": "SystemRequirements::checkRequirements",
           "file": "modules/system/src/Install/Requirements/SystemRequirements.php",
           "ccn": 56,
@@ -137317,6 +137300,14 @@
           "loc": 137,
           "mi": 45,
           "antipatterns": 7
+        },
+        {
+          "name": "ThemeManager::render",
+          "file": "lib/Drupal/Core/Theme/ThemeManager.php",
+          "ccn": 53,
+          "loc": 175,
+          "mi": 39,
+          "antipatterns": 3
         },
         {
           "name": "ContentTranslationHandler::entityFormAlter",
@@ -137410,7 +137401,7 @@
           "name": "UrlGenerator::generateFromRoute",
           "file": "lib/Drupal/Core/Routing/UrlGenerator.php",
           "ccn": 39,
-          "loc": 93,
+          "loc": 95,
           "mi": 56,
           "antipatterns": 0
         },
@@ -137535,14 +137526,6 @@
           "antipatterns": 29
         },
         {
-          "name": "ThemeSettingsForm::buildForm",
-          "file": "modules/system/src/Form/ThemeSettingsForm.php",
-          "ccn": 32,
-          "loc": 213,
-          "mi": 40,
-          "antipatterns": 66
-        },
-        {
           "name": "FieldResolver::resolveInternalEntityQueryPath",
           "file": "modules/jsonapi/src/Context/FieldResolver.php",
           "ccn": 32,
@@ -137554,8 +137537,8 @@
           "name": "Registry::processExtension",
           "file": "lib/Drupal/Core/Theme/Registry.php",
           "ccn": 31,
-          "loc": 98,
-          "mi": 57,
+          "loc": 94,
+          "mi": 58,
           "antipatterns": 2
         },
         {
@@ -137591,6 +137574,14 @@
           "antipatterns": 0
         },
         {
+          "name": "ThemeSettingsForm::buildForm",
+          "file": "modules/system/src/Form/ThemeSettingsForm.php",
+          "ccn": 31,
+          "loc": 202,
+          "mi": 41,
+          "antipatterns": 62
+        },
+        {
           "name": "ViewUI::renderPreview",
           "file": "modules/views_ui/src/ViewUI.php",
           "ccn": 31,
@@ -137618,6 +137609,66 @@
     }
   ],
   "commits": [
+    {
+      "hash": "aea47fe1b2b",
+      "date": "Mar 04, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3569092 Update method signatures for addConstraint() and ConstraintMa",
+      "locDelta": -92,
+      "ccnDelta": -5,
+      "miDelta": 4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "3f8e552bd2a",
+      "date": "Mar 04, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3575575 Remove deprecations around File component and module",
+      "locDelta": -1012,
+      "ccnDelta": -32,
+      "miDelta": 23,
+      "antipatternsDelta": -7
+    },
+    {
+      "hash": "9f05b589c2c",
+      "date": "Mar 04, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3575467 Remove deprecations related to the theme engine",
+      "locDelta": -173,
+      "ccnDelta": -34,
+      "miDelta": 53,
+      "antipatternsDelta": -7
+    },
+    {
+      "hash": "3d3387bd1ea",
+      "date": "Mar 04, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3571069 Remove hook_module_implements_alter and support in HookCollec",
+      "locDelta": -22,
+      "ccnDelta": -2,
+      "miDelta": 3,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "2a9fde3df0d",
+      "date": "Mar 04, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3574859 Remove deprecated code from lib/menu, lib/routing, lib/sessio",
+      "locDelta": -211,
+      "ccnDelta": -45,
+      "miDelta": 17,
+      "antipatternsDelta": -5
+    },
+    {
+      "hash": "20de7941343",
+      "date": "Mar 04, 2026",
+      "type": "Bug",
+      "message": "fix: #3319212 Entities without labels cause TypeError in EntityController title ",
+      "locDelta": 13,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
     {
       "hash": "4eb589c00c3",
       "date": "Mar 03, 2026",
@@ -138557,66 +138608,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "b6627d2bc3a",
-      "date": "Feb 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3555534 Since symfony/validator 7.4: Support for evaluating options in th",
-      "locDelta": 695,
-      "ccnDelta": 101,
-      "miDelta": -27,
-      "antipatternsDelta": 27
-    },
-    {
-      "hash": "13d18b6bd92",
-      "date": "Feb 01, 2026",
-      "type": "Maintenance",
-      "message": "task: #3520730 Fix PHPStan arguments.count error related to interface argument a",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "a8fe3f24e96",
-      "date": "Feb 01, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3566768 Change \\Drupal\\system\\Form\\CronForm to use ConfigFormBase and",
-      "locDelta": -13,
-      "ccnDelta": -1,
-      "miDelta": 5,
-      "antipatternsDelta": -4
-    },
-    {
-      "hash": "317ec5e32c3",
-      "date": "Feb 01, 2026",
-      "type": "Maintenance",
-      "message": "task: #3568087 Deprecate procedural code from contextual.module",
-      "locDelta": 35,
-      "ccnDelta": 5,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "f0792ef3ad2",
-      "date": "Feb 01, 2026",
-      "type": "Bug",
-      "message": "fix: #3570857 PHPStan fails if pdo_mysql is not installed",
-      "locDelta": 10,
-      "ccnDelta": 0,
-      "miDelta": -3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c8c8cb5cf37",
-      "date": "Jan 31, 2026",
-      "type": "Bug",
-      "message": "fix: #3516264 CKEditor 5 loads all plugin translations on AJAX operations",
-      "locDelta": 6,
-      "ccnDelta": 2,
-      "miDelta": -2,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -138726,7 +138717,7 @@
     },
     {
       "year": 2026,
-      "commits": 341
+      "commits": 351
     }
   ]
 }
