@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-05T00:52:29.406248",
+  "generated": "2026-03-06T00:56:33.108787",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 40,
+      "total": 51,
       "features": 4,
-      "bugs": 18,
-      "maintenance": 18,
+      "bugs": 22,
+      "maintenance": 25,
       "unknown": 0
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "aea47fe1",
+      "commit": "b7a8ea8b",
       "production": {
-        "loc": 288393,
-        "functions": 22898,
+        "loc": 288441,
+        "functions": 22903,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133155,7 +133155,7 @@
         },
         "antipatterns": 73
       },
-      "testLoc": 455331,
+      "testLoc": 455417,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133163,8 +133163,8 @@
         "events": 40,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2898,
-        "globalFunctions": 280
+        "interfaceMethods": 2899,
+        "globalFunctions": 276
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -135027,6 +135027,7 @@
           "SessionManagerInterface::delete",
           "SessionManagerInterface::destroy",
           "SessionManagerInterface::setWriteSafeHandler",
+          "UserSessionRepositoryInterface::deleteAll",
           "AccountProxyInterface::setAccount",
           "AccountProxyInterface::getAccount",
           "AccountProxyInterface::setInitialAccountId",
@@ -137189,10 +137190,6 @@
           "language_negotiation_url_prefixes_update",
           "language_get_browser_drupal_langcode_mappings",
           "editor_image_upload_settings_form",
-          "editor_form_filter_admin_format_editor_configure",
-          "editor_form_filter_admin_form_ajax",
-          "editor_form_filter_admin_format_validate",
-          "editor_form_filter_admin_format_submit",
           "editor_filter_xss",
           "automated_cron_settings_submit",
           "toolbar_menu_navigation_links",
@@ -137202,7 +137199,7 @@
       "antipatterns": {
         "magicKeys": 10614,
         "deepArrays": 7997,
-        "serviceLocators": 2552
+        "serviceLocators": 2553
       },
       "hotspots": [
         {
@@ -137609,6 +137606,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "cc89478fae0",
+      "date": "Mar 05, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3575585 Convert remaining themes to OOP",
+      "locDelta": 25,
+      "ccnDelta": 5,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "3fb558de463",
+      "date": "Mar 05, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3568092 Convert editor.module procedural submit, validate and Ajax ca",
+      "locDelta": -2,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "29b81b3c8e5",
+      "date": "Mar 05, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3570849 Deprecate SessionManager::delete()",
+      "locDelta": 25,
+      "ccnDelta": 4,
+      "miDelta": -3,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "e123a46d7a0",
+      "date": "Mar 05, 2026",
+      "type": "Maintenance",
+      "message": "task: #3576556 Deprecate CachePluginBase::cacheExpire",
+      "locDelta": 0,
+      "ccnDelta": -2,
+      "miDelta": 2,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "aea47fe1b2b",
       "date": "Mar 04, 2026",
@@ -138568,46 +138605,6 @@
       "ccnDelta": 2,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "03b4ba430e1",
-      "date": "Feb 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3505370 Remove 'filter tips' page and deprecate the long format API",
-      "locDelta": -4,
-      "ccnDelta": 3,
-      "miDelta": -6,
-      "antipatternsDelta": -8
-    },
-    {
-      "hash": "79ed7375dd2",
-      "date": "Feb 02, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3537962 EntityFieldManager::getFieldDefinitions() per-bundle caching can ",
-      "locDelta": 14,
-      "ccnDelta": 3,
-      "miDelta": -12,
-      "antipatternsDelta": 3
-    },
-    {
-      "hash": "26a0c062ab5",
-      "date": "Feb 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3566424 Deprecate Views::pluginManager() and Views::handlerManager() and ",
-      "locDelta": -9,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 41
-    },
-    {
-      "hash": "69f701f318d",
-      "date": "Feb 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3567980 Remove unneeded parameter $requestStack from EntityController",
-      "locDelta": -3,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138717,7 +138714,7 @@
     },
     {
       "year": 2026,
-      "commits": 351
+      "commits": 362
     }
   ]
 }
