@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-06T00:56:33.108787",
+  "generated": "2026-03-07T00:49:31.183083",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 51,
+      "total": 66,
       "features": 4,
-      "bugs": 22,
-      "maintenance": 25,
+      "bugs": 28,
+      "maintenance": 34,
       "unknown": 0
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "b7a8ea8b",
+      "commit": "8a94b995",
       "production": {
-        "loc": 288441,
-        "functions": 22903,
+        "loc": 288188,
+        "functions": 22870,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133155,7 +133155,7 @@
         },
         "antipatterns": 73
       },
-      "testLoc": 455417,
+      "testLoc": 455426,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133163,8 +133163,8 @@
         "events": 40,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2899,
-        "globalFunctions": 276
+        "interfaceMethods": 2898,
+        "globalFunctions": 275
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -135451,7 +135451,6 @@
           "EntityTypeInterface::hasIntegerId",
           "ParamConverterInterface::convert",
           "ParamConverterInterface::applies",
-          "ParamConverterManagerInterface::addConverter",
           "ParamConverterManagerInterface::getConverter",
           "ParamConverterManagerInterface::setRouteParameterConverters",
           "ParamConverterManagerInterface::convert",
@@ -137066,7 +137065,6 @@
           "locale_translation_source_build",
           "locale_translation_build_server_pattern",
           "locale_cron_fill_queue",
-          "locale_translate_batch_import_files",
           "locale_translate_get_interface_translation_files",
           "locale_translate_batch_build",
           "locale_translate_batch_import",
@@ -137199,7 +137197,7 @@
       "antipatterns": {
         "magicKeys": 10614,
         "deepArrays": 7997,
-        "serviceLocators": 2553
+        "serviceLocators": 2540
       },
       "hotspots": [
         {
@@ -137582,7 +137580,7 @@
           "name": "ViewUI::renderPreview",
           "file": "modules/views_ui/src/ViewUI.php",
           "ccn": 31,
-          "loc": 258,
+          "loc": 256,
           "mi": 36,
           "antipatterns": 66
         },
@@ -137606,6 +137604,76 @@
     }
   ],
   "commits": [
+    {
+      "hash": "dce563e4498",
+      "date": "Mar 06, 2026",
+      "type": "Maintenance",
+      "message": "task: #3573896 Remove deprecations from System module",
+      "locDelta": -51,
+      "ccnDelta": -13,
+      "miDelta": 0,
+      "antipatternsDelta": -10
+    },
+    {
+      "hash": "8ebac7b2e26",
+      "date": "Mar 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3560357 Taxonomy term ID from URL ViewsArgumentDefault plugin does not app",
+      "locDelta": -5,
+      "ccnDelta": -4,
+      "miDelta": -2,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "3742821e2b1",
+      "date": "Mar 06, 2026",
+      "type": "Maintenance",
+      "message": "task: #3039248 Deprecate views_ui_contextual_links_suppress(), views_ui_contextu",
+      "locDelta": -9,
+      "ccnDelta": -2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "a4cda8572f3",
+      "date": "Mar 06, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571094 Remove RegisterStreamWrappersPass",
+      "locDelta": -35,
+      "ccnDelta": -5,
+      "miDelta": 3,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "69652b9c8dc",
+      "date": "Mar 06, 2026",
+      "type": "Maintenance",
+      "message": "task: #3568124 Deprecate remaining functions in media.module",
+      "locDelta": 17,
+      "ccnDelta": 4,
+      "miDelta": 0,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "5e4a4a4ec67",
+      "date": "Mar 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3436295 ParamConverterManager lazy services are broken and should use a se",
+      "locDelta": -165,
+      "ccnDelta": -26,
+      "miDelta": 0,
+      "antipatternsDelta": -4
+    },
+    {
+      "hash": "e808e76c844",
+      "date": "Mar 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3567483 Update manager crashing admin panel with uncaught exceptions parsi",
+      "locDelta": 18,
+      "ccnDelta": 3,
+      "miDelta": -17,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "cc89478fae0",
       "date": "Mar 05, 2026",
@@ -138535,76 +138603,6 @@
       "ccnDelta": 5,
       "miDelta": 1,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "61c592bf375",
-      "date": "Feb 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3563051 Remove unnecessary status messages from file_save_upload() on fil",
-      "locDelta": -6,
-      "ccnDelta": -1,
-      "miDelta": 1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ba110231a9e",
-      "date": "Feb 03, 2026",
-      "type": "Feature",
-      "message": "feat: #3529464 Make menu trail behaviour in SystemMenuBlock optional",
-      "locDelta": 73,
-      "ccnDelta": 21,
-      "miDelta": -10,
-      "antipatternsDelta": 9
-    },
-    {
-      "hash": "99a2607aba6",
-      "date": "Feb 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571111 Remove item_attributes deprecations",
-      "locDelta": -9,
-      "ccnDelta": -3,
-      "miDelta": 7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "78087dfd025",
-      "date": "Feb 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3568101 Remove editor.module underscore functions. Move the logic in Edit",
-      "locDelta": 10,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "462af0a2e27",
-      "date": "Feb 03, 2026",
-      "type": "Feature",
-      "message": "feat: #3339905 Add page_top and page_bottom to #attached to get rid of NodeTheme",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "b2c257c41f0",
-      "date": "Feb 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571063 Remove Deprecated methods in ModuleHandler and ModuleHandlerInter",
-      "locDelta": -29,
-      "ccnDelta": -13,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "47ae02bb658",
-      "date": "Feb 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3566888 Move contact module form callbacks from procedural to hook class",
-      "locDelta": 9,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138714,7 +138712,7 @@
     },
     {
       "year": 2026,
-      "commits": 362
+      "commits": 377
     }
   ]
 }
