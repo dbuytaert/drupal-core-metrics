@@ -1540,11 +1540,11 @@ function calculateAggregates(array $functions, int $totalLoc): array
         'functions' => $count,
         'ccn' => [
             'avg' => round($ccnAvg, 1),
-            'p95' => $ccnP95,
+            'p95' => round($ccnP95, 1),
         ],
         'mi' => [
             'avg' => round($avgMi, 1),
-            'p5' => $miP5,
+            'p5' => round($miP5, 1),
         ],
         'antipatterns' => round($antipatternsDensity, 1),
     ];

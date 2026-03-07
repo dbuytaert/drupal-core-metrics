@@ -78,6 +78,16 @@
             <p class="executive-summary">The charts below tell the story of a changing code base.</p>
             <p class="executive-summary">Code quality has improved since Drupal 7: lower complexity, fewer anti-patterns, better architecture, and better test coverage. The API surface has also modernized: global functions were replaced by interface methods, services, plugins, and events, shifting from procedural to object-oriented patterns.</p>
             <p class="executive-summary">By tracking these metrics, we hope to inform decisions about both code quality and developer experience.</p>
+            <p class="executive-summary" id="time-range-container" style="display: none;">
+                Time range:
+                <select id="time-range-select" style="padding: 0.25rem 0.5rem; border-radius: 0.25rem; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-primary); font-size: 0.875rem; margin-left: 0.25rem;">
+                    <option value="all" selected>Since Drupal 7</option>
+                    <option value="2015-10">Since Drupal 8</option>
+                    <option value="2020-04">Since Drupal 9</option>
+                    <option value="2022-10">Since Drupal 10</option>
+                    <option value="2024-07">Since Drupal 11</option>
+                </select>
+            </p>
         </header>
         <div id="dashboard"><div class="loading">Loading data...</div></div>
         <footer style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color); font-size: 0.875rem; color: var(--text-secondary); text-align: center;">
@@ -172,6 +182,14 @@
             return div.innerHTML;
         }
 
+        function yearTickCallback(value, index) {
+            const label = this.getLabelForValue(value);
+            const year = label.substring(0, 4);
+            const labels = this.chart.data.labels;
+            const prevLabel = index > 0 ? labels[index - 1] : '';
+            return prevLabel.substring(0, 4) !== year ? year : '';
+        }
+
         function createLocChart(container, data, title, subtitle) {
             const section = document.createElement('div');
             section.className = 'card';
@@ -188,7 +206,7 @@
                     labels,
                     datasets: [
                         { label: 'Production code', data: sortedData.map(d => d.production?.loc || 0), borderColor: colors.production, backgroundColor: colors.production, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'circle' },
-                        { label: 'Tests', data: sortedData.map(d => d.testLoc || 0), borderColor: colors.test, backgroundColor: colors.test, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'rect', borderDash: [5, 5], hidden: true }
+                        { label: 'Tests', data: sortedData.map(d => d.testLoc || 0), borderColor: colors.test, backgroundColor: colors.test, borderWidth: 2, tension: 0.3, pointRadius: 4, pointStyle: 'rect', borderDash: [5, 5] }
                     ]
                 },
                 options: {
@@ -208,19 +226,7 @@
                     scales: {
                         x: {
                             grid: { display: false },
-                            ticks: {
-                                callback: function(value, index) {
-                                    const label = this.getLabelForValue(value);
-                                    const year = label.substring(0, 4);
-                                    const labels = this.chart.data.labels;
-                                    const prevLabel = index > 0 ? labels[index - 1] : '';
-                                    if (prevLabel.substring(0, 4) !== year) {
-                                        return year;
-                                    }
-                                    return '';
-                                },
-                                maxRotation: 0
-                            }
+                            ticks: { callback: yearTickCallback, maxRotation: 0 }
                         },
                         y: {
                             min: 0,
@@ -270,19 +276,7 @@
                     scales: {
                         x: {
                             grid: { display: false },
-                            ticks: {
-                                callback: function(value, index) {
-                                    const label = this.getLabelForValue(value);
-                                    const year = label.substring(0, 4);
-                                    const labels = this.chart.data.labels;
-                                    const prevLabel = index > 0 ? labels[index - 1] : '';
-                                    if (prevLabel.substring(0, 4) !== year) {
-                                        return year;
-                                    }
-                                    return '';
-                                },
-                                maxRotation: 0
-                            }
+                            ticks: { callback: yearTickCallback, maxRotation: 0 }
                         },
                         y: {
                             min: 0,
@@ -333,19 +327,7 @@
                     scales: {
                         x: {
                             grid: { display: false },
-                            ticks: {
-                                callback: function(value, index) {
-                                    const label = this.getLabelForValue(value);
-                                    const year = label.substring(0, 4);
-                                    const labels = this.chart.data.labels;
-                                    const prevLabel = index > 0 ? labels[index - 1] : '';
-                                    if (prevLabel.substring(0, 4) !== year) {
-                                        return year;
-                                    }
-                                    return '';
-                                },
-                                maxRotation: 0
-                            }
+                            ticks: { callback: yearTickCallback, maxRotation: 0 }
                         },
                         y: {
                             min: 0,
@@ -574,19 +556,7 @@
                         x: {
                             stacked: true,
                             grid: { display: false },
-                            ticks: {
-                                callback: function(value, index) {
-                                    const label = this.getLabelForValue(value);
-                                    const year = label.substring(0, 4);
-                                    const labels = this.chart.data.labels;
-                                    const prevLabel = index > 0 ? labels[index - 1] : '';
-                                    if (prevLabel.substring(0, 4) !== year) {
-                                        return year;
-                                    }
-                                    return '';
-                                },
-                                maxRotation: 0
-                            }
+                            ticks: { callback: yearTickCallback, maxRotation: 0 }
                         },
                         y: { stacked: true, beginAtZero: true, title: { display: true, text: 'Density (per 1k LOC)' } }
                     }
@@ -660,19 +630,7 @@
                         x: {
                             stacked: true,
                             grid: { display: false },
-                            ticks: {
-                                callback: function(value, index) {
-                                    const label = this.getLabelForValue(value);
-                                    const year = label.substring(0, 4);
-                                    const labels = this.chart.data.labels;
-                                    const prevLabel = index > 0 ? labels[index - 1] : '';
-                                    if (prevLabel.substring(0, 4) !== year) {
-                                        return year;
-                                    }
-                                    return '';
-                                },
-                                maxRotation: 0
-                            }
+                            ticks: { callback: yearTickCallback, maxRotation: 0 }
                         },
                         y: { stacked: true, beginAtZero: true, title: { display: true, text: 'Total' } }
                     }
@@ -940,6 +898,12 @@
 
         function renderDashboard(data) {
             const container = document.getElementById('dashboard');
+
+            // Destroy existing Chart.js instances before clearing the DOM
+            container.querySelectorAll('canvas').forEach(canvas => {
+                const chart = Chart.getChart(canvas);
+                if (chart) chart.destroy();
+            });
             container.innerHTML = '';
 
             if (!data.snapshots?.length) {
@@ -947,19 +911,33 @@
                 return;
             }
 
-            data.snapshots.sort((a, b) => b.date.localeCompare(a.date));
+            const snapshots = [...data.snapshots].sort((a, b) => b.date.localeCompare(a.date));
 
-            createLocChart(container, data.snapshots, 'Lines of code', 'Drupal Core is a large codebase, too big for any one person to fully understand, but manageable for a healthy community. For scale, Kubernetes is about 10x larger and the Linux kernel about 75x. A healthy test-to-production ratio is 1:1 or higher, and Drupal far exceeds this. Measures non-blank, non-comment lines (SLOC). PHP code only; excludes vendor dependencies.');
-            createCcnChart(container, data.snapshots);
-            createMiChart(container, data.snapshots);
-            createAntiPatternsChart(container, data.snapshots);
-            createSurfaceAreaChart(container, data.snapshots);
+            createLocChart(container, snapshots, 'Lines of code', 'Drupal Core is a large codebase, too big for any one person to fully understand, but manageable for a healthy community. For scale, Kubernetes is about 10x larger and the Linux kernel about 75x. A healthy test-to-production ratio is 1:1 or higher, and Drupal far exceeds this. Measures non-blank, non-comment lines (SLOC). PHP code only; excludes vendor dependencies.');
+            createCcnChart(container, snapshots);
+            createMiChart(container, snapshots);
+            createAntiPatternsChart(container, snapshots);
+            createSurfaceAreaChart(container, snapshots);
             renderRecentCommits(container, data.commits);
-            renderHotspots(container, data.snapshots);
+            renderHotspots(container, snapshots);
             createCommitsPerYearChart(container, data.commitsPerYear);
             createCommitsPerMonthChart(container, data.commitsMonthly);
             createCommitTypeDistributionChart(container, data.commitsMonthly);
-            renderSurfaceAreaReference(container, data.snapshots);
+            renderSurfaceAreaReference(container, snapshots);
+        }
+
+        function filterDataByRange(data, cutoffMonth) {
+            if (!cutoffMonth) return data;
+
+            const cutoffYear = parseInt(cutoffMonth);
+
+            return {
+                ...data,
+                snapshots: data.snapshots.filter(s => s.date >= cutoffMonth),
+                commits: data.commits?.filter(c => c.date >= cutoffMonth),
+                commitsPerYear: data.commitsPerYear?.filter(c => c.year >= cutoffYear),
+                commitsMonthly: data.commitsMonthly?.filter(c => c.date >= cutoffMonth)
+            };
         }
 
         // Load data and render
@@ -974,6 +952,14 @@
                 const options = { year: 'numeric', month: 'long', day: '2-digit' };
                 document.getElementById('last-updated').textContent =
                     'Last updated: ' + generated.toLocaleDateString('en-US', options);
+
+                // Show time range dropdown
+                document.getElementById('time-range-container').style.display = '';
+                const timeRangeSelect = document.getElementById('time-range-select');
+                timeRangeSelect.addEventListener('change', () => {
+                    const value = timeRangeSelect.value;
+                    renderDashboard(filterDataByRange(data, value === 'all' ? null : value));
+                });
 
                 renderDashboard(data);
             })
