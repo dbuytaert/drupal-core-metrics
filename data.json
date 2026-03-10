@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-09T00:53:03.851404",
+  "generated": "2026-03-10T00:49:52.658148",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 68,
+      "total": 86,
       "features": 4,
-      "bugs": 29,
-      "maintenance": 35,
+      "bugs": 37,
+      "maintenance": 45,
       "unknown": 0
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "378e6520",
+      "commit": "1bcdac07",
       "production": {
-        "loc": 288183,
-        "functions": 22870,
+        "loc": 287993,
+        "functions": 22850,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133153,9 +133153,9 @@
           "avg": 87.1,
           "p5": 84
         },
-        "antipatterns": 73
+        "antipatterns": 73.1
       },
-      "testLoc": 455427,
+      "testLoc": 455469,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133163,7 +133163,7 @@
         "events": 40,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2898,
+        "interfaceMethods": 2893,
         "globalFunctions": 275
       },
       "surfaceAreaLists": {
@@ -134842,8 +134842,6 @@
           "ThemeHandlerInterface::addTheme",
           "ThemeHandlerInterface::refreshInfo",
           "ThemeHandlerInterface::reset",
-          "ThemeHandlerInterface::rebuildThemeData",
-          "ThemeHandlerInterface::getBaseThemes",
           "ThemeHandlerInterface::getName",
           "ThemeHandlerInterface::getDefault",
           "ThemeHandlerInterface::getThemeDirectories",
@@ -134856,7 +134854,6 @@
           "ModuleUninstallValidatorInterface::validate",
           "ModuleInstallerInterface::install",
           "ModuleInstallerInterface::uninstall",
-          "ModuleInstallerInterface::addUninstallValidator",
           "ModuleInstallerInterface::validateUninstall",
           "MessengerInterface::addMessage",
           "MessengerInterface::addStatus",
@@ -135024,9 +135021,7 @@
           "WriteSafeSessionHandlerInterface::setSessionWritable",
           "WriteSafeSessionHandlerInterface::isSessionWritable",
           "PermissionCheckerInterface::hasPermission",
-          "SessionManagerInterface::delete",
           "SessionManagerInterface::destroy",
-          "SessionManagerInterface::setWriteSafeHandler",
           "UserSessionRepositoryInterface::deleteAll",
           "AccountProxyInterface::setAccount",
           "AccountProxyInterface::getAccount",
@@ -137196,8 +137191,8 @@
       },
       "antipatterns": {
         "magicKeys": 10612,
-        "deepArrays": 7995,
-        "serviceLocators": 2540
+        "deepArrays": 7997,
+        "serviceLocators": 2530
       },
       "hotspots": [
         {
@@ -137604,6 +137599,116 @@
     }
   ],
   "commits": [
+    {
+      "hash": "1bcdac075aa",
+      "date": "Mar 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3576648 Skip automated cron on all CLI commands",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "9f591ba9082",
+      "date": "Mar 09, 2026",
+      "type": "Bug",
+      "message": "fix: #2973515 MenuActiveTrail should ignore disabled menu links",
+      "locDelta": 1,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "3fcad25ab79",
+      "date": "Mar 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3570351 content_translation_form_language_content_settings_submit()` creat",
+      "locDelta": 3,
+      "ccnDelta": 2,
+      "miDelta": -2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "4f51b64b77b",
+      "date": "Mar 09, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3575462 Remove deprecations from themes and misc",
+      "locDelta": -26,
+      "ccnDelta": -4,
+      "miDelta": 9,
+      "antipatternsDelta": -3
+    },
+    {
+      "hash": "ae4815ac1a9",
+      "date": "Mar 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3114887 Error responses are stored when using the Download migration proce",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "cd3e02cb3b7",
+      "date": "Mar 09, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3577376 Remove recently introduced deprecations from SessionManager",
+      "locDelta": -20,
+      "ccnDelta": -7,
+      "miDelta": 3,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "c6498ec04bd",
+      "date": "Mar 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3577133 Remove unused class property dateExample",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "d2246d5e4df",
+      "date": "Mar 09, 2026",
+      "type": "Maintenance",
+      "message": "chore: #3560876 NavigationUserBlock::buildLinks() doesn't check if the user coul",
+      "locDelta": 7,
+      "ccnDelta": 1,
+      "miDelta": -4,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "4b07dbcc69f",
+      "date": "Mar 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3564197 Package Manager should not restrict which packages can do scaffold",
+      "locDelta": -47,
+      "ccnDelta": -6,
+      "miDelta": 4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "c8e47315faf",
+      "date": "Mar 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3046985 The word \"Second\" needs translation context",
+      "locDelta": 0,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "0792d0f124c",
+      "date": "Mar 09, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3571068 Remove deprecated code from lib/Extension, lib/Form, some lef",
+      "locDelta": -111,
+      "ccnDelta": -24,
+      "miDelta": 5,
+      "antipatternsDelta": -8
+    },
     {
       "hash": "378e65203ea",
       "date": "Mar 08, 2026",
@@ -138493,116 +138598,6 @@
       "ccnDelta": -151,
       "miDelta": 113,
       "antipatternsDelta": -75
-    },
-    {
-      "hash": "014cc526536",
-      "date": "Feb 10, 2026",
-      "type": "Bug",
-      "message": "fix: #3568922 Method discoverResourceUrl does not check response type",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "b4ee668cf88",
-      "date": "Feb 09, 2026",
-      "type": "Maintenance",
-      "message": "task: #3569328 Modernize locale.translations.inc",
-      "locDelta": 112,
-      "ccnDelta": 19,
-      "miDelta": -16,
-      "antipatternsDelta": 22
-    },
-    {
-      "hash": "acaf0b1c2ee",
-      "date": "Feb 07, 2026",
-      "type": "Bug",
-      "message": "fix: #3565886 Navigation module throws an error on missing URL",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "e35a5a075be",
-      "date": "Feb 07, 2026",
-      "type": "Maintenance",
-      "message": "task: #3567616 Move _help_search_update to hook",
-      "locDelta": -3,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": -2
-    },
-    {
-      "hash": "d49ef2658a5",
-      "date": "Feb 07, 2026",
-      "type": "Maintenance",
-      "message": "task: #3567163 Move field_ui form callback to hook class",
-      "locDelta": 5,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "22f99645e25",
-      "date": "Feb 06, 2026",
-      "type": "Bug",
-      "message": "fix: #3241299 Properly return FALSE for invalid strings in DateTimePlus::checkAr",
-      "locDelta": 5,
-      "ccnDelta": 0,
-      "miDelta": -4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "90f9762bceb",
-      "date": "Feb 05, 2026",
-      "type": "Maintenance",
-      "message": "task: #3566792 Deprecate remaining ckeditor5.module procedural code",
-      "locDelta": 60,
-      "ccnDelta": 12,
-      "miDelta": -23,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "7a7ba61ec25",
-      "date": "Feb 05, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571609 Remove Field Layout module from core",
-      "locDelta": -415,
-      "ccnDelta": -78,
-      "miDelta": 26,
-      "antipatternsDelta": -31
-    },
-    {
-      "hash": "1f86870ff29",
-      "date": "Feb 05, 2026",
-      "type": "Maintenance",
-      "message": "task: #3471199 Remove sid_length and sid_bits_per_character deprecation from Cor",
-      "locDelta": -9,
-      "ccnDelta": -3,
-      "miDelta": 5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "5e89bf91349",
-      "date": "Feb 04, 2026",
-      "type": "Bug",
-      "message": "fix: #3463524 editor_post_update_sanitize_image_upload_settings fails on missing",
-      "locDelta": 6,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "3245d571a9f",
-      "date": "Feb 03, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3564937 Remove duplicative caching of views rows",
-      "locDelta": 0,
-      "ccnDelta": 0,
-      "miDelta": 1,
-      "antipatternsDelta": -2
     }
   ],
   "commitsPerYear": [
@@ -138712,7 +138707,7 @@
     },
     {
       "year": 2026,
-      "commits": 379
+      "commits": 397
     }
   ]
 }
