@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-10T00:49:52.658148",
+  "generated": "2026-03-11T00:49:38.754508",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 86,
-      "features": 4,
-      "bugs": 37,
-      "maintenance": 45,
+      "total": 116,
+      "features": 5,
+      "bugs": 42,
+      "maintenance": 69,
       "unknown": 0
     }
   ],
@@ -133141,21 +133141,21 @@
     },
     {
       "date": "2026-03",
-      "commit": "1bcdac07",
+      "commit": "19163c55",
       "production": {
-        "loc": 287993,
-        "functions": 22850,
+        "loc": 288440,
+        "functions": 22845,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 87.1,
+          "avg": 87,
           "p5": 84
         },
-        "antipatterns": 73.1
+        "antipatterns": 73
       },
-      "testLoc": 455469,
+      "testLoc": 455632,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137190,8 +137190,8 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10612,
-        "deepArrays": 7997,
+        "magicKeys": 10613,
+        "deepArrays": 7998,
         "serviceLocators": 2530
       },
       "hotspots": [
@@ -137239,7 +137239,7 @@
           "name": "FieldViewsDataProvider::defaultFieldImplementation",
           "file": "modules/views/src/FieldViewsDataProvider.php",
           "ccn": 61,
-          "loc": 377,
+          "loc": 384,
           "mi": 21,
           "antipatterns": 60
         },
@@ -137271,7 +137271,7 @@
           "name": "SystemRequirements::checkRequirements",
           "file": "modules/system/src/Install/Requirements/SystemRequirements.php",
           "ccn": 56,
-          "loc": 374,
+          "loc": 377,
           "mi": 22,
           "antipatterns": 17
         },
@@ -137303,7 +137303,7 @@
           "name": "ContentTranslationHandler::entityFormAlter",
           "file": "modules/content_translation/src/ContentTranslationHandler.php",
           "ccn": 49,
-          "loc": 195,
+          "loc": 199,
           "mi": 38,
           "antipatterns": 75
         },
@@ -137415,8 +137415,8 @@
           "name": "ViewEditForm::getFormBucket",
           "file": "modules/views_ui/src/ViewEditForm.php",
           "ccn": 38,
-          "loc": 177,
-          "mi": 43,
+          "loc": 200,
+          "mi": 40,
           "antipatterns": 32
         },
         {
@@ -137519,8 +137519,8 @@
           "name": "FieldResolver::resolveInternalEntityQueryPath",
           "file": "modules/jsonapi/src/Context/FieldResolver.php",
           "ccn": 32,
-          "loc": 98,
-          "mi": 57,
+          "loc": 99,
+          "mi": 56,
           "antipatterns": 0
         },
         {
@@ -137575,7 +137575,7 @@
           "name": "ViewUI::renderPreview",
           "file": "modules/views_ui/src/ViewUI.php",
           "ccn": 31,
-          "loc": 256,
+          "loc": 259,
           "mi": 36,
           "antipatterns": 66
         },
@@ -137583,8 +137583,8 @@
           "name": "drupal_verify_install_file",
           "file": "includes/install.inc",
           "ccn": 30,
-          "loc": 65,
-          "mi": 66,
+          "loc": 73,
+          "mi": 63,
           "antipatterns": 0
         },
         {
@@ -137599,6 +137599,116 @@
     }
   ],
   "commits": [
+    {
+      "hash": "19163c55fcb",
+      "date": "Mar 10, 2026",
+      "type": "Feature",
+      "message": "feat: #3547353 Move HIDDEN, CLOSED and OPEN constants in CommentItemInterface to",
+      "locDelta": 5,
+      "ccnDelta": 1,
+      "miDelta": 2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "f5b6b5ef22e",
+      "date": "Mar 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3285176 Warning message links to \"available updates\" even if user does not",
+      "locDelta": 14,
+      "ccnDelta": 5,
+      "miDelta": -7,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "b36ea26601f",
+      "date": "Mar 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3549730 Enable LongLineDeclaration",
+      "locDelta": 478,
+      "ccnDelta": 0,
+      "miDelta": -171,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "c7879e860e2",
+      "date": "Mar 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3347842 Deprecate the trusted data concept in configuration",
+      "locDelta": 3,
+      "ccnDelta": -2,
+      "miDelta": -6,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "f72b6b28cdd",
+      "date": "Mar 10, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3571143 Convert BlockHooks::pageTop to attachment in BlockController:",
+      "locDelta": -6,
+      "ccnDelta": -2,
+      "miDelta": -4,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "98b2f7c7a34",
+      "date": "Mar 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3469143 MainContentViewSubscriber should use a service locator",
+      "locDelta": -19,
+      "ccnDelta": -3,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "fd710d9eae5",
+      "date": "Mar 10, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3398534 Allow form service wiring via constructor parameter attribute",
+      "locDelta": -31,
+      "ccnDelta": -4,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "c376f872be5",
+      "date": "Mar 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3572171 Persist is_syncing across container rebuilds",
+      "locDelta": 2,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 5
+    },
+    {
+      "hash": "007276470ae",
+      "date": "Mar 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3572785 \\Drupal\\system\\Controller\\ThemeController::willInstallExperimental",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "d759d555ab4",
+      "date": "Mar 10, 2026",
+      "type": "Maintenance",
+      "message": "perf: #2149631 Don't clear the CSS cache when installing themes",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "b3c46ac0610",
+      "date": "Mar 10, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3574198 TypedDataManager prototypes should not include the parent context",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "1bcdac075aa",
       "date": "Mar 09, 2026",
@@ -138488,116 +138598,6 @@
       "ccnDelta": 21,
       "miDelta": -20,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "94da3be331e",
-      "date": "Feb 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3570570 Remove lazy declaration and proxy class for ConfigInstaller and M",
-      "locDelta": -93,
-      "ccnDelta": -18,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "9367e55ded5",
-      "date": "Feb 15, 2026",
-      "type": "Bug",
-      "message": "fix: #2722307 Move translation based conditions into database query on revisions",
-      "locDelta": 3,
-      "ccnDelta": -4,
-      "miDelta": -1,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "c11e445f127",
-      "date": "Feb 15, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571065 Remove deprecated code from lib/Entity and lib/Field",
-      "locDelta": -126,
-      "ccnDelta": -34,
-      "miDelta": 17,
-      "antipatternsDelta": -2
-    },
-    {
-      "hash": "3c07b176ed1",
-      "date": "Feb 13, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3571351 Only get the css/js query string when necessary",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 1,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "2275ac6bd7e",
-      "date": "Feb 11, 2026",
-      "type": "Bug",
-      "message": "fix: #3572084 Dotfiles cannot be ignored cia *.starterkit.yml file",
-      "locDelta": 2,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "859cc28dfc6",
-      "date": "Feb 11, 2026",
-      "type": "Feature",
-      "message": "feat: #1503146 Aliased paths cannot be set as front page",
-      "locDelta": 14,
-      "ccnDelta": 1,
-      "miDelta": 7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d4265722d22",
-      "date": "Feb 11, 2026",
-      "type": "Feature",
-      "message": "feat: #3481627 Update user creation form to hide password and status fields when",
-      "locDelta": 10,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 9
-    },
-    {
-      "hash": "43c2d5ec907",
-      "date": "Feb 11, 2026",
-      "type": "Feature",
-      "message": "feat: #3559628 Allow #[MapQueryParameter] attribute for query string handling in",
-      "locDelta": -13,
-      "ccnDelta": -3,
-      "miDelta": 9,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "86416c4ca4e",
-      "date": "Feb 11, 2026",
-      "type": "Bug",
-      "message": "fix: #3569751 Workspace AJAX query parameters become arrays when form elements h",
-      "locDelta": -1,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "cd54e644bde",
-      "date": "Feb 10, 2026",
-      "type": "Bug",
-      "message": "fix: #3567544 Alias lookup by path is not case sensitive but AliasPrefixList and",
-      "locDelta": 17,
-      "ccnDelta": 4,
-      "miDelta": -8,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "8fcce5d1d9e",
-      "date": "Feb 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #3570668 Remove History module from core",
-      "locDelta": -741,
-      "ccnDelta": -151,
-      "miDelta": 113,
-      "antipatternsDelta": -75
     }
   ],
   "commitsPerYear": [
@@ -138707,7 +138707,7 @@
     },
     {
       "year": 2026,
-      "commits": 397
+      "commits": 427
     }
   ]
 }
