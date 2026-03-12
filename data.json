@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-11T00:49:38.754508",
+  "generated": "2026-03-12T00:48:29.054574",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 116,
+      "total": 130,
       "features": 5,
-      "bugs": 42,
-      "maintenance": 69,
+      "bugs": 45,
+      "maintenance": 80,
       "unknown": 0
     }
   ],
@@ -133141,9 +133141,9 @@
     },
     {
       "date": "2026-03",
-      "commit": "19163c55",
+      "commit": "c84deaef",
       "production": {
-        "loc": 288440,
+        "loc": 288456,
         "functions": 22845,
         "ccn": {
           "avg": 2.5,
@@ -133153,9 +133153,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 73
+        "antipatterns": 72.9
       },
-      "testLoc": 455632,
+      "testLoc": 455660,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137600,6 +137600,16 @@
   ],
   "commits": [
     {
+      "hash": "c84deaef44f",
+      "date": "Mar 11, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3571994 Reduce container rebuilds in functional tests",
+      "locDelta": 13,
+      "ccnDelta": 13,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "19163c55fcb",
       "date": "Mar 10, 2026",
       "type": "Feature",
@@ -138588,16 +138598,6 @@
       "ccnDelta": -2,
       "miDelta": 6,
       "antipatternsDelta": 2
-    },
-    {
-      "hash": "502a59b2c2b",
-      "date": "Feb 16, 2026",
-      "type": "Bug",
-      "message": "fix: #3540105 Capture access cacheability in getDefaultOperations() methods for ",
-      "locDelta": 73,
-      "ccnDelta": 21,
-      "miDelta": -20,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138707,7 +138707,7 @@
     },
     {
       "year": 2026,
-      "commits": 427
+      "commits": 441
     }
   ]
 }
