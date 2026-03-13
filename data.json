@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-12T00:48:29.054574",
+  "generated": "2026-03-13T00:52:42.940088",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 130,
+      "total": 136,
       "features": 5,
-      "bugs": 45,
-      "maintenance": 80,
+      "bugs": 46,
+      "maintenance": 85,
       "unknown": 0
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "c84deaef",
+      "commit": "8c44045f",
       "production": {
-        "loc": 288456,
-        "functions": 22845,
+        "loc": 288476,
+        "functions": 22847,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133153,9 +133153,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72.9
+        "antipatterns": 73
       },
-      "testLoc": 455660,
+      "testLoc": 455601,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137192,7 +137192,7 @@
       "antipatterns": {
         "magicKeys": 10613,
         "deepArrays": 7998,
-        "serviceLocators": 2530
+        "serviceLocators": 2533
       },
       "hotspots": [
         {
@@ -137505,7 +137505,7 @@
           "ccn": 32,
           "loc": 100,
           "mi": 56,
-          "antipatterns": 7
+          "antipatterns": 8
         },
         {
           "name": "NumericFilter::valueForm",
@@ -137599,6 +137599,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "f929b61ad9e",
+      "date": "Mar 12, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3568387 Move text_summary to TextSummary service and deprecate",
+      "locDelta": 15,
+      "ccnDelta": 2,
+      "miDelta": 1,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "410370cb86f",
+      "date": "Mar 12, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3574230 Use a weak reference for EntityBase::typedData                   ",
+      "locDelta": 5,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
     {
       "hash": "c84deaef44f",
       "date": "Mar 11, 2026",
@@ -138578,26 +138598,6 @@
       "ccnDelta": 94,
       "miDelta": -135,
       "antipatternsDelta": 46
-    },
-    {
-      "hash": "4de2b4c0acd",
-      "date": "Feb 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571296 Remove plaintext $account->password",
-      "locDelta": -8,
-      "ccnDelta": -2,
-      "miDelta": 1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "747ad627d36",
-      "date": "Feb 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3566801 Helper to check if the entity type's ID is integer",
-      "locDelta": -15,
-      "ccnDelta": -2,
-      "miDelta": 6,
-      "antipatternsDelta": 2
     }
   ],
   "commitsPerYear": [
@@ -138707,7 +138707,7 @@
     },
     {
       "year": 2026,
-      "commits": 441
+      "commits": 447
     }
   ]
 }
