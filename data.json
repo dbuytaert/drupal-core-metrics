@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-13T00:52:42.940088",
+  "generated": "2026-03-14T00:50:17.289526",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 136,
-      "features": 5,
-      "bugs": 46,
-      "maintenance": 85,
+      "total": 143,
+      "features": 6,
+      "bugs": 48,
+      "maintenance": 89,
       "unknown": 0
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "8c44045f",
+      "commit": "791670b5",
       "production": {
-        "loc": 288476,
-        "functions": 22847,
+        "loc": 288493,
+        "functions": 22849,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133153,9 +133153,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 73
+        "antipatterns": 72.9
       },
-      "testLoc": 455601,
+      "testLoc": 455629,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137192,7 +137192,7 @@
       "antipatterns": {
         "magicKeys": 10613,
         "deepArrays": 7998,
-        "serviceLocators": 2533
+        "serviceLocators": 2532
       },
       "hotspots": [
         {
@@ -137599,6 +137599,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "791670b52ef",
+      "date": "Mar 13, 2026",
+      "type": "Bug",
+      "message": "fix: #3488260 Stop logging an error when component not found",
+      "locDelta": -20,
+      "ccnDelta": -5,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "4a57d7b3ce0",
+      "date": "Mar 13, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3570917 Deprecate editor_image_upload_settings_form() and move the lo",
+      "locDelta": 35,
+      "ccnDelta": 4,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "e0fa1b64cea",
+      "date": "Mar 13, 2026",
+      "type": "Bug",
+      "message": "fix: #3566514 Theme override/extend deprecation message uses the wrong extension",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "154740811c1",
+      "date": "Mar 13, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3561385 Fix \"expects FieldableEntityInterface\" issues detected by php",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "f929b61ad9e",
       "date": "Mar 12, 2026",
@@ -138558,46 +138598,6 @@
       "ccnDelta": 3,
       "miDelta": 1,
       "antipatternsDelta": -4
-    },
-    {
-      "hash": "cfe4a9adfc4",
-      "date": "Feb 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571067 [12.x] Remove hook_hook_info and support in HookCollectorPass",
-      "locDelta": -108,
-      "ccnDelta": -25,
-      "miDelta": 40,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "bd0f9a5d1f3",
-      "date": "Feb 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571382 Remove deprecations from Layout Builder & Layout Discovery",
-      "locDelta": -6,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "8d9beefb48e",
-      "date": "Feb 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571095 Remove deprecated code from menu_ui and text",
-      "locDelta": -11,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "b090f8e4430",
-      "date": "Feb 16, 2026",
-      "type": "Bug",
-      "message": "fix: #1894286 System updates are executed without priority",
-      "locDelta": 357,
-      "ccnDelta": 94,
-      "miDelta": -135,
-      "antipatternsDelta": 46
     }
   ],
   "commitsPerYear": [
@@ -138707,7 +138707,7 @@
     },
     {
       "year": 2026,
-      "commits": 447
+      "commits": 454
     }
   ]
 }
