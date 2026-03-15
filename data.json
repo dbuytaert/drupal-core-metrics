@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-14T00:50:17.289526",
+  "generated": "2026-03-15T00:57:15.380283",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 143,
+      "total": 144,
       "features": 6,
       "bugs": 48,
-      "maintenance": 89,
+      "maintenance": 90,
       "unknown": 0
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "791670b5",
+      "commit": "a71a3edf",
       "production": {
-        "loc": 288493,
-        "functions": 22849,
+        "loc": 288249,
+        "functions": 22813,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133155,7 +133155,7 @@
         },
         "antipatterns": 72.9
       },
-      "testLoc": 455629,
+      "testLoc": 455603,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133164,7 +133164,7 @@
         "services": 241,
         "yamlFormats": 19,
         "interfaceMethods": 2893,
-        "globalFunctions": 275
+        "globalFunctions": 267
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -137098,8 +137098,6 @@
           "views_embed_view",
           "views_get_view_result",
           "views_element_validate_tags",
-          "views_field_default_views_data",
-          "views_entity_field_label",
           "file_save_upload",
           "file_managed_file_save_upload",
           "file_get_file_references",
@@ -137110,12 +137108,6 @@
           "system_sort_themes",
           "system_default_region",
           "system_admin_compact_mode",
-          "views_ui_view_preview_section_handler_links",
-          "views_ui_view_preview_section_display_category_links",
-          "views_ui_view_preview_section_rows_links",
-          "views_ui_contextual_links_suppress",
-          "views_ui_contextual_links_suppress_push",
-          "views_ui_contextual_links_suppress_pop",
           "views_ui_add_ajax_trigger",
           "views_ui_add_limited_validation",
           "views_ui_add_ajax_wrapper",
@@ -137191,8 +137183,8 @@
       },
       "antipatterns": {
         "magicKeys": 10613,
-        "deepArrays": 7998,
-        "serviceLocators": 2532
+        "deepArrays": 7991,
+        "serviceLocators": 2502
       },
       "hotspots": [
         {
@@ -137599,6 +137591,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "a71a3edf4aa",
+      "date": "Mar 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #3573869 Remove deprecated code from Views and Views UI",
+      "locDelta": -244,
+      "ccnDelta": -55,
+      "miDelta": 29,
+      "antipatternsDelta": -38
+    },
     {
       "hash": "791670b52ef",
       "date": "Mar 13, 2026",
@@ -138588,16 +138590,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": -3
-    },
-    {
-      "hash": "99d71d7d791",
-      "date": "Feb 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3570863 Deprecate _menu_link_content_update_path_alias",
-      "locDelta": 16,
-      "ccnDelta": 3,
-      "miDelta": 1,
-      "antipatternsDelta": -4
     }
   ],
   "commitsPerYear": [
@@ -138707,7 +138699,7 @@
     },
     {
       "year": 2026,
-      "commits": 454
+      "commits": 455
     }
   ]
 }
