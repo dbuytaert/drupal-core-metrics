@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-16T00:57:19.118375",
+  "generated": "2026-03-17T00:52:32.681474",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 144,
-      "features": 6,
+      "total": 152,
+      "features": 7,
       "bugs": 48,
-      "maintenance": 90,
+      "maintenance": 97,
       "unknown": 0
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "a71a3edf",
+      "commit": "d2a88302",
       "production": {
-        "loc": 288249,
-        "functions": 22813,
+        "loc": 288491,
+        "functions": 22824,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133153,9 +133153,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72.9
+        "antipatterns": 72.8
       },
-      "testLoc": 455603,
+      "testLoc": 455726,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133163,7 +133163,7 @@
         "events": 40,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2893,
+        "interfaceMethods": 2894,
         "globalFunctions": 267
       },
       "surfaceAreaLists": {
@@ -133223,17 +133223,17 @@
           "hook_update_requirements_alter",
           "hook_batch_alter",
           "hook_form_alter",
+          "hook_element_info_alter",
+          "hook_page_attachments_alter",
+          "hook_theme_registry_alter",
+          "hook_views_ui_display_top_alter",
+          "hook_views_ui_display_tab_alter",
+          "hook_views_pre_render",
           "hook_admin_content_form_ignore_form_ids",
           "hook_admin_content_form_routes",
           "hook_admin_content_form_routes_alter",
           "hook_css_alter",
-          "hook_element_info_alter",
           "hook_library_info_alter",
-          "hook_page_attachments_alter",
-          "hook_theme_registry_alter",
-          "hook_views_ui_display_tab_alter",
-          "hook_views_ui_display_top_alter",
-          "hook_views_pre_render",
           "hook_transliteration_overrides_alter",
           "hook_file_url_alter",
           "hook_mail",
@@ -133323,6 +133323,7 @@
           "hook_field_info_alter",
           "hook_language_fallback_candidates_entity_view_alter",
           "hook_entity_presave",
+          "hook_comment_links_alter",
           "hook_views_query_alter",
           "hook_entity_insert",
           "hook_entity_update",
@@ -133389,7 +133390,6 @@
           "hook_user_logout",
           "hook_filter_format_disable",
           "hook_views_plugins_argument_validator_alter",
-          "hook_comment_links_alter",
           "hook_image_style_flush",
           "hook_field_storage_config_update_forbid",
           "hook_oembed_resource_url_alter",
@@ -133452,11 +133452,11 @@
           "#config_target",
           "#input",
           "#wrapper_attributes",
+          "#summary_attributes",
+          "#errors",
           "#accordion",
           "#group",
           "#tree",
-          "#summary_attributes",
-          "#errors",
           "#after_build",
           "#states",
           "#title_display",
@@ -135899,6 +135899,7 @@
           "ContentTranslationManagerInterface::getTranslationMetadata",
           "ContentTranslationManagerInterface::setEnabled",
           "ContentTranslationManagerInterface::isEnabled",
+          "ContentTranslationManagerInterface::access",
           "BundleTranslationSettingsInterface::getBundleTranslationSettings",
           "BundleTranslationSettingsInterface::setBundleTranslationSettings",
           "ContentTranslationHandlerInterface::getFieldDefinitions",
@@ -137183,8 +137184,8 @@
       },
       "antipatterns": {
         "magicKeys": 10613,
-        "deepArrays": 7991,
-        "serviceLocators": 2502
+        "deepArrays": 7996,
+        "serviceLocators": 2506
       },
       "hotspots": [
         {
@@ -137591,6 +137592,56 @@
     }
   ],
   "commits": [
+    {
+      "hash": "4e0930e0c51",
+      "date": "Mar 16, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3566890 Deprecate and remove procedural code from content_translation",
+      "locDelta": 102,
+      "ccnDelta": 14,
+      "miDelta": 1,
+      "antipatternsDelta": 9
+    },
+    {
+      "hash": "24411d2f3b3",
+      "date": "Mar 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3575584 Convert Claro to OOP",
+      "locDelta": 115,
+      "ccnDelta": 0,
+      "miDelta": -53,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "56c6081d5dc",
+      "date": "Mar 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3575583 Convert Olivero to OOP",
+      "locDelta": 438,
+      "ccnDelta": 130,
+      "miDelta": -84,
+      "antipatternsDelta": 116
+    },
+    {
+      "hash": "a1065ab75fa",
+      "date": "Mar 16, 2026",
+      "type": "Feature",
+      "message": "feat: #3532950 Support importing default content in JSON format",
+      "locDelta": 7,
+      "ccnDelta": 0,
+      "miDelta": -3,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "d1911787d5b",
+      "date": "Mar 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3577113 Setting properties in FileUploadHandler constructor is unnecessar",
+      "locDelta": -10,
+      "ccnDelta": 0,
+      "miDelta": 5,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "a71a3edf4aa",
       "date": "Mar 14, 2026",
@@ -138540,56 +138591,6 @@
       "ccnDelta": -31,
       "miDelta": 2,
       "antipatternsDelta": -4
-    },
-    {
-      "hash": "e4f6bb432ce",
-      "date": "Feb 18, 2026",
-      "type": "Maintenance",
-      "message": "task: #3554134 Begin cleaning up system install requirements",
-      "locDelta": 322,
-      "ccnDelta": 15,
-      "miDelta": -78,
-      "antipatternsDelta": 14
-    },
-    {
-      "hash": "09985a50b2b",
-      "date": "Feb 17, 2026",
-      "type": "Maintenance",
-      "message": "task: #3502975 Remove all legacy code related to authorize.php and FileTransfer",
-      "locDelta": -1526,
-      "ccnDelta": -332,
-      "miDelta": 192,
-      "antipatternsDelta": -124
-    },
-    {
-      "hash": "549c6fb943a",
-      "date": "Feb 17, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3573903 Remove unused SystemManager::$menuItems property",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "31b727dc4f6",
-      "date": "Feb 17, 2026",
-      "type": "Bug",
-      "message": "fix: #3573856 SiteConfigureForm properties need to be reset after module install",
-      "locDelta": 10,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d3b7a5979d4",
-      "date": "Feb 17, 2026",
-      "type": "Bug",
-      "message": "fix: #2982853 Menu settings and path alias details should be closed even with va",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -3
     }
   ],
   "commitsPerYear": [
@@ -138699,7 +138700,7 @@
     },
     {
       "year": 2026,
-      "commits": 455
+      "commits": 463
     }
   ]
 }
