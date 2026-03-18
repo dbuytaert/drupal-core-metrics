@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-17T00:52:32.681474",
+  "generated": "2026-03-18T00:54:24.238088",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 152,
+      "total": 158,
       "features": 7,
-      "bugs": 48,
-      "maintenance": 97,
+      "bugs": 51,
+      "maintenance": 100,
       "unknown": 0
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "d2a88302",
+      "commit": "6b3bd50b",
       "production": {
-        "loc": 288491,
-        "functions": 22824,
+        "loc": 288554,
+        "functions": 22825,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133155,7 +133155,7 @@
         },
         "antipatterns": 72.8
       },
-      "testLoc": 455726,
+      "testLoc": 455891,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137185,7 +137185,7 @@
       "antipatterns": {
         "magicKeys": 10613,
         "deepArrays": 7996,
-        "serviceLocators": 2506
+        "serviceLocators": 2509
       },
       "hotspots": [
         {
@@ -137592,6 +137592,56 @@
     }
   ],
   "commits": [
+    {
+      "hash": "6b3bd50be53",
+      "date": "Mar 17, 2026",
+      "type": "Bug",
+      "message": "fix: #3575678 Locale checks file mtime but this is tricky if the translation fil",
+      "locDelta": 48,
+      "ccnDelta": 10,
+      "miDelta": -13,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "16b32971c3d",
+      "date": "Mar 17, 2026",
+      "type": "Bug",
+      "message": "fix: #3252278 Complete JSON:API's handling of field (including computed & empty ",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": -2,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "9186041119a",
+      "date": "Mar 17, 2026",
+      "type": "Maintenance",
+      "message": "task: #3566600 Deprecate drupal/core-dev-pinned metapackage",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "e58734790f5",
+      "date": "Mar 17, 2026",
+      "type": "Bug",
+      "message": "fix: #3416735 Stream wrappers not registered when installing module's default co",
+      "locDelta": 2,
+      "ccnDelta": 3,
+      "miDelta": -3,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "73c6e0ac22d",
+      "date": "Mar 17, 2026",
+      "type": "Maintenance",
+      "message": "task: #3558292 Support passing container parameters with the Autowire attribute ",
+      "locDelta": 9,
+      "ccnDelta": 2,
+      "miDelta": -9,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "4e0930e0c51",
       "date": "Mar 16, 2026",
@@ -138541,56 +138591,6 @@
       "ccnDelta": 0,
       "miDelta": 1,
       "antipatternsDelta": -9
-    },
-    {
-      "hash": "3c7b7654433",
-      "date": "Feb 18, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571052 Remove D12 deprecated code from Drupal/Components",
-      "locDelta": -8,
-      "ccnDelta": -3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "88dc1323f7f",
-      "date": "Feb 18, 2026",
-      "type": "Bug",
-      "message": "fix: #3565020 Set the Drupal\\views\\ViewsData::$fullyLoaded property to TRUE only",
-      "locDelta": 9,
-      "ccnDelta": 4,
-      "miDelta": -5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "db2875d5ec8",
-      "date": "Feb 18, 2026",
-      "type": "Maintenance",
-      "message": "task: #3525077 Remove deprecated paths from the Database API & friends",
-      "locDelta": -112,
-      "ccnDelta": -10,
-      "miDelta": 23,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "648ed214a99",
-      "date": "Feb 18, 2026",
-      "type": "Maintenance",
-      "message": "task: #3570238 Deprecate remaining functions in taxonomy",
-      "locDelta": 43,
-      "ccnDelta": 16,
-      "miDelta": -17,
-      "antipatternsDelta": 6
-    },
-    {
-      "hash": "686e984d29b",
-      "date": "Feb 18, 2026",
-      "type": "Maintenance",
-      "message": "task: #3573868 Remove deprecated code from Workspaces and Workspace UI modules",
-      "locDelta": -95,
-      "ccnDelta": -31,
-      "miDelta": 2,
-      "antipatternsDelta": -4
     }
   ],
   "commitsPerYear": [
@@ -138700,7 +138700,7 @@
     },
     {
       "year": 2026,
-      "commits": 463
+      "commits": 469
     }
   ]
 }
