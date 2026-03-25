@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-24T00:48:52.259228",
+  "generated": "2026-03-25T00:54:33.833773",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,11 +2475,11 @@
     },
     {
       "date": "2026-03",
-      "total": 190,
-      "features": 9,
-      "bugs": 58,
-      "maintenance": 123,
-      "unknown": 0
+      "total": 218,
+      "features": 10,
+      "bugs": 59,
+      "maintenance": 148,
+      "unknown": 1
     }
   ],
   "snapshots": [
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "c769fb59",
+      "commit": "7a938df2",
       "production": {
-        "loc": 288382,
-        "functions": 22815,
+        "loc": 288390,
+        "functions": 22805,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133153,9 +133153,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72.9
+        "antipatterns": 72.8
       },
-      "testLoc": 455989,
+      "testLoc": 456776,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133164,7 +133164,7 @@
         "services": 241,
         "yamlFormats": 19,
         "interfaceMethods": 2894,
-        "globalFunctions": 265
+        "globalFunctions": 263
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -137007,8 +137007,6 @@
           "drupal_static",
           "drupal_static_reset",
           "drupal_register_shutdown_function",
-          "claro_system_module_invoked_library_info_alter",
-          "claro_system_module_invoked_theme_registry_alter",
           "content_translation_translate_access",
           "content_translation_enable_widget",
           "content_translation_language_configuration_element_process",
@@ -137181,9 +137179,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10613,
-        "deepArrays": 7997,
-        "serviceLocators": 2498
+        "magicKeys": 10614,
+        "deepArrays": 7998,
+        "serviceLocators": 2494
       },
       "hotspots": [
         {
@@ -137590,6 +137588,86 @@
     }
   ],
   "commits": [
+    {
+      "hash": "9a9ada0574a",
+      "date": "Mar 24, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3555670 Deprecate user_load_by_mail & user_load_by_name",
+      "locDelta": 4,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "188f4662749",
+      "date": "Mar 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3572243 Deprecate several views functions",
+      "locDelta": 51,
+      "ccnDelta": 16,
+      "miDelta": -12,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "6e2b2070ef6",
+      "date": "Mar 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3579673 Remove lazy declaration and proxy class for MIME type guessers",
+      "locDelta": -86,
+      "ccnDelta": -16,
+      "miDelta": 1,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "222a555507a",
+      "date": "Mar 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3580403 Add a 'is temporary' flag to WorkspaceSwitchEvent",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "0b415562467",
+      "date": "Mar 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3579903 Eliminate Olivero and three test .theme files",
+      "locDelta": 6,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "dcfcfab69eb",
+      "date": "Mar 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3580662 Deprecate _filter_tips()",
+      "locDelta": 24,
+      "ccnDelta": 7,
+      "miDelta": -5,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "7d554627d8f",
+      "date": "Mar 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3579899 Remove remaining claro.theme functions",
+      "locDelta": 1,
+      "ccnDelta": -4,
+      "miDelta": -1,
+      "antipatternsDelta": -4
+    },
+    {
+      "hash": "2ed9cb80fae",
+      "date": "Mar 24, 2026",
+      "type": "Bug",
+      "message": "fix: #3577001 LocaleConfigManager::updateConfigTranslations() unconditionally re",
+      "locDelta": 2,
+      "ccnDelta": 2,
+      "miDelta": -2,
+      "antipatternsDelta": -1
+    },
     {
       "hash": "fe7b094eb73",
       "date": "Mar 20, 2026",
@@ -138509,86 +138587,6 @@
       "ccnDelta": 3,
       "miDelta": 1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "c0e6b67e8b2",
-      "date": "Feb 23, 2026",
-      "type": "Maintenance",
-      "message": "task: #3574424 Remove deprecated code from path, path_alias, image, and responsi",
-      "locDelta": -83,
-      "ccnDelta": -20,
-      "miDelta": 0,
-      "antipatternsDelta": -12
-    },
-    {
-      "hash": "f5d6d7d901c",
-      "date": "Feb 23, 2026",
-      "type": "Maintenance",
-      "message": "task: #3569133 Remove shortcut from umami and standard profile and recipe",
-      "locDelta": -33,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "8f8ade46b13",
-      "date": "Feb 22, 2026",
-      "type": "Maintenance",
-      "message": "task: #3574901 Remove deprecated code from datetime and datetime_range module",
-      "locDelta": -13,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ffea32377c9",
-      "date": "Feb 22, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571874 Remove deprecated code from block_content",
-      "locDelta": -119,
-      "ccnDelta": -27,
-      "miDelta": 18,
-      "antipatternsDelta": -8
-    },
-    {
-      "hash": "69ed67c96da",
-      "date": "Feb 22, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571058 Remove deprecated code from lib/Classloader, lib/Composer, and li",
-      "locDelta": -14,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "637e0e356bc",
-      "date": "Feb 22, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571623 Remove deprecated code from the Node module",
-      "locDelta": -196,
-      "ccnDelta": -35,
-      "miDelta": 19,
-      "antipatternsDelta": -25
-    },
-    {
-      "hash": "78253dd19d1",
-      "date": "Feb 22, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571054 Remove deprecated code from lib/Access, lib/Ajax, and lib/Archive",
-      "locDelta": -200,
-      "ccnDelta": -41,
-      "miDelta": 8,
-      "antipatternsDelta": -2
-    },
-    {
-      "hash": "54bc9308376",
-      "date": "Feb 20, 2026",
-      "type": "Bug",
-      "message": "fix: #3562072 Menu link content export with dependencies doesn't include parent ",
-      "locDelta": 42,
-      "ccnDelta": 7,
-      "miDelta": -2,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138698,7 +138696,7 @@
     },
     {
       "year": 2026,
-      "commits": 501
+      "commits": 529
     }
   ]
 }
