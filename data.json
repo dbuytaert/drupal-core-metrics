@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-29T00:59:05.791088",
+  "generated": "2026-03-30T00:56:28.134949",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,10 +2475,10 @@
     },
     {
       "date": "2026-03",
-      "total": 243,
+      "total": 246,
       "features": 12,
       "bugs": 63,
-      "maintenance": 167,
+      "maintenance": 170,
       "unknown": 1
     }
   ],
@@ -133141,10 +133141,10 @@
     },
     {
       "date": "2026-03",
-      "commit": "35fcf3d6",
+      "commit": "05ecfda7",
       "production": {
-        "loc": 288321,
-        "functions": 22801,
+        "loc": 288235,
+        "functions": 22799,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133155,7 +133155,7 @@
         },
         "antipatterns": 72.9
       },
-      "testLoc": 456593,
+      "testLoc": 456630,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137179,9 +137179,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10614,
-        "deepArrays": 8004,
-        "serviceLocators": 2495
+        "magicKeys": 10610,
+        "deepArrays": 8003,
+        "serviceLocators": 2491
       },
       "hotspots": [
         {
@@ -137588,6 +137588,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "05ecfda70b1",
+      "date": "Mar 29, 2026",
+      "type": "Maintenance",
+      "message": "task: #3571593 Deprecate translation.path config in favor of settings",
+      "locDelta": 21,
+      "ccnDelta": 4,
+      "miDelta": 3,
+      "antipatternsDelta": -6
+    },
+    {
+      "hash": "afd18ab9294",
+      "date": "Mar 29, 2026",
+      "type": "Maintenance",
+      "message": "task: #3574717 Remove deprecated code from migrate module",
+      "locDelta": -107,
+      "ccnDelta": -17,
+      "miDelta": 32,
+      "antipatternsDelta": -3
+    },
     {
       "hash": "35fcf3d614b",
       "date": "Mar 27, 2026",
@@ -138567,26 +138587,6 @@
       "ccnDelta": 7,
       "miDelta": 2,
       "antipatternsDelta": 3
-    },
-    {
-      "hash": "f215e25ce11",
-      "date": "Feb 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3574714 Remove Migrate Drupal UI from core",
-      "locDelta": -1082,
-      "ccnDelta": -160,
-      "miDelta": 247,
-      "antipatternsDelta": -219
-    },
-    {
-      "hash": "49c2dc16930",
-      "date": "Feb 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3575254 Module deprecation removal part2",
-      "locDelta": -255,
-      "ccnDelta": -67,
-      "miDelta": 41,
-      "antipatternsDelta": -28
     }
   ],
   "commitsPerYear": [
@@ -138696,7 +138696,7 @@
     },
     {
       "year": 2026,
-      "commits": 554
+      "commits": 557
     }
   ]
 }
