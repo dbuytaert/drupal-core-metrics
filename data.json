@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-31T00:57:03.934005",
+  "generated": "2026-04-01T01:00:21.464227",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2475,11 +2475,11 @@
     },
     {
       "date": "2026-03",
-      "total": 262,
+      "total": 268,
       "features": 13,
       "bugs": 65,
-      "maintenance": 181,
-      "unknown": 3
+      "maintenance": 185,
+      "unknown": 5
     }
   ],
   "snapshots": [
@@ -133140,10 +133140,10 @@
       ]
     },
     {
-      "date": "2026-03",
-      "commit": "d8ea980e",
+      "date": "2026-04",
+      "commit": "284ea826",
       "production": {
-        "loc": 288235,
+        "loc": 288225,
         "functions": 22799,
         "ccn": {
           "avg": 2.5,
@@ -133155,7 +133155,7 @@
         },
         "antipatterns": 72.9
       },
-      "testLoc": 456718,
+      "testLoc": 456683,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137589,6 +137589,26 @@
   ],
   "commits": [
     {
+      "hash": "0d05b837e03",
+      "date": "Mar 31, 2026",
+      "type": "Maintenance",
+      "message": "task: #3581948 Reduce password hashing costs in functional tests",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "9a04a208991",
+      "date": "Mar 31, 2026",
+      "type": "Maintenance",
+      "message": "task: #3579153 Remove fallback to sendmail_from ini setting when sending mails",
+      "locDelta": -12,
+      "ccnDelta": -4,
+      "miDelta": 6,
+      "antipatternsDelta": 1
+    },
+    {
       "hash": "05ecfda70b1",
       "date": "Mar 29, 2026",
       "type": "Maintenance",
@@ -138567,26 +138587,6 @@
       "ccnDelta": 2,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "f08dfd4910e",
-      "date": "Feb 27, 2026",
-      "type": "Maintenance",
-      "message": "task: #3574461 Deprecate not implementing \\Drupal\\layout_builder\\SupportAwareSec",
-      "locDelta": 8,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "961e61181b8",
-      "date": "Feb 26, 2026",
-      "type": "Maintenance",
-      "message": "task: #3572339 Modernize locale.fetch.inc",
-      "locDelta": 39,
-      "ccnDelta": 7,
-      "miDelta": 2,
-      "antipatternsDelta": 3
     }
   ],
   "commitsPerYear": [
@@ -138696,7 +138696,7 @@
     },
     {
       "year": 2026,
-      "commits": 573
+      "commits": 579
     }
   ]
 }
