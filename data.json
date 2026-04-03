@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T00:52:17.620381",
+  "generated": "2026-04-03T00:54:05.243616",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 2,
+      "total": 11,
       "features": 1,
       "bugs": 0,
-      "maintenance": 1,
+      "maintenance": 10,
       "unknown": 0
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "a9bb3cd2",
+      "commit": "4ee8755b",
       "production": {
-        "loc": 288225,
-        "functions": 22799,
+        "loc": 288184,
+        "functions": 22798,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133163,7 +133163,7 @@
         },
         "antipatterns": 72.9
       },
-      "testLoc": 456683,
+      "testLoc": 456564,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137597,6 +137597,36 @@
   ],
   "commits": [
     {
+      "hash": "4ee8755bf57",
+      "date": "Apr 02, 2026",
+      "type": "Maintenance",
+      "message": "chore: #3576880 Cleanup deprecations from test folder classes",
+      "locDelta": -6,
+      "ccnDelta": -1,
+      "miDelta": 3,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "5f59e9f2716",
+      "date": "Apr 02, 2026",
+      "type": "Maintenance",
+      "message": "task: #3578084 Add return types to Twig implementations",
+      "locDelta": -4,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "d09bf682dc3",
+      "date": "Apr 02, 2026",
+      "type": "Maintenance",
+      "message": "task: #3582178 Remove dead code in Admin",
+      "locDelta": -31,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
       "hash": "0d05b837e03",
       "date": "Mar 31, 2026",
       "type": "Maintenance",
@@ -138565,36 +138595,6 @@
       "ccnDelta": 2,
       "miDelta": -2,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "0318f797cdf",
-      "date": "Mar 01, 2026",
-      "type": "Bug",
-      "message": "fix: #3574721 FormBuilder service order causes failure",
-      "locDelta": -4,
-      "ccnDelta": -1,
-      "miDelta": 3,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "f350d615690",
-      "date": "Mar 01, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3568144 Convert editor_filter_xss() to a element.editor service metho",
-      "locDelta": 18,
-      "ccnDelta": 4,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d1db2f83aad",
-      "date": "Mar 01, 2026",
-      "type": "Bug",
-      "message": "fix: #2613044 Requests are pushed onto the request stack twice, popped once",
-      "locDelta": 10,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138704,7 +138704,7 @@
     },
     {
       "year": 2026,
-      "commits": 581
+      "commits": 590
     }
   ]
 }
