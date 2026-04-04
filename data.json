@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-03T00:54:05.243616",
+  "generated": "2026-04-04T00:55:28.496200",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 11,
-      "features": 1,
+      "total": 21,
+      "features": 2,
       "bugs": 0,
-      "maintenance": 10,
+      "maintenance": 19,
       "unknown": 0
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "4ee8755b",
+      "commit": "d65f0172",
       "production": {
-        "loc": 288184,
-        "functions": 22798,
+        "loc": 288253,
+        "functions": 22811,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133163,7 +133163,7 @@
         },
         "antipatterns": 72.9
       },
-      "testLoc": 456564,
+      "testLoc": 456636,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133171,7 +133171,7 @@
         "events": 40,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2894,
+        "interfaceMethods": 2900,
         "globalFunctions": 263
       },
       "surfaceAreaLists": {
@@ -134284,6 +134284,12 @@
           "FilterFormatInterface::getFilterTypes",
           "FilterFormatInterface::getHtmlRestrictions",
           "FilterFormatInterface::removeFilter",
+          "FilterFormatInterface::getRoles",
+          "FilterFormatRepositoryInterface::getAllFormats",
+          "FilterFormatRepositoryInterface::getFormatsForAccount",
+          "FilterFormatRepositoryInterface::getFormatsByRole",
+          "FilterFormatRepositoryInterface::getDefaultFormat",
+          "FilterFormatRepositoryInterface::getFallbackFormatId",
           "FilterInterface::getType",
           "FilterInterface::getLabel",
           "FilterInterface::getDescription",
@@ -137188,8 +137194,8 @@
       },
       "antipatterns": {
         "magicKeys": 10610,
-        "deepArrays": 8003,
-        "serviceLocators": 2491
+        "deepArrays": 8002,
+        "serviceLocators": 2498
       },
       "hotspots": [
         {
@@ -137596,6 +137602,76 @@
     }
   ],
   "commits": [
+    {
+      "hash": "d65f0172ec6",
+      "date": "Apr 03, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #2536594 Add a FilterFormatRepository providing methods to load filter",
+      "locDelta": 100,
+      "ccnDelta": 17,
+      "miDelta": 10,
+      "antipatternsDelta": 4
+    },
+    {
+      "hash": "1ab3da43b7b",
+      "date": "Apr 03, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3582386 remove absolute from HelpTwigExtension links",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "d867a4ad4c2",
+      "date": "Apr 03, 2026",
+      "type": "Maintenance",
+      "message": "chore: #3567589 Exempt 'system.modules_uninstall' route in UpdateHooks::pageTop(",
+      "locDelta": 2,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "5ccc0bf6d97",
+      "date": "Apr 03, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3582533 Move Settings Tray block metadata to Settings Tray module",
+      "locDelta": -4,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "5a0a3bb5e07",
+      "date": "Apr 03, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3571046 Use tagged iterators in PathProcessorManager and RouteProcess",
+      "locDelta": -38,
+      "ccnDelta": -9,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "7d3d3ba2db8",
+      "date": "Apr 03, 2026",
+      "type": "Maintenance",
+      "message": "chore: #3533078 Enforce  parameter in EntityListBuilderInterface::getOperations ",
+      "locDelta": -44,
+      "ccnDelta": -23,
+      "miDelta": 15,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "fcb3dff594b",
+      "date": "Apr 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3572173 Deprecate field.module remaining functions",
+      "locDelta": 54,
+      "ccnDelta": 13,
+      "miDelta": -6,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "4ee8755bf57",
       "date": "Apr 02, 2026",
@@ -138525,76 +138601,6 @@
       "ccnDelta": 6,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "7c466763ae8",
-      "date": "Mar 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3574284 Remove PDOConnection from SQLite",
-      "locDelta": -13,
-      "ccnDelta": -3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "9fc3187d7cc",
-      "date": "Mar 01, 2026",
-      "type": "Feature",
-      "message": "feat: #3556948 Merging Gin as Admin theme",
-      "locDelta": 2405,
-      "ccnDelta": 634,
-      "miDelta": -658,
-      "antipatternsDelta": 673
-    },
-    {
-      "hash": "4dcc7892403",
-      "date": "Mar 01, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3570235 Deprecate functions in syslog.module",
-      "locDelta": 16,
-      "ccnDelta": 2,
-      "miDelta": 2,
-      "antipatternsDelta": -3
-    },
-    {
-      "hash": "867a3c069c9",
-      "date": "Mar 01, 2026",
-      "type": "Bug",
-      "message": "fix: #3560260 OEmbedIframeController makes responses uncacheable by mistake",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "ac357941fe8",
-      "date": "Mar 01, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3566782 Deprecate block_theme_initialize() and move the logic to a se",
-      "locDelta": 25,
-      "ccnDelta": 5,
-      "miDelta": -8,
-      "antipatternsDelta": 4
-    },
-    {
-      "hash": "efe749343bb",
-      "date": "Mar 01, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3572348 Static cache EntityDataDefinition::getDataType()",
-      "locDelta": 9,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "03d858794c4",
-      "date": "Mar 01, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3572098 JSON:API normalisation caching can be more expensive than normali",
-      "locDelta": 6,
-      "ccnDelta": 2,
-      "miDelta": -2,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138704,7 +138710,7 @@
     },
     {
       "year": 2026,
-      "commits": 590
+      "commits": 600
     }
   ]
 }
