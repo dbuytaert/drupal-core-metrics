@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-07T00:58:23.212538",
+  "generated": "2026-04-08T00:56:10.012164",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 33,
+      "total": 38,
       "features": 3,
-      "bugs": 3,
-      "maintenance": 27,
+      "bugs": 4,
+      "maintenance": 31,
       "unknown": 0
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "88805fc7",
+      "commit": "cf83b856",
       "production": {
-        "loc": 288271,
-        "functions": 22812,
+        "loc": 288300,
+        "functions": 22815,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133163,7 +133163,7 @@
         },
         "antipatterns": 72.9
       },
-      "testLoc": 456846,
+      "testLoc": 456885,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137603,6 +137603,16 @@
   ],
   "commits": [
     {
+      "hash": "6429cd321f4",
+      "date": "Apr 07, 2026",
+      "type": "Maintenance",
+      "message": "task: #2571679 Replace views_add_contextual_links() in views.module with service",
+      "locDelta": 27,
+      "ccnDelta": 2,
+      "miDelta": 4,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "39f4d1408d1",
       "date": "Apr 05, 2026",
       "type": "Maintenance",
@@ -138591,16 +138601,6 @@
       "ccnDelta": 2,
       "miDelta": 0,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "4eb589c00c3",
-      "date": "Mar 03, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3575542 Remove deprecations related to the theme preprocess discovery",
-      "locDelta": -187,
-      "ccnDelta": -52,
-      "miDelta": 12,
-      "antipatternsDelta": -25
     }
   ],
   "commitsPerYear": [
@@ -138710,7 +138710,7 @@
     },
     {
       "year": 2026,
-      "commits": 612
+      "commits": 617
     }
   ]
 }
