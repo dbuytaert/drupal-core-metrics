@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-08T00:56:10.012164",
+  "generated": "2026-04-09T00:50:44.513942",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 38,
-      "features": 3,
-      "bugs": 4,
-      "maintenance": 31,
+      "total": 45,
+      "features": 4,
+      "bugs": 7,
+      "maintenance": 34,
       "unknown": 0
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "cf83b856",
+      "commit": "22801c00",
       "production": {
-        "loc": 288300,
-        "functions": 22815,
+        "loc": 288446,
+        "functions": 22825,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133163,7 +133163,7 @@
         },
         "antipatterns": 72.9
       },
-      "testLoc": 456885,
+      "testLoc": 457046,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137193,9 +137193,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10610,
+        "magicKeys": 10612,
         "deepArrays": 8002,
-        "serviceLocators": 2499
+        "serviceLocators": 2505
       },
       "hotspots": [
         {
@@ -137602,6 +137602,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "ab676ddab98",
+      "date": "Apr 08, 2026",
+      "type": "Bug",
+      "message": "fix: #3526541 Cannot set default values on multi-valued formatted Text fields",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "607b8329f68",
+      "date": "Apr 08, 2026",
+      "type": "Bug",
+      "message": "fix: #3582229 Package Manager blows up when it encounters already-unpacked recip",
+      "locDelta": 7,
+      "ccnDelta": 2,
+      "miDelta": -5,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "392da0f591f",
+      "date": "Apr 08, 2026",
+      "type": "Feature",
+      "message": "feat: #3096170 Add Confirmation Page for theme uninstall",
+      "locDelta": 78,
+      "ccnDelta": 13,
+      "miDelta": -20,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "54c6c2e50c1",
+      "date": "Apr 08, 2026",
+      "type": "Maintenance",
+      "message": "task: #3567618 Create service for image_path_flush, image_style_options and cons",
+      "locDelta": 58,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 6
+    },
     {
       "hash": "6429cd321f4",
       "date": "Apr 07, 2026",
@@ -138561,46 +138601,6 @@
       "ccnDelta": -32,
       "miDelta": 23,
       "antipatternsDelta": -7
-    },
-    {
-      "hash": "9f05b589c2c",
-      "date": "Mar 04, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3575467 Remove deprecations related to the theme engine",
-      "locDelta": -173,
-      "ccnDelta": -34,
-      "miDelta": 53,
-      "antipatternsDelta": -7
-    },
-    {
-      "hash": "3d3387bd1ea",
-      "date": "Mar 04, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3571069 Remove hook_module_implements_alter and support in HookCollec",
-      "locDelta": -22,
-      "ccnDelta": -2,
-      "miDelta": 3,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "2a9fde3df0d",
-      "date": "Mar 04, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3574859 Remove deprecated code from lib/menu, lib/routing, lib/sessio",
-      "locDelta": -211,
-      "ccnDelta": -45,
-      "miDelta": 17,
-      "antipatternsDelta": -5
-    },
-    {
-      "hash": "20de7941343",
-      "date": "Mar 04, 2026",
-      "type": "Bug",
-      "message": "fix: #3319212 Entities without labels cause TypeError in EntityController title ",
-      "locDelta": 13,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -138710,7 +138710,7 @@
     },
     {
       "year": 2026,
-      "commits": 617
+      "commits": 624
     }
   ]
 }
