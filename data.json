@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-10T00:57:22.887971",
+  "generated": "2026-04-11T00:56:11.529343",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 52,
-      "features": 4,
-      "bugs": 7,
-      "maintenance": 41,
+      "total": 56,
+      "features": 5,
+      "bugs": 8,
+      "maintenance": 43,
       "unknown": 0
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "53a3a0d4",
+      "commit": "44856397",
       "production": {
-        "loc": 288466,
-        "functions": 22825,
+        "loc": 288759,
+        "functions": 22843,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133161,9 +133161,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72.9
+        "antipatterns": 72.8
       },
-      "testLoc": 457050,
+      "testLoc": 457245,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137194,8 +137194,8 @@
       },
       "antipatterns": {
         "magicKeys": 10612,
-        "deepArrays": 8002,
-        "serviceLocators": 2504
+        "deepArrays": 8005,
+        "serviceLocators": 2513
       },
       "hotspots": [
         {
@@ -137602,6 +137602,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "44856397aaa",
+      "date": "Apr 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3577671 Modernize locale file handling",
+      "locDelta": 98,
+      "ccnDelta": 14,
+      "miDelta": 4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "1083a8bdb69",
+      "date": "Apr 10, 2026",
+      "type": "Feature",
+      "message": "feat: #3301682 Define bundle classes via attributes",
+      "locDelta": 80,
+      "ccnDelta": 13,
+      "miDelta": -34,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "ec8c0566862",
+      "date": "Apr 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3226806 Move filter implementations from filter.module to plugin classes",
+      "locDelta": 113,
+      "ccnDelta": 12,
+      "miDelta": -6,
+      "antipatternsDelta": 7
+    },
+    {
+      "hash": "f14dbcc201c",
+      "date": "Apr 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3548957 Deprecate ToStringTrait",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "b4c833bf0fd",
       "date": "Apr 10, 2026",
@@ -138561,46 +138601,6 @@
       "ccnDelta": 4,
       "miDelta": 0,
       "antipatternsDelta": 3
-    },
-    {
-      "hash": "5e4a4a4ec67",
-      "date": "Mar 06, 2026",
-      "type": "Bug",
-      "message": "fix: #3436295 ParamConverterManager lazy services are broken and should use a se",
-      "locDelta": -165,
-      "ccnDelta": -26,
-      "miDelta": 0,
-      "antipatternsDelta": -4
-    },
-    {
-      "hash": "e808e76c844",
-      "date": "Mar 06, 2026",
-      "type": "Bug",
-      "message": "fix: #3567483 Update manager crashing admin panel with uncaught exceptions parsi",
-      "locDelta": 18,
-      "ccnDelta": 3,
-      "miDelta": -17,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "cc89478fae0",
-      "date": "Mar 05, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3575585 Convert remaining themes to OOP",
-      "locDelta": 25,
-      "ccnDelta": 5,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "3fb558de463",
-      "date": "Mar 05, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3568092 Convert editor.module procedural submit, validate and Ajax ca",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -138710,7 +138710,7 @@
     },
     {
       "year": 2026,
-      "commits": 631
+      "commits": 635
     }
   ]
 }
