@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-11T00:56:11.529343",
+  "generated": "2026-04-12T01:00:43.908265",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 56,
+      "total": 59,
       "features": 5,
       "bugs": 8,
-      "maintenance": 43,
+      "maintenance": 46,
       "unknown": 0
     }
   ],
@@ -133149,9 +133149,9 @@
     },
     {
       "date": "2026-04",
-      "commit": "44856397",
+      "commit": "645ffba8",
       "production": {
-        "loc": 288759,
+        "loc": 288854,
         "functions": 22843,
         "ccn": {
           "avg": 2.5,
@@ -133163,7 +133163,7 @@
         },
         "antipatterns": 72.8
       },
-      "testLoc": 457245,
+      "testLoc": 457254,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137195,7 +137195,7 @@
       "antipatterns": {
         "magicKeys": 10612,
         "deepArrays": 8005,
-        "serviceLocators": 2513
+        "serviceLocators": 2516
       },
       "hotspots": [
         {
@@ -137602,6 +137602,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "645ffba8cc5",
+      "date": "Apr 12, 2026",
+      "type": "Maintenance",
+      "message": "task: #3522561 Fully type StatementInterface methods' parameters",
+      "locDelta": 3,
+      "ccnDelta": -1,
+      "miDelta": -4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "5b4ad871353",
+      "date": "Apr 12, 2026",
+      "type": "Maintenance",
+      "message": "task: #3583849 Deprecate PgSql Connection::*Savepoint() methods",
+      "locDelta": 51,
+      "ccnDelta": 24,
+      "miDelta": -20,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "8d78571bbef",
+      "date": "Apr 12, 2026",
+      "type": "Maintenance",
+      "message": "task: #3406985 Convert all transactions in core to use explicit ::commitOrReleas",
+      "locDelta": 41,
+      "ccnDelta": 8,
+      "miDelta": -23,
+      "antipatternsDelta": 4
+    },
     {
       "hash": "44856397aaa",
       "date": "Apr 10, 2026",
@@ -138571,36 +138601,6 @@
       "ccnDelta": -4,
       "miDelta": -2,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "3742821e2b1",
-      "date": "Mar 06, 2026",
-      "type": "Maintenance",
-      "message": "task: #3039248 Deprecate views_ui_contextual_links_suppress(), views_ui_contextu",
-      "locDelta": -9,
-      "ccnDelta": -2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "a4cda8572f3",
-      "date": "Mar 06, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571094 Remove RegisterStreamWrappersPass",
-      "locDelta": -35,
-      "ccnDelta": -5,
-      "miDelta": 3,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "69652b9c8dc",
-      "date": "Mar 06, 2026",
-      "type": "Maintenance",
-      "message": "task: #3568124 Deprecate remaining functions in media.module",
-      "locDelta": 17,
-      "ccnDelta": 4,
-      "miDelta": 0,
-      "antipatternsDelta": 3
     }
   ],
   "commitsPerYear": [
@@ -138710,7 +138710,7 @@
     },
     {
       "year": 2026,
-      "commits": 635
+      "commits": 638
     }
   ]
 }
