@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-13T00:59:00.392202",
+  "generated": "2026-04-14T01:02:38.805125",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,11 +2483,11 @@
     },
     {
       "date": "2026-04",
-      "total": 60,
-      "features": 5,
-      "bugs": 8,
-      "maintenance": 47,
-      "unknown": 0
+      "total": 72,
+      "features": 6,
+      "bugs": 9,
+      "maintenance": 56,
+      "unknown": 1
     }
   ],
   "snapshots": [
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "89062b86",
+      "commit": "afcf2016",
       "production": {
-        "loc": 288831,
-        "functions": 22843,
+        "loc": 289019,
+        "functions": 22861,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133163,7 +133163,7 @@
         },
         "antipatterns": 72.8
       },
-      "testLoc": 457254,
+      "testLoc": 457689,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133171,7 +133171,7 @@
         "events": 40,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2900,
+        "interfaceMethods": 2901,
         "globalFunctions": 263
       },
       "surfaceAreaLists": {
@@ -135200,6 +135200,7 @@
           "SelectInterface::getOrderBy",
           "SelectInterface::getGroupBy",
           "SelectInterface::getTables",
+          "SelectInterface::getRange",
           "SelectInterface::getUnion",
           "SelectInterface::escapeLike",
           "SelectInterface::escapeField",
@@ -137195,7 +137196,7 @@
       "antipatterns": {
         "magicKeys": 10612,
         "deepArrays": 8005,
-        "serviceLocators": 2516
+        "serviceLocators": 2518
       },
       "hotspots": [
         {
@@ -137602,6 +137603,76 @@
     }
   ],
   "commits": [
+    {
+      "hash": "5674bcd77c2",
+      "date": "Apr 13, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3571400 Deprecate functions in menu_ui.module and move to hooks or he",
+      "locDelta": 55,
+      "ccnDelta": 8,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "527ecd06d5e",
+      "date": "Apr 13, 2026",
+      "type": "Maintenance",
+      "message": "task: #3584098 Early return in NodeAccessGrantsCacheContext when there are no gr",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "fe9b08d475e",
+      "date": "Apr 13, 2026",
+      "type": "Maintenance",
+      "message": "task: #3560075 Relocate or deprecate link_options, link_uri, timezone and user_l",
+      "locDelta": 114,
+      "ccnDelta": 22,
+      "miDelta": -14,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "ee459f79f9b",
+      "date": "Apr 13, 2026",
+      "type": "Unknown",
+      "message": "Revert \"task: #3560075 Relocate or deprecate link_options, link_uri, timezone an",
+      "locDelta": -114,
+      "ccnDelta": -22,
+      "miDelta": 14,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "32d3a4dc58a",
+      "date": "Apr 13, 2026",
+      "type": "Maintenance",
+      "message": "task: #3560075 Relocate or deprecate link_options, link_uri, timezone and user_l",
+      "locDelta": 114,
+      "ccnDelta": 22,
+      "miDelta": -14,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "fd7e1c2dda3",
+      "date": "Apr 13, 2026",
+      "type": "Maintenance",
+      "message": "task: #3581569 Remove user_cookie_save() and user_cookie_delete()",
+      "locDelta": 11,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "b124145238c",
+      "date": "Apr 13, 2026",
+      "type": "Maintenance",
+      "message": "task: #2986699 Add missing getter method to retrieve range (limit/offset) from S",
+      "locDelta": 7,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "89062b861cf",
       "date": "Apr 12, 2026",
@@ -138531,76 +138602,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "d2246d5e4df",
-      "date": "Mar 09, 2026",
-      "type": "Maintenance",
-      "message": "chore: #3560876 NavigationUserBlock::buildLinks() doesn't check if the user coul",
-      "locDelta": 7,
-      "ccnDelta": 1,
-      "miDelta": -4,
-      "antipatternsDelta": 3
-    },
-    {
-      "hash": "4b07dbcc69f",
-      "date": "Mar 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3564197 Package Manager should not restrict which packages can do scaffold",
-      "locDelta": -47,
-      "ccnDelta": -6,
-      "miDelta": 4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c8e47315faf",
-      "date": "Mar 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3046985 The word \"Second\" needs translation context",
-      "locDelta": 0,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "0792d0f124c",
-      "date": "Mar 09, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3571068 Remove deprecated code from lib/Extension, lib/Form, some lef",
-      "locDelta": -111,
-      "ccnDelta": -24,
-      "miDelta": 5,
-      "antipatternsDelta": -8
-    },
-    {
-      "hash": "378e65203ea",
-      "date": "Mar 08, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #2335523 Remove node.module.css from node/drupal.node library and depr",
-      "locDelta": -6,
-      "ccnDelta": 0,
-      "miDelta": 2,
-      "antipatternsDelta": -4
-    },
-    {
-      "hash": "7f7a3e43bdf",
-      "date": "Mar 07, 2026",
-      "type": "Bug",
-      "message": "fix: #3572967 Renderer::executeInRenderContext() and BigPipe should also pass im",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "dce563e4498",
-      "date": "Mar 06, 2026",
-      "type": "Maintenance",
-      "message": "task: #3573896 Remove deprecations from System module",
-      "locDelta": -51,
-      "ccnDelta": -13,
-      "miDelta": 0,
-      "antipatternsDelta": -10
     }
   ],
   "commitsPerYear": [
@@ -138710,7 +138711,7 @@
     },
     {
       "year": 2026,
-      "commits": 639
+      "commits": 651
     }
   ]
 }
