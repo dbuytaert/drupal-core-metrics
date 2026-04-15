@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-14T01:02:38.805125",
+  "generated": "2026-04-15T01:03:57.438051",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 72,
-      "features": 6,
+      "total": 79,
+      "features": 7,
       "bugs": 9,
-      "maintenance": 56,
+      "maintenance": 62,
       "unknown": 1
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "afcf2016",
+      "commit": "13ae7283",
       "production": {
-        "loc": 289019,
-        "functions": 22861,
+        "loc": 289272,
+        "functions": 22879,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133161,14 +133161,14 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72.8
+        "antipatterns": 72.7
       },
-      "testLoc": 457689,
+      "testLoc": 458015,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
         "magicKeys": 271,
-        "events": 40,
+        "events": 41,
         "services": 241,
         "yamlFormats": 19,
         "interfaceMethods": 2901,
@@ -133731,6 +133731,7 @@
           "RoutingEvents::DYNAMIC",
           "RoutingEvents::FINISHED",
           "KernelEvents::EXCEPTION",
+          "RoutingEvents::STATIC",
           "RoutingEvents::ALTER",
           "KernelEvents::REQUEST",
           "FieldStorageDefinitionEvents::CREATE",
@@ -137196,7 +137197,7 @@
       "antipatterns": {
         "magicKeys": 10612,
         "deepArrays": 8005,
-        "serviceLocators": 2518
+        "serviceLocators": 2516
       },
       "hotspots": [
         {
@@ -137491,7 +137492,7 @@
           "name": "install_begin_request",
           "file": "includes/install.core.inc",
           "ccn": 33,
-          "loc": 148,
+          "loc": 147,
           "mi": 48,
           "antipatterns": 18
         },
@@ -137603,6 +137604,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "13ae7283ae3",
+      "date": "Apr 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #2719315 Remove unnecessary system.module path setup in installer",
+      "locDelta": -2,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "19ea2283d9e",
+      "date": "Apr 14, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3560670 Don't lock on the active trail cache collector cache write",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "67892866103",
+      "date": "Apr 14, 2026",
+      "type": "Feature",
+      "message": "feat: #3311365 Use PHP attributes for route discovery",
+      "locDelta": 269,
+      "ccnDelta": 75,
+      "miDelta": -71,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "10d11f6ab98",
+      "date": "Apr 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #3582666 Remove Drupal\\layout_discovery\\Install\\Requirements\\LayoutDiscove",
+      "locDelta": -17,
+      "ccnDelta": -2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "5674bcd77c2",
       "date": "Apr 13, 2026",
@@ -138562,46 +138603,6 @@
       "ccnDelta": 2,
       "miDelta": -2,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "4f51b64b77b",
-      "date": "Mar 09, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3575462 Remove deprecations from themes and misc",
-      "locDelta": -26,
-      "ccnDelta": -4,
-      "miDelta": 9,
-      "antipatternsDelta": -3
-    },
-    {
-      "hash": "ae4815ac1a9",
-      "date": "Mar 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3114887 Error responses are stored when using the Download migration proce",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "cd3e02cb3b7",
-      "date": "Mar 09, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3577376 Remove recently introduced deprecations from SessionManager",
-      "locDelta": -20,
-      "ccnDelta": -7,
-      "miDelta": 3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c6498ec04bd",
-      "date": "Mar 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3577133 Remove unused class property dateExample",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138711,7 +138712,7 @@
     },
     {
       "year": 2026,
-      "commits": 651
+      "commits": 658
     }
   ]
 }
