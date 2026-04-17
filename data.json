@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-16T01:03:54.863618",
+  "generated": "2026-04-17T00:54:51.971794",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,9 +2483,9 @@
     },
     {
       "date": "2026-04",
-      "total": 84,
-      "features": 7,
-      "bugs": 9,
+      "total": 86,
+      "features": 8,
+      "bugs": 10,
       "maintenance": 63,
       "unknown": 5
     }
@@ -133149,9 +133149,9 @@
     },
     {
       "date": "2026-04",
-      "commit": "bba7977d",
+      "commit": "ccc28b4b",
       "production": {
-        "loc": 289316,
+        "loc": 289355,
         "functions": 22879,
         "ccn": {
           "avg": 2.5,
@@ -133163,7 +133163,7 @@
         },
         "antipatterns": 72.7
       },
-      "testLoc": 458040,
+      "testLoc": 458106,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137195,9 +137195,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10612,
-        "deepArrays": 8005,
-        "serviceLocators": 2516
+        "magicKeys": 10618,
+        "deepArrays": 8009,
+        "serviceLocators": 2520
       },
       "hotspots": [
         {
@@ -137604,6 +137604,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "ccc28b4bc95",
+      "date": "Apr 17, 2026",
+      "type": "Feature",
+      "message": "feat: #3544339 Add support in StringFormatter for linking to the entity edit for",
+      "locDelta": 31,
+      "ccnDelta": 1,
+      "miDelta": -14,
+      "antipatternsDelta": 11
+    },
+    {
+      "hash": "1e00c0b78f9",
+      "date": "Apr 16, 2026",
+      "type": "Bug",
+      "message": "fix: #3572171 Persist is_syncing across container rebuilds",
+      "locDelta": 8,
+      "ccnDelta": 2,
+      "miDelta": -4,
+      "antipatternsDelta": 4
+    },
     {
       "hash": "bba7977d9c3",
       "date": "Apr 15, 2026",
@@ -138583,26 +138603,6 @@
       "ccnDelta": 1,
       "miDelta": -1,
       "antipatternsDelta": 5
-    },
-    {
-      "hash": "007276470ae",
-      "date": "Mar 10, 2026",
-      "type": "Bug",
-      "message": "fix: #3572785 \\Drupal\\system\\Controller\\ThemeController::willInstallExperimental",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d759d555ab4",
-      "date": "Mar 10, 2026",
-      "type": "Maintenance",
-      "message": "perf: #2149631 Don't clear the CSS cache when installing themes",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 1,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138712,7 +138712,7 @@
     },
     {
       "year": 2026,
-      "commits": 663
+      "commits": 665
     }
   ]
 }
