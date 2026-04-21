@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-20T00:58:46.031236",
+  "generated": "2026-04-21T01:02:09.075215",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 87,
-      "features": 8,
-      "bugs": 10,
-      "maintenance": 64,
+      "total": 95,
+      "features": 9,
+      "bugs": 11,
+      "maintenance": 70,
       "unknown": 5
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "3659d1b9",
+      "commit": "ed828b00",
       "production": {
-        "loc": 289355,
-        "functions": 22879,
+        "loc": 288648,
+        "functions": 22828,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133161,9 +133161,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72.7
+        "antipatterns": 72.6
       },
-      "testLoc": 458106,
+      "testLoc": 453647,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137196,8 +137196,8 @@
       },
       "antipatterns": {
         "magicKeys": 10618,
-        "deepArrays": 8009,
-        "serviceLocators": 2520
+        "deepArrays": 7968,
+        "serviceLocators": 2463
       },
       "hotspots": [
         {
@@ -137604,6 +137604,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "ed828b000c3",
+      "date": "Apr 20, 2026",
+      "type": "Maintenance",
+      "message": "task: #3581399 Stop using legacy names for test suites",
+      "locDelta": -11,
+      "ccnDelta": -3,
+      "miDelta": 1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "b30fe98d4fd",
+      "date": "Apr 20, 2026",
+      "type": "Feature",
+      "message": "feat: #3015812 Introduce new Theme extension object and properly deprecate REGIO",
+      "locDelta": 87,
+      "ccnDelta": 15,
+      "miDelta": -3,
+      "antipatternsDelta": 4
+    },
+    {
+      "hash": "88187a5ee7e",
+      "date": "Apr 20, 2026",
+      "type": "Maintenance",
+      "message": "task: #3580877 Remove updates added prior to 11.3.0 from 12.x",
+      "locDelta": -783,
+      "ccnDelta": -165,
+      "miDelta": 116,
+      "antipatternsDelta": -102
+    },
     {
       "hash": "ccc28b4bc95",
       "date": "Apr 17, 2026",
@@ -138573,36 +138603,6 @@
       "ccnDelta": -2,
       "miDelta": -4,
       "antipatternsDelta": -2
-    },
-    {
-      "hash": "98b2f7c7a34",
-      "date": "Mar 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #3469143 MainContentViewSubscriber should use a service locator",
-      "locDelta": -19,
-      "ccnDelta": -3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "fd710d9eae5",
-      "date": "Mar 10, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3398534 Allow form service wiring via constructor parameter attribute",
-      "locDelta": -31,
-      "ccnDelta": -4,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "c376f872be5",
-      "date": "Mar 10, 2026",
-      "type": "Bug",
-      "message": "fix: #3572171 Persist is_syncing across container rebuilds",
-      "locDelta": 2,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 5
     }
   ],
   "commitsPerYear": [
@@ -138712,7 +138712,7 @@
     },
     {
       "year": 2026,
-      "commits": 666
+      "commits": 674
     }
   ]
 }
