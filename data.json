@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-22T00:57:18.254338",
+  "generated": "2026-04-23T01:03:30.131372",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 100,
-      "features": 9,
-      "bugs": 11,
-      "maintenance": 75,
+      "total": 109,
+      "features": 10,
+      "bugs": 12,
+      "maintenance": 82,
       "unknown": 5
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "7410b513",
+      "commit": "c21604f8",
       "production": {
-        "loc": 288789,
-        "functions": 22845,
+        "loc": 288834,
+        "functions": 22848,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133161,9 +133161,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72.5
+        "antipatterns": 72.6
       },
-      "testLoc": 453882,
+      "testLoc": 453981,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133395,11 +133395,11 @@
           "hook_field_storage_config_update_forbid",
           "hook_image_style_flush",
           "hook_block_view_alter",
+          "hook_node_grants_alter",
           "hook_node_access_records",
           "hook_node_access_records_alter",
           "hook_config_translation_info_alter",
           "hook_views_analyze",
-          "hook_node_grants_alter",
           "hook_media_source_info_alter",
           "hook_views_post_render",
           "hook_image_style_access",
@@ -137196,8 +137196,8 @@
       },
       "antipatterns": {
         "magicKeys": 10618,
-        "deepArrays": 7967,
-        "serviceLocators": 2463
+        "deepArrays": 7971,
+        "serviceLocators": 2464
       },
       "hotspots": [
         {
@@ -137604,6 +137604,66 @@
     }
   ],
   "commits": [
+    {
+      "hash": "c21604f8220",
+      "date": "Apr 22, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #2473041 Restructure node access grant behavior into the node access h",
+      "locDelta": 31,
+      "ccnDelta": 4,
+      "miDelta": 0,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "24fb26f2630",
+      "date": "Apr 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3453216 Clean up outdated mentions of prepareLegacyRequest",
+      "locDelta": 6,
+      "ccnDelta": 3,
+      "miDelta": -2,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "7a031e39a6c",
+      "date": "Apr 22, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #2538970 Improve the speed of \\Drupal\\Core\\Theme\\ThemeAccessCheck",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "317a6474a40",
+      "date": "Apr 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3581109 Move HelpSearch to Search sub-module",
+      "locDelta": 4,
+      "ccnDelta": -2,
+      "miDelta": 0,
+      "antipatternsDelta": -3
+    },
+    {
+      "hash": "502de2e8d2e",
+      "date": "Apr 22, 2026",
+      "type": "Bug",
+      "message": "fix: #3045509 EntityFieldManager key/value field map gets out of sync, doesn't r",
+      "locDelta": -4,
+      "ccnDelta": -1,
+      "miDelta": 3,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "671d81e9747",
+      "date": "Apr 22, 2026",
+      "type": "Feature",
+      "message": "feat: #3508641 Define form elements from SDC",
+      "locDelta": 8,
+      "ccnDelta": 3,
+      "miDelta": -3,
+      "antipatternsDelta": 2
+    },
     {
       "hash": "7410b513d52",
       "date": "Apr 21, 2026",
@@ -138543,66 +138603,6 @@
       "ccnDelta": 2,
       "miDelta": 1,
       "antipatternsDelta": 3
-    },
-    {
-      "hash": "410370cb86f",
-      "date": "Mar 12, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3574230 Use a weak reference for EntityBase::typedData                   ",
-      "locDelta": 5,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "c84deaef44f",
-      "date": "Mar 11, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3571994 Reduce container rebuilds in functional tests",
-      "locDelta": 13,
-      "ccnDelta": 13,
-      "miDelta": -3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "19163c55fcb",
-      "date": "Mar 10, 2026",
-      "type": "Feature",
-      "message": "feat: #3547353 Move HIDDEN, CLOSED and OPEN constants in CommentItemInterface to",
-      "locDelta": 5,
-      "ccnDelta": 1,
-      "miDelta": 2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "f5b6b5ef22e",
-      "date": "Mar 10, 2026",
-      "type": "Bug",
-      "message": "fix: #3285176 Warning message links to \"available updates\" even if user does not",
-      "locDelta": 14,
-      "ccnDelta": 5,
-      "miDelta": -7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "b36ea26601f",
-      "date": "Mar 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #3549730 Enable LongLineDeclaration",
-      "locDelta": 478,
-      "ccnDelta": 0,
-      "miDelta": -171,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "c7879e860e2",
-      "date": "Mar 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #3347842 Deprecate the trusted data concept in configuration",
-      "locDelta": 3,
-      "ccnDelta": -2,
-      "miDelta": -6,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -138712,7 +138712,7 @@
     },
     {
       "year": 2026,
-      "commits": 679
+      "commits": 688
     }
   ]
 }
