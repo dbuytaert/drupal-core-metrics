@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-24T01:01:54.180939",
+  "generated": "2026-04-25T01:00:15.605497",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 115,
-      "features": 11,
-      "bugs": 14,
-      "maintenance": 83,
+      "total": 127,
+      "features": 12,
+      "bugs": 16,
+      "maintenance": 92,
       "unknown": 7
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "bc0673ec",
+      "commit": "3301cb41",
       "production": {
-        "loc": 288882,
-        "functions": 22851,
+        "loc": 289016,
+        "functions": 22865,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133163,7 +133163,7 @@
         },
         "antipatterns": 72.5
       },
-      "testLoc": 454022,
+      "testLoc": 454089,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137197,8 +137197,8 @@
       },
       "antipatterns": {
         "magicKeys": 10617,
-        "deepArrays": 7965,
-        "serviceLocators": 2466
+        "deepArrays": 7978,
+        "serviceLocators": 2463
       },
       "hotspots": [
         {
@@ -137605,6 +137605,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "a2bcba1d161",
+      "date": "Apr 24, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3035340 Deprecate core/modules/views_ui/admin.inc",
+      "locDelta": 102,
+      "ccnDelta": 14,
+      "miDelta": -4,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "90bc21126a8",
+      "date": "Apr 24, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3550054 Move FORM_SEPARATE_PAGE and FORM_BELOW constants in CommentIt",
+      "locDelta": 7,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "3ae3915e6fa",
+      "date": "Apr 24, 2026",
+      "type": "Feature",
+      "message": "feat: #2547493 Add support for unique / primary key constraints composed of mult",
+      "locDelta": 16,
+      "ccnDelta": 3,
+      "miDelta": -15,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "bc0673ecec6",
       "date": "Apr 23, 2026",
@@ -138574,36 +138604,6 @@
       "ccnDelta": 0,
       "miDelta": -53,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "56c6081d5dc",
-      "date": "Mar 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3575583 Convert Olivero to OOP",
-      "locDelta": 438,
-      "ccnDelta": 130,
-      "miDelta": -84,
-      "antipatternsDelta": 116
-    },
-    {
-      "hash": "a1065ab75fa",
-      "date": "Mar 16, 2026",
-      "type": "Feature",
-      "message": "feat: #3532950 Support importing default content in JSON format",
-      "locDelta": 7,
-      "ccnDelta": 0,
-      "miDelta": -3,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "d1911787d5b",
-      "date": "Mar 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3577113 Setting properties in FileUploadHandler constructor is unnecessar",
-      "locDelta": -10,
-      "ccnDelta": 0,
-      "miDelta": 5,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138713,7 +138713,7 @@
     },
     {
       "year": 2026,
-      "commits": 694
+      "commits": 706
     }
   ]
 }
