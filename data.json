@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-29T01:07:38.832917",
+  "generated": "2026-04-30T01:07:45.592077",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,10 +2483,10 @@
     },
     {
       "date": "2026-04",
-      "total": 153,
+      "total": 164,
       "features": 15,
-      "bugs": 24,
-      "maintenance": 107,
+      "bugs": 28,
+      "maintenance": 114,
       "unknown": 7
     }
   ],
@@ -133149,10 +133149,10 @@
     },
     {
       "date": "2026-04",
-      "commit": "1f556401",
+      "commit": "e6c69fa8",
       "production": {
-        "loc": 290092,
-        "functions": 22903,
+        "loc": 290365,
+        "functions": 22908,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133163,7 +133163,7 @@
         },
         "antipatterns": 72.5
       },
-      "testLoc": 455276,
+      "testLoc": 455381,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133308,6 +133308,8 @@
           "hook_field_widget_complete_form_alter",
           "hook_field_widget_single_element_form_alter",
           "hook_options_list_alter",
+          "hook_field_purge_field",
+          "hook_field_purge_field_storage",
           "hook_field_info_entity_type_ui_definitions_alter",
           "hook_field_ui_preconfigured_options_alter",
           "hook_mail",
@@ -133356,8 +133358,6 @@
           "hook_action_info_alter",
           "hook_views_post_execute",
           "hook_field_storage_config_update_forbid",
-          "hook_field_purge_field",
-          "hook_field_purge_field_storage",
           "hook_field_formatter_third_party_settings_form",
           "hook_field_formatter_settings_summary_alter",
           "hook_field_widget_third_party_settings_form",
@@ -133450,8 +133450,8 @@
           "#context",
           "#theme",
           "#message_list",
-          "#content",
-          "#url",
+          "#component",
+          "#props",
           "#accordion",
           "#group",
           "#tree",
@@ -133469,6 +133469,7 @@
           "#entity.(?<entityTypeId>.+).clone_form#",
           "#lazy_builder",
           "#create_placeholder",
+          "#url",
           "#tag",
           "#noscript",
           "#summary_attributes",
@@ -133519,9 +133520,7 @@
           "#field_prefix",
           "#field_suffix",
           "#plain_text",
-          "#component",
           "#variant",
-          "#props",
           "#slots",
           "#propsAlter",
           "#slotsAlter",
@@ -133624,6 +133623,7 @@
           "#key_column",
           "#data",
           "#group_display",
+          "#content",
           "#fields",
           "#extra",
           "#regions",
@@ -137201,9 +137201,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10666,
-        "deepArrays": 8006,
-        "serviceLocators": 2470
+        "magicKeys": 10664,
+        "deepArrays": 8005,
+        "serviceLocators": 2481
       },
       "hotspots": [
         {
@@ -137370,7 +137370,7 @@
           "name": "SystemController::themesPage",
           "file": "modules/system/src/Controller/SystemController.php",
           "ccn": 44,
-          "loc": 176,
+          "loc": 181,
           "mi": 41,
           "antipatterns": 10
         },
@@ -137610,6 +137610,66 @@
     }
   ],
   "commits": [
+    {
+      "hash": "dfa88487b11",
+      "date": "Apr 29, 2026",
+      "type": "Bug",
+      "message": "fix: #3581109 Move HelpSearch to Search sub-module",
+      "locDelta": 23,
+      "ccnDelta": 9,
+      "miDelta": 0,
+      "antipatternsDelta": 7
+    },
+    {
+      "hash": "ec09b79130e",
+      "date": "Apr 29, 2026",
+      "type": "Bug",
+      "message": "fix: #3578444 Date filter doesn't apply default offset values",
+      "locDelta": 11,
+      "ccnDelta": 5,
+      "miDelta": -7,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "3b4e8c1c66c",
+      "date": "Apr 29, 2026",
+      "type": "Maintenance",
+      "message": "task: #3502993 Convert Navigation messages component to SDC",
+      "locDelta": -7,
+      "ccnDelta": 0,
+      "miDelta": 5,
+      "antipatternsDelta": -3
+    },
+    {
+      "hash": "57d2fe40642",
+      "date": "Apr 29, 2026",
+      "type": "Bug",
+      "message": "fix: #3567230 Only overwrite mapped field values on media items when source fiel",
+      "locDelta": 17,
+      "ccnDelta": 4,
+      "miDelta": -12,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "867318c3996",
+      "date": "Apr 29, 2026",
+      "type": "Maintenance",
+      "message": "task: #2907780 Add a field purger service",
+      "locDelta": 78,
+      "ccnDelta": 11,
+      "miDelta": -17,
+      "antipatternsDelta": 4
+    },
+    {
+      "hash": "548722a899b",
+      "date": "Apr 29, 2026",
+      "type": "Maintenance",
+      "message": "task: #3584823 Convert system module routes to use attributes",
+      "locDelta": 145,
+      "ccnDelta": 0,
+      "miDelta": -47,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "d8fb0e0929c",
       "date": "Apr 28, 2026",
@@ -138549,66 +138609,6 @@
       "ccnDelta": 0,
       "miDelta": 5,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "ba4dc7c4d18",
-      "date": "Mar 25, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3580109 Optimise CacheTagsCheckSumTrait::calculateChecksum()",
-      "locDelta": 5,
-      "ccnDelta": 2,
-      "miDelta": -5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "f1274ed02eb",
-      "date": "Mar 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3278309 Remove dead code in DefaultLanguageItem::applyDefaultValue()",
-      "locDelta": -4,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "53fc60861a0",
-      "date": "Mar 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3550268 Remove deprecated paths from the testing framework",
-      "locDelta": -171,
-      "ccnDelta": -41,
-      "miDelta": 57,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "9a9ada0574a",
-      "date": "Mar 24, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3555670 Deprecate user_load_by_mail & user_load_by_name",
-      "locDelta": 4,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "188f4662749",
-      "date": "Mar 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3572243 Deprecate several views functions",
-      "locDelta": 51,
-      "ccnDelta": 16,
-      "miDelta": -12,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "6e2b2070ef6",
-      "date": "Mar 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3579673 Remove lazy declaration and proxy class for MIME type guessers",
-      "locDelta": -86,
-      "ccnDelta": -16,
-      "miDelta": 1,
-      "antipatternsDelta": -2
     }
   ],
   "commitsPerYear": [
@@ -138718,7 +138718,7 @@
     },
     {
       "year": 2026,
-      "commits": 732
+      "commits": 743
     }
   ]
 }
