@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-30T01:07:45.592077",
+  "generated": "2026-05-01T01:08:38.999545",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2483,11 +2483,19 @@
     },
     {
       "date": "2026-04",
-      "total": 164,
+      "total": 171,
       "features": 15,
       "bugs": 28,
-      "maintenance": 114,
-      "unknown": 7
+      "maintenance": 120,
+      "unknown": 8
+    },
+    {
+      "date": "2026-05",
+      "total": 2,
+      "features": 0,
+      "bugs": 0,
+      "maintenance": 2,
+      "unknown": 0
     }
   ],
   "snapshots": [
@@ -133148,11 +133156,11 @@
       ]
     },
     {
-      "date": "2026-04",
-      "commit": "e6c69fa8",
+      "date": "2026-05",
+      "commit": "255ff3ed",
       "production": {
-        "loc": 290365,
-        "functions": 22908,
+        "loc": 290397,
+        "functions": 22913,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133161,9 +133169,9 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 72.5
+        "antipatterns": 72.4
       },
-      "testLoc": 455381,
+      "testLoc": 455442,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137203,7 +137211,7 @@
       "antipatterns": {
         "magicKeys": 10664,
         "deepArrays": 8005,
-        "serviceLocators": 2481
+        "serviceLocators": 2467
       },
       "hotspots": [
         {
@@ -137610,6 +137618,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "3a0d690df6f",
+      "date": "Apr 30, 2026",
+      "type": "Maintenance",
+      "message": "task: #3533299 Deprecate node access rebuild functions",
+      "locDelta": 44,
+      "ccnDelta": 6,
+      "miDelta": -2,
+      "antipatternsDelta": -14
+    },
+    {
+      "hash": "b5d0936a90c",
+      "date": "Apr 30, 2026",
+      "type": "Unknown",
+      "message": "Revert \"task: #3533299 Deprecate node access rebuild functions\"",
+      "locDelta": -44,
+      "ccnDelta": -6,
+      "miDelta": 2,
+      "antipatternsDelta": 14
+    },
+    {
+      "hash": "31e1980b7ac",
+      "date": "Apr 30, 2026",
+      "type": "Maintenance",
+      "message": "task: #3533299 Deprecate node access rebuild functions",
+      "locDelta": 44,
+      "ccnDelta": 6,
+      "miDelta": -2,
+      "antipatternsDelta": -14
+    },
+    {
+      "hash": "3e7ef0a111b",
+      "date": "Apr 30, 2026",
+      "type": "Maintenance",
+      "message": "task: #3587725 Use ConfigImporterFactory in RecipeCommand",
+      "locDelta": -13,
+      "ccnDelta": 0,
+      "miDelta": 3,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "dfa88487b11",
       "date": "Apr 29, 2026",
@@ -138569,46 +138617,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "65bd47cd354",
-      "date": "Mar 26, 2026",
-      "type": "Bug",
-      "message": "fix: #3578193 CommentTokensHooks passes NULL to UrlHelper::stripDangerousProtoco",
-      "locDelta": 1,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "37a345a2c48",
-      "date": "Mar 26, 2026",
-      "type": "Feature",
-      "message": "feat: #3574012 Add a getFieldValue() method to bypass typed data overhead for sp",
-      "locDelta": 29,
-      "ccnDelta": 5,
-      "miDelta": -5,
-      "antipatternsDelta": 6
-    },
-    {
-      "hash": "fd74ffe5dd8",
-      "date": "Mar 26, 2026",
-      "type": "Bug",
-      "message": "fix: #3569172 Weird language negotiation behavior inside getLanguageSwitchLinks ",
-      "locDelta": 17,
-      "ccnDelta": 5,
-      "miDelta": -10,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "1af5bc1f931",
-      "date": "Mar 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3578196 Remove media and user links from the Content menu",
-      "locDelta": -7,
-      "ccnDelta": 0,
-      "miDelta": 5,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138718,7 +138726,7 @@
     },
     {
       "year": 2026,
-      "commits": 743
+      "commits": 752
     }
   ]
 }
