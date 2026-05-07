@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-06T01:04:22.902594",
+  "generated": "2026-05-07T01:07:10.508823",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 16,
+      "total": 21,
       "features": 0,
-      "bugs": 1,
-      "maintenance": 14,
+      "bugs": 3,
+      "maintenance": 17,
       "unknown": 1
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "f93aafb4",
+      "commit": "c6836648",
       "production": {
-        "loc": 290273,
-        "functions": 22890,
+        "loc": 290257,
+        "functions": 22888,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.4
       },
-      "testLoc": 455551,
+      "testLoc": 455603,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133179,7 +133179,7 @@
         "events": 42,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2901,
+        "interfaceMethods": 2902,
         "globalFunctions": 263
       },
       "surfaceAreaLists": {
@@ -135182,6 +135182,7 @@
           "ParamConverterManagerInterface::convert",
           "ParamConverterInterface::convert",
           "ParamConverterInterface::applies",
+          "ParamConverterRouteRequirementInterface::getRouteRequirement",
           "SupportsTemporaryTablesInterface::queryTemporary",
           "TransactionManagerInterface::inTransaction",
           "TransactionManagerInterface::has",
@@ -137618,6 +137619,36 @@
   ],
   "commits": [
     {
+      "hash": "c6836648996",
+      "date": "May 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3579661 Call to a member function getPath() on null in EntityRouteHelper->",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "69709341ca6",
+      "date": "May 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3475540 Use a route requirement to prevent non-ASCII characters causing an",
+      "locDelta": 36,
+      "ccnDelta": 12,
+      "miDelta": -15,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "15d01177ac6",
+      "date": "May 06, 2026",
+      "type": "Maintenance",
+      "message": "task: #3570634 Remove fallback classloader and related code in AttributeClassDis",
+      "locDelta": -56,
+      "ccnDelta": -12,
+      "miDelta": 10,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "f93aafb4712",
       "date": "May 05, 2026",
       "type": "Maintenance",
@@ -138586,36 +138617,6 @@
       "ccnDelta": 13,
       "miDelta": -6,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "4ee8755bf57",
-      "date": "Apr 02, 2026",
-      "type": "Maintenance",
-      "message": "chore: #3576880 Cleanup deprecations from test folder classes",
-      "locDelta": -6,
-      "ccnDelta": -1,
-      "miDelta": 3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "5f59e9f2716",
-      "date": "Apr 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3578084 Add return types to Twig implementations",
-      "locDelta": -4,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "d09bf682dc3",
-      "date": "Apr 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3582178 Remove dead code in Admin",
-      "locDelta": -31,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138725,7 +138726,7 @@
     },
     {
       "year": 2026,
-      "commits": 766
+      "commits": 771
     }
   ]
 }
