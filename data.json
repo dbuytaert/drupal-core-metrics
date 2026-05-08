@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-07T01:07:10.508823",
+  "generated": "2026-05-08T01:07:52.771732",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 21,
-      "features": 0,
-      "bugs": 3,
-      "maintenance": 17,
+      "total": 29,
+      "features": 1,
+      "bugs": 6,
+      "maintenance": 21,
       "unknown": 1
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "c6836648",
+      "commit": "866f2d6c",
       "production": {
-        "loc": 290257,
-        "functions": 22888,
+        "loc": 290351,
+        "functions": 22895,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.4
       },
-      "testLoc": 455603,
+      "testLoc": 455661,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137619,6 +137619,46 @@
   ],
   "commits": [
     {
+      "hash": "d2f42dadfe7",
+      "date": "May 08, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3588385 Add a transaction around the database key value store setMultiple",
+      "locDelta": 10,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "fc5ba393b05",
+      "date": "May 07, 2026",
+      "type": "Bug",
+      "message": "fix: #3587298 RouteProcessorCsrf::processOutbound() should bubble 'session' cach",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "fe682bee7a2",
+      "date": "May 07, 2026",
+      "type": "Maintenance",
+      "message": "test: #3573954 Move common code across Drupal base test suite classes to DrupalT",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "ff86b9f9aeb",
+      "date": "May 07, 2026",
+      "type": "Feature",
+      "message": "feat: #3066751 Add resolvable_uri property to LinkItem for APIs",
+      "locDelta": 82,
+      "ccnDelta": 19,
+      "miDelta": -4,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "c6836648996",
       "date": "May 06, 2026",
       "type": "Bug",
@@ -138577,46 +138617,6 @@
       "ccnDelta": 2,
       "miDelta": -1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "5ccc0bf6d97",
-      "date": "Apr 03, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3582533 Move Settings Tray block metadata to Settings Tray module",
-      "locDelta": -4,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "5a0a3bb5e07",
-      "date": "Apr 03, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3571046 Use tagged iterators in PathProcessorManager and RouteProcess",
-      "locDelta": -38,
-      "ccnDelta": -9,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "7d3d3ba2db8",
-      "date": "Apr 03, 2026",
-      "type": "Maintenance",
-      "message": "chore: #3533078 Enforce  parameter in EntityListBuilderInterface::getOperations ",
-      "locDelta": -44,
-      "ccnDelta": -23,
-      "miDelta": 15,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "fcb3dff594b",
-      "date": "Apr 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3572173 Deprecate field.module remaining functions",
-      "locDelta": 54,
-      "ccnDelta": 13,
-      "miDelta": -6,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138726,7 +138726,7 @@
     },
     {
       "year": 2026,
-      "commits": 771
+      "commits": 779
     }
   ]
 }
