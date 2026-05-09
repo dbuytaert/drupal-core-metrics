@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-08T01:07:52.771732",
+  "generated": "2026-05-09T01:06:36.573384",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 29,
+      "total": 33,
       "features": 1,
       "bugs": 6,
-      "maintenance": 21,
+      "maintenance": 25,
       "unknown": 1
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "866f2d6c",
+      "commit": "65586432",
       "production": {
-        "loc": 290351,
-        "functions": 22895,
+        "loc": 290363,
+        "functions": 22900,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.4
       },
-      "testLoc": 455661,
+      "testLoc": 455678,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133179,7 +133179,7 @@
         "events": 42,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2902,
+        "interfaceMethods": 2903,
         "globalFunctions": 263
       },
       "surfaceAreaLists": {
@@ -135708,6 +135708,7 @@
           "KeyValueStoreInterface::get",
           "KeyValueStoreInterface::getMultiple",
           "KeyValueStoreInterface::getAll",
+          "KeyValueStoreInterface::getAllKeys",
           "KeyValueStoreInterface::set",
           "KeyValueStoreInterface::setIfNotExists",
           "KeyValueStoreInterface::setMultiple",
@@ -137211,7 +137212,7 @@
       "antipatterns": {
         "magicKeys": 10667,
         "deepArrays": 8005,
-        "serviceLocators": 2455
+        "serviceLocators": 2456
       },
       "hotspots": [
         {
@@ -137618,6 +137619,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "9fc95e06f27",
+      "date": "May 08, 2026",
+      "type": "Maintenance",
+      "message": "task: #3573879 Mark layout_builder_expose_all_field_blocks obsolete, uninstall i",
+      "locDelta": -24,
+      "ccnDelta": -4,
+      "miDelta": 4,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "3971cf1881b",
+      "date": "May 08, 2026",
+      "type": "Maintenance",
+      "message": "task: #3563639 Add getAllKeys() method to KeyValueStoreInterface",
+      "locDelta": 36,
+      "ccnDelta": 7,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "d2f42dadfe7",
       "date": "May 08, 2026",
@@ -138597,26 +138618,6 @@
       "ccnDelta": 17,
       "miDelta": 10,
       "antipatternsDelta": 4
-    },
-    {
-      "hash": "1ab3da43b7b",
-      "date": "Apr 03, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3582386 remove absolute from HelpTwigExtension links",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d867a4ad4c2",
-      "date": "Apr 03, 2026",
-      "type": "Maintenance",
-      "message": "chore: #3567589 Exempt 'system.modules_uninstall' route in UpdateHooks::pageTop(",
-      "locDelta": 2,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138726,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 779
+      "commits": 783
     }
   ]
 }
