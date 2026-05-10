@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-09T01:06:36.573384",
+  "generated": "2026-05-10T01:08:22.148802",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 33,
+      "total": 39,
       "features": 1,
-      "bugs": 6,
-      "maintenance": 25,
+      "bugs": 9,
+      "maintenance": 28,
       "unknown": 1
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "65586432",
+      "commit": "701ea27c",
       "production": {
-        "loc": 290363,
-        "functions": 22900,
+        "loc": 290392,
+        "functions": 22901,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.4
       },
-      "testLoc": 455678,
+      "testLoc": 455756,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137620,6 +137620,36 @@
   ],
   "commits": [
     {
+      "hash": "701ea27c223",
+      "date": "May 09, 2026",
+      "type": "Bug",
+      "message": "fix: #2486267 Attributes of a block content are applied to block itself",
+      "locDelta": 14,
+      "ccnDelta": 3,
+      "miDelta": -2,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "55e61b4ace8",
+      "date": "May 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3463868 Two #config_targets error when used on a text_format form element",
+      "locDelta": 15,
+      "ccnDelta": 3,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "bf07099563d",
+      "date": "May 09, 2026",
+      "type": "Maintenance",
+      "message": "task: #3585555 Bump PHPStan & friends to latest release",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "9fc95e06f27",
       "date": "May 08, 2026",
       "type": "Maintenance",
@@ -138588,36 +138618,6 @@
       "ccnDelta": 2,
       "miDelta": 4,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "39f4d1408d1",
-      "date": "Apr 05, 2026",
-      "type": "Maintenance",
-      "message": "task: #3575858 Make updating services after container rebuild smarter in ConfigI",
-      "locDelta": 9,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "0923b693f15",
-      "date": "Apr 05, 2026",
-      "type": "Maintenance",
-      "message": "task: #3582106 Move user_form_process_password_confirm into UserThemeHooks",
-      "locDelta": 7,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d65f0172ec6",
-      "date": "Apr 03, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #2536594 Add a FilterFormatRepository providing methods to load filter",
-      "locDelta": 100,
-      "ccnDelta": 17,
-      "miDelta": 10,
-      "antipatternsDelta": 4
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 783
+      "commits": 789
     }
   ]
 }
