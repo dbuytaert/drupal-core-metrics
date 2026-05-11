@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-10T01:08:22.148802",
+  "generated": "2026-05-11T01:08:33.204452",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 39,
+      "total": 40,
       "features": 1,
       "bugs": 9,
-      "maintenance": 28,
+      "maintenance": 29,
       "unknown": 1
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "701ea27c",
+      "commit": "8f361502",
       "production": {
-        "loc": 290392,
-        "functions": 22901,
+        "loc": 290358,
+        "functions": 22896,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.4
       },
-      "testLoc": 455756,
+      "testLoc": 455721,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137212,7 +137212,7 @@
       "antipatterns": {
         "magicKeys": 10667,
         "deepArrays": 8005,
-        "serviceLocators": 2456
+        "serviceLocators": 2455
       },
       "hotspots": [
         {
@@ -137619,6 +137619,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "8f361502ecf",
+      "date": "May 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #2877924 Remove ContentPreprocess and associated code",
+      "locDelta": -34,
+      "ccnDelta": -8,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "701ea27c223",
       "date": "May 09, 2026",
@@ -138608,16 +138618,6 @@
       "ccnDelta": 3,
       "miDelta": 0,
       "antipatternsDelta": 6
-    },
-    {
-      "hash": "6429cd321f4",
-      "date": "Apr 07, 2026",
-      "type": "Maintenance",
-      "message": "task: #2571679 Replace views_add_contextual_links() in views.module with service",
-      "locDelta": 27,
-      "ccnDelta": 2,
-      "miDelta": 4,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 789
+      "commits": 790
     }
   ]
 }
