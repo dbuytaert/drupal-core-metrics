@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-11T01:08:33.204452",
+  "generated": "2026-05-12T01:04:18.836825",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 40,
-      "features": 1,
-      "bugs": 9,
-      "maintenance": 29,
+      "total": 48,
+      "features": 3,
+      "bugs": 11,
+      "maintenance": 33,
       "unknown": 1
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "8f361502",
+      "commit": "24d12af3",
       "production": {
-        "loc": 290358,
-        "functions": 22896,
+        "loc": 290806,
+        "functions": 22944,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133169,9 +133169,9 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 72.4
+        "antipatterns": 72.3
       },
-      "testLoc": 455721,
+      "testLoc": 456025,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137212,7 +137212,7 @@
       "antipatterns": {
         "magicKeys": 10667,
         "deepArrays": 8005,
-        "serviceLocators": 2455
+        "serviceLocators": 2461
       },
       "hotspots": [
         {
@@ -137619,6 +137619,66 @@
     }
   ],
   "commits": [
+    {
+      "hash": "24d12af3c73",
+      "date": "May 11, 2026",
+      "type": "Bug",
+      "message": "fix: #3559132 FileSystem::deleteRecursive() leaves files/directories when realpa",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "e69457653ca",
+      "date": "May 11, 2026",
+      "type": "Maintenance",
+      "message": "task: #3588024 PHP 8.6 - Functions mb_regex_encoding() and mb_ereg() are depreca",
+      "locDelta": -7,
+      "ccnDelta": -1,
+      "miDelta": 8,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "a85f1db8b88",
+      "date": "May 11, 2026",
+      "type": "Bug",
+      "message": "fix: #3064751 Responsive image formatter does not support URL/Link options",
+      "locDelta": 13,
+      "ccnDelta": 1,
+      "miDelta": -3,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "20ac0fa9f28",
+      "date": "May 11, 2026",
+      "type": "Feature",
+      "message": "feat: #3513035 Add constraint to check that the max delta for a field item list ",
+      "locDelta": 81,
+      "ccnDelta": 11,
+      "miDelta": -18,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "2cc488347a8",
+      "date": "May 11, 2026",
+      "type": "Maintenance",
+      "message": "task: #3037031 Convert locale.compare.inc to a service",
+      "locDelta": 225,
+      "ccnDelta": 41,
+      "miDelta": -18,
+      "antipatternsDelta": 6
+    },
+    {
+      "hash": "57bf3237b20",
+      "date": "May 11, 2026",
+      "type": "Feature",
+      "message": "feat: #3313404 Use symfony/runtime for less bespoke bootstrap/compatibility with",
+      "locDelta": 174,
+      "ccnDelta": 37,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "8f361502ecf",
       "date": "May 10, 2026",
@@ -138558,66 +138618,6 @@
       "ccnDelta": -1,
       "miDelta": 0,
       "antipatternsDelta": -2
-    },
-    {
-      "hash": "cb4a8105732",
-      "date": "Apr 09, 2026",
-      "type": "Maintenance",
-      "message": "task: #3583647 ModuleInstaller::install() has needless check for  being empty",
-      "locDelta": 0,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "8bf67fbd480",
-      "date": "Apr 09, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3457818 Optimize CacheContextsManager:::convertTokensToKeys()/optimizeTok",
-      "locDelta": 11,
-      "ccnDelta": 1,
-      "miDelta": -7,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "ab676ddab98",
-      "date": "Apr 08, 2026",
-      "type": "Bug",
-      "message": "fix: #3526541 Cannot set default values on multi-valued formatted Text fields",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "607b8329f68",
-      "date": "Apr 08, 2026",
-      "type": "Bug",
-      "message": "fix: #3582229 Package Manager blows up when it encounters already-unpacked recip",
-      "locDelta": 7,
-      "ccnDelta": 2,
-      "miDelta": -5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "392da0f591f",
-      "date": "Apr 08, 2026",
-      "type": "Feature",
-      "message": "feat: #3096170 Add Confirmation Page for theme uninstall",
-      "locDelta": 78,
-      "ccnDelta": 13,
-      "miDelta": -20,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "54c6c2e50c1",
-      "date": "Apr 08, 2026",
-      "type": "Maintenance",
-      "message": "task: #3567618 Create service for image_path_flush, image_style_options and cons",
-      "locDelta": 58,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": 6
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 790
+      "commits": 798
     }
   ]
 }
