@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-13T01:07:38.145929",
+  "generated": "2026-05-14T01:09:29.038203",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 55,
+      "total": 60,
       "features": 3,
-      "bugs": 14,
-      "maintenance": 37,
+      "bugs": 17,
+      "maintenance": 39,
       "unknown": 1
     }
   ],
@@ -133157,9 +133157,9 @@
     },
     {
       "date": "2026-05",
-      "commit": "79cbaf53",
+      "commit": "94f3e8f1",
       "production": {
-        "loc": 290822,
+        "loc": 290839,
         "functions": 22944,
         "ccn": {
           "avg": 2.5,
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.3
       },
-      "testLoc": 456160,
+      "testLoc": 456256,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137210,9 +137210,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10667,
+        "magicKeys": 10671,
         "deepArrays": 8005,
-        "serviceLocators": 2461
+        "serviceLocators": 2462
       },
       "hotspots": [
         {
@@ -137619,6 +137619,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "a69f1e953a8",
+      "date": "May 13, 2026",
+      "type": "Bug",
+      "message": "fix: #455724 Deprecate check_markup()",
+      "locDelta": 5,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 4
+    },
+    {
+      "hash": "c0f1c27c3f8",
+      "date": "May 13, 2026",
+      "type": "Maintenance",
+      "message": "task: #3586470 Support preloading of fonts declared from components",
+      "locDelta": 11,
+      "ccnDelta": 3,
+      "miDelta": -7,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "79cbaf53646",
       "date": "May 12, 2026",
@@ -138598,26 +138618,6 @@
       "ccnDelta": 8,
       "miDelta": -23,
       "antipatternsDelta": 4
-    },
-    {
-      "hash": "44856397aaa",
-      "date": "Apr 10, 2026",
-      "type": "Bug",
-      "message": "fix: #3577671 Modernize locale file handling",
-      "locDelta": 98,
-      "ccnDelta": 14,
-      "miDelta": 4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "1083a8bdb69",
-      "date": "Apr 10, 2026",
-      "type": "Feature",
-      "message": "feat: #3301682 Define bundle classes via attributes",
-      "locDelta": 80,
-      "ccnDelta": 13,
-      "miDelta": -34,
-      "antipatternsDelta": 3
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 805
+      "commits": 810
     }
   ]
 }
