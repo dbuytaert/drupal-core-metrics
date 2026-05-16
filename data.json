@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-15T01:06:25.661048",
+  "generated": "2026-05-16T01:05:48.260585",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 64,
+      "total": 68,
       "features": 3,
       "bugs": 18,
-      "maintenance": 42,
+      "maintenance": 46,
       "unknown": 1
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "cf604c3a",
+      "commit": "a1b8f1ae",
       "production": {
-        "loc": 290837,
-        "functions": 22944,
+        "loc": 291016,
+        "functions": 22964,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133169,9 +133169,9 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 72.3
+        "antipatterns": 72.2
       },
-      "testLoc": 456351,
+      "testLoc": 456388,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137212,7 +137212,7 @@
       "antipatterns": {
         "magicKeys": 10671,
         "deepArrays": 8005,
-        "serviceLocators": 2462
+        "serviceLocators": 2432
       },
       "hotspots": [
         {
@@ -137619,6 +137619,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "a1b8f1aed85",
+      "date": "May 15, 2026",
+      "type": "Maintenance",
+      "message": "task: #3507711 Move the code that hides the toolbar when navigation is enabled t",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "c2bcef504f7",
+      "date": "May 15, 2026",
+      "type": "Maintenance",
+      "message": "task: #3516173 Block status code visibility condition should use a status code c",
+      "locDelta": 20,
+      "ccnDelta": 4,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "0977dec3e22",
+      "date": "May 15, 2026",
+      "type": "Maintenance",
+      "message": "task: #3581303 Convert locale batch callbacks",
+      "locDelta": 155,
+      "ccnDelta": 26,
+      "miDelta": -3,
+      "antipatternsDelta": -29
+    },
     {
       "hash": "f9b616d5365",
       "date": "May 14, 2026",
@@ -138588,36 +138618,6 @@
       "ccnDelta": 3,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "89062b861cf",
-      "date": "Apr 12, 2026",
-      "type": "Maintenance",
-      "message": "task: #3584316 Cleanup StatementInterface/StatementBase deprecations",
-      "locDelta": -23,
-      "ccnDelta": -4,
-      "miDelta": 9,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "645ffba8cc5",
-      "date": "Apr 12, 2026",
-      "type": "Maintenance",
-      "message": "task: #3522561 Fully type StatementInterface methods' parameters",
-      "locDelta": 3,
-      "ccnDelta": -1,
-      "miDelta": -4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "5b4ad871353",
-      "date": "Apr 12, 2026",
-      "type": "Maintenance",
-      "message": "task: #3583849 Deprecate PgSql Connection::*Savepoint() methods",
-      "locDelta": 51,
-      "ccnDelta": 24,
-      "miDelta": -20,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 814
+      "commits": 818
     }
   ]
 }
