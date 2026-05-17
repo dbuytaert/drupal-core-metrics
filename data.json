@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-16T01:05:48.260585",
+  "generated": "2026-05-17T01:09:57.896644",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 68,
+      "total": 71,
       "features": 3,
-      "bugs": 18,
-      "maintenance": 46,
+      "bugs": 19,
+      "maintenance": 48,
       "unknown": 1
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "a1b8f1ae",
+      "commit": "c31dedaf",
       "production": {
-        "loc": 291016,
-        "functions": 22964,
+        "loc": 291195,
+        "functions": 22972,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133169,9 +133169,9 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 72.2
+        "antipatterns": 72.1
       },
-      "testLoc": 456388,
+      "testLoc": 456489,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137211,8 +137211,8 @@
       },
       "antipatterns": {
         "magicKeys": 10671,
-        "deepArrays": 8005,
-        "serviceLocators": 2432
+        "deepArrays": 8006,
+        "serviceLocators": 2434
       },
       "hotspots": [
         {
@@ -137619,6 +137619,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "c31dedafabd",
+      "date": "May 16, 2026",
+      "type": "Bug",
+      "message": "fix: #1452100 Private file download returns access denied, when file attached to",
+      "locDelta": 179,
+      "ccnDelta": 42,
+      "miDelta": -43,
+      "antipatternsDelta": 3
+    },
     {
       "hash": "a1b8f1aed85",
       "date": "May 15, 2026",
@@ -138608,16 +138618,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "b124145238c",
-      "date": "Apr 13, 2026",
-      "type": "Maintenance",
-      "message": "task: #2986699 Add missing getter method to retrieve range (limit/offset) from S",
-      "locDelta": 7,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 818
+      "commits": 821
     }
   ]
 }
