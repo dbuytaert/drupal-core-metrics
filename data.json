@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-23T01:07:58.900076",
+  "generated": "2026-05-24T01:05:50.309984",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 80,
+      "total": 85,
       "features": 3,
       "bugs": 19,
-      "maintenance": 56,
+      "maintenance": 61,
       "unknown": 2
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "895a4394",
+      "commit": "9fc2acb5",
       "production": {
-        "loc": 291171,
-        "functions": 22972,
+        "loc": 291288,
+        "functions": 22984,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.1
       },
-      "testLoc": 456479,
+      "testLoc": 456518,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137212,7 +137212,7 @@
       "antipatterns": {
         "magicKeys": 10671,
         "deepArrays": 8006,
-        "serviceLocators": 2434
+        "serviceLocators": 2428
       },
       "hotspots": [
         {
@@ -137619,6 +137619,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "767c715f7d2",
+      "date": "May 23, 2026",
+      "type": "Maintenance",
+      "message": "task: #3037156 Modernize locale history functions",
+      "locDelta": 117,
+      "ccnDelta": 19,
+      "miDelta": -1,
+      "antipatternsDelta": -6
+    },
     {
       "hash": "dc3c97a4d01",
       "date": "May 21, 2026",
@@ -138608,16 +138618,6 @@
       "ccnDelta": 1,
       "miDelta": -1,
       "antipatternsDelta": 2
-    },
-    {
-      "hash": "fe9b08d475e",
-      "date": "Apr 13, 2026",
-      "type": "Maintenance",
-      "message": "task: #3560075 Relocate or deprecate link_options, link_uri, timezone and user_l",
-      "locDelta": 114,
-      "ccnDelta": 22,
-      "miDelta": -14,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 830
+      "commits": 835
     }
   ]
 }
