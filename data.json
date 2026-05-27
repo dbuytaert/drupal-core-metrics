@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-26T01:09:25.357560",
+  "generated": "2026-05-27T01:10:34.712434",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 86,
+      "total": 91,
       "features": 3,
       "bugs": 19,
-      "maintenance": 62,
+      "maintenance": 67,
       "unknown": 2
     }
   ],
@@ -133157,21 +133157,21 @@
     },
     {
       "date": "2026-05",
-      "commit": "f9ba80d9",
+      "commit": "56aee63b",
       "production": {
-        "loc": 291288,
-        "functions": 22984,
+        "loc": 291353,
+        "functions": 22989,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 86.9,
+          "avg": 87,
           "p5": 84
         },
         "antipatterns": 72.1
       },
-      "testLoc": 456518,
+      "testLoc": 456562,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133285,6 +133285,11 @@
           "hook_modules_installed",
           "hook_themes_installed",
           "hook_themes_uninstalled",
+          "hook_node_search_ranking",
+          "hook_entity_view_display_alter",
+          "hook_views_data_alter",
+          "hook_node_update_index",
+          "hook_node_search_result",
           "hook_config_translation_info",
           "hook_entity_operation",
           "hook_config_schema_info_alter",
@@ -133296,7 +133301,6 @@
           "hook_language_types_info_alter",
           "hook_entity_bundle_info_alter",
           "hook_field_info_alter",
-          "hook_views_data_alter",
           "hook_menu_links_discovered_alter",
           "hook_language_fallback_candidates_entity_view_alter",
           "hook_entity_extra_field_info",
@@ -133335,10 +133339,7 @@
           "hook_node_links_alter",
           "hook_field_info_entity_type_ui_definitions_alter",
           "hook_entity_storage_load",
-          "hook_node_update_index",
-          "hook_node_search_result",
           "hook_user_cancel",
-          "hook_node_search_ranking",
           "hook_node_grants",
           "hook_file_download",
           "hook_field_views_data",
@@ -133362,7 +133363,6 @@
           "hook_entity_preload",
           "hook_entity_translation_insert",
           "hook_entity_query_tag__latest_translated_affected_revision_alter",
-          "hook_entity_view_display_alter",
           "hook_config_translation_info_alter",
           "hook_node_grants_alter",
           "hook_node_access_records",
@@ -133540,6 +133540,7 @@
           "#view",
           "#row",
           "#field_prefix",
+          "#account",
           "#allowed_tags",
           "#status_headings",
           "#count",
@@ -133547,7 +133548,6 @@
           "#allow_focus",
           "#allowed_formats",
           "#height",
-          "#account",
           "#resource",
           "#media",
           "#placeholder_token",
@@ -137211,8 +137211,8 @@
       },
       "antipatterns": {
         "magicKeys": 10671,
-        "deepArrays": 8006,
-        "serviceLocators": 2428
+        "deepArrays": 8007,
+        "serviceLocators": 2431
       },
       "hotspots": [
         {
@@ -137619,6 +137619,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "a1a05d186fa",
+      "date": "May 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3587564 Move search functionality from node to Search module",
+      "locDelta": 65,
+      "ccnDelta": 3,
+      "miDelta": -27,
+      "antipatternsDelta": 3
+    },
     {
       "hash": "767c715f7d2",
       "date": "May 23, 2026",
@@ -138608,16 +138618,6 @@
       "ccnDelta": 8,
       "miDelta": -1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "527ecd06d5e",
-      "date": "Apr 13, 2026",
-      "type": "Maintenance",
-      "message": "task: #3584098 Early return in NodeAccessGrantsCacheContext when there are no gr",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 2
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 836
+      "commits": 841
     }
   ]
 }
