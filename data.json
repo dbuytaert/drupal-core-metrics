@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-28T01:06:44.878316",
+  "generated": "2026-05-29T01:15:29.375302",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 94,
+      "total": 97,
       "features": 3,
-      "bugs": 20,
-      "maintenance": 68,
+      "bugs": 21,
+      "maintenance": 70,
       "unknown": 3
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "68cf8d51",
+      "commit": "12da330a",
       "production": {
-        "loc": 291135,
-        "functions": 22976,
+        "loc": 291095,
+        "functions": 22971,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133169,9 +133169,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72.1
+        "antipatterns": 72.2
       },
-      "testLoc": 456182,
+      "testLoc": 456089,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137212,7 +137212,7 @@
       "antipatterns": {
         "magicKeys": 10671,
         "deepArrays": 8007,
-        "serviceLocators": 2431
+        "serviceLocators": 2432
       },
       "hotspots": [
         {
@@ -137408,20 +137408,20 @@
           "antipatterns": 0
         },
         {
+          "name": "UrlGenerator::generateFromRoute",
+          "file": "lib/Drupal/Core/Routing/UrlGenerator.php",
+          "ccn": 40,
+          "loc": 98,
+          "mi": 55,
+          "antipatterns": 0
+        },
+        {
           "name": "AccountForm::form",
           "file": "modules/user/src/AccountForm.php",
           "ccn": 39,
           "loc": 179,
           "mi": 42,
           "antipatterns": 84
-        },
-        {
-          "name": "UrlGenerator::generateFromRoute",
-          "file": "lib/Drupal/Core/Routing/UrlGenerator.php",
-          "ccn": 39,
-          "loc": 95,
-          "mi": 56,
-          "antipatterns": 0
         },
         {
           "name": "ViewsEntitySchemaSubscriber::onEntityTypeUpdate",
@@ -137619,6 +137619,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "12da330a1d3",
+      "date": "May 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3503843 Remove automatic preloading of all \"public\" routes, cache routes ",
+      "locDelta": -43,
+      "ccnDelta": -15,
+      "miDelta": -8,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "01058045345",
+      "date": "May 27, 2026",
+      "type": "Bug",
+      "message": "fix: #3592341 Fix dot-segment encoding for chained ../ and ./ in generated URLs",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "21eace16a29",
       "date": "May 27, 2026",
@@ -138598,26 +138618,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "67892866103",
-      "date": "Apr 14, 2026",
-      "type": "Feature",
-      "message": "feat: #3311365 Use PHP attributes for route discovery",
-      "locDelta": 269,
-      "ccnDelta": 75,
-      "miDelta": -71,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "10d11f6ab98",
-      "date": "Apr 14, 2026",
-      "type": "Maintenance",
-      "message": "task: #3582666 Remove Drupal\\layout_discovery\\Install\\Requirements\\LayoutDiscove",
-      "locDelta": -17,
-      "ccnDelta": -2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 844
+      "commits": 847
     }
   ]
 }
