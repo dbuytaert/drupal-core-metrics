@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-29T01:15:29.375302",
+  "generated": "2026-05-30T01:09:43.645028",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 97,
+      "total": 102,
       "features": 3,
-      "bugs": 21,
-      "maintenance": 70,
+      "bugs": 24,
+      "maintenance": 72,
       "unknown": 3
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "12da330a",
+      "commit": "440c6903",
       "production": {
-        "loc": 291095,
-        "functions": 22971,
+        "loc": 291104,
+        "functions": 22972,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.2
       },
-      "testLoc": 456089,
+      "testLoc": 456192,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137620,6 +137620,36 @@
   ],
   "commits": [
     {
+      "hash": "61ef4c65545",
+      "date": "May 29, 2026",
+      "type": "Maintenance",
+      "message": "task: #3589208 Always use the file contents to determine asset aggregate filenam",
+      "locDelta": -2,
+      "ccnDelta": 0,
+      "miDelta": 2,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "b5b29d41deb",
+      "date": "May 29, 2026",
+      "type": "Bug",
+      "message": "fix: #3280235 Calling code can not collect bubbled attachments from TextProcesse",
+      "locDelta": 8,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "45045440e1f",
+      "date": "May 29, 2026",
+      "type": "Bug",
+      "message": "fix: #3585716 EntityQuery uses hard-coded langcode in revision-data joins, break",
+      "locDelta": 3,
+      "ccnDelta": -1,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "12da330a1d3",
       "date": "May 28, 2026",
       "type": "Maintenance",
@@ -138588,36 +138618,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "496796e0a3e",
-      "date": "Apr 15, 2026",
-      "type": "Maintenance",
-      "message": "task: #3451483 Improve Dynamic Page Cache headers for HTML and JSON 4xx response",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": -2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "13ae7283ae3",
-      "date": "Apr 14, 2026",
-      "type": "Maintenance",
-      "message": "task: #2719315 Remove unnecessary system.module path setup in installer",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -2
-    },
-    {
-      "hash": "19ea2283d9e",
-      "date": "Apr 14, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3560670 Don't lock on the active trail cache collector cache write",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 847
+      "commits": 852
     }
   ]
 }
