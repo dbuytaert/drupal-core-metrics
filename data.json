@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-30T01:09:43.645028",
+  "generated": "2026-05-31T01:14:13.826311",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2491,10 +2491,10 @@
     },
     {
       "date": "2026-05",
-      "total": 102,
+      "total": 103,
       "features": 3,
       "bugs": 24,
-      "maintenance": 72,
+      "maintenance": 73,
       "unknown": 3
     }
   ],
@@ -133157,10 +133157,10 @@
     },
     {
       "date": "2026-05",
-      "commit": "440c6903",
+      "commit": "f964c116",
       "production": {
-        "loc": 291104,
-        "functions": 22972,
+        "loc": 291135,
+        "functions": 22973,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133171,7 +133171,7 @@
         },
         "antipatterns": 72.2
       },
-      "testLoc": 456192,
+      "testLoc": 456214,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137211,8 +137211,8 @@
       },
       "antipatterns": {
         "magicKeys": 10671,
-        "deepArrays": 8007,
-        "serviceLocators": 2432
+        "deepArrays": 8008,
+        "serviceLocators": 2437
       },
       "hotspots": [
         {
@@ -137619,6 +137619,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "f964c116991",
+      "date": "May 30, 2026",
+      "type": "Maintenance",
+      "message": "task: #3582690 Remove or replace usages of Shortcut from themes",
+      "locDelta": 31,
+      "ccnDelta": 6,
+      "miDelta": -3,
+      "antipatternsDelta": 5
+    },
     {
       "hash": "61ef4c65545",
       "date": "May 29, 2026",
@@ -138608,16 +138618,6 @@
       "ccnDelta": 6,
       "miDelta": -16,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "dffa15c1a59",
-      "date": "Apr 15, 2026",
-      "type": "Unknown",
-      "message": "SA-CORE-2026-003 by cantina_security, dries, shirshaw64@gmail.com, larowlan, mcd",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138727,7 @@
     },
     {
       "year": 2026,
-      "commits": 852
+      "commits": 853
     }
   ]
 }
