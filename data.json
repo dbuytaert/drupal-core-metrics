@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-01T01:17:59.768464",
+  "generated": "2026-06-02T01:17:51.256908",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2496,6 +2496,14 @@
       "bugs": 24,
       "maintenance": 73,
       "unknown": 3
+    },
+    {
+      "date": "2026-06",
+      "total": 7,
+      "features": 0,
+      "bugs": 2,
+      "maintenance": 5,
+      "unknown": 0
     }
   ],
   "snapshots": [
@@ -133157,9 +133165,9 @@
     },
     {
       "date": "2026-06",
-      "commit": "f964c116",
+      "commit": "29aa27ad",
       "production": {
-        "loc": 291135,
+        "loc": 291145,
         "functions": 22973,
         "ccn": {
           "avg": 2.5,
@@ -133171,7 +133179,7 @@
         },
         "antipatterns": 72.2
       },
-      "testLoc": 456214,
+      "testLoc": 456217,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137212,7 +137220,7 @@
       "antipatterns": {
         "magicKeys": 10671,
         "deepArrays": 8008,
-        "serviceLocators": 2437
+        "serviceLocators": 2439
       },
       "hotspots": [
         {
@@ -137619,6 +137627,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "29aa27ad2d2",
+      "date": "Jun 01, 2026",
+      "type": "Bug",
+      "message": "fix: #3593008 AccessPolicyProcessor::processAccessPolicies() creates unnecessary",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "8feb0d7c373",
+      "date": "Jun 01, 2026",
+      "type": "Maintenance",
+      "message": "task: #3503843 Remove automatic preloading of all \"public\" routes, cache routes ",
+      "locDelta": 10,
+      "ccnDelta": 2,
+      "miDelta": -2,
+      "antipatternsDelta": 2
+    },
     {
       "hash": "f964c116991",
       "date": "May 30, 2026",
@@ -138598,26 +138626,6 @@
       "ccnDelta": 2,
       "miDelta": -4,
       "antipatternsDelta": 4
-    },
-    {
-      "hash": "bba7977d9c3",
-      "date": "Apr 15, 2026",
-      "type": "Unknown",
-      "message": "SA-CORE-2026-001 by murat_kekic, akalata, benjifisher, drumm, larowlan, mlhess, ",
-      "locDelta": 11,
-      "ccnDelta": 4,
-      "miDelta": -3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d8574bb8d7a",
-      "date": "Apr 15, 2026",
-      "type": "Unknown",
-      "message": "SA-CORE-2026-002 by hswww, menon, t-chen, benjifisher, cilefen, drumm, greggles,",
-      "locDelta": 29,
-      "ccnDelta": 6,
-      "miDelta": -16,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138727,7 +138735,7 @@
     },
     {
       "year": 2026,
-      "commits": 853
+      "commits": 860
     }
   ]
 }
