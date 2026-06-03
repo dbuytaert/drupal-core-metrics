@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-02T01:17:51.256908",
+  "generated": "2026-06-03T01:21:55.250678",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 7,
-      "features": 0,
-      "bugs": 2,
-      "maintenance": 5,
+      "total": 12,
+      "features": 1,
+      "bugs": 4,
+      "maintenance": 7,
       "unknown": 0
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "29aa27ad",
+      "commit": "f30d64c5",
       "production": {
-        "loc": 291145,
-        "functions": 22973,
+        "loc": 291229,
+        "functions": 22978,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 72.2
       },
-      "testLoc": 456217,
+      "testLoc": 456366,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133187,7 +133187,7 @@
         "events": 42,
         "services": 241,
         "yamlFormats": 19,
-        "interfaceMethods": 2903,
+        "interfaceMethods": 2905,
         "globalFunctions": 263
       },
       "surfaceAreaLists": {
@@ -136199,6 +136199,8 @@
           "ConditionInterface::notExists",
           "ConditionInterface::conditions",
           "ConditionInterface::compile",
+          "ConditionInterface::setQuery",
+          "ConditionInterface::getQuery",
           "QueryAggregateInterface::aggregate",
           "QueryAggregateInterface::groupBy",
           "QueryAggregateInterface::conditionAggregate",
@@ -137328,6 +137330,14 @@
           "antipatterns": 7
         },
         {
+          "name": "Tables::addField",
+          "file": "lib/Drupal/Core/Entity/Query/Sql/Tables.php",
+          "ccn": 50,
+          "loc": 168,
+          "mi": 41,
+          "antipatterns": 0
+        },
+        {
           "name": "ContentTranslationHandler::entityFormAlter",
           "file": "modules/content_translation/src/ContentTranslationHandler.php",
           "ccn": 49,
@@ -137350,14 +137360,6 @@
           "loc": 111,
           "mi": 51,
           "antipatterns": 1
-        },
-        {
-          "name": "Tables::addField",
-          "file": "lib/Drupal/Core/Entity/Query/Sql/Tables.php",
-          "ccn": 46,
-          "loc": 157,
-          "mi": 43,
-          "antipatterns": 0
         },
         {
           "name": "FieldPluginBase::renderAsLink",
@@ -137627,6 +137629,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "f30d64c5689",
+      "date": "Jun 02, 2026",
+      "type": "Bug",
+      "message": "fix: #1499532 Respect explicitly set node path alias langcode on save",
+      "locDelta": 8,
+      "ccnDelta": 2,
+      "miDelta": -4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "c73e7955364",
+      "date": "Jun 02, 2026",
+      "type": "Feature",
+      "message": "feat: #3549601 Allow --directory and @group to work together in run-tests.sh",
+      "locDelta": 6,
+      "ccnDelta": 4,
+      "miDelta": -6,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "702159f4ab2",
+      "date": "Jun 02, 2026",
+      "type": "Maintenance",
+      "message": "perf: #2875033 Optimize joins and table selection in SQL entity query implementa",
+      "locDelta": 61,
+      "ccnDelta": 24,
+      "miDelta": -10,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "5f815c3bf49",
+      "date": "Jun 01, 2026",
+      "type": "Bug",
+      "message": "fix: #3592887 AttributeRouteDiscovery does not cleanly handle invalid classes",
+      "locDelta": 9,
+      "ccnDelta": 3,
+      "miDelta": -7,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "29aa27ad2d2",
       "date": "Jun 01, 2026",
@@ -138586,46 +138628,6 @@
       "ccnDelta": -3,
       "miDelta": 1,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "b30fe98d4fd",
-      "date": "Apr 20, 2026",
-      "type": "Feature",
-      "message": "feat: #3015812 Introduce new Theme extension object and properly deprecate REGIO",
-      "locDelta": 87,
-      "ccnDelta": 15,
-      "miDelta": -3,
-      "antipatternsDelta": 4
-    },
-    {
-      "hash": "88187a5ee7e",
-      "date": "Apr 20, 2026",
-      "type": "Maintenance",
-      "message": "task: #3580877 Remove updates added prior to 11.3.0 from 12.x",
-      "locDelta": -783,
-      "ccnDelta": -165,
-      "miDelta": 116,
-      "antipatternsDelta": -102
-    },
-    {
-      "hash": "ccc28b4bc95",
-      "date": "Apr 17, 2026",
-      "type": "Feature",
-      "message": "feat: #3544339 Add support in StringFormatter for linking to the entity edit for",
-      "locDelta": 31,
-      "ccnDelta": 1,
-      "miDelta": -14,
-      "antipatternsDelta": 11
-    },
-    {
-      "hash": "1e00c0b78f9",
-      "date": "Apr 16, 2026",
-      "type": "Bug",
-      "message": "fix: #3572171 Persist is_syncing across container rebuilds",
-      "locDelta": 8,
-      "ccnDelta": 2,
-      "miDelta": -4,
-      "antipatternsDelta": 4
     }
   ],
   "commitsPerYear": [
@@ -138735,7 +138737,7 @@
     },
     {
       "year": 2026,
-      "commits": 860
+      "commits": 865
     }
   ]
 }
