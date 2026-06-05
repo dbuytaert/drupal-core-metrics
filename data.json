@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-04T01:21:43.726901",
+  "generated": "2026-06-05T01:16:09.385025",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 24,
-      "features": 2,
-      "bugs": 6,
-      "maintenance": 16,
+      "total": 28,
+      "features": 3,
+      "bugs": 7,
+      "maintenance": 18,
       "unknown": 0
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "0394ef0b",
+      "commit": "b3b68aed",
       "production": {
-        "loc": 291319,
-        "functions": 22988,
+        "loc": 291359,
+        "functions": 22999,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 72.1
       },
-      "testLoc": 456685,
+      "testLoc": 456674,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137222,7 +137222,7 @@
       "antipatterns": {
         "magicKeys": 10671,
         "deepArrays": 8008,
-        "serviceLocators": 2440
+        "serviceLocators": 2433
       },
       "hotspots": [
         {
@@ -137629,6 +137629,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "fbc204ef40c",
+      "date": "Jun 04, 2026",
+      "type": "Maintenance",
+      "message": "task: #3590050 Deprecate and replace locale_status related functions",
+      "locDelta": 36,
+      "ccnDelta": 1,
+      "miDelta": 19,
+      "antipatternsDelta": -6
+    },
+    {
+      "hash": "65947ba38aa",
+      "date": "Jun 04, 2026",
+      "type": "Bug",
+      "message": "fix: #3041170 RowPluginBase::render() update docblock and trigger deprecation fo",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "75becbf693d",
       "date": "Jun 03, 2026",
@@ -138608,26 +138628,6 @@
       "ccnDelta": -2,
       "miDelta": 0,
       "antipatternsDelta": -3
-    },
-    {
-      "hash": "502de2e8d2e",
-      "date": "Apr 22, 2026",
-      "type": "Bug",
-      "message": "fix: #3045509 EntityFieldManager key/value field map gets out of sync, doesn't r",
-      "locDelta": -4,
-      "ccnDelta": -1,
-      "miDelta": 3,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "671d81e9747",
-      "date": "Apr 22, 2026",
-      "type": "Feature",
-      "message": "feat: #3508641 Define form elements from SDC",
-      "locDelta": 8,
-      "ccnDelta": 3,
-      "miDelta": -3,
-      "antipatternsDelta": 2
     }
   ],
   "commitsPerYear": [
@@ -138737,7 +138737,7 @@
     },
     {
       "year": 2026,
-      "commits": 877
+      "commits": 881
     }
   ]
 }
