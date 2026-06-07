@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-06T01:13:10.172945",
+  "generated": "2026-06-07T01:17:25.253925",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 29,
+      "total": 30,
       "features": 3,
       "bugs": 8,
-      "maintenance": 18,
+      "maintenance": 19,
       "unknown": 0
     }
   ],
@@ -133165,9 +133165,9 @@
     },
     {
       "date": "2026-06",
-      "commit": "87c1c03d",
+      "commit": "7918d127",
       "production": {
-        "loc": 291359,
+        "loc": 291361,
         "functions": 22999,
         "ccn": {
           "avg": 2.5,
@@ -137229,7 +137229,7 @@
           "name": "SystemRequirementsHooks::checkRequirements",
           "file": "modules/system/src/Hook/SystemRequirementsHooks.php",
           "ccn": 183,
-          "loc": 1235,
+          "loc": 1233,
           "mi": 0,
           "antipatterns": 82
         },
@@ -137629,6 +137629,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "7918d127e88",
+      "date": "Jun 06, 2026",
+      "type": "Maintenance",
+      "message": "task: #3588490 Don't reset the extension lists in system requirements",
+      "locDelta": 2,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "fbc204ef40c",
       "date": "Jun 04, 2026",
@@ -138618,16 +138628,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "317a6474a40",
-      "date": "Apr 22, 2026",
-      "type": "Maintenance",
-      "message": "task: #3581109 Move HelpSearch to Search sub-module",
-      "locDelta": 4,
-      "ccnDelta": -2,
-      "miDelta": 0,
-      "antipatternsDelta": -3
     }
   ],
   "commitsPerYear": [
@@ -138737,7 +138737,7 @@
     },
     {
       "year": 2026,
-      "commits": 882
+      "commits": 883
     }
   ]
 }
