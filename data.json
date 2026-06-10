@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-09T01:11:49.907297",
+  "generated": "2026-06-10T01:16:30.503184",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 35,
+      "total": 46,
       "features": 4,
-      "bugs": 11,
-      "maintenance": 20,
+      "bugs": 15,
+      "maintenance": 27,
       "unknown": 0
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "d507d794",
+      "commit": "c6b13555",
       "production": {
-        "loc": 291783,
-        "functions": 23025,
+        "loc": 291712,
+        "functions": 23023,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 72
       },
-      "testLoc": 457023,
+      "testLoc": 457164,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137222,9 +137222,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10671,
-        "deepArrays": 8008,
-        "serviceLocators": 2435
+        "magicKeys": 10669,
+        "deepArrays": 8009,
+        "serviceLocators": 2431
       },
       "hotspots": [
         {
@@ -137631,6 +137631,56 @@
     }
   ],
   "commits": [
+    {
+      "hash": "c6b13555a6a",
+      "date": "Jun 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3590897 Sidebar toggle is visible and functioning in media library dialog,",
+      "locDelta": -5,
+      "ccnDelta": -3,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "e9065446e20",
+      "date": "Jun 09, 2026",
+      "type": "Maintenance",
+      "message": "task: #3590364 Part 2 of Consolidate, refactor, remove and untangle Claro's CSS ",
+      "locDelta": -5,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "f6c6aec7302",
+      "date": "Jun 09, 2026",
+      "type": "Maintenance",
+      "message": "task: #3590050 Deprecate and replace locale_status related functions",
+      "locDelta": -62,
+      "ccnDelta": -12,
+      "miDelta": 30,
+      "antipatternsDelta": -3
+    },
+    {
+      "hash": "6ce4beead00",
+      "date": "Jun 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3593390 Media Preview Endpoint Leaks Labels Of Non-Viewable Media By UUID",
+      "locDelta": 1,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "7df1a889e3b",
+      "date": "Jun 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3593223 [PHP 8.5] OptionsWidgetBase::getSelectedOptions tries to access nu",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "d507d794fd0",
       "date": "Jun 09, 2026",
@@ -138580,56 +138630,6 @@
       "ccnDelta": 3,
       "miDelta": -15,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "bc0673ecec6",
-      "date": "Apr 23, 2026",
-      "type": "Maintenance",
-      "message": "task: #3581109 Move HelpSearch to Search sub-module",
-      "locDelta": 4,
-      "ccnDelta": -2,
-      "miDelta": 0,
-      "antipatternsDelta": -3
-    },
-    {
-      "hash": "7a148275d78",
-      "date": "Apr 23, 2026",
-      "type": "Unknown",
-      "message": "Revert \"fix: #3496257 Race conditions in CacheCollector/State (again)\"",
-      "locDelta": -22,
-      "ccnDelta": -4,
-      "miDelta": 17,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "3d0c1dae763",
-      "date": "Apr 23, 2026",
-      "type": "Unknown",
-      "message": "Revert \"task: #3581109 Move HelpSearch to Search sub-module\"",
-      "locDelta": -4,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 3
-    },
-    {
-      "hash": "5a9379130ff",
-      "date": "Apr 23, 2026",
-      "type": "Bug",
-      "message": "fix: #3443428 Whitespace in Views exposed filters returns incorrect results",
-      "locDelta": 7,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "1c65c7adaa6",
-      "date": "Apr 23, 2026",
-      "type": "Feature",
-      "message": "feat: #3366561 Support preloading of fonts in the libraries API",
-      "locDelta": 41,
-      "ccnDelta": 12,
-      "miDelta": -8,
-      "antipatternsDelta": -5
     }
   ],
   "commitsPerYear": [
@@ -138739,7 +138739,7 @@
     },
     {
       "year": 2026,
-      "commits": 888
+      "commits": 899
     }
   ]
 }
