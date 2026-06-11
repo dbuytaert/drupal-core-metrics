@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-10T01:16:30.503184",
+  "generated": "2026-06-11T01:17:01.275368",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 46,
+      "total": 48,
       "features": 4,
-      "bugs": 15,
-      "maintenance": 27,
+      "bugs": 16,
+      "maintenance": 28,
       "unknown": 0
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "c6b13555",
+      "commit": "d5398211",
       "production": {
-        "loc": 291712,
-        "functions": 23023,
+        "loc": 291774,
+        "functions": 23024,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 72
       },
-      "testLoc": 457164,
+      "testLoc": 457217,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137252,14 +137252,6 @@
           "antipatterns": 3
         },
         {
-          "name": "SqlContentEntityStorage::loadFromDedicatedTables",
-          "file": "lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php",
-          "ccn": 69,
-          "loc": 189,
-          "mi": 34,
-          "antipatterns": 14
-        },
-        {
           "name": "YamlFileLoader::parseDefinition",
           "file": "lib/Drupal/Core/DependencyInjection/YamlFileLoader.php",
           "ccn": 68,
@@ -137556,6 +137548,14 @@
           "antipatterns": 8
         },
         {
+          "name": "SqlContentEntityStorage::loadSingleCardinalityFields",
+          "file": "lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php",
+          "ccn": 32,
+          "loc": 105,
+          "mi": 55,
+          "antipatterns": 9
+        },
+        {
           "name": "TaxonomyIndexTid::valueForm",
           "file": "modules/taxonomy/src/Plugin/views/filter/TaxonomyIndexTid.php",
           "ccn": 31,
@@ -137631,6 +137631,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "d5398211c15",
+      "date": "Jun 10, 2026",
+      "type": "Maintenance",
+      "message": "revert: #3587806 Revert adding placeholdering to messages  blocks",
+      "locDelta": -3,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "7d3b03497b6",
+      "date": "Jun 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3593963 Field loading can hit the MySQL 61 table join limit if there are ~",
+      "locDelta": 65,
+      "ccnDelta": 7,
+      "miDelta": -48,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "c6b13555a6a",
       "date": "Jun 09, 2026",
@@ -138610,26 +138630,6 @@
       "ccnDelta": 14,
       "miDelta": -4,
       "antipatternsDelta": 3
-    },
-    {
-      "hash": "90bc21126a8",
-      "date": "Apr 24, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3550054 Move FORM_SEPARATE_PAGE and FORM_BELOW constants in CommentIt",
-      "locDelta": 7,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "3ae3915e6fa",
-      "date": "Apr 24, 2026",
-      "type": "Feature",
-      "message": "feat: #2547493 Add support for unique / primary key constraints composed of mult",
-      "locDelta": 16,
-      "ccnDelta": 3,
-      "miDelta": -15,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138739,7 +138739,7 @@
     },
     {
       "year": 2026,
-      "commits": 899
+      "commits": 901
     }
   ]
 }
