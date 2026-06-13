@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-12T01:20:26.557395",
+  "generated": "2026-06-13T01:17:24.600321",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 48,
+      "total": 50,
       "features": 4,
-      "bugs": 16,
-      "maintenance": 28,
+      "bugs": 17,
+      "maintenance": 29,
       "unknown": 0
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "d5398211",
+      "commit": "b91680f9",
       "production": {
-        "loc": 291774,
-        "functions": 23024,
+        "loc": 291783,
+        "functions": 23025,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137632,6 +137632,26 @@
   ],
   "commits": [
     {
+      "hash": "b91680f90a1",
+      "date": "Jun 12, 2026",
+      "type": "Maintenance",
+      "message": "task: #3585891 Deprecate Validating CSRF tokens with the 'rest' key in CsrfReque",
+      "locDelta": 5,
+      "ccnDelta": 0,
+      "miDelta": -5,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "75547409801",
+      "date": "Jun 12, 2026",
+      "type": "Bug",
+      "message": "fix: #3597692 [regression] The 'dr' command doesn't set DRUPAL_TEST_IN_CHILD_SIT",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": 9,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "d5398211c15",
       "date": "Jun 10, 2026",
       "type": "Maintenance",
@@ -138610,26 +138630,6 @@
       "ccnDelta": 24,
       "miDelta": -30,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "38336a5b040",
-      "date": "Apr 27, 2026",
-      "type": "Feature",
-      "message": "feat: #3564234 Add display-builder agnostic overview page for display modes",
-      "locDelta": 326,
-      "ccnDelta": 50,
-      "miDelta": -89,
-      "antipatternsDelta": 46
-    },
-    {
-      "hash": "a2bcba1d161",
-      "date": "Apr 24, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3035340 Deprecate core/modules/views_ui/admin.inc",
-      "locDelta": 102,
-      "ccnDelta": 14,
-      "miDelta": -4,
-      "antipatternsDelta": 3
     }
   ],
   "commitsPerYear": [
@@ -138739,7 +138739,7 @@
     },
     {
       "year": 2026,
-      "commits": 901
+      "commits": 903
     }
   ]
 }
