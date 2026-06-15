@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-14T01:19:03.887568",
+  "generated": "2026-06-15T01:15:09.002588",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,9 +2499,9 @@
     },
     {
       "date": "2026-06",
-      "total": 51,
+      "total": 53,
       "features": 4,
-      "bugs": 18,
+      "bugs": 20,
       "maintenance": 29,
       "unknown": 0
     }
@@ -133165,7 +133165,7 @@
     },
     {
       "date": "2026-06",
-      "commit": "29f66725",
+      "commit": "39c17921",
       "production": {
         "loc": 291783,
         "functions": 23025,
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 72
       },
-      "testLoc": 457217,
+      "testLoc": 457214,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137632,6 +137632,16 @@
   ],
   "commits": [
     {
+      "hash": "39c17921261",
+      "date": "Jun 14, 2026",
+      "type": "Bug",
+      "message": "fix: #3400181 [regression] calling TypedConfigManager::getDefinition() causes ca",
+      "locDelta": 2,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "b91680f90a1",
       "date": "Jun 12, 2026",
       "type": "Maintenance",
@@ -138620,16 +138630,6 @@
       "ccnDelta": 44,
       "miDelta": -47,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "b694283c795",
-      "date": "Apr 27, 2026",
-      "type": "Feature",
-      "message": "feat: #3512962 Add validation to field.storage.*.* indexes",
-      "locDelta": 91,
-      "ccnDelta": 24,
-      "miDelta": -30,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138739,7 +138739,7 @@
     },
     {
       "year": 2026,
-      "commits": 904
+      "commits": 906
     }
   ]
 }
