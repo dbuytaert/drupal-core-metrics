@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-15T01:15:09.002588",
+  "generated": "2026-06-16T01:23:22.116252",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,9 +2499,9 @@
     },
     {
       "date": "2026-06",
-      "total": 53,
-      "features": 4,
-      "bugs": 20,
+      "total": 55,
+      "features": 5,
+      "bugs": 21,
       "maintenance": 29,
       "unknown": 0
     }
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "39c17921",
+      "commit": "24b03581",
       "production": {
-        "loc": 291783,
-        "functions": 23025,
+        "loc": 291814,
+        "functions": 23026,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 72
       },
-      "testLoc": 457214,
+      "testLoc": 457331,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137572,6 +137572,14 @@
           "antipatterns": 2
         },
         {
+          "name": "HookCollectorPass::collectModuleHookImplementations",
+          "file": "lib/Drupal/Core/Hook/HookCollectorPass.php",
+          "ccn": 31,
+          "loc": 110,
+          "mi": 54,
+          "antipatterns": 2
+        },
+        {
           "name": "TaxonomyIndexTid::valueForm",
           "file": "modules/taxonomy/src/Plugin/views/filter/TaxonomyIndexTid.php",
           "ccn": 31,
@@ -137618,19 +137626,21 @@
           "loc": 100,
           "mi": 57,
           "antipatterns": 0
-        },
-        {
-          "name": "drupal_verify_install_file",
-          "file": "includes/install.inc",
-          "ccn": 30,
-          "loc": 73,
-          "mi": 63,
-          "antipatterns": 0
         }
       ]
     }
   ],
   "commits": [
+    {
+      "hash": "3e6179a621d",
+      "date": "Jun 15, 2026",
+      "type": "Feature",
+      "message": "feat: #3524377 Allow to skip OOP hooks and services for modules that are not ins",
+      "locDelta": 31,
+      "ccnDelta": 7,
+      "miDelta": -4,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "39c17921261",
       "date": "Jun 14, 2026",
@@ -138620,16 +138630,6 @@
       "ccnDelta": 2,
       "miDelta": -3,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "20ee7c834dc",
-      "date": "Apr 27, 2026",
-      "type": "Maintenance",
-      "message": "task: #3530640 Disable the user.login.http route by default and move to REST",
-      "locDelta": 218,
-      "ccnDelta": 44,
-      "miDelta": -47,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138739,7 +138739,7 @@
     },
     {
       "year": 2026,
-      "commits": 906
+      "commits": 908
     }
   ]
 }
