@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-16T01:23:22.116252",
+  "generated": "2026-06-17T01:18:21.193264",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 55,
+      "total": 56,
       "features": 5,
       "bugs": 21,
-      "maintenance": 29,
+      "maintenance": 30,
       "unknown": 0
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "24b03581",
+      "commit": "5ad58ce3",
       "production": {
-        "loc": 291814,
-        "functions": 23026,
+        "loc": 291821,
+        "functions": 23027,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 72
       },
-      "testLoc": 457331,
+      "testLoc": 457334,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137224,7 +137224,7 @@
       "antipatterns": {
         "magicKeys": 10669,
         "deepArrays": 8009,
-        "serviceLocators": 2431
+        "serviceLocators": 2432
       },
       "hotspots": [
         {
@@ -137631,6 +137631,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "5ad58ce3c67",
+      "date": "Jun 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3587564 Move search functionality from node to Search module",
+      "locDelta": 7,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "3e6179a621d",
       "date": "Jun 15, 2026",
@@ -138620,16 +138630,6 @@
       "ccnDelta": 13,
       "miDelta": -9,
       "antipatternsDelta": 5
-    },
-    {
-      "hash": "c50266aecf3",
-      "date": "Apr 27, 2026",
-      "type": "Maintenance",
-      "message": "task: #3571172 Deprecate system_sort_themes() and system_check_directory() in sy",
-      "locDelta": 11,
-      "ccnDelta": 2,
-      "miDelta": -3,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138739,7 +138739,7 @@
     },
     {
       "year": 2026,
-      "commits": 908
+      "commits": 909
     }
   ]
 }
