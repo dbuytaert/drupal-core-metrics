@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-18T01:19:53.281872",
+  "generated": "2026-06-19T01:24:43.972148",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,9 +2499,9 @@
     },
     {
       "date": "2026-06",
-      "total": 61,
+      "total": 63,
       "features": 5,
-      "bugs": 21,
+      "bugs": 23,
       "maintenance": 30,
       "unknown": 5
     }
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "31867e69",
+      "commit": "09d9f4d3",
       "production": {
-        "loc": 291876,
-        "functions": 23027,
+        "loc": 291881,
+        "functions": 23028,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 72
       },
-      "testLoc": 457351,
+      "testLoc": 457353,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137224,7 +137224,7 @@
       "antipatterns": {
         "magicKeys": 10669,
         "deepArrays": 8009,
-        "serviceLocators": 2434
+        "serviceLocators": 2436
       },
       "hotspots": [
         {
@@ -137631,6 +137631,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "09d9f4d3206",
+      "date": "Jun 18, 2026",
+      "type": "Bug",
+      "message": "fix: #3597406 [regression] DrupalApplication (for 'dr') needs to support DRUPAL_",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "7d0ebcd09ab",
+      "date": "Jun 18, 2026",
+      "type": "Bug",
+      "message": "fix: #3601433 Fix local_status deprecation by clearing source in a post update",
+      "locDelta": 5,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 2
+    },
     {
       "hash": "31867e6906e",
       "date": "Jun 17, 2026",
@@ -138610,26 +138630,6 @@
       "ccnDelta": 2,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "a2ee2493433",
-      "date": "Apr 28, 2026",
-      "type": "Bug",
-      "message": "fix: #3580855 Entity recursive rendering protection is not compatible with Fiber",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": -4,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "95b8775117c",
-      "date": "Apr 28, 2026",
-      "type": "Bug",
-      "message": "fix: #3474070 Allow StarterKit forked themes with prefix",
-      "locDelta": 16,
-      "ccnDelta": 2,
-      "miDelta": -3,
-      "antipatternsDelta": 3
     }
   ],
   "commitsPerYear": [
@@ -138739,7 +138739,7 @@
     },
     {
       "year": 2026,
-      "commits": 914
+      "commits": 916
     }
   ]
 }
