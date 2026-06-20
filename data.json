@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-19T01:24:43.972148",
+  "generated": "2026-06-20T01:13:21.634443",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 63,
-      "features": 5,
-      "bugs": 23,
-      "maintenance": 30,
+      "total": 70,
+      "features": 6,
+      "bugs": 25,
+      "maintenance": 34,
       "unknown": 5
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "09d9f4d3",
+      "commit": "761f8a85",
       "production": {
-        "loc": 291881,
-        "functions": 23028,
+        "loc": 291888,
+        "functions": 23030,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133177,9 +133177,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 72
+        "antipatterns": 71.9
       },
-      "testLoc": 457353,
+      "testLoc": 457512,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -133187,7 +133187,7 @@
         "events": 43,
         "services": 242,
         "yamlFormats": 19,
-        "interfaceMethods": 2905,
+        "interfaceMethods": 2907,
         "globalFunctions": 263
       },
       "surfaceAreaLists": {
@@ -133505,7 +133505,6 @@
           "#pack_id",
           "#icon_id",
           "#settings",
-          "#wrapper_attributes",
           "#tag",
           "#include_fallback",
           "#lazy_builder",
@@ -133549,6 +133548,7 @@
           "#executes_submit_callback",
           "#tree",
           "#tableselect",
+          "#wrapper_attributes",
           "#display",
           "#message_list",
           "#status_headings",
@@ -134529,6 +134529,8 @@
           "ConditionAggregateInterface::notExists",
           "ConditionAggregateInterface::conditions",
           "ConditionAggregateInterface::compile",
+          "ConditionAggregateInterface::setQuery",
+          "ConditionAggregateInterface::getQuery",
           "QueryAggregateInterface::aggregate",
           "QueryAggregateInterface::groupBy",
           "QueryAggregateInterface::conditionAggregate",
@@ -137222,9 +137224,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10669,
-        "deepArrays": 8009,
-        "serviceLocators": 2436
+        "magicKeys": 10655,
+        "deepArrays": 7994,
+        "serviceLocators": 2435
       },
       "hotspots": [
         {
@@ -137631,6 +137633,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "761f8a859d3",
+      "date": "Jun 20, 2026",
+      "type": "Feature",
+      "message": "feat: #3594332 Add a user:login command to generate a one-time login link",
+      "locDelta": 60,
+      "ccnDelta": 8,
+      "miDelta": -16,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "6958ed374e1",
+      "date": "Jun 19, 2026",
+      "type": "Maintenance",
+      "message": "task: #3520028 Remove support for selecting install profiles via the UI installe",
+      "locDelta": -105,
+      "ccnDelta": -22,
+      "miDelta": 37,
+      "antipatternsDelta": -30
+    },
+    {
+      "hash": "d7f1e63a569",
+      "date": "Jun 19, 2026",
+      "type": "Maintenance",
+      "message": "task: #3586760 Use composite key Upsert queries in core",
+      "locDelta": 44,
+      "ccnDelta": 6,
+      "miDelta": -11,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "3e4104d1b00",
+      "date": "Jun 19, 2026",
+      "type": "Bug",
+      "message": "fix: #3593233 Cloning an aggregate entity query shares its aggregate conditions ",
+      "locDelta": 8,
+      "ccnDelta": 4,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
     {
       "hash": "09d9f4d3206",
       "date": "Jun 18, 2026",
@@ -138590,46 +138632,6 @@
       "ccnDelta": 12,
       "miDelta": -9,
       "antipatternsDelta": 4
-    },
-    {
-      "hash": "117fee744a4",
-      "date": "Apr 28, 2026",
-      "type": "Bug",
-      "message": "fix: #3581434 Entity serialization issue in Layout Builder due to content modera",
-      "locDelta": 2,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "051f4387948",
-      "date": "Apr 28, 2026",
-      "type": "Bug",
-      "message": "fix: #3566351 Throwing AccessDeniedException without a route causes PHP errors",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c3a6c1a5285",
-      "date": "Apr 28, 2026",
-      "type": "Bug",
-      "message": "fix: #3584324 Make the chained fast backend self-heal when last_write_timestamp ",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d5babbbe46e",
-      "date": "Apr 28, 2026",
-      "type": "Bug",
-      "message": "fix: #1797438 HTML5 validation is preventing form submit and not fully accessibl",
-      "locDelta": 12,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138739,7 +138741,7 @@
     },
     {
       "year": 2026,
-      "commits": 916
+      "commits": 923
     }
   ]
 }
