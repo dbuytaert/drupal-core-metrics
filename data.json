@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-21T01:18:06.425804",
+  "generated": "2026-06-22T01:21:03.582481",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 71,
+      "total": 72,
       "features": 6,
       "bugs": 25,
-      "maintenance": 35,
+      "maintenance": 36,
       "unknown": 5
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "57cd59d8",
+      "commit": "08e955a3",
       "production": {
-        "loc": 291888,
-        "functions": 23030,
+        "loc": 292013,
+        "functions": 23031,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 71.9
       },
-      "testLoc": 457515,
+      "testLoc": 457699,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137225,7 +137225,7 @@
       },
       "antipatterns": {
         "magicKeys": 10655,
-        "deepArrays": 7994,
+        "deepArrays": 7996,
         "serviceLocators": 2435
       },
       "hotspots": [
@@ -137358,6 +137358,14 @@
           "antipatterns": 1
         },
         {
+          "name": "LibraryDiscoveryParser::buildByExtension",
+          "file": "lib/Drupal/Core/Asset/LibraryDiscoveryParser.php",
+          "ccn": 46,
+          "loc": 128,
+          "mi": 48,
+          "antipatterns": 0
+        },
+        {
           "name": "PoStreamReader::readLine",
           "file": "lib/Drupal/Component/Gettext/PoStreamReader.php",
           "ccn": 45,
@@ -137372,14 +137380,6 @@
           "loc": 129,
           "mi": 48,
           "antipatterns": 3
-        },
-        {
-          "name": "LibraryDiscoveryParser::buildByExtension",
-          "file": "lib/Drupal/Core/Asset/LibraryDiscoveryParser.php",
-          "ccn": 44,
-          "loc": 122,
-          "mi": 49,
-          "antipatterns": 0
         },
         {
           "name": "SystemController::themesPage",
@@ -137633,6 +137633,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "08e955a3547",
+      "date": "Jun 21, 2026",
+      "type": "Maintenance",
+      "message": "task: #3565258 Support library-specific aggregates",
+      "locDelta": 125,
+      "ccnDelta": 39,
+      "miDelta": -52,
+      "antipatternsDelta": 3
+    },
     {
       "hash": "761f8a859d3",
       "date": "Jun 20, 2026",
@@ -138622,16 +138632,6 @@
       "ccnDelta": 22,
       "miDelta": -35,
       "antipatternsDelta": 22
-    },
-    {
-      "hash": "4c021eac920",
-      "date": "Apr 28, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3561960 Combine the database queries in ::loadFromSharedTables() and ::lo",
-      "locDelta": 38,
-      "ccnDelta": 12,
-      "miDelta": -9,
-      "antipatternsDelta": 4
     }
   ],
   "commitsPerYear": [
@@ -138741,7 +138741,7 @@
     },
     {
       "year": 2026,
-      "commits": 924
+      "commits": 925
     }
   ]
 }
