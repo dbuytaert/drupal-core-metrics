@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-23T01:06:36.028742",
+  "generated": "2026-06-24T01:09:21.713265",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 72,
+      "total": 76,
       "features": 6,
-      "bugs": 25,
-      "maintenance": 36,
+      "bugs": 27,
+      "maintenance": 38,
       "unknown": 5
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "08e955a3",
+      "commit": "e582ecb8",
       "production": {
-        "loc": 292013,
-        "functions": 23031,
+        "loc": 292033,
+        "functions": 23032,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133177,9 +133177,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 71.9
+        "antipatterns": 71.8
       },
-      "testLoc": 457699,
+      "testLoc": 457846,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137622,17 +137622,37 @@
           "antipatterns": 66
         },
         {
-          "name": "SqlContentEntityStorage::saveToDedicatedTables",
-          "file": "lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php",
+          "name": "drupal_verify_install_file",
+          "file": "includes/install.inc",
           "ccn": 30,
-          "loc": 100,
-          "mi": 57,
+          "loc": 73,
+          "mi": 63,
           "antipatterns": 0
         }
       ]
     }
   ],
   "commits": [
+    {
+      "hash": "e582ecb84af",
+      "date": "Jun 23, 2026",
+      "type": "Maintenance",
+      "message": "revert: #3605262 Database write optimizations result in inconsistent data in dat",
+      "locDelta": -7,
+      "ccnDelta": -5,
+      "miDelta": 2,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "35cf89bd9f7",
+      "date": "Jun 23, 2026",
+      "type": "Maintenance",
+      "message": "task: #3496328 Use a hash of the cache data for CacheCollector race condition de",
+      "locDelta": 20,
+      "ccnDelta": 6,
+      "miDelta": -14,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "08e955a3547",
       "date": "Jun 21, 2026",
@@ -138612,26 +138632,6 @@
       "ccnDelta": 6,
       "miDelta": -9,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "e3857514b3c",
-      "date": "Apr 28, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3587415 Avoid querying for last installed schema definitions twice",
-      "locDelta": 13,
-      "ccnDelta": 2,
-      "miDelta": -10,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c9798f85aa9",
-      "date": "Apr 28, 2026",
-      "type": "Feature",
-      "message": "feat: #2954834 Add poster image to HTML5 media videos",
-      "locDelta": 136,
-      "ccnDelta": 22,
-      "miDelta": -35,
-      "antipatternsDelta": 22
     }
   ],
   "commitsPerYear": [
@@ -138741,7 +138741,7 @@
     },
     {
       "year": 2026,
-      "commits": 925
+      "commits": 929
     }
   ]
 }
