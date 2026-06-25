@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-24T01:09:21.713265",
+  "generated": "2026-06-25T01:12:01.127614",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,10 +2499,10 @@
     },
     {
       "date": "2026-06",
-      "total": 76,
+      "total": 84,
       "features": 6,
-      "bugs": 27,
-      "maintenance": 38,
+      "bugs": 28,
+      "maintenance": 45,
       "unknown": 5
     }
   ],
@@ -133165,10 +133165,10 @@
     },
     {
       "date": "2026-06",
-      "commit": "e582ecb8",
+      "commit": "1733dbbc",
       "production": {
-        "loc": 292033,
-        "functions": 23032,
+        "loc": 292104,
+        "functions": 23037,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 71.8
       },
-      "testLoc": 457846,
+      "testLoc": 457887,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137226,7 +137226,7 @@
       "antipatterns": {
         "magicKeys": 10655,
         "deepArrays": 7996,
-        "serviceLocators": 2435
+        "serviceLocators": 2429
       },
       "hotspots": [
         {
@@ -137633,6 +137633,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "1733dbbcb14",
+      "date": "Jun 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3594389 Remove unecessary core dev version replacement in locale project ",
+      "locDelta": -6,
+      "ccnDelta": -2,
+      "miDelta": 3,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "17cc005b695",
+      "date": "Jun 24, 2026",
+      "type": "Bug",
+      "message": "fix: #3072557 Plugin ID menu_link_content was not found in _menu_link_content_up",
+      "locDelta": 2,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "bfdab16510c",
+      "date": "Jun 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3592037 Settings::get() should not trigger a deprecation for settings wit",
+      "locDelta": 3,
+      "ccnDelta": 4,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "47e42d18619",
+      "date": "Jun 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3595084 Deprecate locale submit callbacks",
+      "locDelta": 72,
+      "ccnDelta": 12,
+      "miDelta": 2,
+      "antipatternsDelta": -6
+    },
     {
       "hash": "e582ecb84af",
       "date": "Jun 23, 2026",
@@ -138592,46 +138632,6 @@
       "ccnDelta": 0,
       "miDelta": 5,
       "antipatternsDelta": -3
-    },
-    {
-      "hash": "57d2fe40642",
-      "date": "Apr 29, 2026",
-      "type": "Bug",
-      "message": "fix: #3567230 Only overwrite mapped field values on media items when source fiel",
-      "locDelta": 17,
-      "ccnDelta": 4,
-      "miDelta": -12,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "867318c3996",
-      "date": "Apr 29, 2026",
-      "type": "Maintenance",
-      "message": "task: #2907780 Add a field purger service",
-      "locDelta": 78,
-      "ccnDelta": 11,
-      "miDelta": -17,
-      "antipatternsDelta": 4
-    },
-    {
-      "hash": "548722a899b",
-      "date": "Apr 29, 2026",
-      "type": "Maintenance",
-      "message": "task: #3584823 Convert system module routes to use attributes",
-      "locDelta": 145,
-      "ccnDelta": 0,
-      "miDelta": -47,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "d8fb0e0929c",
-      "date": "Apr 28, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3184242 Support brotli compression of assets",
-      "locDelta": 19,
-      "ccnDelta": 6,
-      "miDelta": -9,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138741,7 +138741,7 @@
     },
     {
       "year": 2026,
-      "commits": 929
+      "commits": 937
     }
   ]
 }
