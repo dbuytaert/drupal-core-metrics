@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-30T01:13:32.576879",
+  "generated": "2026-07-01T01:16:23.650669",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2499,9 +2499,9 @@
     },
     {
       "date": "2026-06",
-      "total": 89,
+      "total": 91,
       "features": 6,
-      "bugs": 29,
+      "bugs": 31,
       "maintenance": 49,
       "unknown": 5
     }
@@ -133164,11 +133164,11 @@
       ]
     },
     {
-      "date": "2026-06",
-      "commit": "ec24cbda",
+      "date": "2026-07",
+      "commit": "fd41a57a",
       "production": {
-        "loc": 292109,
-        "functions": 23037,
+        "loc": 292118,
+        "functions": 23038,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133179,7 @@
         },
         "antipatterns": 71.8
       },
-      "testLoc": 457936,
+      "testLoc": 457938,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137226,7 +137226,7 @@
       "antipatterns": {
         "magicKeys": 10655,
         "deepArrays": 7996,
-        "serviceLocators": 2429
+        "serviceLocators": 2430
       },
       "hotspots": [
         {
@@ -137633,6 +137633,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "22c7a860b85",
+      "date": "Jun 30, 2026",
+      "type": "Bug",
+      "message": "fix: #3387100 Missing config schema for core.base_field_override.*.*.* third_par",
+      "locDelta": 9,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "ec24cbda1f7",
       "date": "Jun 29, 2026",
@@ -138622,16 +138632,6 @@
       "ccnDelta": 6,
       "miDelta": -2,
       "antipatternsDelta": -14
-    },
-    {
-      "hash": "3e7ef0a111b",
-      "date": "Apr 30, 2026",
-      "type": "Maintenance",
-      "message": "task: #3587725 Use ConfigImporterFactory in RecipeCommand",
-      "locDelta": -13,
-      "ccnDelta": 0,
-      "miDelta": 3,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138741,7 +138741,7 @@
     },
     {
       "year": 2026,
-      "commits": 942
+      "commits": 944
     }
   ]
 }
