@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-01T01:16:23.650669",
+  "generated": "2026-07-02T01:13:03.262179",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2504,6 +2504,14 @@
       "bugs": 31,
       "maintenance": 49,
       "unknown": 5
+    },
+    {
+      "date": "2026-07",
+      "total": 1,
+      "features": 1,
+      "bugs": 0,
+      "maintenance": 0,
+      "unknown": 0
     }
   ],
   "snapshots": [
@@ -133165,10 +133173,10 @@
     },
     {
       "date": "2026-07",
-      "commit": "fd41a57a",
+      "commit": "84ff87df",
       "production": {
-        "loc": 292118,
-        "functions": 23038,
+        "loc": 292166,
+        "functions": 23039,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -133179,7 +133187,7 @@
         },
         "antipatterns": 71.8
       },
-      "testLoc": 457938,
+      "testLoc": 458102,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137634,6 +137642,16 @@
   ],
   "commits": [
     {
+      "hash": "84ff87dfc56",
+      "date": "Jul 01, 2026",
+      "type": "Feature",
+      "message": "feat: #3584793 Use PHP attributes for form route discovery",
+      "locDelta": 48,
+      "ccnDelta": 8,
+      "miDelta": -12,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "22c7a860b85",
       "date": "Jun 30, 2026",
       "type": "Bug",
@@ -138622,16 +138640,6 @@
       "ccnDelta": -6,
       "miDelta": 2,
       "antipatternsDelta": 14
-    },
-    {
-      "hash": "31e1980b7ac",
-      "date": "Apr 30, 2026",
-      "type": "Maintenance",
-      "message": "task: #3533299 Deprecate node access rebuild functions",
-      "locDelta": 44,
-      "ccnDelta": 6,
-      "miDelta": -2,
-      "antipatternsDelta": -14
     }
   ],
   "commitsPerYear": [
@@ -138741,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 944
+      "commits": 945
     }
   ]
 }
