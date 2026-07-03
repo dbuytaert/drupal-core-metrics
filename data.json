@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-02T01:13:03.262179",
+  "generated": "2026-07-03T03:12:19.119035",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 1,
-      "features": 1,
+      "total": 5,
+      "features": 2,
       "bugs": 0,
-      "maintenance": 0,
+      "maintenance": 3,
       "unknown": 0
     }
   ],
@@ -137642,6 +137642,36 @@
   ],
   "commits": [
     {
+      "hash": "4cc588f7f55",
+      "date": "Jul 02, 2026",
+      "type": "Maintenance",
+      "message": "task: #3594199 Remove the Telephone module",
+      "locDelta": -214,
+      "ccnDelta": -27,
+      "miDelta": 17,
+      "antipatternsDelta": -28
+    },
+    {
+      "hash": "3992c6572c3",
+      "date": "Jul 02, 2026",
+      "type": "Feature",
+      "message": "feat: #3605551 Allow install profiles to be automatically uninstalled",
+      "locDelta": 5,
+      "ccnDelta": 2,
+      "miDelta": -2,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "9eb69cba350",
+      "date": "Jul 02, 2026",
+      "type": "Maintenance",
+      "message": "task: #3569137 Ensure TRUNCATE ::execute() method returns void",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "84ff87dfc56",
       "date": "Jul 01, 2026",
       "type": "Feature",
@@ -138610,36 +138640,6 @@
       "ccnDelta": 0,
       "miDelta": -3,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "e461cedbad5",
-      "date": "May 01, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3587806 Add placeholdering to help, messages, branding blocks",
-      "locDelta": 9,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "3a0d690df6f",
-      "date": "Apr 30, 2026",
-      "type": "Maintenance",
-      "message": "task: #3533299 Deprecate node access rebuild functions",
-      "locDelta": 44,
-      "ccnDelta": 6,
-      "miDelta": -2,
-      "antipatternsDelta": -14
-    },
-    {
-      "hash": "b5d0936a90c",
-      "date": "Apr 30, 2026",
-      "type": "Unknown",
-      "message": "Revert \"task: #3533299 Deprecate node access rebuild functions\"",
-      "locDelta": -44,
-      "ccnDelta": -6,
-      "miDelta": 2,
-      "antipatternsDelta": 14
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 945
+      "commits": 949
     }
   ]
 }
