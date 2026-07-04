@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-03T03:12:19.119035",
+  "generated": "2026-07-04T03:10:28.084903",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,9 +2507,9 @@
     },
     {
       "date": "2026-07",
-      "total": 5,
+      "total": 7,
       "features": 2,
-      "bugs": 0,
+      "bugs": 2,
       "maintenance": 3,
       "unknown": 0
     }
@@ -137642,6 +137642,26 @@
   ],
   "commits": [
     {
+      "hash": "b4c63e817b3",
+      "date": "Jul 03, 2026",
+      "type": "Bug",
+      "message": "fix: #3607938 Chunking of Op in loadFromDedicatedTables causes Cartesian multipl",
+      "locDelta": -8,
+      "ccnDelta": -1,
+      "miDelta": 2,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "97a0dbb3324",
+      "date": "Jul 03, 2026",
+      "type": "Bug",
+      "message": "fix: #3600697 Attribute route discovery does not handle arrays for JSON:API cont",
+      "locDelta": 2,
+      "ccnDelta": 1,
+      "miDelta": -2,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "4cc588f7f55",
       "date": "Jul 02, 2026",
       "type": "Maintenance",
@@ -138620,26 +138640,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "8447a07e0ee",
-      "date": "May 05, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3569096 Remove BC layer $options argument from Constraint plugin cons",
-      "locDelta": -180,
-      "ccnDelta": -57,
-      "miDelta": -6,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "06c1f1b1aa4",
-      "date": "May 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3191278 Use plugin id to make help section headers HTML IDs",
-      "locDelta": 4,
-      "ccnDelta": 0,
-      "miDelta": -3,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 949
+      "commits": 951
     }
   ]
 }
