@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-06T03:47:10.890714",
+  "generated": "2026-07-07T03:19:20.829157",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 8,
+      "total": 13,
       "features": 2,
-      "bugs": 2,
-      "maintenance": 4,
+      "bugs": 5,
+      "maintenance": 6,
       "unknown": 0
     }
   ],
@@ -137642,6 +137642,46 @@
   ],
   "commits": [
     {
+      "hash": "7e0c9a2e387",
+      "date": "Jul 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3564112 Cache rebuild triggers file_get_contents Permission denied in them",
+      "locDelta": 4,
+      "ccnDelta": 0,
+      "miDelta": -2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "98c10fdf25a",
+      "date": "Jul 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3608374 Data for non-revisionable/non-translatable/no-dedicated-field-tabl",
+      "locDelta": 1,
+      "ccnDelta": 4,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "4f3e6a284a7",
+      "date": "Jul 06, 2026",
+      "type": "Maintenance",
+      "message": "task: #3588547 Don't invalidate the entire fast backend on persistent backend ca",
+      "locDelta": 7,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "ecf6584e4f5",
+      "date": "Jul 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3593838 Views QueryParameter argument_default plugin doesn't apply default",
+      "locDelta": -2,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
       "hash": "b4c63e817b3",
       "date": "Jul 03, 2026",
       "type": "Bug",
@@ -138600,46 +138640,6 @@
       "ccnDelta": -3,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "c9a981a1ac9",
-      "date": "May 05, 2026",
-      "type": "Maintenance",
-      "message": "task: #3588453 Drop unnecessary theme_preprocess_for_suggestions from keyvalue",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "941b5753abb",
-      "date": "May 05, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3587601 Avoid loading date formats in element info",
-      "locDelta": 0,
-      "ccnDelta": -3,
-      "miDelta": 5,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "4081563ae37",
-      "date": "May 05, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3125013 Refactor update.fetch.inc into a MailHandler",
-      "locDelta": 44,
-      "ccnDelta": 4,
-      "miDelta": 10,
-      "antipatternsDelta": -11
-    },
-    {
-      "hash": "71f4885c3ea",
-      "date": "May 05, 2026",
-      "type": "Bug",
-      "message": "fix: #3574506 Sorting by Views result counter causes ORDER BY unknown",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 952
+      "commits": 957
     }
   ]
 }
