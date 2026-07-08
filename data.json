@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-07T03:19:20.829157",
+  "generated": "2026-07-08T00:59:39.424782",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 13,
+      "total": 17,
       "features": 2,
-      "bugs": 5,
-      "maintenance": 6,
+      "bugs": 7,
+      "maintenance": 8,
       "unknown": 0
     }
   ],
@@ -137642,6 +137642,36 @@
   ],
   "commits": [
     {
+      "hash": "b3351dd532e",
+      "date": "Jul 07, 2026",
+      "type": "Maintenance",
+      "message": "task: #3608738 Avoid adding user:0 cache tag in UserRoles cache context",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "a009581e4e4",
+      "date": "Jul 07, 2026",
+      "type": "Bug",
+      "message": "fix: #3609020 BC layer in locale_translation_get_projects() implemented incorrec",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "e439b183f1d",
+      "date": "Jul 07, 2026",
+      "type": "Bug",
+      "message": "fix: #3605554 Translations are never loaded or downloaded for a custom profile",
+      "locDelta": 6,
+      "ccnDelta": 6,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "7e0c9a2e387",
       "date": "Jul 06, 2026",
       "type": "Bug",
@@ -138610,36 +138640,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "69709341ca6",
-      "date": "May 06, 2026",
-      "type": "Bug",
-      "message": "fix: #3475540 Use a route requirement to prevent non-ASCII characters causing an",
-      "locDelta": 36,
-      "ccnDelta": 12,
-      "miDelta": -15,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "15d01177ac6",
-      "date": "May 06, 2026",
-      "type": "Maintenance",
-      "message": "task: #3570634 Remove fallback classloader and related code in AttributeClassDis",
-      "locDelta": -56,
-      "ccnDelta": -12,
-      "miDelta": 10,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "f93aafb4712",
-      "date": "May 05, 2026",
-      "type": "Maintenance",
-      "message": "task: #3586071 Remove deprecated method getOriginalClass",
-      "locDelta": -5,
-      "ccnDelta": -3,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 957
+      "commits": 961
     }
   ]
 }
