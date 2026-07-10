@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-09T01:03:31.527138",
+  "generated": "2026-07-10T01:04:23.368806",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,9 +2507,9 @@
     },
     {
       "date": "2026-07",
-      "total": 19,
+      "total": 22,
       "features": 2,
-      "bugs": 9,
+      "bugs": 12,
       "maintenance": 8,
       "unknown": 0
     }
@@ -137642,6 +137642,26 @@
   ],
   "commits": [
     {
+      "hash": "06650578bf5",
+      "date": "Jul 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3091285 Composer scaffolding fails when permissions on default.settings.ym",
+      "locDelta": 30,
+      "ccnDelta": 15,
+      "miDelta": -18,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "7f3e2517f3f",
+      "date": "Jul 09, 2026",
+      "type": "Bug",
+      "message": "fix: #3607866 Scaffold plugin does not always create autoload_runtime.php when u",
+      "locDelta": 18,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "38d6cd53cf9",
       "date": "Jul 08, 2026",
       "type": "Bug",
@@ -138620,26 +138640,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "fe682bee7a2",
-      "date": "May 07, 2026",
-      "type": "Maintenance",
-      "message": "test: #3573954 Move common code across Drupal base test suite classes to DrupalT",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "ff86b9f9aeb",
-      "date": "May 07, 2026",
-      "type": "Feature",
-      "message": "feat: #3066751 Add resolvable_uri property to LinkItem for APIs",
-      "locDelta": 82,
-      "ccnDelta": 19,
-      "miDelta": -4,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 963
+      "commits": 966
     }
   ]
 }
