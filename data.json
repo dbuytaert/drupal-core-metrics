@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-10T01:04:23.368806",
+  "generated": "2026-07-11T00:55:30.160225",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,11 +2507,11 @@
     },
     {
       "date": "2026-07",
-      "total": 22,
+      "total": 34,
       "features": 2,
-      "bugs": 12,
-      "maintenance": 8,
-      "unknown": 0
+      "bugs": 18,
+      "maintenance": 13,
+      "unknown": 1
     }
   ],
   "snapshots": [
@@ -137642,6 +137642,66 @@
   ],
   "commits": [
     {
+      "hash": "09561ef8186",
+      "date": "Jul 10, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3608912 Move search updates back to search module and fix missing plu",
+      "locDelta": 169,
+      "ccnDelta": 31,
+      "miDelta": -7,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "411e46bd179",
+      "date": "Jul 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3554720 Remove addition of a object type in all props",
+      "locDelta": -5,
+      "ccnDelta": -1,
+      "miDelta": 3,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "9235f874d32",
+      "date": "Jul 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3475153 Make DirectoryWithMetadataDiscovery generic and reusable",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "12e85bfb520",
+      "date": "Jul 10, 2026",
+      "type": "Unknown",
+      "message": "Revert \"fix: #3114467 'Negate' form value for condition plugins should be cast t",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "c033e7a8c08",
+      "date": "Jul 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3114467 'Negate' form value for condition plugins should be cast to boolea",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "f8c93a2f241",
+      "date": "Jul 10, 2026",
+      "type": "Bug",
+      "message": "fix: #3605792 SQL injection via unvalidated operator in case-insensitive entity ",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "06650578bf5",
       "date": "Jul 09, 2026",
       "type": "Bug",
@@ -138580,66 +138640,6 @@
       "ccnDelta": 3,
       "miDelta": -2,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "55e61b4ace8",
-      "date": "May 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3463868 Two #config_targets error when used on a text_format form element",
-      "locDelta": 15,
-      "ccnDelta": 3,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "bf07099563d",
-      "date": "May 09, 2026",
-      "type": "Maintenance",
-      "message": "task: #3585555 Bump PHPStan & friends to latest release",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "9fc95e06f27",
-      "date": "May 08, 2026",
-      "type": "Maintenance",
-      "message": "task: #3573879 Mark layout_builder_expose_all_field_blocks obsolete, uninstall i",
-      "locDelta": -24,
-      "ccnDelta": -4,
-      "miDelta": 4,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "3971cf1881b",
-      "date": "May 08, 2026",
-      "type": "Maintenance",
-      "message": "task: #3563639 Add getAllKeys() method to KeyValueStoreInterface",
-      "locDelta": 36,
-      "ccnDelta": 7,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d2f42dadfe7",
-      "date": "May 08, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3588385 Add a transaction around the database key value store setMultiple",
-      "locDelta": 10,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "fc5ba393b05",
-      "date": "May 07, 2026",
-      "type": "Bug",
-      "message": "fix: #3587298 RouteProcessorCsrf::processOutbound() should bubble 'session' cach",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 966
+      "commits": 978
     }
   ]
 }
