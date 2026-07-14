@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-13T00:53:38.796330",
+  "generated": "2026-07-14T00:55:51.565137",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 34,
+      "total": 44,
       "features": 2,
-      "bugs": 18,
-      "maintenance": 13,
+      "bugs": 23,
+      "maintenance": 18,
       "unknown": 1
     }
   ],
@@ -137642,6 +137642,36 @@
   ],
   "commits": [
     {
+      "hash": "de0a865f3a8",
+      "date": "Jul 13, 2026",
+      "type": "Bug",
+      "message": "fix: #3603333 Errors when stream wrappers instantiate services in constructors b",
+      "locDelta": 19,
+      "ccnDelta": 4,
+      "miDelta": -1,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "46e88176426",
+      "date": "Jul 13, 2026",
+      "type": "Bug",
+      "message": "fix: #3592946 ComponentNegotiator::negotiate() re-runs on every call when no rep",
+      "locDelta": -1,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "30a8b5bfbac",
+      "date": "Jul 13, 2026",
+      "type": "Maintenance",
+      "message": "task: #3589108 Refactor DeprecationHandler into a standard PHPUnit extension",
+      "locDelta": -6,
+      "ccnDelta": 0,
+      "miDelta": 2,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "09561ef8186",
       "date": "Jul 10, 2026",
       "type": "Maintenance",
@@ -138610,36 +138640,6 @@
       "ccnDelta": 41,
       "miDelta": -18,
       "antipatternsDelta": 6
-    },
-    {
-      "hash": "57bf3237b20",
-      "date": "May 11, 2026",
-      "type": "Feature",
-      "message": "feat: #3313404 Use symfony/runtime for less bespoke bootstrap/compatibility with",
-      "locDelta": 174,
-      "ccnDelta": 37,
-      "miDelta": -3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "8f361502ecf",
-      "date": "May 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #2877924 Remove ContentPreprocess and associated code",
-      "locDelta": -34,
-      "ccnDelta": -8,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "701ea27c223",
-      "date": "May 09, 2026",
-      "type": "Bug",
-      "message": "fix: #2486267 Attributes of a block content are applied to block itself",
-      "locDelta": 14,
-      "ccnDelta": 3,
-      "miDelta": -2,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 978
+      "commits": 988
     }
   ]
 }
