@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-15T00:46:28.966111",
+  "generated": "2026-07-16T00:55:01.811357",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,11 +2507,11 @@
     },
     {
       "date": "2026-07",
-      "total": 48,
+      "total": 51,
       "features": 2,
       "bugs": 23,
       "maintenance": 22,
-      "unknown": 1
+      "unknown": 4
     }
   ],
   "snapshots": [
@@ -137642,6 +137642,26 @@
   ],
   "commits": [
     {
+      "hash": "195e67bc29a",
+      "date": "Jul 15, 2026",
+      "type": "Unknown",
+      "message": "SA-CORE-2026-011 by prudloff, fathershawn, catch, larowlan, longwave, xjm",
+      "locDelta": 2,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "e41cc6ff613",
+      "date": "Jul 15, 2026",
+      "type": "Unknown",
+      "message": "SA-CORE-2026-010 by offensive-ai, benjifisher, kim.pepper, mohit_aghera, catch, ",
+      "locDelta": 0,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "0c3247edb22",
       "date": "Jul 14, 2026",
       "type": "Maintenance",
@@ -138620,26 +138640,6 @@
       "ccnDelta": 1,
       "miDelta": -3,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "e69457653ca",
-      "date": "May 11, 2026",
-      "type": "Maintenance",
-      "message": "task: #3588024 PHP 8.6 - Functions mb_regex_encoding() and mb_ereg() are depreca",
-      "locDelta": -7,
-      "ccnDelta": -1,
-      "miDelta": 8,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "a85f1db8b88",
-      "date": "May 11, 2026",
-      "type": "Bug",
-      "message": "fix: #3064751 Responsive image formatter does not support URL/Link options",
-      "locDelta": 13,
-      "ccnDelta": 1,
-      "miDelta": -3,
-      "antipatternsDelta": 2
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 992
+      "commits": 995
     }
   ]
 }
