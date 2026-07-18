@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-17T00:57:36.831144",
+  "generated": "2026-07-18T00:50:09.809343",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 52,
-      "features": 2,
-      "bugs": 24,
-      "maintenance": 22,
+      "total": 57,
+      "features": 3,
+      "bugs": 26,
+      "maintenance": 24,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,36 @@
   ],
   "commits": [
     {
+      "hash": "a06956c97b5",
+      "date": "Jul 17, 2026",
+      "type": "Maintenance",
+      "message": "task: #3547724 Throw an exception when unsupported procedural functions are defi",
+      "locDelta": -3,
+      "ccnDelta": -3,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "ecaa384d8df",
+      "date": "Jul 17, 2026",
+      "type": "Bug",
+      "message": "fix: #3029122 Drupal returns a 500 Internal error when 'destination' url query v",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "854ccc02f13",
+      "date": "Jul 17, 2026",
+      "type": "Bug",
+      "message": "fix: #3611084 DrupalApplication should use the compiled container",
+      "locDelta": 0,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "c8bda45c62b",
       "date": "Jul 16, 2026",
       "type": "Bug",
@@ -138610,36 +138640,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "d38a4f4ea13",
-      "date": "May 12, 2026",
-      "type": "Bug",
-      "message": "fix: #2844620 Automatically split cache debug headers into multiple lines when t",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": 2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "177e4f8af61",
-      "date": "May 12, 2026",
-      "type": "Maintenance",
-      "message": "task: #3589630 Deprecate NodeViewController",
-      "locDelta": -4,
-      "ccnDelta": -2,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "f56d20ef2df",
-      "date": "May 12, 2026",
-      "type": "Maintenance",
-      "message": "perf: #3308877 Add static cache for loadEntityByUuid function to store uuid-id p",
-      "locDelta": 15,
-      "ccnDelta": 7,
-      "miDelta": -2,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 996
+      "commits": 1001
     }
   ]
 }
