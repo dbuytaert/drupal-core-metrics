@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-20T03:16:23.630538",
+  "generated": "2026-07-21T00:57:16.354749",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 57,
+      "total": 65,
       "features": 3,
-      "bugs": 26,
-      "maintenance": 24,
+      "bugs": 28,
+      "maintenance": 30,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,36 @@
   ],
   "commits": [
     {
+      "hash": "c4d7966964e",
+      "date": "Jul 20, 2026",
+      "type": "Maintenance",
+      "message": "task: #3485030 Avoid saving menu links through node form when they do not change",
+      "locDelta": 8,
+      "ccnDelta": 3,
+      "miDelta": -5,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "220ee9fe404",
+      "date": "Jul 20, 2026",
+      "type": "Bug",
+      "message": "fix: #3611653 Upsert fails after upgrade from 11.3 to 11.4",
+      "locDelta": 19,
+      "ccnDelta": 4,
+      "miDelta": -17,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "28d2798c5cd",
+      "date": "Jul 20, 2026",
+      "type": "Bug",
+      "message": "fix: #3611529 Moderation state field definitions can have an incorrect target bu",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
       "hash": "a06956c97b5",
       "date": "Jul 17, 2026",
       "type": "Maintenance",
@@ -138610,36 +138640,6 @@
       "ccnDelta": 0,
       "miDelta": 1,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "a69f1e953a8",
-      "date": "May 13, 2026",
-      "type": "Bug",
-      "message": "fix: #455724 Deprecate check_markup()",
-      "locDelta": 5,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 4
-    },
-    {
-      "hash": "c0f1c27c3f8",
-      "date": "May 13, 2026",
-      "type": "Maintenance",
-      "message": "task: #3586470 Support preloading of fonts declared from components",
-      "locDelta": 11,
-      "ccnDelta": 3,
-      "miDelta": -7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "79cbaf53646",
-      "date": "May 12, 2026",
-      "type": "Bug",
-      "message": "fix: #3301239 Improve the error message thrown in PoStreamReader::readLine() whe",
-      "locDelta": 1,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1001
+      "commits": 1009
     }
   ]
 }
