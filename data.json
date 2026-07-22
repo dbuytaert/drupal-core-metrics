@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-21T00:57:16.354749",
+  "generated": "2026-07-22T00:57:49.006065",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 65,
-      "features": 3,
-      "bugs": 28,
-      "maintenance": 30,
+      "total": 75,
+      "features": 5,
+      "bugs": 30,
+      "maintenance": 36,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,36 @@
   ],
   "commits": [
     {
+      "hash": "d60736ee69d",
+      "date": "Jul 21, 2026",
+      "type": "Maintenance",
+      "message": "task: #3586221 Remove the Stable 9 theme",
+      "locDelta": -50,
+      "ccnDelta": -13,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "b0f28bf138e",
+      "date": "Jul 21, 2026",
+      "type": "Feature",
+      "message": "feat: #3605549 Allow install profiles to specify a list of recipes that should b",
+      "locDelta": 1415,
+      "ccnDelta": 292,
+      "miDelta": -409,
+      "antipatternsDelta": 113
+    },
+    {
+      "hash": "0c75f8ed85b",
+      "date": "Jul 21, 2026",
+      "type": "Feature",
+      "message": "feat: #3101714 Link field display should show plaintext URLs longer than 80 char",
+      "locDelta": 5,
+      "ccnDelta": 4,
+      "miDelta": -3,
+      "antipatternsDelta": 3
+    },
+    {
       "hash": "c4d7966964e",
       "date": "Jul 20, 2026",
       "type": "Maintenance",
@@ -138610,36 +138640,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": -2
-    },
-    {
-      "hash": "c2bcef504f7",
-      "date": "May 15, 2026",
-      "type": "Maintenance",
-      "message": "task: #3516173 Block status code visibility condition should use a status code c",
-      "locDelta": 20,
-      "ccnDelta": 4,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "0977dec3e22",
-      "date": "May 15, 2026",
-      "type": "Maintenance",
-      "message": "task: #3581303 Convert locale batch callbacks",
-      "locDelta": 155,
-      "ccnDelta": 26,
-      "miDelta": -3,
-      "antipatternsDelta": -29
-    },
-    {
-      "hash": "f9b616d5365",
-      "date": "May 14, 2026",
-      "type": "Bug",
-      "message": "fix: #3579253 run-tests.sh does not properly process PHPUnit output when no test",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 1,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1009
+      "commits": 1019
     }
   ]
 }
