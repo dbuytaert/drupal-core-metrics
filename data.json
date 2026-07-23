@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-22T00:57:49.006065",
+  "generated": "2026-07-23T00:52:47.927520",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 75,
+      "total": 86,
       "features": 5,
-      "bugs": 30,
-      "maintenance": 36,
+      "bugs": 34,
+      "maintenance": 43,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,56 @@
   ],
   "commits": [
     {
+      "hash": "f6012fd4721",
+      "date": "Jul 22, 2026",
+      "type": "Bug",
+      "message": "fix: #3608493 \\Drupal\\Core\\Database\\Query\\Insert::execute() is overriden in all ",
+      "locDelta": -29,
+      "ccnDelta": -5,
+      "miDelta": 10,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "cac4703191c",
+      "date": "Jul 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3572350 Disable the default /node listing view, replace Olivero hardcoded",
+      "locDelta": 20,
+      "ccnDelta": 2,
+      "miDelta": 1,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "4f0c2dc6ed2",
+      "date": "Jul 22, 2026",
+      "type": "Bug",
+      "message": "fix: #3593466 View mode form crashes if there are no bundles",
+      "locDelta": 1,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "9715af43cff",
+      "date": "Jul 22, 2026",
+      "type": "Bug",
+      "message": "fix: #3608491 \\Drupal\\Core\\Database\\ExceptionHandler methods never return",
+      "locDelta": 4,
+      "ccnDelta": -1,
+      "miDelta": 2,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "99760dd5055",
+      "date": "Jul 22, 2026",
+      "type": "Maintenance",
+      "message": "task: #3593123 Add BatchStorageInterface::getId()",
+      "locDelta": 1,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "d60736ee69d",
       "date": "Jul 21, 2026",
       "type": "Maintenance",
@@ -138590,56 +138640,6 @@
       "ccnDelta": 19,
       "miDelta": -1,
       "antipatternsDelta": -6
-    },
-    {
-      "hash": "dc3c97a4d01",
-      "date": "May 21, 2026",
-      "type": "Maintenance",
-      "message": "task: #3591179 Update main and 11.x to latest Twig and Symfony versions",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "eccc454363a",
-      "date": "May 20, 2026",
-      "type": "Unknown",
-      "message": "SA-CORE-2026-004 by michaelmaturi, longwave, catch, bbrala, mcdruid, larowlan, x",
-      "locDelta": 6,
-      "ccnDelta": 2,
-      "miDelta": -5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "9972cbae749",
-      "date": "May 18, 2026",
-      "type": "Maintenance",
-      "message": "task: #3587707 Try to avoid extra cache sets/gets in ThemeRegistry",
-      "locDelta": -27,
-      "ccnDelta": -8,
-      "miDelta": 12,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c31dedafabd",
-      "date": "May 16, 2026",
-      "type": "Bug",
-      "message": "fix: #1452100 Private file download returns access denied, when file attached to",
-      "locDelta": 179,
-      "ccnDelta": 42,
-      "miDelta": -43,
-      "antipatternsDelta": 3
-    },
-    {
-      "hash": "a1b8f1aed85",
-      "date": "May 15, 2026",
-      "type": "Maintenance",
-      "message": "task: #3507711 Move the code that hides the toolbar when navigation is enabled t",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": -2
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1019
+      "commits": 1030
     }
   ]
 }
