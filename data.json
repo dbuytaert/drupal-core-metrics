@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-23T00:52:47.927520",
+  "generated": "2026-07-24T00:56:18.979274",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 86,
-      "features": 5,
-      "bugs": 34,
-      "maintenance": 43,
+      "total": 92,
+      "features": 6,
+      "bugs": 38,
+      "maintenance": 44,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,16 @@
   ],
   "commits": [
     {
+      "hash": "4aa1f933844",
+      "date": "Jul 24, 2026",
+      "type": "Feature",
+      "message": "feat: #3481627 Update user creation form to hide password and status fields when",
+      "locDelta": 11,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 7
+    },
+    {
       "hash": "f6012fd4721",
       "date": "Jul 22, 2026",
       "type": "Bug",
@@ -138630,16 +138640,6 @@
       "ccnDelta": 3,
       "miDelta": -27,
       "antipatternsDelta": 3
-    },
-    {
-      "hash": "767c715f7d2",
-      "date": "May 23, 2026",
-      "type": "Maintenance",
-      "message": "task: #3037156 Modernize locale history functions",
-      "locDelta": 117,
-      "ccnDelta": 19,
-      "miDelta": -1,
-      "antipatternsDelta": -6
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1030
+      "commits": 1036
     }
   ]
 }
