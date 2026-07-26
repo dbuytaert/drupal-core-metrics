@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-25T01:00:22.034903",
+  "generated": "2026-07-26T01:03:28.655904",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 98,
+      "total": 106,
       "features": 6,
-      "bugs": 40,
-      "maintenance": 48,
+      "bugs": 43,
+      "maintenance": 53,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,26 @@
   ],
   "commits": [
     {
+      "hash": "70c6a37feba",
+      "date": "Jul 25, 2026",
+      "type": "Maintenance",
+      "message": "task: #3593666 Convert Views routes to attributes",
+      "locDelta": 84,
+      "ccnDelta": 0,
+      "miDelta": -33,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "7355949b9f4",
+      "date": "Jul 25, 2026",
+      "type": "Bug",
+      "message": "fix: #3605431 Missing is_string check for the sort_by Views exposed form query p",
+      "locDelta": 0,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "29066acd0c9",
       "date": "Jul 24, 2026",
       "type": "Maintenance",
@@ -138620,26 +138640,6 @@
       "ccnDelta": 0,
       "miDelta": 2,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "b5b29d41deb",
-      "date": "May 29, 2026",
-      "type": "Bug",
-      "message": "fix: #3280235 Calling code can not collect bubbled attachments from TextProcesse",
-      "locDelta": 8,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "45045440e1f",
-      "date": "May 29, 2026",
-      "type": "Bug",
-      "message": "fix: #3585716 EntityQuery uses hard-coded langcode in revision-data joins, break",
-      "locDelta": 3,
-      "ccnDelta": -1,
-      "miDelta": -3,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1042
+      "commits": 1050
     }
   ]
 }
