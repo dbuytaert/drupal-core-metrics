@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-26T01:03:28.655904",
+  "generated": "2026-07-27T01:02:59.187420",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 106,
+      "total": 111,
       "features": 6,
-      "bugs": 43,
-      "maintenance": 53,
+      "bugs": 44,
+      "maintenance": 57,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,16 @@
   ],
   "commits": [
     {
+      "hash": "d97ade05372",
+      "date": "Jul 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3588379 Move search from user module to Search",
+      "locDelta": 81,
+      "ccnDelta": 12,
+      "miDelta": -5,
+      "antipatternsDelta": 5
+    },
+    {
       "hash": "70c6a37feba",
       "date": "Jul 25, 2026",
       "type": "Maintenance",
@@ -138630,16 +138640,6 @@
       "ccnDelta": 6,
       "miDelta": -3,
       "antipatternsDelta": 5
-    },
-    {
-      "hash": "61ef4c65545",
-      "date": "May 29, 2026",
-      "type": "Maintenance",
-      "message": "task: #3589208 Always use the file contents to determine asset aggregate filenam",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 2,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1050
+      "commits": 1055
     }
   ]
 }
