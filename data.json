@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-27T01:02:59.187420",
+  "generated": "2026-07-28T00:59:04.975930",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 111,
+      "total": 118,
       "features": 6,
-      "bugs": 44,
-      "maintenance": 57,
+      "bugs": 45,
+      "maintenance": 63,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,26 @@
   ],
   "commits": [
     {
+      "hash": "6c17be9d892",
+      "date": "Jul 27, 2026",
+      "type": "Bug",
+      "message": "fix: #3613047 RouteProvider::__construct() BC branch assigns $table to $language",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "2884bf374c6",
+      "date": "Jul 27, 2026",
+      "type": "Maintenance",
+      "message": "task: #2951046 Allow parsing and writing PHP class constants and enums in YAML f",
+      "locDelta": 244,
+      "ccnDelta": 54,
+      "miDelta": -28,
+      "antipatternsDelta": 5
+    },
+    {
       "hash": "d97ade05372",
       "date": "Jul 26, 2026",
       "type": "Maintenance",
@@ -138620,26 +138640,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "8feb0d7c373",
-      "date": "Jun 01, 2026",
-      "type": "Maintenance",
-      "message": "task: #3503843 Remove automatic preloading of all \"public\" routes, cache routes ",
-      "locDelta": 10,
-      "ccnDelta": 2,
-      "miDelta": -2,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "f964c116991",
-      "date": "May 30, 2026",
-      "type": "Maintenance",
-      "message": "task: #3582690 Remove or replace usages of Shortcut from themes",
-      "locDelta": 31,
-      "ccnDelta": 6,
-      "miDelta": -3,
-      "antipatternsDelta": 5
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1055
+      "commits": 1062
     }
   ]
 }
