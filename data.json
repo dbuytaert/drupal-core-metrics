@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-28T00:59:04.975930",
+  "generated": "2026-07-29T00:54:30.088369",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 118,
+      "total": 123,
       "features": 6,
-      "bugs": 45,
-      "maintenance": 63,
+      "bugs": 46,
+      "maintenance": 67,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,36 @@
   ],
   "commits": [
     {
+      "hash": "c35d842e681",
+      "date": "Jul 28, 2026",
+      "type": "Bug",
+      "message": "fix: #3612163 When installing themes on the Appearance page, batches added (eg. ",
+      "locDelta": 9,
+      "ccnDelta": 2,
+      "miDelta": -4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "169100e3820",
+      "date": "Jul 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3588847 Update to Symfony 8.1",
+      "locDelta": -3,
+      "ccnDelta": 1,
+      "miDelta": 2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "41844eb9e39",
+      "date": "Jul 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3613241 Remove lazy declaration and proxy class for lock services",
+      "locDelta": -100,
+      "ccnDelta": -20,
+      "miDelta": 0,
+      "antipatternsDelta": -2
+    },
+    {
       "hash": "6c17be9d892",
       "date": "Jul 27, 2026",
       "type": "Bug",
@@ -138610,36 +138640,6 @@
       "ccnDelta": 4,
       "miDelta": -6,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "702159f4ab2",
-      "date": "Jun 02, 2026",
-      "type": "Maintenance",
-      "message": "perf: #2875033 Optimize joins and table selection in SQL entity query implementa",
-      "locDelta": 61,
-      "ccnDelta": 24,
-      "miDelta": -10,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "5f815c3bf49",
-      "date": "Jun 01, 2026",
-      "type": "Bug",
-      "message": "fix: #3592887 AttributeRouteDiscovery does not cleanly handle invalid classes",
-      "locDelta": 9,
-      "ccnDelta": 3,
-      "miDelta": -7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "29aa27ad2d2",
-      "date": "Jun 01, 2026",
-      "type": "Bug",
-      "message": "fix: #3593008 AccessPolicyProcessor::processAccessPolicies() creates unnecessary",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1062
+      "commits": 1067
     }
   ]
 }
