@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-30T00:56:50.330250",
+  "generated": "2026-07-31T01:00:53.345773",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2507,10 +2507,10 @@
     },
     {
       "date": "2026-07",
-      "total": 135,
+      "total": 150,
       "features": 7,
-      "bugs": 49,
-      "maintenance": 75,
+      "bugs": 51,
+      "maintenance": 88,
       "unknown": 4
     }
   ],
@@ -137642,6 +137642,46 @@
   ],
   "commits": [
     {
+      "hash": "8d4627eaf4c",
+      "date": "Jul 30, 2026",
+      "type": "Maintenance",
+      "message": "task: #3613243 Convert block.module routes to attributes",
+      "locDelta": 66,
+      "ccnDelta": 0,
+      "miDelta": -12,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "80ff540c9a6",
+      "date": "Jul 30, 2026",
+      "type": "Maintenance",
+      "message": "task: #3593472 Insecure Direct Object Reference in Private File Uploads",
+      "locDelta": 7,
+      "ccnDelta": 2,
+      "miDelta": -2,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "9a20b9c4195",
+      "date": "Jul 30, 2026",
+      "type": "Maintenance",
+      "message": "task: #3584238 Deprecate implicit commit-on-destruct",
+      "locDelta": 17,
+      "ccnDelta": 2,
+      "miDelta": -11,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "214876bb6f7",
+      "date": "Jul 30, 2026",
+      "type": "Maintenance",
+      "message": "task: #3050199 Remove entity level constraint MenuSettingsConstraint that valida",
+      "locDelta": -8,
+      "ccnDelta": -3,
+      "miDelta": 7,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "e179038b408",
       "date": "Jul 29, 2026",
       "type": "Bug",
@@ -138600,46 +138640,6 @@
       "ccnDelta": 9,
       "miDelta": -3,
       "antipatternsDelta": 2
-    },
-    {
-      "hash": "7918d127e88",
-      "date": "Jun 06, 2026",
-      "type": "Maintenance",
-      "message": "task: #3588490 Don't reset the extension lists in system requirements",
-      "locDelta": 2,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "fbc204ef40c",
-      "date": "Jun 04, 2026",
-      "type": "Maintenance",
-      "message": "task: #3590050 Deprecate and replace locale_status related functions",
-      "locDelta": 36,
-      "ccnDelta": 1,
-      "miDelta": 19,
-      "antipatternsDelta": -6
-    },
-    {
-      "hash": "65947ba38aa",
-      "date": "Jun 04, 2026",
-      "type": "Bug",
-      "message": "fix: #3041170 RowPluginBase::render() update docblock and trigger deprecation fo",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "75becbf693d",
-      "date": "Jun 03, 2026",
-      "type": "Feature",
-      "message": "feat: #3020938 Add view unpublished block content permission",
-      "locDelta": 4,
-      "ccnDelta": 0,
-      "miDelta": -2,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -138749,7 +138749,7 @@
     },
     {
       "year": 2026,
-      "commits": 1079
+      "commits": 1094
     }
   ]
 }
