@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-01T00:59:31.836580",
+  "generated": "2026-08-02T01:02:33.818550",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,9 +2515,9 @@
     },
     {
       "date": "2026-08",
-      "total": 2,
+      "total": 3,
       "features": 0,
-      "bugs": 0,
+      "bugs": 1,
       "maintenance": 2,
       "unknown": 0
     }
@@ -137649,9 +137649,9 @@
     },
     {
       "date": "2026-08",
-      "commit": "076e034a",
+      "commit": "73847ce0",
       "production": {
-        "loc": 292843,
+        "loc": 292845,
         "functions": 23063,
         "ccn": {
           "avg": 2.5,
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.6
       },
-      "testLoc": 460061,
+      "testLoc": 460079,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -141714,7 +141714,7 @@
       "antipatterns": {
         "magicKeys": 10643,
         "deepArrays": 7995,
-        "serviceLocators": 2442
+        "serviceLocators": 2443
       },
       "hotspots": [
         {
@@ -142121,6 +142121,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "73847ce09f3",
+      "date": "Aug 01, 2026",
+      "type": "Bug",
+      "message": "fix: #3600904 Shipped configuration entities that do not have translatable eleme",
+      "locDelta": 2,
+      "ccnDelta": 3,
+      "miDelta": -3,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "c51fe139f8a",
       "date": "Aug 01, 2026",
@@ -143110,16 +143120,6 @@
       "ccnDelta": 48,
       "miDelta": -33,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "aad450200eb",
-      "date": "Jun 08, 2026",
-      "type": "Bug",
-      "message": "fix: #3594092 loadUnchanged() returns an in-memory-modified entity when hook_ent",
-      "locDelta": 4,
-      "ccnDelta": 2,
-      "miDelta": -5,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143229,7 +143229,7 @@
     },
     {
       "year": 2026,
-      "commits": 1101
+      "commits": 1102
     }
   ]
 }
