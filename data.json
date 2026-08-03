@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-02T01:02:33.818550",
+  "generated": "2026-08-03T01:02:24.150040",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 3,
-      "features": 0,
-      "bugs": 1,
-      "maintenance": 2,
+      "total": 6,
+      "features": 1,
+      "bugs": 2,
+      "maintenance": 3,
       "unknown": 0
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "73847ce0",
+      "commit": "a3108d01",
       "production": {
-        "loc": 292845,
-        "functions": 23063,
+        "loc": 293590,
+        "functions": 23103,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137661,9 +137661,9 @@
           "avg": 87,
           "p5": 84
         },
-        "antipatterns": 71.6
+        "antipatterns": 71.3
       },
-      "testLoc": 460079,
+      "testLoc": 460783,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137671,7 +137671,7 @@
         "events": 43,
         "services": 242,
         "yamlFormats": 19,
-        "interfaceMethods": 2909,
+        "interfaceMethods": 2910,
         "globalFunctions": 265
       },
       "surfaceAreaLists": {
@@ -140305,6 +140305,7 @@
           "ThemeInitializationInterface::getActiveThemeByName",
           "ThemeInitializationInterface::loadActiveTheme",
           "ThemeInitializationInterface::getActiveTheme",
+          "SchemaDefinitionInterface::toArray",
           "TransactionManagerInterface::inTransaction",
           "TransactionManagerInterface::has",
           "TransactionManagerInterface::push",
@@ -141713,7 +141714,7 @@
       },
       "antipatterns": {
         "magicKeys": 10643,
-        "deepArrays": 7995,
+        "deepArrays": 7960,
         "serviceLocators": 2443
       },
       "hotspots": [
@@ -142121,6 +142122,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "a3108d0139a",
+      "date": "Aug 03, 2026",
+      "type": "Feature",
+      "message": "feat: #3411490 Replace array-based DB Schema API with a value object structure",
+      "locDelta": 725,
+      "ccnDelta": 122,
+      "miDelta": -110,
+      "antipatternsDelta": -35
+    },
+    {
+      "hash": "62c7178d2be",
+      "date": "Aug 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3581218 Deprecate .theme file extension",
+      "locDelta": 20,
+      "ccnDelta": 4,
+      "miDelta": -4,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "73847ce09f3",
       "date": "Aug 01, 2026",
@@ -143100,26 +143121,6 @@
       "ccnDelta": 1,
       "miDelta": -1,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "7df1a889e3b",
-      "date": "Jun 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3593223 [PHP 8.5] OptionsWidgetBase::getSelectedOptions tries to access nu",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d507d794fd0",
-      "date": "Jun 09, 2026",
-      "type": "Feature",
-      "message": "feat: #3453474 CLI entry point in Drupal Core",
-      "locDelta": 351,
-      "ccnDelta": 48,
-      "miDelta": -33,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143229,7 +143230,7 @@
     },
     {
       "year": 2026,
-      "commits": 1102
+      "commits": 1105
     }
   ]
 }
