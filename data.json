@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-03T01:02:24.150040",
+  "generated": "2026-08-04T01:00:49.308273",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 6,
+      "total": 10,
       "features": 1,
       "bugs": 2,
-      "maintenance": 3,
+      "maintenance": 7,
       "unknown": 0
     }
   ],
@@ -137649,9 +137649,9 @@
     },
     {
       "date": "2026-08",
-      "commit": "a3108d01",
+      "commit": "b5c577dd",
       "production": {
-        "loc": 293590,
+        "loc": 293604,
         "functions": 23103,
         "ccn": {
           "avg": 2.5,
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.3
       },
-      "testLoc": 460783,
+      "testLoc": 460697,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137791,7 +137791,6 @@
           "hook_block_view_alter",
           "hook_toolbar_alter",
           "hook_block_alter",
-          "hook_css_alter",
           "hook_requirements",
           "hook_requirements_alter",
           "hook_runtime_requirements_alter",
@@ -137885,6 +137884,7 @@
           "hook_filter_secure_image_alter",
           "hook_editor_js_settings_alter",
           "hook_editor_xss_filter_alter",
+          "hook_css_alter",
           "hook_countries_alter",
           "hook_menu_local_tasks_alter",
           "hook_contextual_links_alter",
@@ -141714,8 +141714,8 @@
       },
       "antipatterns": {
         "magicKeys": 10643,
-        "deepArrays": 7960,
-        "serviceLocators": 2443
+        "deepArrays": 7963,
+        "serviceLocators": 2442
       },
       "hotspots": [
         {
@@ -142122,6 +142122,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "57faef3a50b",
+      "date": "Aug 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #3613256 Optimize TypedConfigManager::getDefinitionWithReplacements()",
+      "locDelta": 5,
+      "ccnDelta": 1,
+      "miDelta": -3,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "f79c0a4fbd6",
+      "date": "Aug 03, 2026",
+      "type": "Maintenance",
+      "message": "task: #1945262 Introduce before and after for conditional ordering in library de",
+      "locDelta": 9,
+      "ccnDelta": 4,
+      "miDelta": 8,
+      "antipatternsDelta": 2
+    },
     {
       "hash": "a3108d0139a",
       "date": "Aug 03, 2026",
@@ -143101,26 +143121,6 @@
       "ccnDelta": -1,
       "miDelta": 0,
       "antipatternsDelta": -2
-    },
-    {
-      "hash": "f6c6aec7302",
-      "date": "Jun 09, 2026",
-      "type": "Maintenance",
-      "message": "task: #3590050 Deprecate and replace locale_status related functions",
-      "locDelta": -62,
-      "ccnDelta": -12,
-      "miDelta": 30,
-      "antipatternsDelta": -3
-    },
-    {
-      "hash": "6ce4beead00",
-      "date": "Jun 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3593390 Media Preview Endpoint Leaks Labels Of Non-Viewable Media By UUID",
-      "locDelta": 1,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143230,7 @@
     },
     {
       "year": 2026,
-      "commits": 1105
+      "commits": 1109
     }
   ]
 }
