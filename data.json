@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-04T01:00:49.308273",
+  "generated": "2026-08-05T00:58:27.821349",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 10,
+      "total": 27,
       "features": 1,
-      "bugs": 2,
-      "maintenance": 7,
+      "bugs": 6,
+      "maintenance": 20,
       "unknown": 0
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "b5c577dd",
+      "commit": "a1eb6504",
       "production": {
-        "loc": 293604,
-        "functions": 23103,
+        "loc": 293741,
+        "functions": 23106,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137663,14 +137663,14 @@
         },
         "antipatterns": 71.3
       },
-      "testLoc": 460697,
+      "testLoc": 460826,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
         "magicKeys": 275,
         "events": 43,
-        "services": 242,
-        "yamlFormats": 19,
+        "services": 244,
+        "yamlFormats": 16,
         "interfaceMethods": 2910,
         "globalFunctions": 265
       },
@@ -138408,8 +138408,10 @@
           "field_storage_definition",
           "field_definition",
           "plugin_form",
-          "menu",
           "menu_link",
+          "menu",
+          "local_action",
+          "local_task",
           "request_stack",
           "current_route_match",
           "event_dispatcher",
@@ -138521,10 +138523,7 @@
           "libraries",
           "layouts",
           "routing",
-          "links.task",
           "links.contextual",
-          "links.menu",
-          "links.action",
           "starterkit",
           "icons",
           "info",
@@ -141715,7 +141714,7 @@
       "antipatterns": {
         "magicKeys": 10643,
         "deepArrays": 7963,
-        "serviceLocators": 2442
+        "serviceLocators": 2446
       },
       "hotspots": [
         {
@@ -142122,6 +142121,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "047e314b510",
+      "date": "Aug 04, 2026",
+      "type": "Maintenance",
+      "message": "task: #3604286 Upsert - Allow to customize the behavior of the update when the i",
+      "locDelta": 95,
+      "ccnDelta": 23,
+      "miDelta": -43,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "ab7033c0024",
+      "date": "Aug 04, 2026",
+      "type": "Maintenance",
+      "message": "task: #3593485 Use YamlCacheCollectorDiscovery for links, tasks, and actions",
+      "locDelta": 24,
+      "ccnDelta": 4,
+      "miDelta": -7,
+      "antipatternsDelta": 4
+    },
+    {
+      "hash": "043283f6e75",
+      "date": "Aug 04, 2026",
+      "type": "Bug",
+      "message": "fix: #3611989 Workspace purge deletes entities that went live through another wo",
+      "locDelta": 16,
+      "ccnDelta": 4,
+      "miDelta": -7,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "57faef3a50b",
       "date": "Aug 03, 2026",
@@ -143091,36 +143120,6 @@
       "ccnDelta": -1,
       "miDelta": 0,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "7d3b03497b6",
-      "date": "Jun 10, 2026",
-      "type": "Bug",
-      "message": "fix: #3593963 Field loading can hit the MySQL 61 table join limit if there are ~",
-      "locDelta": 65,
-      "ccnDelta": 7,
-      "miDelta": -48,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c6b13555a6a",
-      "date": "Jun 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3590897 Sidebar toggle is visible and functioning in media library dialog,",
-      "locDelta": -5,
-      "ccnDelta": -3,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "e9065446e20",
-      "date": "Jun 09, 2026",
-      "type": "Maintenance",
-      "message": "task: #3590364 Part 2 of Consolidate, refactor, remove and untangle Claro's CSS ",
-      "locDelta": -5,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": -2
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143229,7 @@
     },
     {
       "year": 2026,
-      "commits": 1109
+      "commits": 1126
     }
   ]
 }
