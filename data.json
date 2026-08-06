@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-05T00:58:27.821349",
+  "generated": "2026-08-06T00:55:19.950914",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,9 +2515,9 @@
     },
     {
       "date": "2026-08",
-      "total": 27,
+      "total": 31,
       "features": 1,
-      "bugs": 6,
+      "bugs": 10,
       "maintenance": 20,
       "unknown": 0
     }
@@ -137649,9 +137649,9 @@
     },
     {
       "date": "2026-08",
-      "commit": "a1eb6504",
+      "commit": "cabfe083",
       "production": {
-        "loc": 293741,
+        "loc": 293765,
         "functions": 23106,
         "ccn": {
           "avg": 2.5,
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.3
       },
-      "testLoc": 460826,
+      "testLoc": 460902,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -142122,6 +142122,26 @@
   ],
   "commits": [
     {
+      "hash": "2fdf57a0ce6",
+      "date": "Aug 06, 2026",
+      "type": "Bug",
+      "message": "fix: #3603762 HTML injection in ajax_page_state GET parameter",
+      "locDelta": 19,
+      "ccnDelta": 4,
+      "miDelta": -7,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "4326f06f711",
+      "date": "Aug 05, 2026",
+      "type": "Bug",
+      "message": "fix: #3556508 Respect allowed_formats settings in \\Drupal\\text\\Plugin\\Field\\Fiel",
+      "locDelta": 5,
+      "ccnDelta": 2,
+      "miDelta": -5,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "047e314b510",
       "date": "Aug 04, 2026",
       "type": "Maintenance",
@@ -143100,26 +143120,6 @@
       "ccnDelta": 0,
       "miDelta": -5,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "75547409801",
-      "date": "Jun 12, 2026",
-      "type": "Bug",
-      "message": "fix: #3597692 [regression] The 'dr' command doesn't set DRUPAL_TEST_IN_CHILD_SIT",
-      "locDelta": 4,
-      "ccnDelta": 1,
-      "miDelta": 9,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d5398211c15",
-      "date": "Jun 10, 2026",
-      "type": "Maintenance",
-      "message": "revert: #3587806 Revert adding placeholdering to messages  blocks",
-      "locDelta": -3,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -143229,7 +143229,7 @@
     },
     {
       "year": 2026,
-      "commits": 1126
+      "commits": 1130
     }
   ]
 }
