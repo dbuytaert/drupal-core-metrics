@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-06T00:55:19.950914",
+  "generated": "2026-08-07T01:33:10.080479",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 31,
+      "total": 36,
       "features": 1,
-      "bugs": 10,
-      "maintenance": 20,
+      "bugs": 12,
+      "maintenance": 23,
       "unknown": 0
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "cabfe083",
+      "commit": "ef161e27",
       "production": {
-        "loc": 293765,
-        "functions": 23106,
+        "loc": 293793,
+        "functions": 23109,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.3
       },
-      "testLoc": 460902,
+      "testLoc": 461018,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -142132,6 +142132,16 @@
       "antipatternsDelta": 0
     },
     {
+      "hash": "36e3ad425c6",
+      "date": "Aug 05, 2026",
+      "type": "Maintenance",
+      "message": "task: #3587565 Static cache entities that aren't loaded",
+      "locDelta": 28,
+      "ccnDelta": 9,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "4326f06f711",
       "date": "Aug 05, 2026",
       "type": "Bug",
@@ -143110,16 +143120,6 @@
       "ccnDelta": 1,
       "miDelta": -1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "b91680f90a1",
-      "date": "Jun 12, 2026",
-      "type": "Maintenance",
-      "message": "task: #3585891 Deprecate Validating CSRF tokens with the 'rest' key in CsrfReque",
-      "locDelta": 5,
-      "ccnDelta": 0,
-      "miDelta": -5,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143229,7 +143229,7 @@
     },
     {
       "year": 2026,
-      "commits": 1130
+      "commits": 1135
     }
   ]
 }
