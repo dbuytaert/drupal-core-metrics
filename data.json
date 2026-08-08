@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07T01:33:10.080479",
+  "generated": "2026-08-08T00:43:12.289835",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 36,
+      "total": 41,
       "features": 1,
-      "bugs": 12,
-      "maintenance": 23,
+      "bugs": 14,
+      "maintenance": 26,
       "unknown": 0
     }
   ],
@@ -137649,9 +137649,9 @@
     },
     {
       "date": "2026-08",
-      "commit": "ef161e27",
+      "commit": "902684eb",
       "production": {
-        "loc": 293793,
+        "loc": 293805,
         "functions": 23109,
         "ccn": {
           "avg": 2.5,
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.3
       },
-      "testLoc": 461018,
+      "testLoc": 461137,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -141713,8 +141713,8 @@
       },
       "antipatterns": {
         "magicKeys": 10643,
-        "deepArrays": 7963,
-        "serviceLocators": 2446
+        "deepArrays": 7965,
+        "serviceLocators": 2445
       },
       "hotspots": [
         {
@@ -142001,7 +142001,7 @@
           "name": "install_begin_request",
           "file": "includes/install.core.inc",
           "ccn": 34,
-          "loc": 147,
+          "loc": 146,
           "mi": 48,
           "antipatterns": 18
         },
@@ -142121,6 +142121,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "902684ebd02",
+      "date": "Aug 07, 2026",
+      "type": "Bug",
+      "message": "fix: #3611594 [regression] Recursion detected when merging duplicate #attached p",
+      "locDelta": 10,
+      "ccnDelta": 5,
+      "miDelta": -9,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "6c4592b1936",
+      "date": "Aug 07, 2026",
+      "type": "Maintenance",
+      "message": "task: #3614153 Install system module alongside other modules in the installer",
+      "locDelta": 2,
+      "ccnDelta": 1,
+      "miDelta": 9,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "2fdf57a0ce6",
       "date": "Aug 06, 2026",
@@ -143100,26 +143120,6 @@
       "ccnDelta": 3,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "3e6179a621d",
-      "date": "Jun 15, 2026",
-      "type": "Feature",
-      "message": "feat: #3524377 Allow to skip OOP hooks and services for modules that are not ins",
-      "locDelta": 31,
-      "ccnDelta": 7,
-      "miDelta": -4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "39c17921261",
-      "date": "Jun 14, 2026",
-      "type": "Bug",
-      "message": "fix: #3400181 [regression] calling TypedConfigManager::getDefinition() causes ca",
-      "locDelta": 2,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143229,7 +143229,7 @@
     },
     {
       "year": 2026,
-      "commits": 1135
+      "commits": 1140
     }
   ]
 }
