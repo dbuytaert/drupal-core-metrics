@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-09T00:44:05.396961",
+  "generated": "2026-08-10T00:44:44.366965",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 41,
+      "total": 47,
       "features": 1,
       "bugs": 14,
-      "maintenance": 26,
+      "maintenance": 32,
       "unknown": 0
     }
   ],
@@ -137649,9 +137649,9 @@
     },
     {
       "date": "2026-08",
-      "commit": "902684eb",
+      "commit": "2742c2eb",
       "production": {
-        "loc": 293805,
+        "loc": 293824,
         "functions": 23109,
         "ccn": {
           "avg": 2.5,
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.3
       },
-      "testLoc": 461137,
+      "testLoc": 461176,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137747,7 +137747,6 @@
           "hook_tokens",
           "hook_local_tasks_alter",
           "hook_entity_operation",
-          "hook_toolbar",
           "hook_page_attachments",
           "hook_contextual_links_view_alter",
           "hook_preprocess",
@@ -137765,6 +137764,7 @@
           "hook_views_ui_display_top_alter",
           "hook_views_preview_info_alter",
           "hook_shortcut_default_set",
+          "hook_toolbar",
           "hook_views_data",
           "hook_menu_links_discovered_alter",
           "hook_views_pre_render",
@@ -137992,7 +137992,6 @@
           "#tree",
           "#languages",
           "#entity_information",
-          "#wrapper_attributes",
           "#alt",
           "#pre_render",
           "#contextual_links",
@@ -138032,6 +138031,7 @@
           "#element_validate",
           "#cardinality",
           "#remaining_slots",
+          "#wrapper_attributes",
           "#style_name",
           "#return_value",
           "#value_callback",
@@ -142122,6 +142122,16 @@
   ],
   "commits": [
     {
+      "hash": "2742c2ebe65",
+      "date": "Aug 10, 2026",
+      "type": "Maintenance",
+      "message": "task: #3611762 Move toolbar hook implementations to the toolbar module",
+      "locDelta": 19,
+      "ccnDelta": 5,
+      "miDelta": -6,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "902684ebd02",
       "date": "Aug 07, 2026",
       "type": "Bug",
@@ -143110,16 +143120,6 @@
       "ccnDelta": 8,
       "miDelta": -9,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "5ad58ce3c67",
-      "date": "Jun 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3587564 Move search functionality from node to Search module",
-      "locDelta": 7,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143229,7 +143229,7 @@
     },
     {
       "year": 2026,
-      "commits": 1140
+      "commits": 1146
     }
   ]
 }
