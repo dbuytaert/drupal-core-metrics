@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-12T01:01:13.515179",
+  "generated": "2026-08-13T00:42:28.094688",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 56,
+      "total": 62,
       "features": 1,
       "bugs": 18,
-      "maintenance": 37,
+      "maintenance": 43,
       "unknown": 0
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "f219bd6e",
+      "commit": "701c6cd1",
       "production": {
-        "loc": 293924,
-        "functions": 23115,
+        "loc": 293889,
+        "functions": 23116,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.3
       },
-      "testLoc": 461308,
+      "testLoc": 461354,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -141713,9 +141713,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10647,
-        "deepArrays": 7965,
-        "serviceLocators": 2453
+        "magicKeys": 10646,
+        "deepArrays": 7966,
+        "serviceLocators": 2449
       },
       "hotspots": [
         {
@@ -142122,6 +142122,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "b2a20761557",
+      "date": "Aug 13, 2026",
+      "type": "Maintenance",
+      "message": "task: #3584347 Deprecate and replace system_admin_compact_mode()",
+      "locDelta": -9,
+      "ccnDelta": -2,
+      "miDelta": 5,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "ff4a9e086f0",
+      "date": "Aug 12, 2026",
+      "type": "Maintenance",
+      "message": "task: #3614493 Remove BC from RouteProvider::__construct()",
+      "locDelta": -27,
+      "ccnDelta": -4,
+      "miDelta": 2,
+      "antipatternsDelta": -3
+    },
     {
       "hash": "b3a039eeace",
       "date": "Aug 11, 2026",
@@ -143101,26 +143121,6 @@
       "ccnDelta": 4,
       "miDelta": 0,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "09d9f4d3206",
-      "date": "Jun 18, 2026",
-      "type": "Bug",
-      "message": "fix: #3597406 [regression] DrupalApplication (for 'dr') needs to support DRUPAL_",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "7d0ebcd09ab",
-      "date": "Jun 18, 2026",
-      "type": "Bug",
-      "message": "fix: #3601433 Fix local_status deprecation by clearing source in a post update",
-      "locDelta": 5,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 2
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143230,7 @@
     },
     {
       "year": 2026,
-      "commits": 1155
+      "commits": 1161
     }
   ]
 }
