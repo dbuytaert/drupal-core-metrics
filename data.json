@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-14T00:38:46.329720",
+  "generated": "2026-08-15T00:35:54.938048",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,11 +2515,11 @@
     },
     {
       "date": "2026-08",
-      "total": 63,
+      "total": 75,
       "features": 1,
-      "bugs": 18,
-      "maintenance": 44,
-      "unknown": 0
+      "bugs": 19,
+      "maintenance": 53,
+      "unknown": 2
     }
   ],
   "snapshots": [
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "513ff039",
+      "commit": "23942ea0",
       "production": {
-        "loc": 293889,
-        "functions": 23116,
+        "loc": 293904,
+        "functions": 23119,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.3
       },
-      "testLoc": 461354,
+      "testLoc": 461387,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -141713,7 +141713,7 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10646,
+        "magicKeys": 10645,
         "deepArrays": 7966,
         "serviceLocators": 2449
       },
@@ -141810,8 +141810,8 @@
           "name": "FormBuilder::doBuildForm",
           "file": "lib/Drupal/Core/Form/FormBuilder.php",
           "ccn": 53,
-          "loc": 137,
-          "mi": 45,
+          "loc": 139,
+          "mi": 44,
           "antipatterns": 7
         },
         {
@@ -142122,6 +142122,66 @@
     }
   ],
   "commits": [
+    {
+      "hash": "23942ea0151",
+      "date": "Aug 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #3603310 Use a data attribute to streamline form element wrapper selection",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "ac2adde1607",
+      "date": "Aug 14, 2026",
+      "type": "Unknown",
+      "message": "Revert \"task: #3581816 Move uses of Shortcut from Navigation to Shortcut\"",
+      "locDelta": -105,
+      "ccnDelta": -27,
+      "miDelta": 38,
+      "antipatternsDelta": -8
+    },
+    {
+      "hash": "b5abc5d7fe6",
+      "date": "Aug 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #2171395 OptionsWidgetBase should use WidgetInterface::massageFormValues()",
+      "locDelta": 8,
+      "ccnDelta": 5,
+      "miDelta": 8,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "ab8745cf435",
+      "date": "Aug 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #3581816 Move uses of Shortcut from Navigation to Shortcut",
+      "locDelta": 105,
+      "ccnDelta": 27,
+      "miDelta": -38,
+      "antipatternsDelta": 8
+    },
+    {
+      "hash": "946e35e4782",
+      "date": "Aug 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #3615175 Tidy up CacheTagsChecksumTrait::calculateChecksum()",
+      "locDelta": 4,
+      "ccnDelta": 6,
+      "miDelta": -4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "d54d3fe0eee",
+      "date": "Aug 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #3615225 Truncate queries on PostgreSQL do not need to fallback to delete ",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "b2a20761557",
       "date": "Aug 13, 2026",
@@ -143061,66 +143121,6 @@
       "ccnDelta": -5,
       "miDelta": 2,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "35cf89bd9f7",
-      "date": "Jun 23, 2026",
-      "type": "Maintenance",
-      "message": "task: #3496328 Use a hash of the cache data for CacheCollector race condition de",
-      "locDelta": 20,
-      "ccnDelta": 6,
-      "miDelta": -14,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "08e955a3547",
-      "date": "Jun 21, 2026",
-      "type": "Maintenance",
-      "message": "task: #3565258 Support library-specific aggregates",
-      "locDelta": 125,
-      "ccnDelta": 39,
-      "miDelta": -52,
-      "antipatternsDelta": 3
-    },
-    {
-      "hash": "761f8a859d3",
-      "date": "Jun 20, 2026",
-      "type": "Feature",
-      "message": "feat: #3594332 Add a user:login command to generate a one-time login link",
-      "locDelta": 60,
-      "ccnDelta": 8,
-      "miDelta": -16,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "6958ed374e1",
-      "date": "Jun 19, 2026",
-      "type": "Maintenance",
-      "message": "task: #3520028 Remove support for selecting install profiles via the UI installe",
-      "locDelta": -105,
-      "ccnDelta": -22,
-      "miDelta": 37,
-      "antipatternsDelta": -30
-    },
-    {
-      "hash": "d7f1e63a569",
-      "date": "Jun 19, 2026",
-      "type": "Maintenance",
-      "message": "task: #3586760 Use composite key Upsert queries in core",
-      "locDelta": 44,
-      "ccnDelta": 6,
-      "miDelta": -11,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "3e4104d1b00",
-      "date": "Jun 19, 2026",
-      "type": "Bug",
-      "message": "fix: #3593233 Cloning an aggregate entity query shares its aggregate conditions ",
-      "locDelta": 8,
-      "ccnDelta": 4,
-      "miDelta": 0,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143230,7 @@
     },
     {
       "year": 2026,
-      "commits": 1162
+      "commits": 1174
     }
   ]
 }
