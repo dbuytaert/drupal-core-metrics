@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-16T00:38:05.693431",
+  "generated": "2026-08-17T00:37:50.886409",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 76,
+      "total": 80,
       "features": 1,
       "bugs": 19,
-      "maintenance": 54,
+      "maintenance": 58,
       "unknown": 2
     }
   ],
@@ -137649,21 +137649,21 @@
     },
     {
       "date": "2026-08",
-      "commit": "057a6964",
+      "commit": "ee7c1cd8",
       "production": {
-        "loc": 293904,
-        "functions": 23119,
+        "loc": 293621,
+        "functions": 23089,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 87,
+          "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 71.3
+        "antipatterns": 71.1
       },
-      "testLoc": 461392,
+      "testLoc": 460802,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -141713,9 +141713,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10645,
-        "deepArrays": 7966,
-        "serviceLocators": 2449
+        "magicKeys": 10623,
+        "deepArrays": 7920,
+        "serviceLocators": 2447
       },
       "hotspots": [
         {
@@ -142001,10 +142001,10 @@
         {
           "name": "install_begin_request",
           "file": "includes/install.core.inc",
-          "ccn": 34,
-          "loc": 146,
-          "mi": 48,
-          "antipatterns": 18
+          "ccn": 33,
+          "loc": 140,
+          "mi": 49,
+          "antipatterns": 16
         },
         {
           "name": "ThemePreprocess::preprocessTable",
@@ -142122,6 +142122,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "ee7c1cd8fbc",
+      "date": "Aug 17, 2026",
+      "type": "Maintenance",
+      "message": "task: #3586218 Remove the Settings Tray module",
+      "locDelta": -379,
+      "ccnDelta": -68,
+      "miDelta": 31,
+      "antipatternsDelta": -74
+    },
+    {
+      "hash": "b33101bf00c",
+      "date": "Aug 17, 2026",
+      "type": "Maintenance",
+      "message": "task: #3616553 replace usage of spl_object_hash() with spl_object_id()",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "589a690cd29",
+      "date": "Aug 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #2934063 Remove the workaround in \\Drupal\\Core\\Installer\\ExtensionListTrai",
+      "locDelta": -10,
+      "ccnDelta": -3,
+      "miDelta": 5,
+      "antipatternsDelta": -3
+    },
+    {
+      "hash": "27ae122951f",
+      "date": "Aug 16, 2026",
+      "type": "Maintenance",
+      "message": "task: #3581816 Move uses of Shortcut from Navigation to Shortcut",
+      "locDelta": 105,
+      "ccnDelta": 27,
+      "miDelta": -38,
+      "antipatternsDelta": 8
+    },
     {
       "hash": "23942ea0151",
       "date": "Aug 14, 2026",
@@ -143081,46 +143121,6 @@
       "ccnDelta": -2,
       "miDelta": 3,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "17cc005b695",
-      "date": "Jun 24, 2026",
-      "type": "Bug",
-      "message": "fix: #3072557 Plugin ID menu_link_content was not found in _menu_link_content_up",
-      "locDelta": 2,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "bfdab16510c",
-      "date": "Jun 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3592037 Settings::get() should not trigger a deprecation for settings wit",
-      "locDelta": 3,
-      "ccnDelta": 4,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "47e42d18619",
-      "date": "Jun 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3595084 Deprecate locale submit callbacks",
-      "locDelta": 72,
-      "ccnDelta": 12,
-      "miDelta": 2,
-      "antipatternsDelta": -6
-    },
-    {
-      "hash": "e582ecb84af",
-      "date": "Jun 23, 2026",
-      "type": "Maintenance",
-      "message": "revert: #3605262 Database write optimizations result in inconsistent data in dat",
-      "locDelta": -7,
-      "ccnDelta": -5,
-      "miDelta": 2,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143230,7 @@
     },
     {
       "year": 2026,
-      "commits": 1175
+      "commits": 1179
     }
   ]
 }
