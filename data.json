@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-17T00:37:50.886409",
+  "generated": "2026-08-18T00:37:35.543771",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 80,
+      "total": 87,
       "features": 1,
-      "bugs": 19,
-      "maintenance": 58,
+      "bugs": 22,
+      "maintenance": 62,
       "unknown": 2
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "ee7c1cd8",
+      "commit": "cfcf382a",
       "production": {
-        "loc": 293621,
-        "functions": 23089,
+        "loc": 293610,
+        "functions": 23088,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.1
       },
-      "testLoc": 460802,
+      "testLoc": 460848,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -142123,6 +142123,36 @@
   ],
   "commits": [
     {
+      "hash": "cfcf382aeac",
+      "date": "Aug 17, 2026",
+      "type": "Bug",
+      "message": "fix: #3615576 FileExistsException thrown in FileSystem::prepareDestination does ",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "b6aadece5d7",
+      "date": "Aug 17, 2026",
+      "type": "Maintenance",
+      "message": "task: #3570466 Reduce severity of GD library supported image file formats warnin",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "0e0ab608e32",
+      "date": "Aug 17, 2026",
+      "type": "Bug",
+      "message": "fix: #2672340 user_user_role_insert should not exist",
+      "locDelta": -11,
+      "ccnDelta": -2,
+      "miDelta": -3,
+      "antipatternsDelta": -1
+    },
+    {
       "hash": "ee7c1cd8fbc",
       "date": "Aug 17, 2026",
       "type": "Maintenance",
@@ -143091,36 +143121,6 @@
       "ccnDelta": 3,
       "miDelta": -3,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "0ed786c7821",
-      "date": "Jun 29, 2026",
-      "type": "Maintenance",
-      "message": "build: #3600889 Remove some minor constraints from core-recommended",
-      "locDelta": 12,
-      "ccnDelta": 0,
-      "miDelta": -10,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "68f6b308eae",
-      "date": "Jun 29, 2026",
-      "type": "Bug",
-      "message": "fix: #3606969 Content translation column group settings only show up once there ",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "1733dbbcb14",
-      "date": "Jun 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3594389 Remove unecessary core dev version replacement in locale project ",
-      "locDelta": -6,
-      "ccnDelta": -2,
-      "miDelta": 3,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143230,7 @@
     },
     {
       "year": 2026,
-      "commits": 1179
+      "commits": 1186
     }
   ]
 }
