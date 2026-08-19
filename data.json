@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-18T00:37:35.543771",
+  "generated": "2026-08-19T00:35:48.916364",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 87,
-      "features": 1,
-      "bugs": 22,
-      "maintenance": 62,
+      "total": 100,
+      "features": 2,
+      "bugs": 26,
+      "maintenance": 70,
       "unknown": 2
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "cfcf382a",
+      "commit": "66241ddc",
       "production": {
-        "loc": 293610,
-        "functions": 23088,
+        "loc": 293662,
+        "functions": 23093,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.1
       },
-      "testLoc": 460848,
+      "testLoc": 461012,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137671,7 +137671,7 @@
         "events": 43,
         "services": 244,
         "yamlFormats": 16,
-        "interfaceMethods": 2911,
+        "interfaceMethods": 2913,
         "globalFunctions": 265
       },
       "surfaceAreaLists": {
@@ -138574,6 +138574,8 @@
           "RoleInterface::revokePermission",
           "RoleInterface::isAdmin",
           "RoleInterface::setIsAdmin",
+          "RoleInterface::getDescription",
+          "RoleInterface::setDescription",
           "RoleInterface::getWeight",
           "RoleInterface::setWeight",
           "UserStorageInterface::updateLastLoginTimestamp",
@@ -141713,9 +141715,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10623,
-        "deepArrays": 7920,
-        "serviceLocators": 2447
+        "magicKeys": 10628,
+        "deepArrays": 7921,
+        "serviceLocators": 2449
       },
       "hotspots": [
         {
@@ -142122,6 +142124,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "66241ddc48b",
+      "date": "Aug 18, 2026",
+      "type": "Bug",
+      "message": "fix: #3590964 Update/Install-time service overrides for cache should support Mem",
+      "locDelta": 16,
+      "ccnDelta": 3,
+      "miDelta": -7,
+      "antipatternsDelta": 2
+    },
+    {
+      "hash": "00dfe3f40fe",
+      "date": "Aug 18, 2026",
+      "type": "Feature",
+      "message": "feat: #256287 Give roles a description value",
+      "locDelta": 35,
+      "ccnDelta": 7,
+      "miDelta": -5,
+      "antipatternsDelta": 8
+    },
+    {
+      "hash": "61a6cb28377",
+      "date": "Aug 18, 2026",
+      "type": "Bug",
+      "message": "fix: #3469280 Handle NULL mime types in template_preprocess_file_link()",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "7e96da55f11",
+      "date": "Aug 18, 2026",
+      "type": "Maintenance",
+      "message": "style: #3577137 Upgrade to Coder 9",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
     {
       "hash": "cfcf382aeac",
       "date": "Aug 17, 2026",
@@ -143081,46 +143123,6 @@
       "ccnDelta": 2,
       "miDelta": -2,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "9eb69cba350",
-      "date": "Jul 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3569137 Ensure TRUNCATE ::execute() method returns void",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": 1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "84ff87dfc56",
-      "date": "Jul 01, 2026",
-      "type": "Feature",
-      "message": "feat: #3584793 Use PHP attributes for form route discovery",
-      "locDelta": 48,
-      "ccnDelta": 8,
-      "miDelta": -12,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "22c7a860b85",
-      "date": "Jun 30, 2026",
-      "type": "Bug",
-      "message": "fix: #3387100 Missing config schema for core.base_field_override.*.*.* third_par",
-      "locDelta": 9,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ec24cbda1f7",
-      "date": "Jun 29, 2026",
-      "type": "Maintenance",
-      "message": "task: #3600644 Pull up attributes from block plugins if the render array has no ",
-      "locDelta": 4,
-      "ccnDelta": 3,
-      "miDelta": -3,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143232,7 @@
     },
     {
       "year": 2026,
-      "commits": 1186
+      "commits": 1199
     }
   ]
 }
