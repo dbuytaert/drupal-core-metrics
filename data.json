@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-19T00:35:48.916364",
+  "generated": "2026-08-20T00:30:30.990177",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,11 +2515,11 @@
     },
     {
       "date": "2026-08",
-      "total": 100,
+      "total": 102,
       "features": 2,
       "bugs": 26,
-      "maintenance": 70,
-      "unknown": 2
+      "maintenance": 71,
+      "unknown": 3
     }
   ],
   "snapshots": [
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "66241ddc",
+      "commit": "f5e26580",
       "production": {
-        "loc": 293662,
-        "functions": 23093,
+        "loc": 293629,
+        "functions": 23088,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.1
       },
-      "testLoc": 461012,
+      "testLoc": 460943,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -137671,7 +137671,7 @@
         "events": 43,
         "services": 244,
         "yamlFormats": 16,
-        "interfaceMethods": 2913,
+        "interfaceMethods": 2911,
         "globalFunctions": 265
       },
       "surfaceAreaLists": {
@@ -138574,8 +138574,6 @@
           "RoleInterface::revokePermission",
           "RoleInterface::isAdmin",
           "RoleInterface::setIsAdmin",
-          "RoleInterface::getDescription",
-          "RoleInterface::setDescription",
           "RoleInterface::getWeight",
           "RoleInterface::setWeight",
           "UserStorageInterface::updateLastLoginTimestamp",
@@ -141715,9 +141713,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10628,
+        "magicKeys": 10623,
         "deepArrays": 7921,
-        "serviceLocators": 2449
+        "serviceLocators": 2447
       },
       "hotspots": [
         {
@@ -142124,6 +142122,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "07d6e6935e7",
+      "date": "Aug 19, 2026",
+      "type": "Unknown",
+      "message": "Revert \"feat: #256287 Give roles a description value\"",
+      "locDelta": -35,
+      "ccnDelta": -7,
+      "miDelta": 5,
+      "antipatternsDelta": -8
+    },
     {
       "hash": "66241ddc48b",
       "date": "Aug 18, 2026",
@@ -143113,16 +143121,6 @@
       "ccnDelta": -27,
       "miDelta": 17,
       "antipatternsDelta": -28
-    },
-    {
-      "hash": "3992c6572c3",
-      "date": "Jul 02, 2026",
-      "type": "Feature",
-      "message": "feat: #3605551 Allow install profiles to be automatically uninstalled",
-      "locDelta": 5,
-      "ccnDelta": 2,
-      "miDelta": -2,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143232,7 +143230,7 @@
     },
     {
       "year": 2026,
-      "commits": 1199
+      "commits": 1201
     }
   ]
 }
