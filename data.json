@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-21T00:39:00.867714",
+  "generated": "2026-08-22T00:37:27.918085",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 102,
+      "total": 106,
       "features": 2,
-      "bugs": 26,
-      "maintenance": 71,
+      "bugs": 27,
+      "maintenance": 74,
       "unknown": 3
     }
   ],
@@ -137649,9 +137649,9 @@
     },
     {
       "date": "2026-08",
-      "commit": "f5e26580",
+      "commit": "668d8beb",
       "production": {
-        "loc": 293629,
+        "loc": 293661,
         "functions": 23088,
         "ccn": {
           "avg": 2.5,
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.1
       },
-      "testLoc": 460943,
+      "testLoc": 461013,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -141714,7 +141714,7 @@
       },
       "antipatterns": {
         "magicKeys": 10623,
-        "deepArrays": 7921,
+        "deepArrays": 7917,
         "serviceLocators": 2447
       },
       "hotspots": [
@@ -142122,6 +142122,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "668d8beb60a",
+      "date": "Aug 21, 2026",
+      "type": "Bug",
+      "message": "fix: #3614911 JS aggregation returns 400 for libraries loaded in the header only",
+      "locDelta": 13,
+      "ccnDelta": 3,
+      "miDelta": -10,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "a748fd63fcc",
+      "date": "Aug 21, 2026",
+      "type": "Maintenance",
+      "message": "task: #3614983 Move help text explaining how to enable help search into the sear",
+      "locDelta": 17,
+      "ccnDelta": 1,
+      "miDelta": 1,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "e326830e48a",
+      "date": "Aug 21, 2026",
+      "type": "Maintenance",
+      "message": "task: #3614955 Move library overrides for Toolbar from Claro and Default Admin t",
+      "locDelta": 2,
+      "ccnDelta": -6,
+      "miDelta": -11,
+      "antipatternsDelta": -5
+    },
     {
       "hash": "07d6e6935e7",
       "date": "Aug 19, 2026",
@@ -143091,36 +143121,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "b4c63e817b3",
-      "date": "Jul 03, 2026",
-      "type": "Bug",
-      "message": "fix: #3607938 Chunking of Op in loadFromDedicatedTables causes Cartesian multipl",
-      "locDelta": -8,
-      "ccnDelta": -1,
-      "miDelta": 2,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "97a0dbb3324",
-      "date": "Jul 03, 2026",
-      "type": "Bug",
-      "message": "fix: #3600697 Attribute route discovery does not handle arrays for JSON:API cont",
-      "locDelta": 2,
-      "ccnDelta": 1,
-      "miDelta": -2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "4cc588f7f55",
-      "date": "Jul 02, 2026",
-      "type": "Maintenance",
-      "message": "task: #3594199 Remove the Telephone module",
-      "locDelta": -214,
-      "ccnDelta": -27,
-      "miDelta": 17,
-      "antipatternsDelta": -28
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143230,7 @@
     },
     {
       "year": 2026,
-      "commits": 1201
+      "commits": 1205
     }
   ]
 }
