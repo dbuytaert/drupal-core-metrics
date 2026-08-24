@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-23T00:38:33.375639",
+  "generated": "2026-08-24T00:38:09.682118",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 107,
+      "total": 110,
       "features": 2,
-      "bugs": 27,
-      "maintenance": 75,
+      "bugs": 28,
+      "maintenance": 77,
       "unknown": 3
     }
   ],
@@ -137649,9 +137649,9 @@
     },
     {
       "date": "2026-08",
-      "commit": "5683959e",
+      "commit": "e5a59ea9",
       "production": {
-        "loc": 293661,
+        "loc": 293664,
         "functions": 23088,
         "ccn": {
           "avg": 2.5,
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 71.1
       },
-      "testLoc": 461009,
+      "testLoc": 461126,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -142123,6 +142123,16 @@
   ],
   "commits": [
     {
+      "hash": "72e3f2f1242",
+      "date": "Aug 23, 2026",
+      "type": "Bug",
+      "message": "fix: #3536795 \"Only file JavaScript/CSS assets can be optimized\" errors in logs",
+      "locDelta": 3,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
       "hash": "668d8beb60a",
       "date": "Aug 21, 2026",
       "type": "Bug",
@@ -143111,16 +143121,6 @@
       "ccnDelta": 2,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "ecf6584e4f5",
-      "date": "Jul 06, 2026",
-      "type": "Bug",
-      "message": "fix: #3593838 Views QueryParameter argument_default plugin doesn't apply default",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143230,7 @@
     },
     {
       "year": 2026,
-      "commits": 1206
+      "commits": 1209
     }
   ]
 }
