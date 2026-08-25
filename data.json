@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-24T00:38:09.682118",
+  "generated": "2026-08-25T00:38:24.358482",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 110,
+      "total": 116,
       "features": 2,
       "bugs": 28,
-      "maintenance": 77,
+      "maintenance": 83,
       "unknown": 3
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "e5a59ea9",
+      "commit": "03e37d38",
       "production": {
-        "loc": 293664,
-        "functions": 23088,
+        "loc": 292186,
+        "functions": 22989,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137661,18 +137661,18 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 71.1
+        "antipatterns": 70.6
       },
-      "testLoc": 461126,
+      "testLoc": 459065,
       "surfaceArea": {
         "pluginTypes": 45,
-        "hooks": 221,
+        "hooks": 220,
         "magicKeys": 275,
         "events": 43,
-        "services": 244,
+        "services": 243,
         "yamlFormats": 16,
-        "interfaceMethods": 2911,
-        "globalFunctions": 265
+        "interfaceMethods": 2897,
+        "globalFunctions": 262
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -137866,7 +137866,6 @@
           "hook_entity_field_access",
           "hook_action_info_alter",
           "hook_preprocess",
-          "hook_shortcut_default_set",
           "hook_field_widget_complete_form_alter",
           "hook_oembed_resource_url_alter",
           "hook_tour_tips_alter",
@@ -138335,7 +138334,6 @@
           "block_content",
           "content_moderation",
           "taxonomy_term",
-          "shortcut",
           "config",
           "media",
           "language_negotiator",
@@ -139433,20 +139431,6 @@
           "TermInterface::setName",
           "TermInterface::getWeight",
           "TermInterface::setWeight",
-          "ShortcutInterface::getTitle",
-          "ShortcutInterface::setTitle",
-          "ShortcutInterface::getWeight",
-          "ShortcutInterface::setWeight",
-          "ShortcutInterface::getUrl",
-          "ShortcutSetInterface::resetLinkWeights",
-          "ShortcutSetInterface::getShortcuts",
-          "ShortcutSetStorageInterface::assignUser",
-          "ShortcutSetStorageInterface::unassignUser",
-          "ShortcutSetStorageInterface::deleteAssignedShortcutSets",
-          "ShortcutSetStorageInterface::getAssignedToUser",
-          "ShortcutSetStorageInterface::getDisplayedToUser",
-          "ShortcutSetStorageInterface::countAssignedUsers",
-          "ShortcutSetStorageInterface::getDefaultSet",
           "OEmbedInterface::getProviders",
           "UrlResolverInterface::getProviderByUrl",
           "UrlResolverInterface::getResourceUrl",
@@ -141592,9 +141576,6 @@
           "taxonomy_term_is_page",
           "taxonomy_build_node_index",
           "taxonomy_delete_node_index",
-          "shortcut_set_edit_access",
-          "shortcut_set_switch_access",
-          "shortcut_renderable_links",
           "media_filter_format_edit_form_validate",
           "language_configuration_element_submit",
           "language_get_default_langcode",
@@ -141713,9 +141694,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10623,
-        "deepArrays": 7917,
-        "serviceLocators": 2447
+        "magicKeys": 10521,
+        "deepArrays": 7821,
+        "serviceLocators": 2404
       },
       "hotspots": [
         {
@@ -142122,6 +142103,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "679a7580afe",
+      "date": "Aug 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3262935 Link field validation constraints don't give enough detail",
+      "locDelta": 8,
+      "ccnDelta": -4,
+      "miDelta": -2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "f6d327d17ed",
+      "date": "Aug 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3593789 Extend RouteSubscriberBase to define as well as alter routes",
+      "locDelta": 11,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "bc5de9c752d",
+      "date": "Aug 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3586214 Remove the Shortcut module",
+      "locDelta": -1564,
+      "ccnDelta": -228,
+      "miDelta": 273,
+      "antipatternsDelta": -240
+    },
+    {
+      "hash": "cd459461153",
+      "date": "Aug 24, 2026",
+      "type": "Maintenance",
+      "message": "task: #3616277 Deprecate several locale functions",
+      "locDelta": 67,
+      "ccnDelta": 7,
+      "miDelta": 2,
+      "antipatternsDelta": -1
+    },
     {
       "hash": "72e3f2f1242",
       "date": "Aug 23, 2026",
@@ -143081,46 +143102,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "e439b183f1d",
-      "date": "Jul 07, 2026",
-      "type": "Bug",
-      "message": "fix: #3605554 Translations are never loaded or downloaded for a custom profile",
-      "locDelta": 6,
-      "ccnDelta": 6,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "7e0c9a2e387",
-      "date": "Jul 06, 2026",
-      "type": "Bug",
-      "message": "fix: #3564112 Cache rebuild triggers file_get_contents Permission denied in them",
-      "locDelta": 4,
-      "ccnDelta": 0,
-      "miDelta": -2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "98c10fdf25a",
-      "date": "Jul 06, 2026",
-      "type": "Bug",
-      "message": "fix: #3608374 Data for non-revisionable/non-translatable/no-dedicated-field-tabl",
-      "locDelta": 1,
-      "ccnDelta": 4,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "4f3e6a284a7",
-      "date": "Jul 06, 2026",
-      "type": "Maintenance",
-      "message": "task: #3588547 Don't invalidate the entire fast backend on persistent backend ca",
-      "locDelta": 7,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143230,7 +143211,7 @@
     },
     {
       "year": 2026,
-      "commits": 1209
+      "commits": 1215
     }
   ]
 }
