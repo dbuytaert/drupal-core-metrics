@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-25T00:38:24.358482",
+  "generated": "2026-08-26T00:35:30.280413",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,11 +2515,11 @@
     },
     {
       "date": "2026-08",
-      "total": 116,
-      "features": 2,
-      "bugs": 28,
-      "maintenance": 83,
-      "unknown": 3
+      "total": 143,
+      "features": 3,
+      "bugs": 32,
+      "maintenance": 104,
+      "unknown": 4
     }
   ],
   "snapshots": [
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "03e37d38",
+      "commit": "02579164",
       "production": {
-        "loc": 292186,
-        "functions": 22989,
+        "loc": 292317,
+        "functions": 22996,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137661,9 +137661,9 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 70.6
+        "antipatterns": 70.7
       },
-      "testLoc": 459065,
+      "testLoc": 458683,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 220,
@@ -137672,7 +137672,7 @@
         "services": 243,
         "yamlFormats": 16,
         "interfaceMethods": 2897,
-        "globalFunctions": 262
+        "globalFunctions": 260
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -141688,24 +141688,22 @@
           "drupal_maintenance_theme",
           "drupal_static",
           "drupal_static_reset",
-          "drupal_register_shutdown_function",
-          "standard_install_tasks_alter",
-          "standard_install_finished"
+          "drupal_register_shutdown_function"
         ]
       },
       "antipatterns": {
-        "magicKeys": 10521,
-        "deepArrays": 7821,
-        "serviceLocators": 2404
+        "magicKeys": 10524,
+        "deepArrays": 7825,
+        "serviceLocators": 2408
       },
       "hotspots": [
         {
           "name": "SystemRequirementsHooks::checkRequirements",
           "file": "modules/system/src/Hook/SystemRequirementsHooks.php",
-          "ccn": 183,
-          "loc": 1233,
+          "ccn": 188,
+          "loc": 1255,
           "mi": 0,
-          "antipatterns": 82
+          "antipatterns": 83
         },
         {
           "name": "IconMimeTypes::getGenericMimeType",
@@ -142103,6 +142101,96 @@
     }
   ],
   "commits": [
+    {
+      "hash": "55c151b4862",
+      "date": "Aug 25, 2026",
+      "type": "Maintenance",
+      "message": "task: #3616275 Use the PECL YAML parser for info file parsing when available",
+      "locDelta": 19,
+      "ccnDelta": 3,
+      "miDelta": -6,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "6a9373d79a2",
+      "date": "Aug 25, 2026",
+      "type": "Maintenance",
+      "message": "task: #3614825 Allow additional modules to be installed alongside the profile mo",
+      "locDelta": 30,
+      "ccnDelta": 8,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "6a4608b15d4",
+      "date": "Aug 25, 2026",
+      "type": "Maintenance",
+      "message": "task: #3614401 Allow install profiles to opt out of being installed",
+      "locDelta": 3,
+      "ccnDelta": 2,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "47961efd535",
+      "date": "Aug 25, 2026",
+      "type": "Bug",
+      "message": "fix: #3563677 Twig debug can influence rendering visually due to whitespace betw",
+      "locDelta": -2,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "b1d192950a5",
+      "date": "Aug 25, 2026",
+      "type": "Maintenance",
+      "message": "task: #3610009 Stop discovery of hooks in include files",
+      "locDelta": -10,
+      "ccnDelta": -4,
+      "miDelta": 2,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "ee7c7d2d123",
+      "date": "Aug 25, 2026",
+      "type": "Maintenance",
+      "message": "task: #3303751 Reduce the number of times UpdateRegistry scans for extensions",
+      "locDelta": 24,
+      "ccnDelta": 4,
+      "miDelta": -4,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "8f7a0cbafdf",
+      "date": "Aug 25, 2026",
+      "type": "Feature",
+      "message": "feat: #2871354 Improve \"allowed_html\" to provide a better config diff",
+      "locDelta": 23,
+      "ccnDelta": 5,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "11e948864ef",
+      "date": "Aug 25, 2026",
+      "type": "Maintenance",
+      "message": "task: #345747 Show all DB Connections on Status Page",
+      "locDelta": 22,
+      "ccnDelta": 5,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "308cba9319f",
+      "date": "Aug 25, 2026",
+      "type": "Maintenance",
+      "message": "task: #3590882 Standard profile should not include Olivero anymore, should provi",
+      "locDelta": 14,
+      "ccnDelta": 2,
+      "miDelta": 1,
+      "antipatternsDelta": 6
+    },
     {
       "hash": "679a7580afe",
       "date": "Aug 24, 2026",
@@ -143012,96 +143100,6 @@
       "ccnDelta": -1,
       "miDelta": 3,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "9235f874d32",
-      "date": "Jul 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #3475153 Make DirectoryWithMetadataDiscovery generic and reusable",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "12e85bfb520",
-      "date": "Jul 10, 2026",
-      "type": "Unknown",
-      "message": "Revert \"fix: #3114467 'Negate' form value for condition plugins should be cast t",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "c033e7a8c08",
-      "date": "Jul 10, 2026",
-      "type": "Bug",
-      "message": "fix: #3114467 'Negate' form value for condition plugins should be cast to boolea",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "f8c93a2f241",
-      "date": "Jul 10, 2026",
-      "type": "Bug",
-      "message": "fix: #3605792 SQL injection via unvalidated operator in case-insensitive entity ",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "06650578bf5",
-      "date": "Jul 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3091285 Composer scaffolding fails when permissions on default.settings.ym",
-      "locDelta": 30,
-      "ccnDelta": 15,
-      "miDelta": -18,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "7f3e2517f3f",
-      "date": "Jul 09, 2026",
-      "type": "Bug",
-      "message": "fix: #3607866 Scaffold plugin does not always create autoload_runtime.php when u",
-      "locDelta": 18,
-      "ccnDelta": 3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "38d6cd53cf9",
-      "date": "Jul 08, 2026",
-      "type": "Bug",
-      "message": "fix: #3609087 \\Drupal\\locale\\LocaleProjectRepository::buildProjects() does not r",
-      "locDelta": 1,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "b3351dd532e",
-      "date": "Jul 07, 2026",
-      "type": "Maintenance",
-      "message": "task: #3608738 Avoid adding user:0 cache tag in UserRoles cache context",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "a009581e4e4",
-      "date": "Jul 07, 2026",
-      "type": "Bug",
-      "message": "fix: #3609020 BC layer in locale_translation_get_projects() implemented incorrec",
-      "locDelta": 3,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143211,7 +143209,7 @@
     },
     {
       "year": 2026,
-      "commits": 1215
+      "commits": 1242
     }
   ]
 }
