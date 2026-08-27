@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-26T00:35:30.280413",
+  "generated": "2026-08-27T01:59:47.371282",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 143,
+      "total": 154,
       "features": 3,
-      "bugs": 32,
-      "maintenance": 104,
+      "bugs": 33,
+      "maintenance": 114,
       "unknown": 4
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "02579164",
+      "commit": "5f0418f0",
       "production": {
-        "loc": 292317,
-        "functions": 22996,
+        "loc": 292695,
+        "functions": 23030,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137661,9 +137661,9 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 70.7
+        "antipatterns": 70.6
       },
-      "testLoc": 458683,
+      "testLoc": 458950,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 220,
@@ -138229,6 +138229,7 @@
           "UserEvents::FLOOD_BLOCKED_IP",
           "KernelEvents::REQUEST",
           "RoutingEvents::ALTER",
+          "ConfigEvents::SAVE",
           "MigrateEvents::PRE_IMPORT",
           "MigrateEvents::POST_IMPORT",
           "MigrateEvents::PRE_ROLLBACK",
@@ -138238,7 +138239,6 @@
           "LayoutBuilderEvents::PREPARE_LAYOUT",
           "RoutingEvents::DYNAMIC",
           "LocaleEvents::SAVE_TRANSLATION",
-          "ConfigEvents::SAVE",
           "LanguageConfigOverrideEvents::SAVE_OVERRIDE",
           "LanguageConfigOverrideEvents::DELETE_OVERRIDE",
           "RenderEvents::SELECT_PAGE_DISPLAY_VARIANT",
@@ -141694,7 +141694,7 @@
       "antipatterns": {
         "magicKeys": 10524,
         "deepArrays": 7825,
-        "serviceLocators": 2408
+        "serviceLocators": 2421
       },
       "hotspots": [
         {
@@ -142101,6 +142101,76 @@
     }
   ],
   "commits": [
+    {
+      "hash": "1ae585cd5db",
+      "date": "Aug 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3618358 Deprecate remaining underscore functions in locale",
+      "locDelta": 39,
+      "ccnDelta": 9,
+      "miDelta": -1,
+      "antipatternsDelta": -6
+    },
+    {
+      "hash": "bd98d7e72ba",
+      "date": "Aug 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3555115 Add a UploadedFilesExtractor and remove duplicate code",
+      "locDelta": 6,
+      "ccnDelta": 1,
+      "miDelta": 5,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "3c3b0152992",
+      "date": "Aug 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3539178 Extract _user_mail_notify() into a user NotificationHandler",
+      "locDelta": 171,
+      "ccnDelta": 34,
+      "miDelta": -16,
+      "antipatternsDelta": 7
+    },
+    {
+      "hash": "e24cd7972d9",
+      "date": "Aug 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3566626 Use property hooks for entity reference item and list entity and ",
+      "locDelta": 9,
+      "ccnDelta": -7,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "4c585253d2e",
+      "date": "Aug 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3618909 Remove toolbar help text not in the module",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "f31a5d865e9",
+      "date": "Aug 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3534109 Permanently maintain a sandbox directory in package_manager",
+      "locDelta": 161,
+      "ccnDelta": 25,
+      "miDelta": -28,
+      "antipatternsDelta": 13
+    },
+    {
+      "hash": "d6ae4630b29",
+      "date": "Aug 26, 2026",
+      "type": "Maintenance",
+      "message": "task: #3618772 Move toolbar_alter hook implementations to the toolbar module",
+      "locDelta": -10,
+      "ccnDelta": -1,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "55c151b4862",
       "date": "Aug 25, 2026",
@@ -143030,76 +143100,6 @@
       "ccnDelta": -1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "0c3247edb22",
-      "date": "Jul 14, 2026",
-      "type": "Maintenance",
-      "message": "task: #3595652 Deprecate module.inc contents",
-      "locDelta": 24,
-      "ccnDelta": 4,
-      "miDelta": 0,
-      "antipatternsDelta": 3
-    },
-    {
-      "hash": "e798c54ce90",
-      "date": "Jul 14, 2026",
-      "type": "Maintenance",
-      "message": "task: #3532506 Never bypass basic validation when saving a config object",
-      "locDelta": -2,
-      "ccnDelta": 0,
-      "miDelta": 2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "de0a865f3a8",
-      "date": "Jul 13, 2026",
-      "type": "Bug",
-      "message": "fix: #3603333 Errors when stream wrappers instantiate services in constructors b",
-      "locDelta": 19,
-      "ccnDelta": 4,
-      "miDelta": -1,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "46e88176426",
-      "date": "Jul 13, 2026",
-      "type": "Bug",
-      "message": "fix: #3592946 ComponentNegotiator::negotiate() re-runs on every call when no rep",
-      "locDelta": -1,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "30a8b5bfbac",
-      "date": "Jul 13, 2026",
-      "type": "Maintenance",
-      "message": "task: #3589108 Refactor DeprecationHandler into a standard PHPUnit extension",
-      "locDelta": -6,
-      "ccnDelta": 0,
-      "miDelta": 2,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "09561ef8186",
-      "date": "Jul 10, 2026",
-      "type": "Maintenance",
-      "message": "refactor: #3608912 Move search updates back to search module and fix missing plu",
-      "locDelta": 169,
-      "ccnDelta": 31,
-      "miDelta": -7,
-      "antipatternsDelta": 3
-    },
-    {
-      "hash": "411e46bd179",
-      "date": "Jul 10, 2026",
-      "type": "Maintenance",
-      "message": "task: #3554720 Remove addition of a object type in all props",
-      "locDelta": -5,
-      "ccnDelta": -1,
-      "miDelta": 3,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -143209,7 +143209,7 @@
     },
     {
       "year": 2026,
-      "commits": 1242
+      "commits": 1253
     }
   ]
 }
