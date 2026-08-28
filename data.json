@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-27T01:59:47.371282",
+  "generated": "2026-08-28T03:20:33.166421",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 154,
-      "features": 3,
-      "bugs": 33,
-      "maintenance": 114,
+      "total": 164,
+      "features": 4,
+      "bugs": 37,
+      "maintenance": 119,
       "unknown": 4
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "5f0418f0",
+      "commit": "7d8143e6",
       "production": {
-        "loc": 292695,
-        "functions": 23030,
+        "loc": 292902,
+        "functions": 23040,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137663,15 +137663,15 @@
         },
         "antipatterns": 70.6
       },
-      "testLoc": 458950,
+      "testLoc": 458859,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 220,
         "magicKeys": 275,
         "events": 43,
-        "services": 243,
+        "services": 244,
         "yamlFormats": 16,
-        "interfaceMethods": 2897,
+        "interfaceMethods": 2898,
         "globalFunctions": 260
       },
       "surfaceAreaLists": {
@@ -137725,11 +137725,11 @@
         "hooks": [
           "hook_theme",
           "hook_help",
-          "hook_user_login",
           "hook_user_cancel",
           "hook_user_cancel_methods_alter",
-          "hook_user_logout",
           "hook_user_format_name_alter",
+          "hook_user_login",
+          "hook_user_logout",
           "hook_js_settings_alter",
           "hook_entity_extra_field_info",
           "hook_template_preprocess_default_variables_alter",
@@ -138354,6 +138354,7 @@
           "filter_protocols",
           "cors",
           "queue",
+          "instant_queue",
           "cache_factory",
           "variation_cache_factory",
           "cache_contexts_manager",
@@ -140324,6 +140325,7 @@
           "QueueGarbageCollectionInterface::garbageCollection",
           "DelayableQueueInterface::delayItem",
           "QueueWorkerInterface::processItem",
+          "InstantQueueRunnerInterface::registerQueue",
           "QueueFactoryInterface::get",
           "QueueInterface::createItem",
           "QueueInterface::numberOfItems",
@@ -141694,7 +141696,7 @@
       "antipatterns": {
         "magicKeys": 10524,
         "deepArrays": 7825,
-        "serviceLocators": 2421
+        "serviceLocators": 2422
       },
       "hotspots": [
         {
@@ -142101,6 +142103,46 @@
     }
   ],
   "commits": [
+    {
+      "hash": "7d8143e6d2d",
+      "date": "Aug 27, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3587797 Move views data cache to cache_discovery",
+      "locDelta": 8,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "9a96116d378",
+      "date": "Aug 27, 2026",
+      "type": "Feature",
+      "message": "feat: #1189464 Add an 'instant' queue runner",
+      "locDelta": 62,
+      "ccnDelta": 13,
+      "miDelta": -5,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "32ce2b45be8",
+      "date": "Aug 27, 2026",
+      "type": "Maintenance",
+      "message": "task: #2012976 Deprecate user_logout() and user_login_finalize() and replace wit",
+      "locDelta": 128,
+      "ccnDelta": 13,
+      "miDelta": -25,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "9758a3ba6fb",
+      "date": "Aug 27, 2026",
+      "type": "Maintenance",
+      "message": "task: #3580152 Deprecate theme-settings.php files",
+      "locDelta": 9,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "1ae585cd5db",
       "date": "Aug 26, 2026",
@@ -143060,46 +143102,6 @@
       "ccnDelta": 1,
       "miDelta": 0,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "854ccc02f13",
-      "date": "Jul 17, 2026",
-      "type": "Bug",
-      "message": "fix: #3611084 DrupalApplication should use the compiled container",
-      "locDelta": 0,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c8bda45c62b",
-      "date": "Jul 16, 2026",
-      "type": "Bug",
-      "message": "fix: #2863785 Avoid PHP notice when comparing config without uuid",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "195e67bc29a",
-      "date": "Jul 15, 2026",
-      "type": "Unknown",
-      "message": "SA-CORE-2026-011 by prudloff, fathershawn, catch, larowlan, longwave, xjm",
-      "locDelta": 2,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "e41cc6ff613",
-      "date": "Jul 15, 2026",
-      "type": "Unknown",
-      "message": "SA-CORE-2026-010 by offensive-ai, benjifisher, kim.pepper, mohit_aghera, catch, ",
-      "locDelta": 0,
-      "ccnDelta": -1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143209,7 +143211,7 @@
     },
     {
       "year": 2026,
-      "commits": 1253
+      "commits": 1263
     }
   ]
 }
