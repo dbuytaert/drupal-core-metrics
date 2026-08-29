@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-28T03:20:33.166421",
+  "generated": "2026-08-29T00:51:27.555475",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 164,
+      "total": 167,
       "features": 4,
-      "bugs": 37,
-      "maintenance": 119,
+      "bugs": 38,
+      "maintenance": 121,
       "unknown": 4
     }
   ],
@@ -137649,9 +137649,9 @@
     },
     {
       "date": "2026-08",
-      "commit": "7d8143e6",
+      "commit": "803373a7",
       "production": {
-        "loc": 292902,
+        "loc": 292917,
         "functions": 23040,
         "ccn": {
           "avg": 2.5,
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 70.6
       },
-      "testLoc": 458859,
+      "testLoc": 458926,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 220,
@@ -141696,7 +141696,7 @@
       "antipatterns": {
         "magicKeys": 10524,
         "deepArrays": 7825,
-        "serviceLocators": 2422
+        "serviceLocators": 2423
       },
       "hotspots": [
         {
@@ -142103,6 +142103,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "bad194b809b",
+      "date": "Aug 28, 2026",
+      "type": "Maintenance",
+      "message": "task: #3610503 Optimize StorageCopyTrait::replaceStorageContents()",
+      "locDelta": 10,
+      "ccnDelta": 4,
+      "miDelta": -2,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "e09f5a64800",
+      "date": "Aug 28, 2026",
+      "type": "Bug",
+      "message": "fix: #3556506 Respect allowed_formats settings in \\Drupal\\text\\Plugin\\Field\\Fiel",
+      "locDelta": 5,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "7d8143e6d2d",
       "date": "Aug 27, 2026",
@@ -143082,26 +143102,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "a06956c97b5",
-      "date": "Jul 17, 2026",
-      "type": "Maintenance",
-      "message": "task: #3547724 Throw an exception when unsupported procedural functions are defi",
-      "locDelta": -3,
-      "ccnDelta": -3,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ecaa384d8df",
-      "date": "Jul 17, 2026",
-      "type": "Bug",
-      "message": "fix: #3029122 Drupal returns a 500 Internal error when 'destination' url query v",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143211,7 +143211,7 @@
     },
     {
       "year": 2026,
-      "commits": 1263
+      "commits": 1266
     }
   ]
 }
