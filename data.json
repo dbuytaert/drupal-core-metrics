@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-29T00:51:27.555475",
+  "generated": "2026-08-30T00:58:03.222032",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 167,
+      "total": 171,
       "features": 4,
-      "bugs": 38,
-      "maintenance": 121,
+      "bugs": 40,
+      "maintenance": 123,
       "unknown": 4
     }
   ],
@@ -137649,10 +137649,10 @@
     },
     {
       "date": "2026-08",
-      "commit": "803373a7",
+      "commit": "141cdc1f",
       "production": {
-        "loc": 292917,
-        "functions": 23040,
+        "loc": 292902,
+        "functions": 23039,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137663,7 +137663,7 @@
         },
         "antipatterns": 70.6
       },
-      "testLoc": 458926,
+      "testLoc": 459226,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 220,
@@ -141696,7 +141696,7 @@
       "antipatterns": {
         "magicKeys": 10524,
         "deepArrays": 7825,
-        "serviceLocators": 2423
+        "serviceLocators": 2424
       },
       "hotspots": [
         {
@@ -142087,8 +142087,8 @@
           "name": "HookCollectorPass::collectModuleHookImplementations",
           "file": "lib/Drupal/Core/Hook/HookCollectorPass.php",
           "ccn": 31,
-          "loc": 110,
-          "mi": 54,
+          "loc": 108,
+          "mi": 55,
           "antipatterns": 2
         },
         {
@@ -142103,6 +142103,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "51ff2c2fe01",
+      "date": "Aug 29, 2026",
+      "type": "Bug",
+      "message": "fix: #3580733 Views status field triggers a PHP 8.5 deprecation on /admin/people",
+      "locDelta": 14,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "3a9a48933cd",
+      "date": "Aug 29, 2026",
+      "type": "Maintenance",
+      "message": "perf: #3591680 Use the YAML parsing cache collector for config file storage",
+      "locDelta": 12,
+      "ccnDelta": 5,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "7d62c7b7785",
+      "date": "Aug 29, 2026",
+      "type": "Maintenance",
+      "message": "task: #3618955 Reduce necessary directory traversing in HookCollectorPass",
+      "locDelta": -41,
+      "ccnDelta": -15,
+      "miDelta": 8,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "bad194b809b",
       "date": "Aug 28, 2026",
@@ -143072,36 +143102,6 @@
       "ccnDelta": 4,
       "miDelta": -3,
       "antipatternsDelta": 3
-    },
-    {
-      "hash": "c4d7966964e",
-      "date": "Jul 20, 2026",
-      "type": "Maintenance",
-      "message": "task: #3485030 Avoid saving menu links through node form when they do not change",
-      "locDelta": 8,
-      "ccnDelta": 3,
-      "miDelta": -5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "220ee9fe404",
-      "date": "Jul 20, 2026",
-      "type": "Bug",
-      "message": "fix: #3611653 Upsert fails after upgrade from 11.3 to 11.4",
-      "locDelta": 19,
-      "ccnDelta": 4,
-      "miDelta": -17,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "28d2798c5cd",
-      "date": "Jul 20, 2026",
-      "type": "Bug",
-      "message": "fix: #3611529 Moderation state field definitions can have an incorrect target bu",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143211,7 +143211,7 @@
     },
     {
       "year": 2026,
-      "commits": 1266
+      "commits": 1270
     }
   ]
 }
