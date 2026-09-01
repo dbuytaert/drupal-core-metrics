@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-31T00:51:04.537141",
+  "generated": "2026-09-01T00:50:36.358922",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2515,10 +2515,10 @@
     },
     {
       "date": "2026-08",
-      "total": 171,
+      "total": 179,
       "features": 4,
-      "bugs": 40,
-      "maintenance": 123,
+      "bugs": 43,
+      "maintenance": 128,
       "unknown": 4
     }
   ],
@@ -137648,11 +137648,11 @@
       ]
     },
     {
-      "date": "2026-08",
-      "commit": "141cdc1f",
+      "date": "2026-09",
+      "commit": "d7ba4a8b",
       "production": {
-        "loc": 292902,
-        "functions": 23039,
+        "loc": 293343,
+        "functions": 23067,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137661,17 +137661,17 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 70.6
+        "antipatterns": 70.7
       },
-      "testLoc": 459226,
+      "testLoc": 459623,
       "surfaceArea": {
         "pluginTypes": 45,
-        "hooks": 220,
+        "hooks": 221,
         "magicKeys": 275,
         "events": 43,
         "services": 244,
         "yamlFormats": 16,
-        "interfaceMethods": 2898,
+        "interfaceMethods": 2900,
         "globalFunctions": 260
       },
       "surfaceAreaLists": {
@@ -137820,6 +137820,7 @@
           "hook_entity_build_defaults_alter",
           "hook_plugin_filter_block_alter",
           "hook_plugin_filter_layout_alter",
+          "hook_field_formatter_info_alter",
           "hook_filter_secure_image_alter",
           "hook_entity_bundle_create",
           "hook_local_tasks_alter",
@@ -138077,11 +138078,11 @@
           "#derivative_plugin_id",
           "#in_preview",
           "#redirect",
+          "#langcode",
           "#entity",
           "#element",
           "#total_count",
           "#filter_types_to_skip",
-          "#langcode",
           "#node",
           "#caption",
           "#classes",
@@ -138670,6 +138671,8 @@
           "UpdateManagerInterface::fetchDataBatch",
           "UpdateManagerInterface::refreshUpdateData",
           "UpdateManagerInterface::projectStorage",
+          "UpdateManagerInterface::getAvailable",
+          "UpdateManagerInterface::reset",
           "UpdateFetcherInterface::getFetchBaseUrl",
           "UpdateFetcherInterface::fetchProjectData",
           "UpdateFetcherInterface::buildFetchUrl",
@@ -141694,9 +141697,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10524,
-        "deepArrays": 7825,
-        "serviceLocators": 2424
+        "magicKeys": 10556,
+        "deepArrays": 7842,
+        "serviceLocators": 2434
       },
       "hotspots": [
         {
@@ -141974,9 +141977,9 @@
         {
           "name": "FormBuilder::handleInputElement",
           "file": "lib/Drupal/Core/Form/FormBuilder.php",
-          "ccn": 36,
-          "loc": 79,
-          "mi": 60,
+          "ccn": 35,
+          "loc": 77,
+          "mi": 61,
           "antipatterns": 0
         },
         {
@@ -142063,9 +142066,9 @@
           "name": "ThemeSettingsForm::buildForm",
           "file": "modules/system/src/Form/ThemeSettingsForm.php",
           "ccn": 31,
-          "loc": 202,
+          "loc": 203,
           "mi": 41,
-          "antipatterns": 62
+          "antipatterns": 63
         },
         {
           "name": "Registry::processExtension",
@@ -142103,6 +142106,56 @@
     }
   ],
   "commits": [
+    {
+      "hash": "d7ba4a8b5bf",
+      "date": "Aug 31, 2026",
+      "type": "Maintenance",
+      "message": "task: #3151555 Deprecate user_picture_enabled()",
+      "locDelta": 3,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "9113328b526",
+      "date": "Aug 31, 2026",
+      "type": "Maintenance",
+      "message": "task: #3616645 Form #value_callback does not support CallableResolver-style call",
+      "locDelta": -1,
+      "ccnDelta": -1,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "7ce49f571ab",
+      "date": "Aug 31, 2026",
+      "type": "Bug",
+      "message": "fix: #3616663 ElementInfoManager overwrites a form element's own #value_callback",
+      "locDelta": -3,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": -2
+    },
+    {
+      "hash": "b0d6a1940a3",
+      "date": "Aug 31, 2026",
+      "type": "Maintenance",
+      "message": "task: #3580703 Deprecate update.module functions",
+      "locDelta": 123,
+      "ccnDelta": 28,
+      "miDelta": -35,
+      "antipatternsDelta": -3
+    },
+    {
+      "hash": "617b3ed985b",
+      "date": "Aug 31, 2026",
+      "type": "Maintenance",
+      "message": "task: #3549134 Move text_with_summary to its own module",
+      "locDelta": 319,
+      "ccnDelta": 49,
+      "miDelta": -21,
+      "antipatternsDelta": 62
+    },
     {
       "hash": "51ff2c2fe01",
       "date": "Aug 29, 2026",
@@ -143052,56 +143105,6 @@
       "ccnDelta": 1,
       "miDelta": -1,
       "antipatternsDelta": -2
-    },
-    {
-      "hash": "9715af43cff",
-      "date": "Jul 22, 2026",
-      "type": "Bug",
-      "message": "fix: #3608491 \\Drupal\\Core\\Database\\ExceptionHandler methods never return",
-      "locDelta": 4,
-      "ccnDelta": -1,
-      "miDelta": 2,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "99760dd5055",
-      "date": "Jul 22, 2026",
-      "type": "Maintenance",
-      "message": "task: #3593123 Add BatchStorageInterface::getId()",
-      "locDelta": 1,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "d60736ee69d",
-      "date": "Jul 21, 2026",
-      "type": "Maintenance",
-      "message": "task: #3586221 Remove the Stable 9 theme",
-      "locDelta": -50,
-      "ccnDelta": -13,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "b0f28bf138e",
-      "date": "Jul 21, 2026",
-      "type": "Feature",
-      "message": "feat: #3605549 Allow install profiles to specify a list of recipes that should b",
-      "locDelta": 1415,
-      "ccnDelta": 292,
-      "miDelta": -409,
-      "antipatternsDelta": 113
-    },
-    {
-      "hash": "0c75f8ed85b",
-      "date": "Jul 21, 2026",
-      "type": "Feature",
-      "message": "feat: #3101714 Link field display should show plaintext URLs longer than 80 char",
-      "locDelta": 5,
-      "ccnDelta": 4,
-      "miDelta": -3,
-      "antipatternsDelta": 3
     }
   ],
   "commitsPerYear": [
@@ -143211,7 +143214,7 @@
     },
     {
       "year": 2026,
-      "commits": 1270
+      "commits": 1278
     }
   ]
 }
