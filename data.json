@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01T00:50:36.358922",
+  "generated": "2026-09-02T00:54:36.987716",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2520,6 +2520,14 @@
       "bugs": 43,
       "maintenance": 128,
       "unknown": 4
+    },
+    {
+      "date": "2026-09",
+      "total": 12,
+      "features": 0,
+      "bugs": 3,
+      "maintenance": 9,
+      "unknown": 0
     }
   ],
   "snapshots": [
@@ -137649,21 +137657,21 @@
     },
     {
       "date": "2026-09",
-      "commit": "d7ba4a8b",
+      "commit": "cc28583d",
       "production": {
-        "loc": 293343,
-        "functions": 23067,
+        "loc": 293567,
+        "functions": 23080,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 86.9,
+          "avg": 87,
           "p5": 84
         },
-        "antipatterns": 70.7
+        "antipatterns": 70.6
       },
-      "testLoc": 459623,
+      "testLoc": 459694,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 221,
@@ -141699,7 +141707,7 @@
       "antipatterns": {
         "magicKeys": 10556,
         "deepArrays": 7842,
-        "serviceLocators": 2434
+        "serviceLocators": 2430
       },
       "hotspots": [
         {
@@ -142106,6 +142114,76 @@
     }
   ],
   "commits": [
+    {
+      "hash": "cc28583dbe1",
+      "date": "Sep 01, 2026",
+      "type": "Bug",
+      "message": "fix: #3389715 Diffs with different line endings leads to Invalid $mode 3 specifi",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "72844a3cba6",
+      "date": "Sep 01, 2026",
+      "type": "Maintenance",
+      "message": "task: #3375423 Deprecate file_managed_file_save_upload(), file_save_upload() and",
+      "locDelta": 63,
+      "ccnDelta": 6,
+      "miDelta": -3,
+      "antipatternsDelta": -3
+    },
+    {
+      "hash": "3a8ca189fa4",
+      "date": "Sep 01, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3532930 Make Drupal\\Core\\Database\\Database type strict and PHPStan L1",
+      "locDelta": 57,
+      "ccnDelta": 19,
+      "miDelta": -16,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "39b62a8288e",
+      "date": "Sep 01, 2026",
+      "type": "Maintenance",
+      "message": "task: #2831617 Deprecate global constants in locale module",
+      "locDelta": 74,
+      "ccnDelta": -2,
+      "miDelta": 1,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "df31ad4e31b",
+      "date": "Sep 01, 2026",
+      "type": "Bug",
+      "message": "fix: #2781815 Content authored views relationship should be provided by node.mod",
+      "locDelta": 3,
+      "ccnDelta": 1,
+      "miDelta": -5,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "435960da6c7",
+      "date": "Sep 01, 2026",
+      "type": "Maintenance",
+      "message": "task: #3619202 Remove Layout Builder from Umami",
+      "locDelta": 25,
+      "ccnDelta": 5,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "12b38bdacee",
+      "date": "Sep 01, 2026",
+      "type": "Maintenance",
+      "message": "task: #3619751 Remove links from filter permission descriptions",
+      "locDelta": -1,
+      "ccnDelta": 0,
+      "miDelta": 1,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "d7ba4a8b5bf",
       "date": "Aug 31, 2026",
@@ -143035,76 +143113,6 @@
       "ccnDelta": 0,
       "miDelta": -36,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "6765430cb4d",
-      "date": "Jul 24, 2026",
-      "type": "Bug",
-      "message": "fix: #3604077 DiscardLayoutChangesForm/RevertOverridesForm::getDescription do no",
-      "locDelta": 8,
-      "ccnDelta": 2,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "2e0db3e82d3",
-      "date": "Jul 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3588332 file_tokens() fails when [file:owner] resolves on a file whose ow",
-      "locDelta": 0,
-      "ccnDelta": 1,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "4aa1f933844",
-      "date": "Jul 24, 2026",
-      "type": "Feature",
-      "message": "feat: #3481627 Update user creation form to hide password and status fields when",
-      "locDelta": 11,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": 7
-    },
-    {
-      "hash": "680a81390e1",
-      "date": "Jul 23, 2026",
-      "type": "Maintenance",
-      "message": "task: #3608184 Load multiple cardinality fields with a smaller result set",
-      "locDelta": 35,
-      "ccnDelta": 5,
-      "miDelta": -11,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "f6012fd4721",
-      "date": "Jul 22, 2026",
-      "type": "Bug",
-      "message": "fix: #3608493 \\Drupal\\Core\\Database\\Query\\Insert::execute() is overriden in all ",
-      "locDelta": -29,
-      "ccnDelta": -5,
-      "miDelta": 10,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "cac4703191c",
-      "date": "Jul 22, 2026",
-      "type": "Maintenance",
-      "message": "task: #3572350 Disable the default /node listing view, replace Olivero hardcoded",
-      "locDelta": 20,
-      "ccnDelta": 2,
-      "miDelta": 1,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "4f0c2dc6ed2",
-      "date": "Jul 22, 2026",
-      "type": "Bug",
-      "message": "fix: #3593466 View mode form crashes if there are no bundles",
-      "locDelta": 1,
-      "ccnDelta": 1,
-      "miDelta": -1,
-      "antipatternsDelta": -2
     }
   ],
   "commitsPerYear": [
@@ -143214,7 +143222,7 @@
     },
     {
       "year": 2026,
-      "commits": 1278
+      "commits": 1290
     }
   ]
 }
