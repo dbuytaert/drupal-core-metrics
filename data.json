@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02T00:54:36.987716",
+  "generated": "2026-09-03T00:53:31.930212",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,11 +2523,11 @@
     },
     {
       "date": "2026-09",
-      "total": 12,
+      "total": 19,
       "features": 0,
-      "bugs": 3,
-      "maintenance": 9,
-      "unknown": 0
+      "bugs": 4,
+      "maintenance": 13,
+      "unknown": 2
     }
   ],
   "snapshots": [
@@ -137657,24 +137657,24 @@
     },
     {
       "date": "2026-09",
-      "commit": "cc28583d",
+      "commit": "723e3839",
       "production": {
-        "loc": 293567,
-        "functions": 23080,
+        "loc": 293101,
+        "functions": 23053,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 87,
+          "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 70.6
+        "antipatterns": 70.4
       },
-      "testLoc": 459694,
+      "testLoc": 458861,
       "surfaceArea": {
         "pluginTypes": 45,
-        "hooks": 221,
+        "hooks": 220,
         "magicKeys": 275,
         "events": 43,
         "services": 244,
@@ -137828,7 +137828,6 @@
           "hook_entity_build_defaults_alter",
           "hook_plugin_filter_block_alter",
           "hook_plugin_filter_layout_alter",
-          "hook_field_formatter_info_alter",
           "hook_filter_secure_image_alter",
           "hook_entity_bundle_create",
           "hook_local_tasks_alter",
@@ -138086,11 +138085,11 @@
           "#derivative_plugin_id",
           "#in_preview",
           "#redirect",
-          "#langcode",
           "#entity",
           "#element",
           "#total_count",
           "#filter_types_to_skip",
+          "#langcode",
           "#node",
           "#caption",
           "#classes",
@@ -141705,9 +141704,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10556,
-        "deepArrays": 7842,
-        "serviceLocators": 2430
+        "magicKeys": 10496,
+        "deepArrays": 7809,
+        "serviceLocators": 2428
       },
       "hotspots": [
         {
@@ -142114,6 +142113,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "1b4da6dbb82",
+      "date": "Sep 02, 2026",
+      "type": "Maintenance",
+      "message": "task: #3583153 Allow to invoke multiple implementations of a specific module wit",
+      "locDelta": 11,
+      "ccnDelta": 4,
+      "miDelta": -6,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "246bddbf7e0",
+      "date": "Sep 02, 2026",
+      "type": "Maintenance",
+      "message": "task: #3620228 Remove text_with_summary",
+      "locDelta": -489,
+      "ccnDelta": -65,
+      "miDelta": 38,
+      "antipatternsDelta": -97
+    },
+    {
+      "hash": "e882b59cc91",
+      "date": "Sep 02, 2026",
+      "type": "Bug",
+      "message": "fix: #3614993 AjaxRenderer::renderResponse() should handle a render array with n",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
     {
       "hash": "cc28583dbe1",
       "date": "Sep 01, 2026",
@@ -143083,36 +143112,6 @@
       "ccnDelta": 12,
       "miDelta": -5,
       "antipatternsDelta": 5
-    },
-    {
-      "hash": "70c6a37feba",
-      "date": "Jul 25, 2026",
-      "type": "Maintenance",
-      "message": "task: #3593666 Convert Views routes to attributes",
-      "locDelta": 84,
-      "ccnDelta": 0,
-      "miDelta": -33,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "7355949b9f4",
-      "date": "Jul 25, 2026",
-      "type": "Bug",
-      "message": "fix: #3605431 Missing is_string check for the sort_by Views exposed form query p",
-      "locDelta": 0,
-      "ccnDelta": 2,
-      "miDelta": -1,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "29066acd0c9",
-      "date": "Jul 24, 2026",
-      "type": "Maintenance",
-      "message": "task: #3593667 Convert user.module routes to attributes",
-      "locDelta": 189,
-      "ccnDelta": 0,
-      "miDelta": -36,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143222,7 +143221,7 @@
     },
     {
       "year": 2026,
-      "commits": 1290
+      "commits": 1297
     }
   ]
 }
