@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04T00:45:29.435183",
+  "generated": "2026-09-05T00:48:49.550049",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 28,
-      "features": 1,
-      "bugs": 5,
-      "maintenance": 20,
+      "total": 45,
+      "features": 2,
+      "bugs": 11,
+      "maintenance": 30,
       "unknown": 2
     }
   ],
@@ -137657,10 +137657,10 @@
     },
     {
       "date": "2026-09",
-      "commit": "a8b181e7",
+      "commit": "92812efa",
       "production": {
-        "loc": 293273,
-        "functions": 23056,
+        "loc": 293695,
+        "functions": 23075,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137669,9 +137669,9 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 70.3
+        "antipatterns": 70.2
       },
-      "testLoc": 459305,
+      "testLoc": 460211,
       "surfaceArea": {
         "pluginTypes": 45,
         "hooks": 220,
@@ -137679,7 +137679,7 @@
         "events": 43,
         "services": 244,
         "yamlFormats": 16,
-        "interfaceMethods": 2900,
+        "interfaceMethods": 2901,
         "globalFunctions": 260
       },
       "surfaceAreaLists": {
@@ -138167,6 +138167,7 @@
           "#required ",
           "#field_has_data",
           "#allowed_values",
+          "#post_render",
           "#link_options",
           "#children",
           "#redirect",
@@ -138187,7 +138188,6 @@
           "#grouping",
           "#mapping",
           "#field",
-          "#post_render",
           "#field_alias",
           "#argument_option",
           "#embed",
@@ -140567,6 +140567,7 @@
           "UpdateManagerInterface::projectStorage",
           "UpdateManagerInterface::getAvailable",
           "UpdateManagerInterface::reset",
+          "UpdateManagerInterface::calculateProjectData",
           "FieldStorageConfigInterface::getType",
           "FieldStorageConfigInterface::getTypeProvider",
           "FieldStorageConfigInterface::getBundles",
@@ -141704,9 +141705,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10496,
-        "deepArrays": 7809,
-        "serviceLocators": 2428
+        "magicKeys": 10497,
+        "deepArrays": 7785,
+        "serviceLocators": 2434
       },
       "hotspots": [
         {
@@ -141726,12 +141727,12 @@
           "antipatterns": 0
         },
         {
-          "name": "update_calculate_project_update_status",
-          "file": "modules/update/update.compare.inc",
-          "ccn": 81,
-          "loc": 269,
-          "mi": 24,
-          "antipatterns": 3
+          "name": "UpdateCalculator::updateProjectStatus",
+          "file": "modules/update/src/UpdateCalculator.php",
+          "ccn": 73,
+          "loc": 254,
+          "mi": 27,
+          "antipatterns": 0
         },
         {
           "name": "YamlFileLoader::parseDefinition",
@@ -142046,6 +142047,14 @@
           "antipatterns": 2
         },
         {
+          "name": "Column::validate",
+          "file": "lib/Drupal/Core/Database/SchemaDefinition/Column.php",
+          "ccn": 31,
+          "loc": 52,
+          "mi": 70,
+          "antipatterns": 0
+        },
+        {
           "name": "PrimitiveTypeConstraintValidator::validate",
           "file": "lib/Drupal/Core/Validation/Plugin/Validation/Constraint/PrimitiveTypeConstraintValidator.php",
           "ccn": 31,
@@ -142100,19 +142109,81 @@
           "loc": 101,
           "mi": 56,
           "antipatterns": 14
-        },
-        {
-          "name": "SqlContentEntityStorage::loadMultipleCardinalityFields",
-          "file": "lib/Drupal/Core/Entity/Sql/SqlContentEntityStorage.php",
-          "ccn": 30,
-          "loc": 108,
-          "mi": 55,
-          "antipatterns": 5
         }
       ]
     }
   ],
   "commits": [
+    {
+      "hash": "92812efaed0",
+      "date": "Sep 05, 2026",
+      "type": "Bug",
+      "message": "fix: #2638250 The label \"Member for\" on user profiles is hardcoded markup that i",
+      "locDelta": 19,
+      "ccnDelta": 3,
+      "miDelta": -2,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "4a54dacd42d",
+      "date": "Sep 04, 2026",
+      "type": "Maintenance",
+      "message": "task: #3580705 Deprecate update.compare functions",
+      "locDelta": 166,
+      "ccnDelta": 44,
+      "miDelta": -57,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "fa4fd791c51",
+      "date": "Sep 04, 2026",
+      "type": "Feature",
+      "message": "feat: #3586688 Add support for generated columns to the DB Schema Definition API",
+      "locDelta": 232,
+      "ccnDelta": 52,
+      "miDelta": -97,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "35bbc4e3bdc",
+      "date": "Sep 04, 2026",
+      "type": "Maintenance",
+      "message": "task: #3605702 Remove remaining Gin and Claro implementation names from Default ",
+      "locDelta": -3,
+      "ccnDelta": -1,
+      "miDelta": -1,
+      "antipatternsDelta": -21
+    },
+    {
+      "hash": "1b496c981a2",
+      "date": "Sep 04, 2026",
+      "type": "Maintenance",
+      "message": "task: #3620216 Add loadOverrideFree and loadMultipleOverrideFree to ConfigEntity",
+      "locDelta": 14,
+      "ccnDelta": 2,
+      "miDelta": 0,
+      "antipatternsDelta": 4
+    },
+    {
+      "hash": "4240fa274f1",
+      "date": "Sep 04, 2026",
+      "type": "Bug",
+      "message": "fix: #3619974 A view in a workspace shows default revision values for non-transl",
+      "locDelta": 4,
+      "ccnDelta": 2,
+      "miDelta": -2,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "dde124da00f",
+      "date": "Sep 04, 2026",
+      "type": "Maintenance",
+      "message": "task: #3620804 Remove search references from Umami theme",
+      "locDelta": -10,
+      "ccnDelta": -2,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
     {
       "hash": "2c9c31c0448",
       "date": "Sep 03, 2026",
@@ -143042,76 +143113,6 @@
       "ccnDelta": 2,
       "miDelta": -2,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "9a20b9c4195",
-      "date": "Jul 30, 2026",
-      "type": "Maintenance",
-      "message": "task: #3584238 Deprecate implicit commit-on-destruct",
-      "locDelta": 17,
-      "ccnDelta": 2,
-      "miDelta": -11,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "214876bb6f7",
-      "date": "Jul 30, 2026",
-      "type": "Maintenance",
-      "message": "task: #3050199 Remove entity level constraint MenuSettingsConstraint that valida",
-      "locDelta": -8,
-      "ccnDelta": -3,
-      "miDelta": 7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "e179038b408",
-      "date": "Jul 29, 2026",
-      "type": "Bug",
-      "message": "fix: #3209204 Adding existing translation throws \"Invalid translation language s",
-      "locDelta": 5,
-      "ccnDelta": 1,
-      "miDelta": -4,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "5a7489d2a92",
-      "date": "Jul 29, 2026",
-      "type": "Maintenance",
-      "message": "task: #3613344 Remove update_fetch_with_http_fallback",
-      "locDelta": -56,
-      "ccnDelta": -7,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "fbfe9c0cbbb",
-      "date": "Jul 29, 2026",
-      "type": "Maintenance",
-      "message": "task: #3585886 Outdated _method requirement in CsrfRequestHeaderAccessCheck::app",
-      "locDelta": -13,
-      "ccnDelta": -4,
-      "miDelta": 0,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "c35d842e681",
-      "date": "Jul 28, 2026",
-      "type": "Bug",
-      "message": "fix: #3612163 When installing themes on the Appearance page, batches added (eg. ",
-      "locDelta": 9,
-      "ccnDelta": 2,
-      "miDelta": -4,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "169100e3820",
-      "date": "Jul 28, 2026",
-      "type": "Maintenance",
-      "message": "task: #3588847 Update to Symfony 8.1",
-      "locDelta": -3,
-      "ccnDelta": 1,
-      "miDelta": 2,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143221,7 +143222,7 @@
     },
     {
       "year": 2026,
-      "commits": 1306
+      "commits": 1323
     }
   ]
 }
