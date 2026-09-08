@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-07T00:55:06.758039",
+  "generated": "2026-09-08T00:53:00.323943",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 51,
-      "features": 2,
-      "bugs": 15,
-      "maintenance": 31,
+      "total": 59,
+      "features": 3,
+      "bugs": 17,
+      "maintenance": 36,
       "unknown": 3
     }
   ],
@@ -137657,10 +137657,10 @@
     },
     {
       "date": "2026-09",
-      "commit": "a52573d8",
+      "commit": "d107690b",
       "production": {
-        "loc": 293715,
-        "functions": 23075,
+        "loc": 294528,
+        "functions": 23151,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137669,17 +137669,17 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 70.2
+        "antipatterns": 70
       },
-      "testLoc": 460257,
+      "testLoc": 462519,
       "surfaceArea": {
-        "pluginTypes": 45,
+        "pluginTypes": 47,
         "hooks": 220,
         "magicKeys": 275,
         "events": 43,
         "services": 244,
-        "yamlFormats": 16,
-        "interfaceMethods": 2901,
+        "yamlFormats": 17,
+        "interfaceMethods": 2916,
         "globalFunctions": 260
       },
       "surfaceAreaLists": {
@@ -137705,6 +137705,8 @@
           "ComponentPluginManager",
           "IconExtractorPluginManager",
           "IconPackManager",
+          "DesignTokenPluginManager",
+          "DesignTokenValuePluginManager",
           "TypedDataManager",
           "ConfigActionManager",
           "VariantManager",
@@ -138530,6 +138532,7 @@
           "links.contextual",
           "layouts",
           "icons",
+          "tokens",
           "routing",
           "services",
           "breakpoints",
@@ -139925,6 +139928,18 @@
           "IconDefinitionInterface::getAllData",
           "IconDefinitionInterface::getData",
           "IconExtractorWithFinderInterface::getFilesFromSources",
+          "DesignTokenValueInterface::toDtcg",
+          "DesignTokenValueInterface::toCss",
+          "DesignTokenValueInterface::prepareConfiguration",
+          "DtcgInterface::getType",
+          "DtcgInterface::getPath",
+          "DtcgInterface::toDtcg",
+          "DesignTokenPluginManagerInterface::getDefinition",
+          "DesignTokenPluginManagerInterface::getDefinitions",
+          "DesignTokenPluginManagerInterface::findDefinitions",
+          "DesignTokenInterface::getCssVariableName",
+          "DesignTokenInterface::getScopes",
+          "DesignTokenInterface::toCss",
           "ThemeNegotiatorInterface::applies",
           "ThemeNegotiatorInterface::determineActiveTheme",
           "StarterKitInterface::postProcess",
@@ -140839,7 +140854,10 @@
           "RoleInterface::getPermissions",
           "RoleInterface::hasPermission",
           "RoleInterface::grantPermission",
+          "RoleInterface::grantPermissions",
+          "RoleInterface::changePermissions",
           "RoleInterface::revokePermission",
+          "RoleInterface::revokePermissions",
           "RoleInterface::isAdmin",
           "RoleInterface::setIsAdmin",
           "RoleInterface::getWeight",
@@ -141706,8 +141724,8 @@
       },
       "antipatterns": {
         "magicKeys": 10497,
-        "deepArrays": 7785,
-        "serviceLocators": 2434
+        "deepArrays": 7789,
+        "serviceLocators": 2437
       },
       "hotspots": [
         {
@@ -142114,6 +142132,56 @@
     }
   ],
   "commits": [
+    {
+      "hash": "d107690b1ce",
+      "date": "Sep 08, 2026",
+      "type": "Bug",
+      "message": "fix: #3621016 text_update_12001 fails to load text_with_summary",
+      "locDelta": 13,
+      "ccnDelta": 3,
+      "miDelta": 0,
+      "antipatternsDelta": 3
+    },
+    {
+      "hash": "a9c9c3e5e4f",
+      "date": "Sep 07, 2026",
+      "type": "Bug",
+      "message": "fix: #3612458 Show all dependent modules on module confirm form for each chosen ",
+      "locDelta": 2,
+      "ccnDelta": 0,
+      "miDelta": -1,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "1ab223a55d3",
+      "date": "Sep 07, 2026",
+      "type": "Maintenance",
+      "message": "task: #3561302 Register equivalent updates on site install",
+      "locDelta": 36,
+      "ccnDelta": 9,
+      "miDelta": -10,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "ae024e8af41",
+      "date": "Sep 07, 2026",
+      "type": "Feature",
+      "message": "feat: #3531854 Add a Design Tokens & CSS variables API",
+      "locDelta": 786,
+      "ccnDelta": 132,
+      "miDelta": -35,
+      "antipatternsDelta": 11
+    },
+    {
+      "hash": "0f7caab8579",
+      "date": "Sep 07, 2026",
+      "type": "Maintenance",
+      "message": "task: #2025089 Deprecate user_role_grant_permissions(), user_role_revoke_permiss",
+      "locDelta": 24,
+      "ccnDelta": 3,
+      "miDelta": -6,
+      "antipatternsDelta": 1
+    },
     {
       "hash": "d4404e98af2",
       "date": "Sep 05, 2026",
@@ -143063,56 +143131,6 @@
       "ccnDelta": 1,
       "miDelta": -3,
       "antipatternsDelta": 1
-    },
-    {
-      "hash": "f79c0a4fbd6",
-      "date": "Aug 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #1945262 Introduce before and after for conditional ordering in library de",
-      "locDelta": 9,
-      "ccnDelta": 4,
-      "miDelta": 8,
-      "antipatternsDelta": 2
-    },
-    {
-      "hash": "a3108d0139a",
-      "date": "Aug 03, 2026",
-      "type": "Feature",
-      "message": "feat: #3411490 Replace array-based DB Schema API with a value object structure",
-      "locDelta": 725,
-      "ccnDelta": 122,
-      "miDelta": -110,
-      "antipatternsDelta": -35
-    },
-    {
-      "hash": "62c7178d2be",
-      "date": "Aug 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3581218 Deprecate .theme file extension",
-      "locDelta": 20,
-      "ccnDelta": 4,
-      "miDelta": -4,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "73847ce09f3",
-      "date": "Aug 01, 2026",
-      "type": "Bug",
-      "message": "fix: #3600904 Shipped configuration entities that do not have translatable eleme",
-      "locDelta": 2,
-      "ccnDelta": 3,
-      "miDelta": -3,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "c51fe139f8a",
-      "date": "Aug 01, 2026",
-      "type": "Maintenance",
-      "message": "task: #3607968 Promote defaults._title to top level in route attributes",
-      "locDelta": 71,
-      "ccnDelta": 10,
-      "miDelta": -9,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143222,7 +143240,7 @@
     },
     {
       "year": 2026,
-      "commits": 1329
+      "commits": 1337
     }
   ]
 }
