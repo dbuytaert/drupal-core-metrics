@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-08T00:53:00.323943",
+  "generated": "2026-09-09T00:44:49.369191",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,11 +2523,11 @@
     },
     {
       "date": "2026-09",
-      "total": 59,
+      "total": 69,
       "features": 3,
-      "bugs": 17,
-      "maintenance": 36,
-      "unknown": 3
+      "bugs": 20,
+      "maintenance": 42,
+      "unknown": 4
     }
   ],
   "snapshots": [
@@ -137657,10 +137657,10 @@
     },
     {
       "date": "2026-09",
-      "commit": "d107690b",
+      "commit": "9afec8fa",
       "production": {
-        "loc": 294528,
-        "functions": 23151,
+        "loc": 294569,
+        "functions": 23165,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137669,17 +137669,17 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 70
+        "antipatterns": 69.8
       },
-      "testLoc": 462519,
+      "testLoc": 462660,
       "surfaceArea": {
         "pluginTypes": 47,
         "hooks": 220,
         "magicKeys": 275,
         "events": 43,
         "services": 244,
-        "yamlFormats": 17,
-        "interfaceMethods": 2916,
+        "yamlFormats": 16,
+        "interfaceMethods": 2919,
         "globalFunctions": 260
       },
       "surfaceAreaLists": {
@@ -137883,10 +137883,10 @@
           "hook_node_links_alter",
           "hook_user_cancel",
           "hook_comment_links_alter",
-          "hook_user_cancel_methods_alter",
           "hook_user_login",
           "hook_user_logout",
           "hook_views_plugins_argument_validator_alter",
+          "hook_user_cancel_methods_alter",
           "hook_plugin_filter_block_alter",
           "hook_plugin_filter_layout_alter",
           "hook_entity_translation_create",
@@ -138533,7 +138533,6 @@
           "layouts",
           "icons",
           "tokens",
-          "routing",
           "services",
           "breakpoints",
           "permissions",
@@ -138912,6 +138911,7 @@
           "PasswordInterface::needsRehash",
           "PasswordGeneratorInterface::generate",
           "ThemeInstallerInterface::install",
+          "ThemeInstallerInterface::getThemesToInstall",
           "ThemeInstallerInterface::uninstall",
           "ThemeHandlerInterface::listInfo",
           "ThemeHandlerInterface::addTheme",
@@ -138945,6 +138945,7 @@
           "ModuleHandlerInterface::alterDeprecated",
           "ModuleHandlerInterface::getModuleDirectories",
           "ModuleInstallerInterface::install",
+          "ModuleInstallerInterface::getModulesToInstall",
           "ModuleInstallerInterface::uninstall",
           "ModuleInstallerInterface::validateUninstall",
           "InstallRequirementsInterface::getRequirements",
@@ -140263,6 +140264,7 @@
           "TranslationInterface::translate",
           "TranslationInterface::translateString",
           "TranslationInterface::formatPlural",
+          "TranslationInterface::selectPluralForm",
           "TranslatorInterface::getStringTranslation",
           "TranslatorInterface::reset",
           "ActionInterface::executeMultiple",
@@ -141723,9 +141725,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10497,
-        "deepArrays": 7789,
-        "serviceLocators": 2437
+        "magicKeys": 10498,
+        "deepArrays": 7786,
+        "serviceLocators": 2386
       },
       "hotspots": [
         {
@@ -142132,6 +142134,96 @@
     }
   ],
   "commits": [
+    {
+      "hash": "9afec8faf2b",
+      "date": "Sep 08, 2026",
+      "type": "Maintenance",
+      "message": "task: #3585957 Prevent the navigation sidebar being rendered via big pipe",
+      "locDelta": 3,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "8a9850a4bd6",
+      "date": "Sep 08, 2026",
+      "type": "Maintenance",
+      "message": "task: #3620746 Remove deprecated methods and functions tagged for 12.0.0",
+      "locDelta": -120,
+      "ccnDelta": -29,
+      "miDelta": 31,
+      "antipatternsDelta": -4
+    },
+    {
+      "hash": "bb5d24ea3d5",
+      "date": "Sep 08, 2026",
+      "type": "Maintenance",
+      "message": "task: #3620747 Remove deprecated method arguments tagged for 12.0.0",
+      "locDelta": -261,
+      "ccnDelta": -56,
+      "miDelta": 59,
+      "antipatternsDelta": -49
+    },
+    {
+      "hash": "0c1323961c4",
+      "date": "Sep 08, 2026",
+      "type": "Bug",
+      "message": "fix: #2660338 Deprecate locale_get_plural",
+      "locDelta": 27,
+      "ccnDelta": 7,
+      "miDelta": 0,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "9e8373659f2",
+      "date": "Sep 08, 2026",
+      "type": "Maintenance",
+      "message": "task: #3620912 Deprecate user.module cancel methods",
+      "locDelta": 87,
+      "ccnDelta": 10,
+      "miDelta": -9,
+      "antipatternsDelta": -5
+    },
+    {
+      "hash": "94a65fff7a2",
+      "date": "Sep 08, 2026",
+      "type": "Maintenance",
+      "message": "task: #3594334 Add a module and theme install command",
+      "locDelta": 270,
+      "ccnDelta": 57,
+      "miDelta": -69,
+      "antipatternsDelta": 5
+    },
+    {
+      "hash": "3c5ba5ef893",
+      "date": "Sep 08, 2026",
+      "type": "Bug",
+      "message": "fix: #3614602 Modules required by an active theme can be uninstalled",
+      "locDelta": 4,
+      "ccnDelta": 1,
+      "miDelta": -1,
+      "antipatternsDelta": -1
+    },
+    {
+      "hash": "885f0e17c8d",
+      "date": "Sep 08, 2026",
+      "type": "Bug",
+      "message": "fix: #3613607 Add RecipeRunner::isApplying() to determine if a recipe is being a",
+      "locDelta": 32,
+      "ccnDelta": 9,
+      "miDelta": -5,
+      "antipatternsDelta": 1
+    },
+    {
+      "hash": "cbef6228cad",
+      "date": "Sep 08, 2026",
+      "type": "Unknown",
+      "message": "Revert \"fix: #3621016 text_update_12001 fails to load text_with_summary\"",
+      "locDelta": -13,
+      "ccnDelta": -3,
+      "miDelta": 0,
+      "antipatternsDelta": -3
+    },
     {
       "hash": "d107690b1ce",
       "date": "Sep 08, 2026",
@@ -143041,96 +143133,6 @@
       "ccnDelta": 5,
       "miDelta": -6,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "902684ebd02",
-      "date": "Aug 07, 2026",
-      "type": "Bug",
-      "message": "fix: #3611594 [regression] Recursion detected when merging duplicate #attached p",
-      "locDelta": 10,
-      "ccnDelta": 5,
-      "miDelta": -9,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "6c4592b1936",
-      "date": "Aug 07, 2026",
-      "type": "Maintenance",
-      "message": "task: #3614153 Install system module alongside other modules in the installer",
-      "locDelta": 2,
-      "ccnDelta": 1,
-      "miDelta": 9,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "2fdf57a0ce6",
-      "date": "Aug 06, 2026",
-      "type": "Bug",
-      "message": "fix: #3603762 HTML injection in ajax_page_state GET parameter",
-      "locDelta": 19,
-      "ccnDelta": 4,
-      "miDelta": -7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "36e3ad425c6",
-      "date": "Aug 05, 2026",
-      "type": "Maintenance",
-      "message": "task: #3587565 Static cache entities that aren't loaded",
-      "locDelta": 28,
-      "ccnDelta": 9,
-      "miDelta": -3,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "4326f06f711",
-      "date": "Aug 05, 2026",
-      "type": "Bug",
-      "message": "fix: #3556508 Respect allowed_formats settings in \\Drupal\\text\\Plugin\\Field\\Fiel",
-      "locDelta": 5,
-      "ccnDelta": 2,
-      "miDelta": -5,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "047e314b510",
-      "date": "Aug 04, 2026",
-      "type": "Maintenance",
-      "message": "task: #3604286 Upsert - Allow to customize the behavior of the update when the i",
-      "locDelta": 95,
-      "ccnDelta": 23,
-      "miDelta": -43,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "ab7033c0024",
-      "date": "Aug 04, 2026",
-      "type": "Maintenance",
-      "message": "task: #3593485 Use YamlCacheCollectorDiscovery for links, tasks, and actions",
-      "locDelta": 24,
-      "ccnDelta": 4,
-      "miDelta": -7,
-      "antipatternsDelta": 4
-    },
-    {
-      "hash": "043283f6e75",
-      "date": "Aug 04, 2026",
-      "type": "Bug",
-      "message": "fix: #3611989 Workspace purge deletes entities that went live through another wo",
-      "locDelta": 16,
-      "ccnDelta": 4,
-      "miDelta": -7,
-      "antipatternsDelta": 0
-    },
-    {
-      "hash": "57faef3a50b",
-      "date": "Aug 03, 2026",
-      "type": "Maintenance",
-      "message": "task: #3613256 Optimize TypedConfigManager::getDefinitionWithReplacements()",
-      "locDelta": 5,
-      "ccnDelta": 1,
-      "miDelta": -3,
-      "antipatternsDelta": 1
     }
   ],
   "commitsPerYear": [
@@ -143240,7 +143242,7 @@
     },
     {
       "year": 2026,
-      "commits": 1337
+      "commits": 1347
     }
   ]
 }
