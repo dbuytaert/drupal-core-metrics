@@ -1278,13 +1278,17 @@ class FunctionBoundaryVisitor extends NodeVisitorAbstract
             $name = $node->name->toString();
             $this->functionStartLine = $node->getStartLine();
             $this->functionEndLine = $node->getEndLine();
-            $this->metrics->enterFunction($name, $this->currentFile);
+            if (!str_contains($node->getDocComment()?->getReformattedText(), '@deprecated')) {
+                $this->metrics->enterFunction($name, $this->currentFile);
+            }
         } elseif ($node instanceof Node\Stmt\ClassMethod) {
             $className = $this->currentClassName ?? 'Unknown';
             $name = $className . '::' . $node->name->toString();
             $this->functionStartLine = $node->getStartLine();
             $this->functionEndLine = $node->getEndLine();
-            $this->metrics->enterFunction($name, $this->currentFile);
+            if (!str_contains($node->getDocComment()?->getReformattedText(), '@deprecated')) {
+                $this->metrics->enterFunction($name, $this->currentFile);
+            }
         }
 
         return null;
