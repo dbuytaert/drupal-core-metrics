@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14T00:50:09.961624",
+  "generated": "2026-09-15T00:54:50.973364",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 88,
+      "total": 99,
       "features": 4,
-      "bugs": 24,
-      "maintenance": 55,
+      "bugs": 25,
+      "maintenance": 65,
       "unknown": 5
     }
   ],
@@ -137657,10 +137657,10 @@
     },
     {
       "date": "2026-09",
-      "commit": "55148447",
+      "commit": "b9b3d591",
       "production": {
-        "loc": 294831,
-        "functions": 23189,
+        "loc": 294290,
+        "functions": 23128,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137671,7 +137671,7 @@
         },
         "antipatterns": 69.8
       },
-      "testLoc": 463368,
+      "testLoc": 463240,
       "surfaceArea": {
         "pluginTypes": 47,
         "hooks": 220,
@@ -137680,7 +137680,7 @@
         "services": 243,
         "yamlFormats": 16,
         "interfaceMethods": 2920,
-        "globalFunctions": 260
+        "globalFunctions": 252
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -137750,6 +137750,7 @@
           "hook_themes_installed",
           "hook_themes_uninstalled",
           "hook_system_info_alter",
+          "hook_help",
           "hook_modules_installed",
           "hook_module_preinstall",
           "hook_update_last_removed",
@@ -137833,7 +137834,6 @@
           "hook_batch_alter",
           "hook_rebuild",
           "hook_navigation_defaults",
-          "hook_help",
           "hook_block_alter",
           "hook_navigation_content_top",
           "hook_navigation_menu_link_tree_alter",
@@ -141559,7 +141559,6 @@
           "image_path_flush",
           "image_style_options",
           "search_excerpt",
-          "syslog_logging_settings_submit",
           "syslog_facility_list",
           "update_get_available",
           "update_create_fetch_task",
@@ -141571,7 +141570,6 @@
           "update_process_project_info",
           "update_calculate_project_data",
           "update_calculate_project_update_status",
-          "field_form_field_config_edit_form_entity_builder",
           "field_purge_batch",
           "field_purge_field",
           "field_purge_field_storage",
@@ -141579,7 +141577,6 @@
           "file_managed_file_save_upload",
           "file_get_file_references",
           "file_field_find_file_reference_column",
-          "media_filter_format_edit_form_validate",
           "filter_formats",
           "filter_formats_reset",
           "filter_get_roles_by_format",
@@ -141610,9 +141607,6 @@
           "user_logout",
           "menu_ui_get_menu_link_defaults",
           "menu_ui_node_builder",
-          "menu_ui_form_node_form_submit",
-          "menu_ui_form_node_type_form_validate",
-          "menu_ui_form_node_type_form_builder",
           "content_translation_translate_access",
           "content_translation_enable_widget",
           "content_translation_language_configuration_element_process",
@@ -141634,7 +141628,6 @@
           "system_region_list",
           "system_sort_themes",
           "system_default_region",
-          "system_admin_compact_mode",
           "toolbar_menu_navigation_links",
           "toolbar_get_rendered_subtrees",
           "block_theme_initialize",
@@ -141671,7 +141664,6 @@
           "locale_form_language_admin_add_form_alter_submit",
           "locale_form_language_admin_edit_form_alter_submit",
           "locale_is_translatable",
-          "locale_system_file_system_settings_submit",
           "locale_translation_get_file_history",
           "locale_translation_update_file_history",
           "locale_translation_file_history_delete",
@@ -141725,9 +141717,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10506,
-        "deepArrays": 7788,
-        "serviceLocators": 2389
+        "magicKeys": 10504,
+        "deepArrays": 7787,
+        "serviceLocators": 2363
       },
       "hotspots": [
         {
@@ -142134,6 +142126,36 @@
     }
   ],
   "commits": [
+    {
+      "hash": "a51813d2e6e",
+      "date": "Sep 14, 2026",
+      "type": "Maintenance",
+      "message": "refactor: #3619763 Clean up UpdateMessageTrait::getText return type",
+      "locDelta": 0,
+      "ccnDelta": 1,
+      "miDelta": 0,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "4371e3ce571",
+      "date": "Sep 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #3575461 Cleanup any remaining deprecations",
+      "locDelta": -582,
+      "ccnDelta": -105,
+      "miDelta": 43,
+      "antipatternsDelta": -26
+    },
+    {
+      "hash": "2d9bc63c00a",
+      "date": "Sep 14, 2026",
+      "type": "Maintenance",
+      "message": "task: #3618746 Move Toolbar uses in Announcement, User, Contextual to Toolbar",
+      "locDelta": -6,
+      "ccnDelta": 0,
+      "miDelta": 2,
+      "antipatternsDelta": -3
+    },
     {
       "hash": "5ac5b9c39bd",
       "date": "Sep 11, 2026",
@@ -143103,36 +143125,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "ac2adde1607",
-      "date": "Aug 14, 2026",
-      "type": "Unknown",
-      "message": "Revert \"task: #3581816 Move uses of Shortcut from Navigation to Shortcut\"",
-      "locDelta": -105,
-      "ccnDelta": -27,
-      "miDelta": 38,
-      "antipatternsDelta": -8
-    },
-    {
-      "hash": "b5abc5d7fe6",
-      "date": "Aug 14, 2026",
-      "type": "Maintenance",
-      "message": "task: #2171395 OptionsWidgetBase should use WidgetInterface::massageFormValues()",
-      "locDelta": 8,
-      "ccnDelta": 5,
-      "miDelta": 8,
-      "antipatternsDelta": 1
-    },
-    {
-      "hash": "ab8745cf435",
-      "date": "Aug 14, 2026",
-      "type": "Maintenance",
-      "message": "task: #3581816 Move uses of Shortcut from Navigation to Shortcut",
-      "locDelta": 105,
-      "ccnDelta": 27,
-      "miDelta": -38,
-      "antipatternsDelta": 8
     }
   ],
   "commitsPerYear": [
@@ -143242,7 +143234,7 @@
     },
     {
       "year": 2026,
-      "commits": 1366
+      "commits": 1377
     }
   ]
 }
