@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '0 0 * * *'  # Daily at midnight UTC
   workflow_dispatch:
+    inputs:
+      allow_shrink:
+        description: 'Write data.json even though a series lost entries, for a deliberate change such as leaving out a running year'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -30,13 +35,25 @@ jobs:
         run: composer install --no-interaction
 
       - name: Run analysis
-        run: python3 scripts/analyze.py
+        run: python3 scripts/analyze.py ${{ inputs.allow_shrink && '--allow-shrink' || '' }}
+
+      # After the analysis, so the dashboard test renders the data.json about to be published;
+      # a failing test stops the run before the commit.
+      - name: Run tests
+        run: python3 -m unittest discover tests
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data.json
-          git diff --staged --quiet || git commit -m "- Regenerate metrics data"
-          git pull --rebase
-          git push
+          git diff --staged --quiet && exit 0
+          git commit -m "Regenerate metrics data"
+          # Publish only data built from the code now on the branch. A push during the run
+          # would otherwise get data from the previous code on top of it.
+          git fetch origin "$GITHUB_REF_NAME"
+          if [ "$(git rev-parse FETCH_HEAD)" != "$GITHUB_SHA" ]; then
+            echo "The branch moved during the analysis; not publishing data built from older code. Run the workflow again." >&2
+            exit 1
+          fi
+          git push origin "HEAD:$GITHUB_REF_NAME"

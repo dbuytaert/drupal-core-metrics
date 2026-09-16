@@ -2,8 +2,8 @@
     "name": "drupal/core-dashboard",
     "description": "Dashboard showing Drupal Core code quality metrics over time",
     "type": "project",
-    "require-dev": {
-        "phpmetrics/phpmetrics": "^2.8"
+    "require": {
+        "nikic/php-parser": "^5.7"
     },
     "config": {
         "sort-packages": true

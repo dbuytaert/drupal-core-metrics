@@ -1,10 +1,15 @@
-# Dependencies
+# Dependencies (composer.lock intentionally NOT committed: we track the latest
+# nikic/php-parser 5.x, resolved fresh on each install)
 /vendor/
 composer.phar
 composer.lock
 
 # Drupal core clone (large, downloaded during analysis)
 /drupal-core/
+
+# Strategic-initiative clones, cloned from the pinned STRATEGIC_REPOS list in
+# scripts/analyze.py. Large, and regenerable by re-running the analysis.
+/ecosystem-repos/
 
 # Temporary output files
 /output/
