@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-15T00:54:50.973364",
+  "generated": "2026-09-16T00:53:04.390122",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 99,
+      "total": 109,
       "features": 4,
-      "bugs": 25,
-      "maintenance": 65,
+      "bugs": 28,
+      "maintenance": 72,
       "unknown": 5
     }
   ],
@@ -137657,10 +137657,10 @@
     },
     {
       "date": "2026-09",
-      "commit": "b9b3d591",
+      "commit": "dfc1cb11",
       "production": {
-        "loc": 294290,
-        "functions": 23128,
+        "loc": 293319,
+        "functions": 23078,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137669,18 +137669,18 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 69.8
+        "antipatterns": 69.2
       },
-      "testLoc": 463240,
+      "testLoc": 461997,
       "surfaceArea": {
         "pluginTypes": 47,
-        "hooks": 220,
-        "magicKeys": 275,
+        "hooks": 218,
+        "magicKeys": 274,
         "events": 43,
-        "services": 243,
+        "services": 242,
         "yamlFormats": 16,
         "interfaceMethods": 2920,
-        "globalFunctions": 252
+        "globalFunctions": 250
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -137909,8 +137909,6 @@
           "hook_views_analyze",
           "hook_system_themes_page_alter",
           "hook_runtime_requirements_alter",
-          "hook_toolbar",
-          "hook_toolbar_alter",
           "hook_block_build_alter",
           "hook_block_view_alter",
           "hook_views_plugins_display_alter",
@@ -138204,7 +138202,6 @@
           "#menu_items",
           "#amount",
           "#severity",
-          "#bar",
           "#contextual_links",
           "#section",
           "#displays",
@@ -138500,7 +138497,6 @@
           "sqlite",
           "announcements_feed",
           "system",
-          "toolbar",
           "basic_auth",
           "block",
           "automated_cron",
@@ -141628,8 +141624,6 @@
           "system_region_list",
           "system_sort_themes",
           "system_default_region",
-          "toolbar_menu_navigation_links",
-          "toolbar_get_rendered_subtrees",
           "block_theme_initialize",
           "automated_cron_settings_submit",
           "views_ui_add_ajax_trigger",
@@ -141717,9 +141711,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10504,
-        "deepArrays": 7787,
-        "serviceLocators": 2363
+        "magicKeys": 10397,
+        "deepArrays": 7658,
+        "serviceLocators": 2353
       },
       "hotspots": [
         {
@@ -142126,6 +142120,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "fa86f491c55",
+      "date": "Sep 15, 2026",
+      "type": "Maintenance",
+      "message": "task: #3586211 Remove the Toolbar module",
+      "locDelta": -993,
+      "ccnDelta": -110,
+      "miDelta": 241,
+      "antipatternsDelta": -249
+    },
+    {
+      "hash": "9ae95467ea4",
+      "date": "Sep 15, 2026",
+      "type": "Bug",
+      "message": "fix: #3562543 FileEventSubscriber::sanitizeFilename() does not check for invalid",
+      "locDelta": 22,
+      "ccnDelta": 4,
+      "miDelta": 0,
+      "antipatternsDelta": 2
+    },
     {
       "hash": "a51813d2e6e",
       "date": "Sep 14, 2026",
@@ -143105,26 +143119,6 @@
       "ccnDelta": -3,
       "miDelta": 5,
       "antipatternsDelta": -3
-    },
-    {
-      "hash": "27ae122951f",
-      "date": "Aug 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #3581816 Move uses of Shortcut from Navigation to Shortcut",
-      "locDelta": 105,
-      "ccnDelta": 27,
-      "miDelta": -38,
-      "antipatternsDelta": 8
-    },
-    {
-      "hash": "23942ea0151",
-      "date": "Aug 14, 2026",
-      "type": "Maintenance",
-      "message": "task: #3603310 Use a data attribute to streamline form element wrapper selection",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -143234,7 +143228,7 @@
     },
     {
       "year": 2026,
-      "commits": 1377
+      "commits": 1387
     }
   ]
 }
