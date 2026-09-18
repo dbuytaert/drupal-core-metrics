@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-17T00:52:42.575279",
+  "generated": "2026-09-18T00:46:54.389708",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 113,
+      "total": 124,
       "features": 4,
-      "bugs": 29,
-      "maintenance": 75,
+      "bugs": 35,
+      "maintenance": 80,
       "unknown": 5
     }
   ],
@@ -137657,10 +137657,10 @@
     },
     {
       "date": "2026-09",
-      "commit": "44cfb165",
+      "commit": "09fef26d",
       "production": {
-        "loc": 293319,
-        "functions": 23078,
+        "loc": 293346,
+        "functions": 23079,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137671,7 +137671,7 @@
         },
         "antipatterns": 69.2
       },
-      "testLoc": 462003,
+      "testLoc": 462111,
       "surfaceArea": {
         "pluginTypes": 47,
         "hooks": 218,
@@ -141713,7 +141713,7 @@
       "antipatterns": {
         "magicKeys": 10397,
         "deepArrays": 7658,
-        "serviceLocators": 2353
+        "serviceLocators": 2356
       },
       "hotspots": [
         {
@@ -142120,6 +142120,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "9070164623d",
+      "date": "Sep 17, 2026",
+      "type": "Maintenance",
+      "message": "task: #3623097 Remove remaining Gin and Claro implementation names from Default ",
+      "locDelta": 27,
+      "ccnDelta": 11,
+      "miDelta": -10,
+      "antipatternsDelta": 3
+    },
     {
       "hash": "fa86f491c55",
       "date": "Sep 15, 2026",
@@ -143109,16 +143119,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "589a690cd29",
-      "date": "Aug 16, 2026",
-      "type": "Maintenance",
-      "message": "task: #2934063 Remove the workaround in \\Drupal\\Core\\Installer\\ExtensionListTrai",
-      "locDelta": -10,
-      "ccnDelta": -3,
-      "miDelta": 5,
-      "antipatternsDelta": -3
     }
   ],
   "commitsPerYear": [
@@ -143228,7 +143228,7 @@
     },
     {
       "year": 2026,
-      "commits": 1391
+      "commits": 1402
     }
   ]
 }
