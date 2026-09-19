@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-18T00:46:54.389708",
+  "generated": "2026-09-19T00:51:01.127428",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 124,
+      "total": 136,
       "features": 4,
-      "bugs": 35,
-      "maintenance": 80,
+      "bugs": 38,
+      "maintenance": 89,
       "unknown": 5
     }
   ],
@@ -137657,10 +137657,10 @@
     },
     {
       "date": "2026-09",
-      "commit": "09fef26d",
+      "commit": "d3c27c1c",
       "production": {
-        "loc": 293346,
-        "functions": 23079,
+        "loc": 292731,
+        "functions": 23036,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137669,9 +137669,9 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 69.2
+        "antipatterns": 68.7
       },
-      "testLoc": 462111,
+      "testLoc": 461479,
       "surfaceArea": {
         "pluginTypes": 47,
         "hooks": 218,
@@ -138107,12 +138107,12 @@
           "#entity.(?<entityTypeId>.+).clone_form#",
           "#multilingual",
           "#after_build",
-          "#config_target",
           "#show_messages",
           "#percent",
           "#message",
           "#label",
           "#section_storage",
+          "#config_target",
           "#upload_validators",
           "#page_actions",
           "#featured_page_actions",
@@ -141711,9 +141711,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10397,
-        "deepArrays": 7658,
-        "serviceLocators": 2356
+        "magicKeys": 10359,
+        "deepArrays": 7512,
+        "serviceLocators": 2346
       },
       "hotspots": [
         {
@@ -142120,6 +142120,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "8d87e802721",
+      "date": "Sep 19, 2026",
+      "type": "Maintenance",
+      "message": "task: #3595089 Remove the Olivero theme",
+      "locDelta": -615,
+      "ccnDelta": -139,
+      "miDelta": 124,
+      "antipatternsDelta": -193
+    },
     {
       "hash": "9070164623d",
       "date": "Sep 17, 2026",
@@ -143109,16 +143119,6 @@
       "ccnDelta": -68,
       "miDelta": 31,
       "antipatternsDelta": -74
-    },
-    {
-      "hash": "b33101bf00c",
-      "date": "Aug 17, 2026",
-      "type": "Maintenance",
-      "message": "task: #3616553 replace usage of spl_object_hash() with spl_object_id()",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": 0,
-      "antipatternsDelta": -1
     }
   ],
   "commitsPerYear": [
@@ -143228,7 +143228,7 @@
     },
     {
       "year": 2026,
-      "commits": 1402
+      "commits": 1414
     }
   ]
 }
