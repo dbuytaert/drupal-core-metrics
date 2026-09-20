@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-19T00:51:01.127428",
+  "generated": "2026-09-20T00:57:09.083765",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 136,
+      "total": 141,
       "features": 4,
-      "bugs": 38,
-      "maintenance": 89,
+      "bugs": 39,
+      "maintenance": 93,
       "unknown": 5
     }
   ],
@@ -137657,10 +137657,10 @@
     },
     {
       "date": "2026-09",
-      "commit": "d3c27c1c",
+      "commit": "c30d609d",
       "production": {
-        "loc": 292731,
-        "functions": 23036,
+        "loc": 288825,
+        "functions": 22759,
         "ccn": {
           "avg": 2.5,
           "p95": 8
@@ -137669,18 +137669,18 @@
           "avg": 86.9,
           "p5": 84
         },
-        "antipatterns": 68.7
+        "antipatterns": 68.6
       },
-      "testLoc": 461479,
+      "testLoc": 457171,
       "surfaceArea": {
-        "pluginTypes": 47,
-        "hooks": 218,
-        "magicKeys": 274,
+        "pluginTypes": 46,
+        "hooks": 216,
+        "magicKeys": 273,
         "events": 43,
-        "services": 242,
+        "services": 241,
         "yamlFormats": 16,
-        "interfaceMethods": 2920,
-        "globalFunctions": 250
+        "interfaceMethods": 2883,
+        "globalFunctions": 249
       },
       "surfaceAreaLists": {
         "pluginTypes": [
@@ -137715,7 +137715,6 @@
           "TopBarItemManager",
           "WorkflowTypeManager",
           "ImageEffectManager",
-          "SearchPluginManager",
           "MediaSourceManager",
           "FilterPluginManager",
           "BreakpointManager",
@@ -137846,13 +137845,6 @@
           "hook_field_views_data_views_data_alter",
           "hook_image_style_flush",
           "hook_entity_type_alter",
-          "hook_search_plugin_alter",
-          "hook_views_data_alter",
-          "hook_entity_predelete",
-          "hook_node_search_ranking",
-          "hook_node_update_index",
-          "hook_node_search_result",
-          "hook_search_preprocess",
           "hook_views_query_substitutions",
           "hook_entity_insert",
           "hook_entity_update",
@@ -137868,6 +137860,7 @@
           "hook_field_storage_config_update_forbid",
           "hook_entity_create",
           "hook_jsonapi_entity_filter_access",
+          "hook_entity_predelete",
           "hook_field_widget_info_alter",
           "hook_file_copy",
           "hook_field_type_category_info_alter",
@@ -137881,7 +137874,11 @@
           "hook_editor_js_settings_alter",
           "hook_editor_xss_filter_alter",
           "hook_node_links_alter",
+          "hook_node_update_index",
+          "hook_node_search_result",
           "hook_user_cancel",
+          "hook_node_search_ranking",
+          "hook_views_data_alter",
           "hook_comment_links_alter",
           "hook_user_login",
           "hook_user_logout",
@@ -138125,11 +138122,6 @@
           "#data",
           "#effect",
           "#total_count",
-          "#list_type",
-          "#result",
-          "#plugin_id",
-          "#view",
-          "#row",
           "#responsive_image_style_id",
           "#key_column",
           "#last",
@@ -138165,6 +138157,8 @@
           "#comment_type",
           "#comment_display_mode",
           "#required ",
+          "#view",
+          "#row",
           "#field_has_data",
           "#allowed_values",
           "#post_render",
@@ -138174,9 +138168,11 @@
           "#block",
           "#extra_field_placeholder_field_name",
           "#configuration",
+          "#plugin_id",
           "#base_plugin_id",
           "#derivative_plugin_id",
           "#in_preview",
+          "#list_type",
           "#remaining_slots",
           "#target_bundles",
           "#media_id",
@@ -138463,7 +138459,6 @@
           "navigation",
           "workflows",
           "path_processor",
-          "search",
           "pgsql",
           "content_moderation",
           "field",
@@ -140490,43 +140485,6 @@
           "ImageStyleStorageInterface::setReplacementId",
           "ImageStyleStorageInterface::getReplacementId",
           "ImageStyleStorageInterface::clearReplacementId",
-          "SearchIndexInterface::index",
-          "SearchIndexInterface::clear",
-          "SearchIndexInterface::markForReindex",
-          "SearchIndexInterface::updateWordWeights",
-          "SearchPageRepositoryInterface::getActiveSearchPages",
-          "SearchPageRepositoryInterface::isSearchActive",
-          "SearchPageRepositoryInterface::getIndexableSearchPages",
-          "SearchPageRepositoryInterface::getDefaultSearchPage",
-          "SearchPageRepositoryInterface::setDefaultSearchPage",
-          "SearchPageRepositoryInterface::clearDefaultSearchPage",
-          "SearchPageRepositoryInterface::sortSearchPages",
-          "SearchPageInterface::getPlugin",
-          "SearchPageInterface::setPlugin",
-          "SearchPageInterface::isDefaultSearch",
-          "SearchPageInterface::isIndexable",
-          "SearchPageInterface::getPath",
-          "SearchPageInterface::getWeight",
-          "ConfigurableSearchPluginInterface::setSearchPageId",
-          "SearchIndexingInterface::updateIndex",
-          "SearchIndexingInterface::indexClear",
-          "SearchIndexingInterface::markForReindex",
-          "SearchIndexingInterface::indexStatus",
-          "SearchInterface::setSearch",
-          "SearchInterface::getKeywords",
-          "SearchInterface::getParameters",
-          "SearchInterface::getAttributes",
-          "SearchInterface::isSearchExecutable",
-          "SearchInterface::getType",
-          "SearchInterface::execute",
-          "SearchInterface::buildResults",
-          "SearchInterface::suggestedTitle",
-          "SearchInterface::getHelp",
-          "SearchInterface::searchFormAlter",
-          "SearchInterface::buildSearchUrlQuery",
-          "SearchInterface::usesAdminTheme",
-          "SearchTextProcessorInterface::process",
-          "SearchTextProcessorInterface::analyze",
           "ResponsiveImageStyleInterface::hasImageStyleMappings",
           "ResponsiveImageStyleInterface::getKeyedImageStyleMappings",
           "ResponsiveImageStyleInterface::getImageStyleMappings",
@@ -141554,7 +141512,6 @@
           "drupal_flush_all_caches",
           "image_path_flush",
           "image_style_options",
-          "search_excerpt",
           "syslog_facility_list",
           "update_get_available",
           "update_create_fetch_task",
@@ -141711,9 +141668,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10359,
-        "deepArrays": 7512,
-        "serviceLocators": 2346
+        "magicKeys": 10150,
+        "deepArrays": 7448,
+        "serviceLocators": 2305
       },
       "hotspots": [
         {
@@ -142120,6 +142077,26 @@
     }
   ],
   "commits": [
+    {
+      "hash": "c30d609d24c",
+      "date": "Sep 20, 2026",
+      "type": "Maintenance",
+      "message": "task: #3516706 Disallow dangerous filenames e.g. command injection characters",
+      "locDelta": 13,
+      "ccnDelta": 2,
+      "miDelta": -3,
+      "antipatternsDelta": 0
+    },
+    {
+      "hash": "64a266aae44",
+      "date": "Sep 20, 2026",
+      "type": "Maintenance",
+      "message": "task: #3586217 Remove the Search module",
+      "locDelta": -3920,
+      "ccnDelta": -639,
+      "miDelta": 809,
+      "antipatternsDelta": -310
+    },
     {
       "hash": "8d87e802721",
       "date": "Sep 19, 2026",
@@ -143099,26 +143076,6 @@
       "ccnDelta": 0,
       "miDelta": 1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "0e0ab608e32",
-      "date": "Aug 17, 2026",
-      "type": "Bug",
-      "message": "fix: #2672340 user_user_role_insert should not exist",
-      "locDelta": -11,
-      "ccnDelta": -2,
-      "miDelta": -3,
-      "antipatternsDelta": -1
-    },
-    {
-      "hash": "ee7c1cd8fbc",
-      "date": "Aug 17, 2026",
-      "type": "Maintenance",
-      "message": "task: #3586218 Remove the Settings Tray module",
-      "locDelta": -379,
-      "ccnDelta": -68,
-      "miDelta": 31,
-      "antipatternsDelta": -74
     }
   ],
   "commitsPerYear": [
@@ -143228,7 +143185,7 @@
     },
     {
       "year": 2026,
-      "commits": 1414
+      "commits": 1419
     }
   ]
 }
