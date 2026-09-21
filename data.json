@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-20T00:57:09.083765",
+  "generated": "2026-09-21T00:52:04.107605",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 141,
+      "total": 142,
       "features": 4,
       "bugs": 39,
-      "maintenance": 93,
+      "maintenance": 94,
       "unknown": 5
     }
   ],
@@ -137657,21 +137657,21 @@
     },
     {
       "date": "2026-09",
-      "commit": "c30d609d",
+      "commit": "8eaf82d7",
       "production": {
-        "loc": 288825,
-        "functions": 22759,
+        "loc": 287489,
+        "functions": 22685,
         "ccn": {
           "avg": 2.5,
           "p95": 8
         },
         "mi": {
-          "avg": 86.9,
+          "avg": 87,
           "p5": 84
         },
-        "antipatterns": 68.6
+        "antipatterns": 67.4
       },
-      "testLoc": 457171,
+      "testLoc": 457090,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 216,
@@ -137823,8 +137823,8 @@
           "hook_page_bottom",
           "hook_transliteration_overrides_alter",
           "hook_element_info_alter",
-          "hook_views_ui_display_top_alter",
           "hook_views_ui_display_tab_alter",
+          "hook_views_ui_display_top_alter",
           "hook_views_pre_render",
           "hook_form_alter",
           "hook_default_admin_content_form_ignore_form_ids",
@@ -138092,7 +138092,6 @@
           "#default_tab",
           "#display",
           "#noscript",
-          "#accordion",
           "#entity.(?<entityTypeId>.+).canonical#",
           "#entity.(?<entityTypeId>.+).delete_form#",
           "#entity.(?<entityTypeId>.+).delete_multiple_form#",
@@ -138102,6 +138101,7 @@
           "#entity.(?<entityTypeId>.+).reset_form#",
           "#entity.(?<entityTypeId>.+).cancel_form#",
           "#entity.(?<entityTypeId>.+).clone_form#",
+          "#accordion",
           "#multilingual",
           "#after_build",
           "#show_messages",
@@ -141668,9 +141668,9 @@
         ]
       },
       "antipatterns": {
-        "magicKeys": 10150,
-        "deepArrays": 7448,
-        "serviceLocators": 2305
+        "magicKeys": 10110,
+        "deepArrays": 7080,
+        "serviceLocators": 2300
       },
       "hotspots": [
         {
@@ -142077,6 +142077,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "8eaf82d7b4f",
+      "date": "Sep 21, 2026",
+      "type": "Maintenance",
+      "message": "task: #3584639 Remove the Claro theme",
+      "locDelta": -1336,
+      "ccnDelta": -402,
+      "miDelta": 390,
+      "antipatternsDelta": -414
+    },
     {
       "hash": "c30d609d24c",
       "date": "Sep 20, 2026",
@@ -143066,16 +143076,6 @@
       "ccnDelta": 0,
       "miDelta": -1,
       "antipatternsDelta": 0
-    },
-    {
-      "hash": "b6aadece5d7",
-      "date": "Aug 17, 2026",
-      "type": "Maintenance",
-      "message": "task: #3570466 Reduce severity of GD library supported image file formats warnin",
-      "locDelta": -1,
-      "ccnDelta": 0,
-      "miDelta": 1,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143185,7 +143185,7 @@
     },
     {
       "year": 2026,
-      "commits": 1419
+      "commits": 1420
     }
   ]
 }
