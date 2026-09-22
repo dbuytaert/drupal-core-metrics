@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-21T00:52:04.107605",
+  "generated": "2026-09-22T00:51:32.269327",
   "commitsMonthly": [
     {
       "date": "2000-05",
@@ -2523,10 +2523,10 @@
     },
     {
       "date": "2026-09",
-      "total": 142,
+      "total": 144,
       "features": 4,
-      "bugs": 39,
-      "maintenance": 94,
+      "bugs": 40,
+      "maintenance": 95,
       "unknown": 5
     }
   ],
@@ -137657,9 +137657,9 @@
     },
     {
       "date": "2026-09",
-      "commit": "8eaf82d7",
+      "commit": "eaba66f4",
       "production": {
-        "loc": 287489,
+        "loc": 287490,
         "functions": 22685,
         "ccn": {
           "avg": 2.5,
@@ -137671,7 +137671,7 @@
         },
         "antipatterns": 67.4
       },
-      "testLoc": 457090,
+      "testLoc": 457139,
       "surfaceArea": {
         "pluginTypes": 46,
         "hooks": 216,
@@ -141669,7 +141669,7 @@
       },
       "antipatterns": {
         "magicKeys": 10110,
-        "deepArrays": 7080,
+        "deepArrays": 7081,
         "serviceLocators": 2300
       },
       "hotspots": [
@@ -142077,6 +142077,16 @@
     }
   ],
   "commits": [
+    {
+      "hash": "eaba66f4188",
+      "date": "Sep 21, 2026",
+      "type": "Bug",
+      "message": "fix: #3618586 default_admin loses the footer group on forms that set #tree, sile",
+      "locDelta": 1,
+      "ccnDelta": 0,
+      "miDelta": 0,
+      "antipatternsDelta": 2
+    },
     {
       "hash": "8eaf82d7b4f",
       "date": "Sep 21, 2026",
@@ -143066,16 +143076,6 @@
       "ccnDelta": 0,
       "miDelta": 0,
       "antipatternsDelta": -1
-    },
-    {
-      "hash": "cfcf382aeac",
-      "date": "Aug 17, 2026",
-      "type": "Bug",
-      "message": "fix: #3615576 FileExistsException thrown in FileSystem::prepareDestination does ",
-      "locDelta": 1,
-      "ccnDelta": 0,
-      "miDelta": -1,
-      "antipatternsDelta": 0
     }
   ],
   "commitsPerYear": [
@@ -143185,7 +143185,7 @@
     },
     {
       "year": 2026,
-      "commits": 1420
+      "commits": 1422
     }
   ]
 }
