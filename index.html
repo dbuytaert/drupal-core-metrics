@@ -1385,7 +1385,7 @@
 
             createStackedChart(container, {
                 title: 'Commits per quarter by repository',
-                subtitle: "Commits per quarter in Drupal Core and in the strategic initiatives. Canvas and Drupal CMS are each one repository. The AI initiative is spread across many, so its band counts all of its modules, themes and recipes with ten commits or more.",
+                subtitle: "Commits per quarter in Drupal Core and in the strategic initiatives. Core, Canvas and Drupal CMS are each one repository. The AI initiative is spread across many, so its band counts all of its modules, themes and recipes with ten commits or more.",
                 labels: rows.map(row => row.date),
                 datasets: [
                     { label: 'Drupal Core', data: sinceItExisted('core'), borderColor: '#0678be', backgroundColor: '#0678be' },
