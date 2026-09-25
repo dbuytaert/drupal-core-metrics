@@ -1021,6 +1021,8 @@
         // article page keeps the blue it has on the visitor query chart.
         const VISITOR_ARTICLE_COLOR = '#0678be';
         const ADMINISTRATOR_COLOR = '#c2734a';
+        // A logged-in user with no role, who is neither of the above.
+        const LOGGED_IN_COLOR = '#475569';
 
         // Stepped lines for metrics core's performance tests pin, dated by the commit
         // that changed them. A day axis rather than monthly labels: a pinned value
@@ -1357,6 +1359,25 @@
                     { label: 'Administrator: CSS', color: ADMINISTRATOR_COLOR, borderDash: [6, 4], minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.administratorNodePage.StylesheetBytes },
                     { label: 'Visitor: JavaScript', color: VISITOR_ARTICLE_COLOR, minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiNodePageColdCache.ScriptBytes },
                     { label: 'Visitor: CSS', color: VISITOR_ARTICLE_COLOR, borderDash: [6, 4], minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiNodePageColdCache.StylesheetBytes },
+                ],
+                format: formatKilobytes,
+                yTitle: 'Kilobytes',
+            });
+        }
+
+        function createFourPageWeightChart(container, pagePerformance, endDay) {
+            // Core's test counts each file once, by URL, however many of the four pages load
+            // it, so the total also falls when pages come to share files rather than each
+            // loading its own copy: that is what #3565258 did to CSS in June 2026.
+            return createPinnedMetricChart(container, pagePerformance, endDay, {
+                title: 'JavaScript and CSS for a four-page visit',
+                subtitle: `How much JavaScript and CSS the browser loads, uncompressed, when someone opens four pages on Umami in a row: the front page, the articles and recipes listings, and one recipe, as a visitor who is not logged in and as a user who is. A file that several of the pages use is downloaded once, so a line falls both when Core ships less code and when the pages share more of their files. Core's tests only notice a size change of more than 2 KB. Less is better.`,
+                // Color is who is viewing, the dash is the kind of file, as on the one-page card.
+                series: [
+                    { label: 'Logged in: JavaScript', color: LOGGED_IN_COLOR, minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiFrontAndRecipePagesAuthenticated.ScriptBytes },
+                    { label: 'Logged in: CSS', color: LOGGED_IN_COLOR, borderDash: [6, 4], minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiFrontAndRecipePagesAuthenticated.StylesheetBytes },
+                    { label: 'Visitor: JavaScript', color: VISITOR_ARTICLE_COLOR, minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiFrontAndRecipePages.ScriptBytes },
+                    { label: 'Visitor: CSS', color: VISITOR_ARTICLE_COLOR, borderDash: [6, 4], minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiFrontAndRecipePages.StylesheetBytes },
                 ],
                 format: formatKilobytes,
                 yTitle: 'Kilobytes',
@@ -2158,7 +2179,7 @@
                 { id: 'codebase', title: 'Codebase', subtitle: 'How big Drupal Core is, how much of it is object-oriented, how old the code is, and what it depends on.', story: ['Drupal Core has several times as much production code as in 2011, before the Drupal 8 rewrite, and nearly all of its PHP is object-oriented. Code last changed in the Drupal 8 years shrinks every year as newer work changes or removes it. Core has more lines of test code than production code.'] },
                 { id: 'api', title: 'Developer API', subtitle: 'The extension points developers build on, with a browsable list, how precisely they are typed, and how they are deprecated and removed.', story: ['The number of extension points grew with the object-oriented rewrite, peaked in the late 2010s and has edged down since, as global functions are retired. A growing share of parameters and return values declare specific types. Deprecated APIs pile up during each major release cycle and are removed around the next major release.'] },
                 { id: 'quality', title: 'Code quality', subtitle: 'How easy the code is to read, understand and change, and which functions and classes are the most complex.', story: ['Function complexity fell while Drupal 8 was being built and has stayed flat since it shipped, though the most complex functions still score many times the threshold (see Complexity hotspots). Unrelated jobs per class have stayed roughly level, and the number of anti-patterns rose until around Drupal 9 and has held level since, even as the codebase kept growing (see Codebase).'] },
-                { id: 'performance', title: 'Performance', subtitle: 'The database queries, cache reads and writes, JavaScript and CSS behind a page on Umami, the demo site in Core: counts and sizes, not load times.', story: ['On Umami, Core\'s demo site, the database queries it takes to build a page on a cold cache fell sharply for visitors and administrators alike, and so did the cache writes for a visitor\'s page on a cold cache. The JavaScript and CSS a page loads has changed far less.'] },
+                { id: 'performance', title: 'Performance', subtitle: 'The database queries, cache reads and writes, JavaScript and CSS behind pages on Umami, the demo site in Core: counts and sizes, not load times.', story: ['On Umami, Core\'s demo site, the database queries it takes to build a page on a cold cache fell sharply for visitors and administrators alike, and so did the cache writes for a visitor\'s page on a cold cache. The JavaScript and CSS one page loads has changed far less, but the CSS a visitor loads across several pages has fallen steeply, mostly since Core began splitting it into files that pages share.'] },
             ].filter(section => section.id !== 'performance' || data.pagePerformance?.length);
             document.getElementById('dashboard-toc')?.remove();
             const toc = document.createElement('ul');
@@ -2220,7 +2241,8 @@
             renderHotspots(container, snapshots);
 
             // A visitor's queries, then the cache reads and writes behind the same pages, which
-            // share their lines, then an administrator's queries, then what both download.
+            // share their lines, then an administrator's queries, then what both download, for one
+            // page and then for a visitor's four.
             // Left out when the selected range holds no rows for it.
             if (data.pagePerformance?.length) {
                 addSection('performance');
@@ -2230,6 +2252,7 @@
                     createVisitorCacheWritesChart(container, data.pagePerformance, data.rangeEndDay),
                     createAdministratorQueriesChart(container, data.pagePerformance, data.rangeEndDay),
                     createPageWeightChart(container, data.pagePerformance, data.rangeEndDay),
+                    createFourPageWeightChart(container, data.pagePerformance, data.rangeEndDay),
                 ].filter(Boolean);
                 // One time axis for the section. Each card starting at its own first
                 // pinned value put different months under the same spot on the page, and

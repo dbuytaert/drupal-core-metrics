@@ -258,13 +258,17 @@ class PagePerformanceTest(unittest.TestCase):
                                            "ScriptBytes": 12000, "StylesheetBytes": None},
                 "umamiNodePageCoolCache": {"QueryCount": 191, "CacheGetCount": 210, "CacheSetCount": 65},
                 "umamiFrontPageColdCache": {"QueryCount": 376, "CacheGetCount": 472, "CacheSetCount": 467},
-                "administratorNodePage": {"QueryCount": None, "ScriptBytes": None, "StylesheetBytes": None}}},
+                "administratorNodePage": {"QueryCount": None, "ScriptBytes": None, "StylesheetBytes": None},
+                "umamiFrontAndRecipePages": {"ScriptBytes": None, "StylesheetBytes": None},
+                "umamiFrontAndRecipePagesAuthenticated": {"ScriptBytes": None, "StylesheetBytes": None}}},
             {"date": "2026-08-25", "commit": commits[1], "issue": 3618432, "metrics": {
                 "umamiNodePageColdCache": {"QueryCount": 194, "CacheGetCount": 221, "CacheSetCount": 229,
                                            "ScriptBytes": 12091, "StylesheetBytes": 39430},
                 "umamiNodePageCoolCache": {"QueryCount": 61, "CacheGetCount": 164, "CacheSetCount": 58},
                 "umamiFrontPageColdCache": {"QueryCount": 178, "CacheGetCount": 225, "CacheSetCount": 240},
-                "administratorNodePage": {"QueryCount": 264, "ScriptBytes": 187160, "StylesheetBytes": 73614}}}])
+                "administratorNodePage": {"QueryCount": 264, "ScriptBytes": 187160, "StylesheetBytes": 73614},
+                "umamiFrontAndRecipePages": {"ScriptBytes": None, "StylesheetBytes": None},
+                "umamiFrontAndRecipePagesAuthenticated": {"ScriptBytes": None, "StylesheetBytes": None}}}])
 
     def test_a_merged_branch_counts_as_its_merge(self):
         # An unsquashed branch passes through pinned values that never stood on core's
