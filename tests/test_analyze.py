@@ -492,7 +492,7 @@ class HalfOfCreditsTest(unittest.TestCase):
         self.assertEqual(names, ["bob", "zed"])
         self.assertEqual(set(people["people"][0]), {"name", "firstCredited"})
 
-    def test_people_who_asked_not_to_be_listed_are_counted_but_not_named(self):
+    def test_people_not_listed_by_name_are_counted_but_not_named(self):
         unlisted = next(iter(analyze_module.NOT_LISTED_BY_NAME))
         year = RUNNING_YEAR - 1
         history = synthetic_history({year - 1: [unlisted, "newcomer"],

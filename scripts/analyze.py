@@ -569,9 +569,9 @@ def extract_credits(subject: str, message: str) -> list[str]:
 # them, so who is named never depends on the order the credit history was walked.
 CORE_TIER_SIZE = 50
 
-# People who have asked not to be listed by name on the dashboard. Their credits
-# still count in every chart; only the two name lists leave them out.
-NOT_LISTED_BY_NAME = {"ghost of drupal past"}
+# People not listed by name on the dashboard. Their credits still count in every
+# chart; only the two name lists leave them out.
+NOT_LISTED_BY_NAME = {"ghost of drupal past", "oily"}
 
 
 class CreditHistory(NamedTuple):
