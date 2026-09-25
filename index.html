@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drupal Core Metrics: Code Quality Dashboard</title>
+    <title>Drupal Core Metrics</title>
     <meta name="description" content="Track Drupal Core's code quality over time. See lines of code, code complexity, anti-patterns, and API surface area.">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
     <script src="chart-rules.js"></script>
@@ -57,9 +57,6 @@
         .people-table th { border-bottom: 2px solid var(--border-color); font-weight: 600; color: var(--text-secondary); }
         .people-table .number { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
         .people-table th:last-child, .people-table td:last-child { padding-left: 1.5rem; }
-        /* Deliberately quiet: an icon, no border, no label, invisible until the
-           pointer is over the card. The charts are the content; a save control is
-           plumbing and should not compete with them for attention. */
         .download-chart {
             position: absolute; top: 0.9rem; right: 0.9rem;
             display: flex; align-items: center; justify-content: center;
@@ -635,7 +632,7 @@
             const sortedData = [...mixData].sort((a, b) => a.date.localeCompare(b.date));
             createStackedChart(container, {
                 title: 'Code composition',
-                subtitle: "Production source lines split into object-oriented PHP (classes, interfaces, traits), procedural PHP (functions and hooks written outside of classes), and JavaScript, stacked. Each line counts by where it sits, so a file holding both a class and functions splits between the two. Tracks Drupal's shift from procedural to object-oriented code. Production code only; excludes tests, vendor dependencies, generated data tables and PHP templates.",
+                subtitle: "Production source lines split into object-oriented PHP (classes, interfaces, traits), procedural PHP (functions and hooks written outside of classes), and JavaScript, stacked. Production code only; excludes tests, vendor dependencies, generated data tables and PHP templates.",
                 labels: sortedData.map(d => d.date),
                 datasets: [
                     { label: 'Object-oriented PHP', data: sortedData.map(d => d.production?.objectOrientedLines || 0), borderColor: '#0678be', backgroundColor: '#0678be' },
@@ -652,27 +649,10 @@
                 .filter(snapshot => typeof snapshot.production?.lcom4 === 'number');
             if (lcomData.length < 2) return;
 
-            // Supply the comparison, do not deliver the verdict. An earlier version
-            // told the reader to "treat a flat line as the meaningful result rather
-            // than a stalled one" and a blind reader called it a thumb on the scale
-            // - reassurance about a number the same paragraph admits has no
-            // benchmark. What actually distinguishes settled from stuck is whether
-            // the average held while the codebase grew, so that is stated as a
-            // fact and the judgement is left where it belongs.
-            const lcomOldest = lcomData[0], lcomNewest = lcomData[lcomData.length - 1];
-            const lcomGrowth = (lcomOldest.production?.lines && lcomNewest.production?.lines)
-                ? lcomNewest.production.lines / lcomOldest.production.lines : null;
-            // Said in words, not values, so it never goes stale: "held" means within 15% of
-            // where the series started.
-            const lcomTrend = { rose: 'risen', fell: 'fallen', held: 'held roughly level' }[
-                chartRules.movement(lcomOldest.production.lcom4, lcomNewest.production.lcom4, 0.15)];
-            const lcomNote = ` It has ${lcomTrend}`
-                + (lcomGrowth >= 3 ? ' while production code grew several times over.' : lcomGrowth >= 2 ? ' while production code more than doubled.' : '.');
-
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Unrelated jobs per class (LCOM4)</h2>
-                <p class="section-subtitle"><a href="https://en.wikipedia.org/wiki/Cohesion_(computer_science)">LCOM4</a> measures how well a class holds together, averaged here across every production class. A class scores 1 when its methods all connect, through shared properties or calls between them, so it does one job; 2 or more means they split into unrelated groups and the class would be clearer divided up. Lower is better.${lcomNote} Read the average as the codebase's tendency, not a verdict on any one class: focused classes and a few sprawling ones average out, so 2 does not mean the typical class does two jobs. There is no published benchmark for a codebase average, and the ideal of 1 is a per-class target no large codebase reaches on average, so the useful comparison is against this codebase's own history rather than against 1. The series starts once most of Core's production PHP sits in classes; before that, an average over a few dozen classes swung with any one of them. Production PHP only; excludes tests and vendor dependencies.</p>
+                <p class="section-subtitle"><a href="https://en.wikipedia.org/wiki/Cohesion_(computer_science)">LCOM4</a> measures the cohesion of a class. A class scores 1 when its methods all connect, through shared properties or calls between them, so it does one job; 2 or more means they split into unrelated groups and the class could be clearer divided up. Lower is better.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -804,7 +784,7 @@
             section.className = 'card';
             section.innerHTML = `
                 <h2>Complexity hotspots</h2>
-                <p class="section-subtitle">Ranked by <a href="https://www.sonarsource.com/resources/cognitive-complexity/">cognitive complexity</a>, a validated measure of how hard a function is to <em>read</em> (it weights deeply nested code most heavily), so the clearest refactoring targets surface first; a class's score is the sum of its methods'. Cyclomatic complexity, which counts the decisions a function makes, sits alongside for contrast: a high cyclomatic score with a low cognitive one is flat, branch-heavy code that still reads easily (a big switch), while the reverse is deeply nested code the classic metric under-rates. PHP production code only; excludes tests and vendor dependencies.</p>
+                <p class="section-subtitle">Ranked by <a href="https://www.sonarsource.com/resources/cognitive-complexity/">cognitive complexity</a>, a validated measure of how hard a function is to <em>read</em> (it weights deeply nested code most heavily). Cyclomatic complexity, which counts the decisions a function makes, sits alongside for contrast: a high cyclomatic score with a low cognitive one is flat, branch-heavy code that still reads easily (a big switch), while the reverse is deeply nested code the classic metric under-rates. PHP production code only; excludes tests and vendor dependencies.</p>
                 <p class="section-subtitle">
                     Snapshot:
                     <select id="hotspots-snapshot-select">
@@ -890,7 +870,7 @@
 
             createStackedChart(container, {
                 title: 'Source code age',
-                subtitle: 'Every line of the production codebase today, grouped by the Drupal release era in which it was last changed, oldest at the bottom to newest on top. It answers how much surviving code was last touched in each generation, say during the Drupal 8 years. The catch is that it tracks the last edit, not the origin. Fix one typo in a line written for Drupal 7 and it now counts as current, even though nothing else about it changed. So read this as recency of last change, not authorship. Production source lines (SLOC), the same definition as Lines of code; excludes tests and vendor dependencies.',
+                subtitle: 'Every line of the production codebase today, grouped by the Drupal release era in which it was last changed, oldest at the bottom to newest on top. It answers how much surviving code was last touched in each generation. The catch is that it tracks the last edit, not the origin. Fix one typo in a line written for Drupal 7 and it now counts as current, even though nothing else about it changed. So read this as recency of last change, not authorship.',
                 labels: snapshots.map(entry => entry.year.toString()),
                 datasets,
                 absoluteStacked: true,
@@ -912,7 +892,7 @@
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Third-party dependencies</h2>
-                <p class="section-subtitle">Third-party Composer packages Drupal Core requires, direct and transitive, counted from the committed <code>composer.lock</code>; Drupal's own packages (<code>drupal/core</code> and its Composer plugins) are excluded. Neither direction is simply better: more packages mean less reinvented code and more supply chain to keep track of. Development packages are what Core needs to test itself, not to run. Where the development line sits at zero, the lock of that era genuinely declared no development packages; unmeasured points are left blank instead. Lock files before 2016 did not separate the two, so earlier points count testing tools as production. Coverage begins with Composer adoption in the Drupal 8 cycle.</p>
+                <p class="section-subtitle">Third-party Composer packages Drupal Core requires, direct and transitive, counted from the committed <code>composer.lock</code>.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -957,7 +937,7 @@
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Typed parameters and return values</h2>
-                <p class="section-subtitle">Explicit types on public method signatures are what an IDE or an AI assistant reads to build against the API without guessing, so higher is better. For example, a method that returns a User or an int has a specific type, one that returns an array has a vague type, since it doesn't say what the array holds, and one that declares nothing has no type. Return values start near zero because PHP only added return types in version 7, and Core couldn't use them until Drupal 8.8 required PHP 7 in December 2019. Parameters had a head start: PHP 5 already allowed class and array types there. Counts types written in the code, not in comments, on public methods in production code; functions outside classes, such as old-style hooks, aren't included, and neither are hook implementations written as methods, which arrived in bulk from 2024 and would lift the share without any existing API gaining a type.</p>
+                <p class="section-subtitle">A specific type says exactly what a method takes or returns, like a <code>User</code> or an <code>int</code>. A vague type says less: <code>array</code> doesn't tell you what the array holds.</p>
                 <div style="display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 0.8rem; color: #64748b; margin-top: 0.6rem">
                     <span>${swatch('border: 1px solid #cbd5e1; box-sizing: border-box')}No type</span>
                     <span>${swatch(`background: ${VAGUE}`)}Vague (array, mixed)</span>
@@ -1411,7 +1391,7 @@
 
             createStackedChart(container, {
                 title: 'Commits per quarter by repository',
-                subtitle: "Commits per quarter in Drupal Core and in the strategic initiatives. Canvas and Drupal CMS are each one repository; the AI initiative is spread across many, so its band counts all of its modules, themes and recipes with ten commits or more. A band starts in the quarter its first repository was created. The running quarter is left out because it has not finished. Relative shows each group's share of the quarter's commits. A commit shows where work happens, not how much it is worth.",
+                subtitle: "Commits per quarter in Drupal Core and in the strategic initiatives. Canvas and Drupal CMS are each one repository; the AI initiative is spread across many, so its band counts all of its modules, themes and recipes with ten commits or more.",
                 labels: rows.map(row => row.date),
                 datasets: [
                     { label: 'Drupal Core', data: sinceItExisted('core'), borderColor: '#0678be', backgroundColor: '#0678be' },
@@ -1433,7 +1413,7 @@
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Security advisories per year</h2>
-                <p class="section-subtitle">Distinct <a href="https://www.drupal.org/security">SA-CORE</a> security advisories per year, deduplicated across the branch backports that fix each one. A count on its own cannot tell you whether a year was riskier: it measures how much was found and disclosed, not how severe any of it was, and one advisory can cover several vulnerabilities. This counts advisories named in a Core commit subject, which is a floor rather than the published total: a fix can land without naming its advisory, so some years understate.</p>
+                <p class="section-subtitle">Distinct <a href="https://www.drupal.org/security">SA-CORE</a> security advisories per year, deduplicated across the branch backports that fix each one. A count on its own cannot tell you whether a year was riskier: it measures how much was found and disclosed, not how severe any of it was, and one advisory can cover several vulnerabilities.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -1457,31 +1437,12 @@
             const deprecationData = data.filter(d => d.deprecations && Object.keys(d.deprecations).length > 0);
             if (deprecationData.length < 2) return;
 
-            // The one peak that dwarfs the rest is what the eye lands on, so the subtitle
-            // addresses it, in words computed from the data.
             const deprecationSorted = [...deprecationData].sort((a, b) => a.date.localeCompare(b.date));
-            const totalAt = entry => Object.values(entry.deprecations).reduce((sum, n) => sum + (n || 0), 0);
-            const peakEntry = deprecationSorted.reduce(
-                (best, entry) => totalAt(entry) > totalAt(best) ? entry : best, deprecationSorted[0]);
-            // Compare the peak against the cycles that came AFTER it, not against
-            // the neighboring point, which sits on the same rising slope and makes
-            // the ratio meaninglessly close to 1. What a reader is comparing when
-            // they say the middle peak dwarfs the rest is the later cycles.
-            const peakYear = Number(peakEntry.date.slice(0, 4));
-            const laterCycles = deprecationSorted.filter(entry => Number(entry.date.slice(0, 4)) >= peakYear + 2);
-            const laterPeak = laterCycles.length
-                ? laterCycles.reduce((best, entry) => totalAt(entry) > totalAt(best) ? entry : best, laterCycles[0]) : null;
-            // In words, not values, with the release that followed the
-            // peak taken from the release timeline rather than written in.
-            const releaseAfterPeak = RELEASES.find(release => release.date > peakEntry.date);
-            const amplitude = laterPeak && totalAt(peakEntry) >= 1.5 * totalAt(laterPeak)
-                ? ` The tallest peak is well above every cycle since${releaseAfterPeak ? `; it came just before Drupal ${releaseAfterPeak.major}, which removed what the previous cycle had deprecated` : ''}.`
-                : '';
 
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Deprecated API surface</h2>
-                <p class="section-subtitle">Code marked deprecated and awaiting removal. Drupal marks an API deprecated, then removes it in a future release (typically a major version), so this count climbs as APIs are retired in favor of new ones and falls when those removals land. Neither direction is simply better: a rise means old APIs are being retired, a fall means those removals have landed. What matters is that it keeps cycling rather than only growing.${amplitude} The near-zero years at the start are real: Drupal had no formal deprecation policy before the Drupal 8 cycle, so there was little to count. PHP production code only; excludes tests and vendor dependencies.</p>
+                <p class="section-subtitle">Code marked deprecated and awaiting removal. Drupal marks an API deprecated, then removes it in a future release (typically a major version), so this count climbs as APIs are retired in favor of new ones and falls when those removals land. A rise means old APIs are being retired, a fall means those removals have landed.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -1580,7 +1541,7 @@
 
             createStackedChart(container, {
                 title: 'API surface area',
-                subtitle: `The chart tracks distinct extension points in Drupal Core over time. Hooks are the ones Core documents, so the series starts when Core began documenting them. Global functions leave out functions Drupal calls by name, such as hook implementations, so hooks moving into classes does not read as functions being retired. Production code only, excluding tests and vendor dependencies; YAML formats and services are read from YAML files.</p><p class="section-subtitle">Since Drupal 7, Drupal Core has added functionality (like Views), removed features, and consolidated competing APIs into shared solutions (like Single Directory Components). Because the functionality changed, the trend doesn't tell you whether Drupal has become easier or harder to learn.</p><p class="section-subtitle">The chart does show how Drupal's architecture has evolved, from procedural (global functions) to object-oriented (interface methods, services, plugins, events, and more). It also shows the types of extension points developers need to learn, and the API surface that Drupal Core Maintainers are responsible for.`,
+                subtitle: `Since Drupal 7, Drupal Core has added functionality (like Views), removed features, and consolidated competing APIs into shared solutions (like Single Directory Components). Because the functionality changed, the trend doesn't tell you whether Drupal has become easier or harder to learn.</p><p class="section-subtitle">The chart does show how Drupal's architecture has evolved, from procedural (global functions) to object-oriented (interface methods, services, plugins, events, and more). It also shows the types of extension points developers need to learn, and the API surface that Drupal Core Maintainers are responsible for.`,
                 labels: sortedData.map(d => d.date),
                 datasets: series.map(entry => ({
                     label: entry.label,
@@ -1610,7 +1571,7 @@
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Contributors per year</h2>
-                <p class="section-subtitle">People credited in Drupal Core commits each year, first-time contributors at the bottom and returning contributors on top. A credit names a person on a commit: the author, reviewers, and others the committer includes, and each counts the same, whatever their role. More people is healthier, and first-time contributors are how the project renews itself. The faded years come before drupal.org's credit system made crediting more generous, so they undercount contributors.</p>
+                <p class="section-subtitle">People credited in Drupal Core commits each year, first-time contributors at the bottom and returning contributors on top. More people is healthier, and first-time contributors are how the project renews itself. The faded years come before drupal.org's credit system made crediting more generous, so they undercount contributors.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -1823,17 +1784,11 @@
             if (rows.length < 2) return;
             const sorted = [...rows].sort((first, second) => first.year - second.year);
             const newest = sorted[sorted.length - 1];
-            const peak = sorted.reduce(
-                (best, entry) => entry.halfOfCredits > best.halfOfCredits ? entry : best, sorted[0]);
-            // Only said when true for the selected range. It no longer compares headcount:
-            // judged from the peak year and the newest alone, one year flipped that clause.
-            const fallen = newest !== peak && chartRules.movement(peak.halfOfCredits, newest.halfOfCredits, 0.15) === 'fell';
-            const trend = fallen ? ' It has fallen since its peak.' : '';
 
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>People with half the credits</h2>
-                <p class="section-subtitle">Each year, the fewest people whose credits add up to half of all credits on Drupal Core. Fewer people means more of Core's work depends on a small group, so a lower bar is the riskier direction.${trend}</p>
+                <p class="section-subtitle">Each year, the fewest people whose credits add up to half of all credits on Drupal Core. Fewer people means more of Core's work depends on a small group, so a lower bar is the riskier direction.</p>
                 <div class="chart-container"><canvas></canvas></div>
                 <div class="people-table-slot"></div>`;
             container.appendChild(section);
@@ -1982,7 +1937,7 @@
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Commits per month vs recent years</h2>
-                <p class="section-subtitle">Drupal Core's own repository only, in ${currentYear}${inProgress ? ' so far' : ''}, against the previous ten years: the gray band is the typical range (10th to 90th percentile) and the dashed line the average. ${currentYear} is shaded green in months above that average and gray in months below. Commit counts track activity, not quality${inProgress ? `, and ${currentYear} is still in progress` : ''}.</p>
+                <p class="section-subtitle">The gray band is the typical range (10th to 90th percentile) and the dashed line the average. ${currentYear} is shaded green in months above that average and gray in months below. Commit counts track activity, not quality${inProgress ? `, and ${currentYear} is still in progress` : ''}.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -2068,8 +2023,7 @@
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Features vs tasks vs bugs</h2>
-                <p class="section-subtitle">Drupal Core commits by the type declared in their subject line, its own repository only. Tasks include both maintenance work (documentation, tests, CI, refactoring) and innovation (smaller enhancements, new feature follow-ups). It shows up to the last twelve months, all after Core adopted these subject prefixes; earlier commits carry no type to read, which is a gap in the record rather than a month without features.</p>
-                <p class="section-subtitle">Read the features band as a floor: feature work usually lands across several commits typed as tasks or fixes, matures in external repositories before arriving in Core, and by design much of Drupal's innovation happens in contributed modules this chart never sees.</p>
+                <p class="section-subtitle">Tasks include both maintenance work (documentation, tests, CI, refactoring) and innovation (smaller enhancements, new feature follow-ups). Feature work usually lands across several commits typed as tasks or fixes, matures in external repositories before arriving in Core, and by design much of Drupal's innovation happens in contributed modules this chart never sees.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -2211,10 +2165,10 @@
             // data.json and makes long-run claims only, in words.
             const sections = [
                 { id: 'activity', title: 'Activity', subtitle: 'How much work goes into Drupal Core, how much goes into the strategic initiatives in their own repositories, and what kind of work it is.', story: ['Commits to Drupal Core have held a steady pace since Drupal 8 shipped, below the busier years of its rewrite. The strategic initiatives each work in their own repository, so their commits are counted separately from Core\'s. Since Core began labeling commits by type, most carry the task or fix prefix; read the features band as a floor, because feature work lands across commits typed as tasks and fixes, and much of Drupal\'s innovation happens in contributed modules this section never sees.'] },
-                { id: 'people', title: 'People', subtitle: 'Who does the work, and how much of it rests on a few people.', story: ['Since drupal.org\'s credit system began, the number of people credited on Drupal Core each year has risen and fallen without a lasting trend, but fewer of them are new, and the group carrying half of the credits has shrunk. People first credited since 2015 now do a large part of the work, yet few of them are in that group, which is still mostly people first credited before 2015.'] },
+                { id: 'people', title: 'People', subtitle: 'Who does the work, and how much of it rests on a few people.', story: ['Since drupal.org\'s credit system began, the number of people credited on Drupal Core each year has risen and fallen without a lasting trend, but fewer of them are new, and the group carrying half of the credits has shrunk.'] },
                 { id: 'security', title: 'Security', subtitle: 'Security problems fixed in Drupal Core each year, counted by the advisories published for them.', story: ['Drupal Core has published security advisories every year of the series, more in some years than others. The count shows fixes shipped, not how safe Drupal is: a year with more advisories is not necessarily a less safe year.'] },
-                { id: 'codebase', title: 'Codebase', subtitle: 'How big Drupal Core is, how much of it is object-oriented, how old the code is, and what it depends on.', story: ['Drupal Core has several times as much production code as in 2011, before the Drupal 8 rewrite, and nearly all of its PHP is object-oriented. Code last changed in the Drupal 8 years shrinks every year as newer work changes or removes it. Core has more lines of test code than production code. The third-party packages Core needs to run have held steady for years, while those it uses for development and testing grew for years before leveling off.'] },
-                { id: 'api', title: 'Developer API', subtitle: 'The extension points developers build on, with a browsable list, how precisely they are typed, and how they are deprecated and removed.', story: ['The number of extension points grew with the object-oriented rewrite, peaked in the late 2010s and has edged down since, as global functions are retired. A growing share of parameters and return values declare specific types, though most return values still declare none. Deprecated APIs pile up during each major release cycle and are removed around the next major release.'] },
+                { id: 'codebase', title: 'Codebase', subtitle: 'How big Drupal Core is, how much of it is object-oriented, how old the code is, and what it depends on.', story: ['Drupal Core has several times as much production code as in 2011, before the Drupal 8 rewrite, and nearly all of its PHP is object-oriented. Code last changed in the Drupal 8 years shrinks every year as newer work changes or removes it. Core has more lines of test code than production code.'] },
+                { id: 'api', title: 'Developer API', subtitle: 'The extension points developers build on, with a browsable list, how precisely they are typed, and how they are deprecated and removed.', story: ['The number of extension points grew with the object-oriented rewrite, peaked in the late 2010s and has edged down since, as global functions are retired. A growing share of parameters and return values declare specific types. Deprecated APIs pile up during each major release cycle and are removed around the next major release.'] },
                 { id: 'quality', title: 'Code quality', subtitle: 'How easy the code is to read, understand and change, and which functions and classes are the most complex.', story: ['Function complexity fell while Drupal 8 was being built and has stayed flat since it shipped, though the most complex functions still score many times the threshold (see Complexity hotspots). Unrelated jobs per class have stayed roughly level, and the number of anti-patterns rose until around Drupal 9 and has held level since, even as the codebase kept growing (see Codebase).'] },
                 { id: 'performance', title: 'Performance', subtitle: 'The database queries, cache reads and writes, JavaScript and CSS behind a page on Umami, the demo site in Core: counts and sizes, not load times.', story: ['On Umami, Core\'s demo site, the database queries it takes to build a page on a cold cache fell sharply for visitors and administrators alike, and so did the cache writes for a visitor\'s page on a cold cache. The JavaScript and CSS a page loads has changed far less.'] },
             ].filter(section => section.id !== 'performance' || data.pagePerformance?.length);
@@ -2256,12 +2210,8 @@
             createSecurityAdvisoriesChart(container, data.securityAdvisories);
 
             addSection('codebase');
-            // The fixture note exists because a reader saw the test line fall by a third
-            // and took the chart for broken: Core had deleted the Drupal 6 and 7 migration
-            // fixtures, generated data that was being counted as test code.
             createLocChart(container, snapshots, 'Lines of code',
                 'Production and test source lines in Drupal Core over time.'
-                + ' Test fixtures and other generated database dumps are excluded, for the same reason vendor code is: counting a database stored as PHP measures the size of a dump rather than the amount of testing. Drupal 7 kept its tests in .test files, which count as tests.'
                 + ' Measures non-blank, non-comment lines (SLOC). PHP code only; excludes vendor dependencies.');
             createLanguageMixChart(container, snapshots);
             createSourceCodeAgeChart(container, data.sourceCodeAge);

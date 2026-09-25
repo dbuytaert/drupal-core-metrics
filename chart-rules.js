@@ -35,12 +35,6 @@ const chartRules = {
     // before it the hooks band read as zero, as if Drupal had no hooks. Oldest first.
     documentedHookSnapshots: snapshots => startAtFirst(snapshots, snapshot => snapshot.surfaceArea?.hooks?.length > 0),
 
-    // How a value moved, as the word a subtitle uses instead of a figure: 'rose' or
-    // 'fell' when it moved by more than `tolerance`, a fraction of where it started;
-    // otherwise 'held'.
-    movement: (before, after, tolerance) =>
-        after > before * (1 + tolerance) ? 'rose' : after < before * (1 - tolerance) ? 'fell' : 'held',
-
     // The last twelve months whose commits classify by type. Core adopted
     // conventional-commit subjects ("fix:", "feat:") in November 2025, and months before
     // read as uncategorized, which a blind reader took for "a data outage". The series

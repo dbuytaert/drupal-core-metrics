@@ -57,17 +57,6 @@ class DocumentedHookSnapshotsTest(unittest.TestCase):
         self.assertEqual(rule("documentedHookSnapshots", [{"date": "2001-01"}]), [])
 
 
-class MovementTest(unittest.TestCase):
-    """Subtitles say how a value moved in words. Moving exactly by the tolerance is holding."""
-
-    def test_words_for_a_move(self):
-        # Halves are exact in floating point, so the boundaries are really tested.
-        self.assertEqual(rule("movement", 100, 151, 0.5), "rose")
-        self.assertEqual(rule("movement", 100, 150, 0.5), "held")
-        self.assertEqual(rule("movement", 100, 50, 0.5), "held")
-        self.assertEqual(rule("movement", 100, 49, 0.5), "fell")
-
-
 class ClassifiedMonthsTest(unittest.TestCase):
     """Commit types are drawn for up to twelve months, from two months after the last
     month in which most commits carried no type."""
