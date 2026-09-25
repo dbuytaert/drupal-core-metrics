@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T11:01:21.006104+00:00",
+  "generatedAt": "2026-09-25T13:46:18.201106+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -2724,10 +2724,6 @@
         "firstCredited": 2012
       },
       {
-        "name": "oily",
-        "firstCredited": 2024
-      },
-      {
         "name": "pdureau",
         "firstCredited": 2023
       },
@@ -2788,7 +2784,7 @@
         "firstCredited": 2011
       }
     ],
-    "unlisted": 1
+    "unlisted": 2
   },
   "halfOfCreditsPeople": {
     "year": 2025,
@@ -3287,6 +3283,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 249650,
           "StylesheetBytes": null
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3323,6 +3323,10 @@
         },
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 249200,
+          "StylesheetBytes": null
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
           "StylesheetBytes": null
         }
       }
@@ -3361,6 +3365,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 249700,
           "StylesheetBytes": null
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3397,6 +3405,10 @@
         },
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 249700,
+          "StylesheetBytes": null
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
           "StylesheetBytes": null
         }
       }
@@ -3435,6 +3447,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": null
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3472,6 +3488,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 86650
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3509,6 +3529,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 86650
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3546,6 +3570,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 86000
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3583,6 +3611,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 85600
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3620,6 +3652,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 85600
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3657,6 +3693,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 85600
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3694,6 +3734,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 85600
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3731,6 +3775,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 85000
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3768,6 +3816,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 85000
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3805,6 +3857,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 85000
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3842,6 +3898,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 170500,
           "StylesheetBytes": 85000
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3879,6 +3939,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 82672
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3916,6 +3980,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 82672
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3953,6 +4021,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 82672
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -3990,6 +4062,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 82672
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4027,6 +4103,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 82672
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4064,6 +4144,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4101,6 +4185,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4138,6 +4226,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4175,6 +4267,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4212,6 +4308,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4249,6 +4349,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 253948,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4286,6 +4390,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 254880,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4323,6 +4431,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 254880,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4360,6 +4472,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 254880,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4397,6 +4513,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 254880,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4434,6 +4554,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 203600,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4471,6 +4595,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 203600,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4508,6 +4636,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 203600,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4545,6 +4677,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 204618,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4582,6 +4718,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 204618,
           "StylesheetBytes": 81750
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4619,6 +4759,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4656,6 +4800,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4693,6 +4841,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4730,6 +4882,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4767,6 +4923,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4804,6 +4964,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
         }
       }
     },
@@ -4841,6 +5005,92 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": null,
+          "StylesheetBytes": null
+        }
+      }
+    },
+    {
+      "date": "2026-01-31",
+      "commit": "c8c8cb5cf37661b92302318df8c84631337d26c3",
+      "issue": 3516264,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 233,
+          "CacheGetCount": null,
+          "CacheSetCount": 281,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 82,
+          "CacheGetCount": 173,
+          "CacheSetCount": 61
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 218,
+          "CacheGetCount": 276,
+          "CacheSetCount": 294
+        },
+        "administratorNodePage": {
+          "QueryCount": 304,
+          "ScriptBytes": 198900,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3873548,
+          "StylesheetBytes": 683604
+        }
+      }
+    },
+    {
+      "date": "2026-01-31",
+      "commit": "77f30c11e66a1721f96216ca8970218f581358a9",
+      "issue": 3570848,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 233,
+          "CacheGetCount": null,
+          "CacheSetCount": 281,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 82,
+          "CacheGetCount": 173,
+          "CacheSetCount": 61
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 218,
+          "CacheGetCount": 276,
+          "CacheSetCount": 294
+        },
+        "administratorNodePage": {
+          "QueryCount": 304,
+          "ScriptBytes": 198900,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3873548,
+          "StylesheetBytes": 682809
         }
       }
     },
@@ -4878,6 +5128,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3873548,
+          "StylesheetBytes": 682809
         }
       }
     },
@@ -4915,6 +5169,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3873548,
+          "StylesheetBytes": 682809
         }
       }
     },
@@ -4952,6 +5210,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3873548,
+          "StylesheetBytes": 682809
         }
       }
     },
@@ -4989,6 +5251,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3873548,
+          "StylesheetBytes": 682809
         }
       }
     },
@@ -5026,6 +5292,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3768185,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5063,6 +5333,51 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3768185,
+          "StylesheetBytes": 619086
+        }
+      }
+    },
+    {
+      "date": "2026-02-18",
+      "commit": "6aaf45efdf88d5d20b544bb153cc963895851f6e",
+      "issue": 3443571,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 224,
+          "CacheGetCount": 241,
+          "CacheSetCount": 238,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 73,
+          "CacheGetCount": 171,
+          "CacheSetCount": 57
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 208,
+          "CacheGetCount": 251,
+          "CacheSetCount": 254
+        },
+        "administratorNodePage": {
+          "QueryCount": 295,
+          "ScriptBytes": 199851,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3769883,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5100,6 +5415,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3769883,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5137,6 +5456,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3769883,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5174,6 +5497,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3769883,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5211,6 +5538,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3769883,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5248,6 +5579,51 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3769883,
+          "StylesheetBytes": 619086
+        }
+      }
+    },
+    {
+      "date": "2026-03-02",
+      "commit": "302f90773338a57fe1693e468fc76b7643a14d4c",
+      "issue": 3572628,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 221,
+          "CacheGetCount": 236,
+          "CacheSetCount": 234,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 77,
+          "CacheGetCount": 171,
+          "CacheSetCount": 59
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 201,
+          "CacheGetCount": 244,
+          "CacheSetCount": 248
+        },
+        "administratorNodePage": {
+          "QueryCount": 286,
+          "ScriptBytes": 199851,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3771245,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5285,6 +5661,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3771850,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5322,6 +5702,92 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3771850,
+          "StylesheetBytes": 619086
+        }
+      }
+    },
+    {
+      "date": "2026-03-05",
+      "commit": "34b4c6eb3279eb2f45c7e9dda5b1b05745626a28",
+      "issue": 3576995,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 221,
+          "CacheGetCount": 235,
+          "CacheSetCount": 233,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 77,
+          "CacheGetCount": 171,
+          "CacheSetCount": 59
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 201,
+          "CacheGetCount": 243,
+          "CacheSetCount": 247
+        },
+        "administratorNodePage": {
+          "QueryCount": 286,
+          "ScriptBytes": 200400,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3809950,
+          "StylesheetBytes": 619086
+        }
+      }
+    },
+    {
+      "date": "2026-03-09",
+      "commit": "4f51b64b77bb0c42e8d56a0f89c7de6b75b483d8",
+      "issue": 3575462,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 221,
+          "CacheGetCount": 235,
+          "CacheSetCount": 233,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 77,
+          "CacheGetCount": 171,
+          "CacheSetCount": 59
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 201,
+          "CacheGetCount": 243,
+          "CacheSetCount": 247
+        },
+        "administratorNodePage": {
+          "QueryCount": 286,
+          "ScriptBytes": 200400,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3803505,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5359,6 +5825,51 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3803505,
+          "StylesheetBytes": 619086
+        }
+      }
+    },
+    {
+      "date": "2026-03-12",
+      "commit": "d6212f9ce9f6e48fb15c190a51ef913e51d9e04a",
+      "issue": 3578653,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 219,
+          "CacheGetCount": 235,
+          "CacheSetCount": 232,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 77,
+          "CacheGetCount": 171,
+          "CacheSetCount": 59
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 199,
+          "CacheGetCount": 243,
+          "CacheSetCount": 246
+        },
+        "administratorNodePage": {
+          "QueryCount": 284,
+          "ScriptBytes": 200400,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3804493,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5396,6 +5907,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3804493,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5433,6 +5948,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3804493,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5470,6 +5989,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3804493,
+          "StylesheetBytes": 619086
         }
       }
     },
@@ -5507,6 +6030,92 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3804493,
+          "StylesheetBytes": 619086
+        }
+      }
+    },
+    {
+      "date": "2026-04-27",
+      "commit": "58b9d70d9377a339bfb6a46367f445390be6d9e7",
+      "issue": 3578477,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 215,
+          "CacheGetCount": 232,
+          "CacheSetCount": 231,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 75,
+          "CacheGetCount": 167,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 195,
+          "CacheGetCount": 241,
+          "CacheSetCount": 246
+        },
+        "administratorNodePage": {
+          "QueryCount": 279,
+          "ScriptBytes": 200400,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3805189,
+          "StylesheetBytes": 619086
+        }
+      }
+    },
+    {
+      "date": "2026-04-27",
+      "commit": "a2b0120864a9717108fc9d7112fac76c39520e4b",
+      "issue": 3527914,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 215,
+          "CacheGetCount": 232,
+          "CacheSetCount": 231,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 75,
+          "CacheGetCount": 167,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 195,
+          "CacheGetCount": 241,
+          "CacheSetCount": 246
+        },
+        "administratorNodePage": {
+          "QueryCount": 279,
+          "ScriptBytes": 200400,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3222537,
+          "StylesheetBytes": 1386351
         }
       }
     },
@@ -5544,6 +6153,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3222537,
+          "StylesheetBytes": 1386351
         }
       }
     },
@@ -5581,6 +6194,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3222537,
+          "StylesheetBytes": 1386351
         }
       }
     },
@@ -5618,6 +6235,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3222537,
+          "StylesheetBytes": 1386351
         }
       }
     },
@@ -5655,6 +6276,51 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3222537,
+          "StylesheetBytes": 1386351
+        }
+      }
+    },
+    {
+      "date": "2026-05-06",
+      "commit": "30521cd634305d4b2c55c84b46912d8897e80c94",
+      "issue": 3587182,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 197,
+          "CacheGetCount": 216,
+          "CacheSetCount": 220,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 70,
+          "CacheGetCount": 162,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 181,
+          "CacheGetCount": 225,
+          "CacheSetCount": 235
+        },
+        "administratorNodePage": {
+          "QueryCount": 261,
+          "ScriptBytes": 200400,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 117400
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3206361,
+          "StylesheetBytes": 1286838
         }
       }
     },
@@ -5692,6 +6358,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3206361,
+          "StylesheetBytes": 1286838
         }
       }
     },
@@ -5729,6 +6399,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3206361,
+          "StylesheetBytes": 1286838
         }
       }
     },
@@ -5766,6 +6440,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3206361,
+          "StylesheetBytes": 1286838
         }
       }
     },
@@ -5803,6 +6481,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 79400
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3206361,
+          "StylesheetBytes": 1286838
         }
       }
     },
@@ -5840,6 +6522,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 55581
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2979216,
+          "StylesheetBytes": 1085546
         }
       }
     },
@@ -5877,6 +6563,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 55581
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2979216,
+          "StylesheetBytes": 1085546
         }
       }
     },
@@ -5914,6 +6604,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 55581
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2979216,
+          "StylesheetBytes": 1085546
         }
       }
     },
@@ -5951,6 +6645,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 55581
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2979216,
+          "StylesheetBytes": 1085546
         }
       }
     },
@@ -5988,6 +6686,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 55581
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2979216,
+          "StylesheetBytes": 1085546
         }
       }
     },
@@ -6025,6 +6727,92 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 73750,
           "StylesheetBytes": 55581
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2979216,
+          "StylesheetBytes": 1085546
+        }
+      }
+    },
+    {
+      "date": "2026-08-10",
+      "commit": "bbe11d6d93e04650408fb88f998ec790eb7f49c5",
+      "issue": 3607794,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 195,
+          "CacheGetCount": 217,
+          "CacheSetCount": 226,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 66,
+          "CacheGetCount": 168,
+          "CacheSetCount": 59
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 200400,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 69629
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 55581
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2976954,
+          "StylesheetBytes": 1085546
+        }
+      }
+    },
+    {
+      "date": "2026-08-14",
+      "commit": "4e897a51852e452918ebf5f7a79ccfb170a6c5ae",
+      "issue": 3615749,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 195,
+          "CacheGetCount": 217,
+          "CacheSetCount": 226,
+          "ScriptBytes": 12000,
+          "StylesheetBytes": 40800
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 66,
+          "CacheGetCount": 168,
+          "CacheSetCount": 59
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 200400,
+          "StylesheetBytes": 79412
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 11700,
+          "StylesheetBytes": 69629
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 73750,
+          "StylesheetBytes": 55581
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2976611,
+          "StylesheetBytes": 640654
         }
       }
     },
@@ -6062,6 +6850,51 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 74020,
           "StylesheetBytes": 55679
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2976896,
+          "StylesheetBytes": 640654
+        }
+      }
+    },
+    {
+      "date": "2026-08-27",
+      "commit": "7d8143e6d2d06299a17a275dc1bcdc011f4c60f7",
+      "issue": 3587797,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 195,
+          "CacheGetCount": 217,
+          "CacheSetCount": 226,
+          "ScriptBytes": 12006,
+          "StylesheetBytes": 40676
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 66,
+          "CacheGetCount": 168,
+          "CacheSetCount": 59
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 200509,
+          "StylesheetBytes": 79807
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12006,
+          "StylesheetBytes": 69796
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 74020,
+          "StylesheetBytes": 55679
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2976896,
+          "StylesheetBytes": 640772
         }
       }
     },
@@ -6099,6 +6932,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 74105,
           "StylesheetBytes": 54433
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2977413,
+          "StylesheetBytes": 640664
         }
       }
     },
@@ -6136,6 +6973,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 60671,
           "StylesheetBytes": 54395
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2963979,
+          "StylesheetBytes": 640664
         }
       }
     },
@@ -6173,6 +7014,10 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 60671,
           "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2963979,
+          "StylesheetBytes": 640664
         }
       }
     },
@@ -6210,6 +7055,297 @@
         "umamiFrontAndRecipePagesAuthenticated": {
           "ScriptBytes": 60671,
           "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2963979,
+          "StylesheetBytes": 640664
+        }
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "commit": "2d9bc63c00a5b038bee26b987af26f934b8fcde2",
+      "issue": 3618746,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 2963979,
+          "StylesheetBytes": 637133
+        }
+      }
+    },
+    {
+      "date": "2026-09-15",
+      "commit": "dfc1cb11418b1ac9ed61053944b5c890d67931b9",
+      "issue": 3582101,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3000540,
+          "StylesheetBytes": 1088877
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "commit": "cb786012099673bf70093b2c4c37258a4286ed53",
+      "issue": 3623385,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3000540,
+          "StylesheetBytes": 1091391
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "commit": "3926319c8cbafb03e6d0d3d99c4b64e1916138c8",
+      "issue": 3623407,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3000544,
+          "StylesheetBytes": 1087530
+        }
+      }
+    },
+    {
+      "date": "2026-09-17",
+      "commit": "8dbb1309517827740a3748a10c0bd1cc80cddbdf",
+      "issue": 3583516,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3000544,
+          "StylesheetBytes": 1084377
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "commit": "d946182a6cf844fd5f1ce6baf95bb4475bbcfac5",
+      "issue": 3618140,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3000544,
+          "StylesheetBytes": 1080352
+        }
+      }
+    },
+    {
+      "date": "2026-09-18",
+      "commit": "3d214398b240fb679d3b1a687b155355b4c07637",
+      "issue": 3623708,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 264,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3008189,
+          "StylesheetBytes": 1075075
         }
       }
     }
