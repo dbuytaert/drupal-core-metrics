@@ -167,6 +167,9 @@
         // because of it, and a larger square is closer to the area it names.
         const SQUARE_LEGEND_LABELS = { usePointStyle: false, boxWidth: 14, boxHeight: 14 };
 
+        // The font of labels drawn on the chart itself, next to the lines they name.
+        const LABEL_FONT = '600 12px -apple-system, sans-serif';
+
         // Hovering a legend entry pales every other layer, so which area an entry
         // names can be checked by looking instead of by comparing shades.
         const paleColor = color => {
@@ -970,7 +973,7 @@
                         context.save();
                         context.textBaseline = 'middle';
                         context.textAlign = 'left';
-                        context.font = '600 12px -apple-system, sans-serif';
+                        context.font = LABEL_FONT;
                         context.fillStyle = '#94a3b8';
                         context.fillText(untypedText, right + 6, untypedY);
                         context.fillStyle = '#64748b';
@@ -1104,6 +1107,11 @@
             // Lines can end close together, so labels are placed top to bottom and
             // pushed apart just enough not to overlap.
             const LABEL_GAP = 14;
+            // Room on the right for the widest end label. A fixed 48 pixels fit "264" but
+            // cut off "3,001 KB".
+            const measuringContext = document.createElement('canvas').getContext('2d');
+            measuringContext.font = LABEL_FONT;
+            const labelWidth = Math.max(0, ...datasets.map(dataset => measuringContext.measureText(format(dataset.latestValue)).width));
             const endLabels = {
                 id: 'endLabels',
                 afterDatasetsDraw(chart) {
@@ -1115,7 +1123,7 @@
                         .filter(end => chart.isDatasetVisible(end.index) && !end.dataset.data.at(-1).ended)
                         .sort((first, second) => first.point.y - second.point.y);
                     context.save();
-                    context.font = '600 12px -apple-system, sans-serif';
+                    context.font = LABEL_FONT;
                     context.fillStyle = '#334155';
                     context.textBaseline = 'middle';
                     let previousY = -Infinity;
@@ -1162,7 +1170,7 @@
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
-                    layout: { padding: { right: 48 } },
+                    layout: { padding: { right: Math.ceil(labelWidth) + 10 } },
                     interaction: { mode: 'nearestStep', intersect: false },
                     plugins: {
                         // Line samples rather than dots when a dash carries meaning, so
@@ -1962,7 +1970,7 @@
                     const averageRight = averageMeta[averageMeta.length - 1];
                     if (!yearPoint || !averageRight) return;
                     context.save();
-                    context.font = '600 12px -apple-system, sans-serif';
+                    context.font = LABEL_FONT;
                     context.textBaseline = 'middle';
                     context.fillStyle = '#1e293b';
                     context.textAlign = 'left';
