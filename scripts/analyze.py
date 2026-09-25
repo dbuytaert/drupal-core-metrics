@@ -227,7 +227,7 @@ def advisories_by_year(subjects: str, running_year: int) -> list[dict]:
 # pages: under core's own scenario labels and metric names, so every number in data.json
 # can be checked against the assertion file it came from. The labels survived every
 # reshuffle of the test classes (#3612172 merged them, #3618432 moved the expectations into
-# YAML files), where a class name did not: the umamiFrontAndRecipePages scenarios kept
+# YAML files), where a class name did not: the scenarios that visit several pages kept
 # their labels through AssetAggregationAcrossPagesTest, the merged class and
 # MultipleRequestsPerformanceTest. Only what a chart draws is listed.
 PAGE_PERFORMANCE_METRICS = {
@@ -237,6 +237,7 @@ PAGE_PERFORMANCE_METRICS = {
     "administratorNodePage": ("QueryCount", "ScriptBytes", "StylesheetBytes"),
     "umamiFrontAndRecipePages": ("ScriptBytes", "StylesheetBytes"),
     "umamiFrontAndRecipePagesAuthenticated": ("ScriptBytes", "StylesheetBytes"),
+    "umamiNodeAddEditor": ("ScriptBytes", "StylesheetBytes"),
 }
 PINNED_METRICS = sorted({metric for metrics in PAGE_PERFORMANCE_METRICS.values() for metric in metrics})
 UMAMI_TESTS = "core/profiles/demo_umami/tests/"

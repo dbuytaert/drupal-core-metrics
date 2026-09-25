@@ -1355,18 +1355,20 @@
         // change and is not drawn.
         const PAGE_WEIGHT_TOLERANCE_BYTES = 2000;
 
+        // A JavaScript and CSS pair for one person: color is who, the dash is the kind of file.
+        const pageWeightLines = (who, color, metrics) => [
+            { label: `${who}: JavaScript`, color, minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => metrics(row).ScriptBytes },
+            { label: `${who}: CSS`, color, borderDash: [6, 4], minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => metrics(row).StylesheetBytes },
+        ];
+
         function createPageWeightChart(container, pagePerformance, endDay) {
-            const cleanFrom = new Date(PAGE_WEIGHT_MEASURED_CLEANLY_AFTER + 'T00:00:00Z').toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
             return createPinnedMetricChart(container, pagePerformance, endDay, {
                 title: 'JavaScript and CSS for one page',
-                subtitle: `How much JavaScript and CSS the browser loads, uncompressed, for an article page on Umami, for a visitor who is not logged in and for an administrator. Core's tests only notice a size change of more than 2 KB, so smaller changes pile up and show as one step. Starts in ${cleanFrom}, once Core stabilized its test of the administrator page.`,
+                subtitle: `How much JavaScript and CSS the browser loads, uncompressed, for an article page on Umami, for a visitor who is not logged in and for an administrator. Less is better.`,
                 startAfter: PAGE_WEIGHT_MEASURED_CLEANLY_AFTER,
-                // Color is who is viewing, the dash is the kind of file.
                 series: [
-                    { label: 'Administrator: JavaScript', color: ADMINISTRATOR_COLOR, minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.administratorNodePage.ScriptBytes },
-                    { label: 'Administrator: CSS', color: ADMINISTRATOR_COLOR, borderDash: [6, 4], minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.administratorNodePage.StylesheetBytes },
-                    { label: 'Visitor: JavaScript', color: VISITOR_ARTICLE_COLOR, minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiNodePageColdCache.ScriptBytes },
-                    { label: 'Visitor: CSS', color: VISITOR_ARTICLE_COLOR, borderDash: [6, 4], minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiNodePageColdCache.StylesheetBytes },
+                    ...pageWeightLines('Administrator', ADMINISTRATOR_COLOR, row => row.metrics.administratorNodePage),
+                    ...pageWeightLines('Visitor', VISITOR_ARTICLE_COLOR, row => row.metrics.umamiNodePageColdCache),
                 ],
                 format: formatKilobytes,
                 yTitle: 'Kilobytes',
@@ -1378,15 +1380,26 @@
             // it, so the total also falls when pages come to share files rather than each
             // loading its own copy: that is what #3565258 did to CSS in June 2026.
             return createPinnedMetricChart(container, pagePerformance, endDay, {
-                title: 'JavaScript and CSS for a four-page visit',
-                subtitle: `How much JavaScript and CSS the browser loads, uncompressed, when someone opens four pages on Umami in a row: the front page, the articles and recipes listings, and one recipe, as a visitor who is not logged in and as a user who is. A file that several of the pages use is downloaded once, so a line falls both when Core ships less code and when the pages share more of their files. Core's tests only notice a size change of more than 2 KB. Less is better.`,
-                // Color is who is viewing, the dash is the kind of file, as on the one-page card.
+                title: 'JavaScript and CSS for browsing four pages',
+                subtitle: `How much JavaScript and CSS the browser loads, uncompressed, when someone opens four pages on Umami in a row: the front page, the article and recipe listings, and one recipe. Measured for a visitor who is not logged in and for a logged-in user without an editing role. A file used by several of the pages counts once. Less is better.`,
                 series: [
-                    { label: 'Logged in: JavaScript', color: LOGGED_IN_COLOR, minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiFrontAndRecipePagesAuthenticated.ScriptBytes },
-                    { label: 'Logged in: CSS', color: LOGGED_IN_COLOR, borderDash: [6, 4], minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiFrontAndRecipePagesAuthenticated.StylesheetBytes },
-                    { label: 'Visitor: JavaScript', color: VISITOR_ARTICLE_COLOR, minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiFrontAndRecipePages.ScriptBytes },
-                    { label: 'Visitor: CSS', color: VISITOR_ARTICLE_COLOR, borderDash: [6, 4], minimumStep: PAGE_WEIGHT_TOLERANCE_BYTES, value: row => row.metrics.umamiFrontAndRecipePages.StylesheetBytes },
+                    ...pageWeightLines('Logged in', LOGGED_IN_COLOR, row => row.metrics.umamiFrontAndRecipePagesAuthenticated),
+                    ...pageWeightLines('Visitor', VISITOR_ARTICLE_COLOR, row => row.metrics.umamiFrontAndRecipePages),
                 ],
+                format: formatKilobytes,
+                yTitle: 'Kilobytes',
+            });
+        }
+
+        function createAuthorPageWeightChart(container, pagePerformance, endDay) {
+            // Core names this scenario umamiNodeAddEditor, but the user it logs in has the
+            // author role. It gets its own card: the edit forms load tens of times more than a
+            // visitor's pages, and on a shared axis the visitor's lines would sit on the floor.
+            return createPinnedMetricChart(container, pagePerformance, endDay, {
+                title: 'JavaScript and CSS for opening three edit forms',
+                subtitle: `How much JavaScript and CSS the browser loads, uncompressed, when an author on Umami opens the forms for a new article, a new recipe and a new basic page in a row. A file used by several of the forms counts once. Less is better.`,
+                // The administrator's color: both work in the back office rather than browse the site.
+                series: pageWeightLines('Author', ADMINISTRATOR_COLOR, row => row.metrics.umamiNodeAddEditor),
                 format: formatKilobytes,
                 yTitle: 'Kilobytes',
             });
@@ -2250,7 +2263,7 @@
 
             // A visitor's queries, then the cache reads and writes behind the same pages, which
             // share their lines, then an administrator's queries, then what both download, for one
-            // page and then for a visitor's four.
+            // page, then for browsing four, then for an author's three edit forms.
             // Left out when the selected range holds no rows for it.
             if (data.pagePerformance?.length) {
                 addSection('performance');
@@ -2261,6 +2274,7 @@
                     createAdministratorQueriesChart(container, data.pagePerformance, data.rangeEndDay),
                     createPageWeightChart(container, data.pagePerformance, data.rangeEndDay),
                     createFourPageWeightChart(container, data.pagePerformance, data.rangeEndDay),
+                    createAuthorPageWeightChart(container, data.pagePerformance, data.rangeEndDay),
                 ].filter(Boolean);
                 // One time axis for the section. Each card starting at its own first
                 // pinned value put different months under the same spot on the page, and
