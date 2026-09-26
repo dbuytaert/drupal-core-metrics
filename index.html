@@ -258,8 +258,9 @@
                 const { left, right, top, bottom } = chartArea;
                 const labels = (chart.data.labels || []).map(String);
                 const settings = options.plugins?.releaseMarkers || {};
-                const markers = RELEASES
-                    .map(release => ({ release, position: chartRules.releasePosition(labels, release.date,
+                // A chart can mark events of its own beside the releases, as { date, text }.
+                const markers = [...RELEASES.map(release => ({ date: release.date, text: 'Drupal ' + release.major })), ...(settings.events || [])]
+                    .map(event => ({ text: event.text, position: chartRules.releasePosition(labels, event.date,
                         { bars: chart.config.type === 'bar', pointDates: settings.pointDates,
                           dayAxis: settings.dayAxis ? { min: xScale.min, max: xScale.max } : null }) }))
                     .filter(marker => marker.position !== null)
@@ -276,7 +277,6 @@
                 const paddingX = 5;
                 const paddingY = 3;
                 markers.forEach(marker => {
-                    marker.text = 'Drupal ' + marker.release.major;
                     const metrics = context.measureText(marker.text);
                     marker.ascent = metrics.actualBoundingBoxAscent;
                     marker.boxWidth = metrics.width + 2 * paddingX;
@@ -1427,7 +1427,7 @@
 
             createStackedChart(container, {
                 title: 'Commits per quarter by repository',
-                subtitle: "Commits per quarter in Drupal Core and in the strategic initiatives. Core, Canvas and Drupal CMS are each one repository. The AI initiative is spread across many, so its band counts all of its modules, themes and recipes with ten commits or more.",
+                subtitle: "Commits per quarter in Drupal Core and in the strategic initiatives. Core, Canvas and Drupal CMS are each one Git repository. The AI initiative is spread across many, so its band counts all of its modules, themes and recipes with ten commits or more. Drupal CMS and Canvas began as prototypes a few weeks before Starshot was announced, so their bands start before its line.",
                 labels: rows.map(row => row.date),
                 datasets: [
                     { label: 'Drupal Core', data: sinceItExisted('core'), borderColor: '#0678be', backgroundColor: '#0678be' },
@@ -1438,6 +1438,15 @@
                 absoluteStacked: true,
                 pointRadius: 2,
                 formatLabel: formatQuarter,
+                // A quarter's point stands for its middle month when placing markers. At its
+                // first month, a May event drew past the second quarter's point, and the AI
+                // band's first quarter, all of it June, looked older than the announcement.
+                // Drupal Starshot, which became Drupal CMS, was announced in the DrupalCon
+                // Portland keynote on 7 May 2024.
+                releaseMarkers: {
+                    pointDates: rows.map(row => `${row.date.slice(0, 5)}${String(Number(row.date.slice(5, 7)) + 1).padStart(2, '0')}`),
+                    events: [{ date: '2024-05', text: 'Starshot announced' }],
+                },
             });
         }
 
