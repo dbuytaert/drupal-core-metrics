@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T00:35:09.387466+00:00",
+  "generatedAt": "2026-09-28T00:35:27.717329+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -7871,26 +7871,26 @@
         "2004": 8,
         "2005": 22,
         "2006": 171,
-        "2007": 266,
-        "2008": 203,
-        "2009": 212,
-        "2010": 591,
-        "2011": 1244,
-        "2012": 15437,
-        "2013": 22910,
-        "2014": 35712,
-        "2015": 25207,
-        "2016": 11430,
-        "2017": 21958,
-        "2018": 13026,
-        "2019": 16061,
+        "2007": 212,
+        "2008": 182,
+        "2009": 198,
+        "2010": 587,
+        "2011": 1243,
+        "2012": 15392,
+        "2013": 22881,
+        "2014": 35708,
+        "2015": 25195,
+        "2016": 11429,
+        "2017": 21838,
+        "2018": 12991,
+        "2019": 16028,
         "2020": 3726,
         "2021": 9739,
-        "2022": 7027,
-        "2023": 13406,
-        "2024": 32728,
-        "2025": 24996,
-        "2026": 26546
+        "2022": 7025,
+        "2023": 13405,
+        "2024": 32712,
+        "2025": 24973,
+        "2026": 27111
       }
     }
   ],
@@ -41765,8 +41765,8 @@
     {
       "date": "2026-09",
       "production": {
-        "lines": 282641,
-        "objectOrientedLines": 274730,
+        "lines": 282791,
+        "objectOrientedLines": 274761,
         "cognitive": {
           "average": 2.67,
           "percentile95": 13
@@ -41774,20 +41774,20 @@
         "lcom4": 2.28,
         "antipatterns": {
           "magicKeys": 14870,
-          "deepArrays": 7024,
-          "serviceLocators": 2289
+          "deepArrays": 6956,
+          "serviceLocators": 2290
         },
         "typeCoverage": {
           "parameterTotal": 23470,
           "parameterTyped": 15018,
           "parameterPrecise": 11049,
-          "returnTotal": 15644,
-          "returnTyped": 2853,
+          "returnTotal": 15645,
+          "returnTyped": 2854,
           "returnPrecise": 2048
         }
       },
       "test": {
-        "lines": 468807
+        "lines": 468929
       },
       "js": {
         "lines": 20036
@@ -42302,8 +42302,8 @@
           {
             "name": "ModuleInstaller",
             "file": "lib/Drupal/Core/Extension/ModuleInstaller.php",
-            "cognitive": 196,
-            "cyclomatic": 112,
+            "cognitive": 201,
+            "cyclomatic": 114,
             "antipatterns": 54
           },
           {
