@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-02T04:10:07.064253+00:00",
+  "generatedAt": "2026-10-03T03:53:04.434030+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -7362,6 +7362,47 @@
           "StylesheetBytes": 1075075
         }
       }
+    },
+    {
+      "date": "2026-10-02",
+      "commit": "528d41786190d9ca30a640bd88dc7f8b1ca2e0a9",
+      "issue": 3626740,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 261,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3008189,
+          "StylesheetBytes": 1075075
+        }
+      }
     }
   ],
   "sourceCodeAge": [
@@ -7900,7 +7941,7 @@
         "2023": 13404,
         "2024": 32696,
         "2025": 24954,
-        "2026": 27282
+        "2026": 27285
       }
     }
   ],
@@ -41775,8 +41816,8 @@
     {
       "date": "2026-10",
       "production": {
-        "lines": 282910,
-        "objectOrientedLines": 274880,
+        "lines": 282913,
+        "objectOrientedLines": 274883,
         "cognitive": {
           "average": 2.67,
           "percentile95": 13
@@ -41797,10 +41838,10 @@
         }
       },
       "test": {
-        "lines": 469190
+        "lines": 469334
       },
       "js": {
-        "lines": 20036
+        "lines": 20040
       },
       "dependencies": {
         "production": 59,
