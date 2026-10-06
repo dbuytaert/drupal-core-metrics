@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T04:10:54.850492+00:00",
+  "generatedAt": "2026-10-06T05:29:38.131401+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -2583,302 +2583,6 @@
       }
     }
   ],
-  "mostCredited": {
-    "year": 2025,
-    "people": [
-      {
-        "name": "acbramley",
-        "firstCredited": 2014
-      },
-      {
-        "name": "alexpott",
-        "firstCredited": 2010
-      },
-      {
-        "name": "amateescu",
-        "firstCredited": 2010
-      },
-      {
-        "name": "andypost",
-        "firstCredited": 2009
-      },
-      {
-        "name": "annmarysruthy",
-        "firstCredited": 2024
-      },
-      {
-        "name": "bbrala",
-        "firstCredited": 2019
-      },
-      {
-        "name": "benjifisher",
-        "firstCredited": 2011
-      },
-      {
-        "name": "berdir",
-        "firstCredited": 2009
-      },
-      {
-        "name": "borisson_",
-        "firstCredited": 2013
-      },
-      {
-        "name": "catch",
-        "firstCredited": 2007
-      },
-      {
-        "name": "cilefen",
-        "firstCredited": 2013
-      },
-      {
-        "name": "ckrina",
-        "firstCredited": 2013
-      },
-      {
-        "name": "daffie",
-        "firstCredited": 2014
-      },
-      {
-        "name": "danielveza",
-        "firstCredited": 2019
-      },
-      {
-        "name": "dawehner",
-        "firstCredited": 2012
-      },
-      {
-        "name": "dcam",
-        "firstCredited": 2012
-      },
-      {
-        "name": "donquixote",
-        "firstCredited": 2010
-      },
-      {
-        "name": "dww",
-        "firstCredited": 2006
-      },
-      {
-        "name": "finnsky",
-        "firstCredited": 2015
-      },
-      {
-        "name": "godotislate",
-        "firstCredited": 2019
-      },
-      {
-        "name": "griffynh",
-        "firstCredited": 2019
-      },
-      {
-        "name": "grimreaper",
-        "firstCredited": 2014
-      },
-      {
-        "name": "g\u00e1bor hojtsy",
-        "firstCredited": 2007
-      },
-      {
-        "name": "heddn",
-        "firstCredited": 2013
-      },
-      {
-        "name": "joachim",
-        "firstCredited": 2009
-      },
-      {
-        "name": "kim.pepper",
-        "firstCredited": 2012
-      },
-      {
-        "name": "kristiaanvandeneynde",
-        "firstCredited": 2013
-      },
-      {
-        "name": "larowlan",
-        "firstCredited": 2011
-      },
-      {
-        "name": "lauriii",
-        "firstCredited": 2013
-      },
-      {
-        "name": "lendude",
-        "firstCredited": 2014
-      },
-      {
-        "name": "longwave",
-        "firstCredited": 2011
-      },
-      {
-        "name": "m4olivei",
-        "firstCredited": 2015
-      },
-      {
-        "name": "mondrake",
-        "firstCredited": 2013
-      },
-      {
-        "name": "mstrelan",
-        "firstCredited": 2012
-      },
-      {
-        "name": "nicxvan",
-        "firstCredited": 2022
-      },
-      {
-        "name": "nod_",
-        "firstCredited": 2012
-      },
-      {
-        "name": "oily",
-        "firstCredited": 2024
-      },
-      {
-        "name": "pdureau",
-        "firstCredited": 2023
-      },
-      {
-        "name": "penyaskito",
-        "firstCredited": 2012
-      },
-      {
-        "name": "phenaproxima",
-        "firstCredited": 2013
-      },
-      {
-        "name": "plopesc",
-        "firstCredited": 2012
-      },
-      {
-        "name": "poker10",
-        "firstCredited": 2022
-      },
-      {
-        "name": "prudloff",
-        "firstCredited": 2022
-      },
-      {
-        "name": "quietone",
-        "firstCredited": 2014
-      },
-      {
-        "name": "rkoller",
-        "firstCredited": 2018
-      },
-      {
-        "name": "shalini_jha",
-        "firstCredited": 2024
-      },
-      {
-        "name": "smustgrave",
-        "firstCredited": 2022
-      },
-      {
-        "name": "spokje",
-        "firstCredited": 2019
-      },
-      {
-        "name": "thejimbirch",
-        "firstCredited": 2020
-      },
-      {
-        "name": "tim.plunkett",
-        "firstCredited": 2010
-      },
-      {
-        "name": "wim leers",
-        "firstCredited": 2007
-      },
-      {
-        "name": "xjm",
-        "firstCredited": 2011
-      }
-    ],
-    "unlisted": 1
-  },
-  "halfOfCreditsPeople": {
-    "year": 2025,
-    "people": [
-      {
-        "name": "acbramley",
-        "firstCredited": 2014
-      },
-      {
-        "name": "alexpott",
-        "firstCredited": 2010
-      },
-      {
-        "name": "andypost",
-        "firstCredited": 2009
-      },
-      {
-        "name": "benjifisher",
-        "firstCredited": 2011
-      },
-      {
-        "name": "berdir",
-        "firstCredited": 2009
-      },
-      {
-        "name": "catch",
-        "firstCredited": 2007
-      },
-      {
-        "name": "dcam",
-        "firstCredited": 2012
-      },
-      {
-        "name": "dww",
-        "firstCredited": 2006
-      },
-      {
-        "name": "godotislate",
-        "firstCredited": 2019
-      },
-      {
-        "name": "larowlan",
-        "firstCredited": 2011
-      },
-      {
-        "name": "longwave",
-        "firstCredited": 2011
-      },
-      {
-        "name": "mondrake",
-        "firstCredited": 2013
-      },
-      {
-        "name": "mstrelan",
-        "firstCredited": 2012
-      },
-      {
-        "name": "nicxvan",
-        "firstCredited": 2022
-      },
-      {
-        "name": "nod_",
-        "firstCredited": 2012
-      },
-      {
-        "name": "phenaproxima",
-        "firstCredited": 2013
-      },
-      {
-        "name": "quietone",
-        "firstCredited": 2014
-      },
-      {
-        "name": "smustgrave",
-        "firstCredited": 2022
-      },
-      {
-        "name": "xjm",
-        "firstCredited": 2011
-      }
-    ],
-    "unlisted": 0
-  },
   "securityAdvisories": [
     {
       "year": 2009,
@@ -7935,17 +7639,17 @@
         "2013": 22878,
         "2014": 35707,
         "2015": 25194,
-        "2016": 11429,
-        "2017": 21838,
+        "2016": 11428,
+        "2017": 21836,
         "2018": 12991,
         "2019": 16020,
         "2020": 3726,
-        "2021": 9737,
+        "2021": 9735,
         "2022": 7025,
         "2023": 13404,
         "2024": 32696,
         "2025": 24954,
-        "2026": 27285
+        "2026": 27292
       }
     }
   ],
@@ -41820,8 +41524,8 @@
     {
       "date": "2026-10",
       "production": {
-        "lines": 282913,
-        "objectOrientedLines": 274883,
+        "lines": 282915,
+        "objectOrientedLines": 274885,
         "cognitive": {
           "average": 2.67,
           "percentile95": 13
@@ -41837,12 +41541,12 @@
           "parameterTyped": 15027,
           "parameterPrecise": 11056,
           "returnTotal": 15650,
-          "returnTyped": 2859,
-          "returnPrecise": 2054
+          "returnTyped": 2860,
+          "returnPrecise": 2055
         }
       },
       "test": {
-        "lines": 469322
+        "lines": 469387
       },
       "js": {
         "lines": 20040
@@ -41853,7 +41557,7 @@
       },
       "deprecations": {
         "classes": 14,
-        "methods": 36,
+        "methods": 37,
         "functions": 198,
         "properties": 6,
         "constants": 39,
