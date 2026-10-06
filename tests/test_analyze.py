@@ -23,8 +23,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "scripts"))
 sys.path.insert(0, str(Path(__file__).parent))
 import analyze as analyze_module  # noqa: E402
 from analyze import (STRATEGIC_REPOS, CreditHistory, classify_commit,  # noqa: E402
-                     extract_credits, get_contributors_per_year, get_half_of_credits_people,
-                     get_most_credited, refuse_degraded_write, to_index_ranges)
+                     extract_credits, get_contributors_per_year, refuse_degraded_write,
+                     to_index_ranges)
 from git_fixtures import commit, commit_change, git_history, init, merge, run_git  # noqa: E402
 from test_definitions import measure_snapshot  # noqa: E402
 
@@ -449,67 +449,6 @@ class ContributorSeriesTest(unittest.TestCase):
         self.assertEqual(row["creditsByFirstYear"], {str(year - 3): 3, str(year): 1})
 
 
-class MostCreditedTest(unittest.TestCase):
-    def test_every_generation_is_named_with_the_year_each_person_arrived(self):
-        # The table draws the newer end of this list, and the field carries the whole of it, each
-        # person with the year they were first credited, so the chart bands them as it likes.
-        year = RUNNING_YEAR - 1
-        history = synthetic_history({
-            year - 10: ["veteran"],
-            year - 2: ["newcomer"],
-            year: ["veteran", "newcomer"],
-        })
-        credited = get_most_credited(history, RUNNING_YEAR)
-        self.assertEqual(credited["year"], year)
-        self.assertEqual(credited["people"], [{"name": "newcomer", "firstCredited": year - 2},
-                                              {"name": "veteran", "firstCredited": year - 10}])
-
-    def test_people_tied_with_the_last_place_are_named_too(self):
-        # most_common() breaks a tie in the order the credit history was walked, so who came last
-        # depended on the walk rather than on the credits.
-        year = RUNNING_YEAR - 1
-        busy = [f"busy{number:02}" for number in range(analyze_module.CORE_TIER_SIZE - 1)]
-        tied = ["tied_a", "tied_b", "tied_c"]
-        history = synthetic_history({year: busy * 5 + tied * 2})
-        names = [person["name"] for person in get_most_credited(history, RUNNING_YEAR)["people"]]
-        self.assertEqual(sorted(name for name in names if name.startswith("tied")), tied)
-        self.assertEqual(len(names), len(busy) + len(tied))
-
-
-class HalfOfCreditsTest(unittest.TestCase):
-    """The people with half the credits appear twice, as the charted count and as
-    the names under it, and both must describe the same group."""
-
-    def test_count_and_names_agree(self):
-        year = RUNNING_YEAR - 1
-        history = synthetic_history({
-            year - 8: ["zed"],
-            year - 1: ["bob"],
-            year: ["zed"] * 4 + ["bob"] * 3 + ["alice"] * 3,
-        })
-        row = [r for r in get_contributors_per_year(history, RUNNING_YEAR) if r["year"] == year][0]
-        people = get_half_of_credits_people(history, RUNNING_YEAR)
-        names = [person["name"] for person in people["people"]]
-        self.assertEqual(row["halfOfCredits"], 2)
-        self.assertEqual(names, ["bob", "zed"])
-        self.assertEqual(set(people["people"][0]), {"name", "firstCredited"})
-
-    def test_people_who_asked_not_to_be_listed_are_counted_but_not_named(self):
-        unlisted = next(iter(analyze_module.NOT_LISTED_BY_NAME))
-        year = RUNNING_YEAR - 1
-        history = synthetic_history({year - 1: [unlisted, "newcomer"],
-                                     year: [unlisted] * 5 + ["newcomer"] * 4})
-        row = [r for r in get_contributors_per_year(history, RUNNING_YEAR) if r["year"] == year][0]
-        self.assertEqual(row["halfOfCredits"], 1)
-        half = get_half_of_credits_people(history, RUNNING_YEAR)
-        self.assertEqual((half["people"], half["unlisted"]), ([], 1))
-        # Both name lists withhold the same people, because both are built by listed_people: the
-        # most-credited list names the other person and counts the one left out.
-        credited = get_most_credited(history, RUNNING_YEAR)
-        self.assertEqual((credited["people"], credited["unlisted"]),
-                         ([{"name": "newcomer", "firstCredited": year - 1}], 1))
-
-
 class CloneSyncTest(unittest.TestCase):
     """A clone stays level with its remote: the same branches at the same commits, and
     HEAD on the remote's default branch. A plain fetch into a bare clone moved nothing,
@@ -708,12 +647,6 @@ class StoredFieldsAreDrawnTest(unittest.TestCase):
         row = next(r for r in get_contributors_per_year(history, RUNNING_YEAR) if r["year"] == year)
         self.assertIndexHtmlDraws(row)
 
-    def test_every_name_list_field_appears_in_index_html(self):
-        year = RUNNING_YEAR - 1
-        history = synthetic_history({year - 1: ["alice"], year: ["alice", "alice", "bob"]})
-        for name_list in (get_most_credited(history, RUNNING_YEAR), get_half_of_credits_people(history, RUNNING_YEAR)):
-            self.assertIndexHtmlDraws(name_list)
-
     def test_every_page_performance_field_appears_in_index_html(self):
         with tempfile.TemporaryDirectory() as directory:
             row = analyze_module.get_page_performance(umami_history(Path(directory)))[-1]
@@ -762,8 +695,6 @@ class RefuseDegradedWriteTest(unittest.TestCase):
             "securityAdvisories": [{"year": 2024}, {"year": 2025}],
             "snapshots": [{"date": "2025-01"}, {"date": "2025-07"}],
             "sourceCodeAge": [{"year": 2024}, {"year": 2025}],
-            "mostCredited": {"year": 2025, "people": []},
-            "halfOfCreditsPeople": {"year": 2025, "people": []},
             "surfaceArea": {"hooks": {"hook_help": [[0, 1]]}},
         }
         self.data_file.write_text(json.dumps(self.good))
@@ -793,10 +724,9 @@ class RefuseDegradedWriteTest(unittest.TestCase):
                     self.write(dict(self.good, **{name: []}))
                 self.assertEqual(caught.exception.code, 1)
 
-    def test_empty_name_tables_or_surface_area_abort(self):
-        for name in ("mostCredited", "halfOfCreditsPeople", "surfaceArea"):
-            with self.subTest(field=name), self.assertRaises(SystemExit):
-                self.write(dict(self.good, **{name: {}}))
+    def test_empty_surface_area_aborts(self):
+        with self.assertRaises(SystemExit):
+            self.write(dict(self.good, surfaceArea={}))
 
     def test_missing_series_aborts(self):
         without = {k: v for k, v in self.good.items() if k != "contributors"}

@@ -44,17 +44,7 @@
             margin-bottom: 1.5rem;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
-        /* Named people under a community chart: newer contributors in the top 50, and the people with half the credits. */
-        .people-lead { margin-top: 1rem; margin-bottom: 0.25rem; }
-        .people-names { font-size: 0.8125rem; line-height: 1.9; }
-        .people-names a { font-family: 'SF Mono', Monaco, 'Courier New', monospace; font-weight: 500; }
-        .people-meta { color: var(--text-secondary); }
         .hatch-swatch { display: inline-block; width: 0.9em; height: 0.9em; vertical-align: -0.1em; background: repeating-linear-gradient(-45deg, #407dbf 0 3px, #a9c6e6 3px 5px); }
-        .people-table { width: 100%; min-width: 40rem; table-layout: fixed; border-collapse: collapse; font-size: 0.8125rem; margin: 0.25rem 0 0.75rem; }
-        .people-table th, .people-table td { padding: 0.45rem 0.6rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--border-color); }
-        .people-table th { border-bottom: 2px solid var(--border-color); font-weight: 600; color: var(--text-secondary); }
-        .people-table .number { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-        .people-table th:last-child, .people-table td:last-child { padding-left: 1.5rem; }
         .download-chart {
             position: absolute; top: 0.9rem; right: 0.9rem;
             display: flex; align-items: center; justify-content: center;
@@ -1648,8 +1638,6 @@
             });
         }
 
-        const profileUrl = name => 'https://www.drupal.org/u/' + encodeURIComponent(name.replace(/ /g, '-'));
-
         // Contributor generations: five-year bands of the year each person was first
         // credited on Core. Everyone first credited before 2010 shares one band: the
         // credit record is too sparse before then to date people precisely. The
@@ -1697,41 +1685,7 @@
             return Object.fromEntries(Object.entries(credits).map(([key, count]) => [key, total ? count / total * 100 : 0]));
         };
 
-        const countOf = (count, singular, plural) => `${count} ${count === 1 ? singular : plural}`;
-        const unlistedNote = count => count > 0
-            ? `And ${count === 1 ? 'one person' : `${count} people`} who asked not to be listed by name.` : '';
-
-        // People grouped into generations as a small table under a people chart,
-        // newest generation first: when the generation was first credited, how long
-        // ago that is, how many of these people it holds, then the names. Both tables
-        // share columns and widths so they line up. A column giving each generation's
-        // share of all credits was dropped: in every blind round readers took it for
-        // the named people's share, and under "half the credits" it added up to all
-        // of them.
-        const renderGenerationTable = (element, { lead, people, bands, year, closing = '' }) => {
-            const rows = bands.slice().reverse()
-                .map(band => ({ band, names: people.filter(person => generationOf(person.firstCredited).key === band.key).map(person => person.name) }))
-                .filter(row => row.names.length);
-            const yearsSince = band => band.start === null ? `${year - band.end}+`
-                : band.start >= year ? 'Under 1'
-                : band.end >= year ? `Up to ${year - band.start}`
-                : `${year - band.end}-${year - band.start}`;
-            const firstCredited = band => band.start === null ? `Before ${band.end + 1}` : band.end >= year ? `${band.start} or later` : `${band.start}-${band.end}`;
-            element.innerHTML = `<p class="section-subtitle people-lead">${lead}</p>
-                <div class="table-scroll"><table class="people-table">
-                    <colgroup><col style="width: 7.5rem"><col style="width: 9rem"><col style="width: 5rem"><col></colgroup>
-                    <thead><tr><th>First credited</th><th class="number">Years since first credit</th><th class="number">People</th><th>Names</th></tr></thead>
-                    <tbody>${rows.map(({ band, names }) => `<tr>
-                        <td>${firstCredited(band)}</td>
-                        <td class="number">${yearsSince(band)}</td>
-                        <td class="number">${names.length}</td>
-                        <td class="people-names">${names.map(name => `<a href="${profileUrl(name)}">${escapeHtml(name)}</a>`).join(', ')}</td>
-                    </tr>`).join('')}</tbody>
-                </table></div>
-                ${closing ? `<p class="people-names people-meta">${closing}</p>` : ''}`;
-        };
-
-        function createCoreGenerationsChart(container, contributors, mostCredited) {
+        function createCoreGenerationsChart(container, contributors) {
             // Every credit of the year by the generation of the person credited, as a
             // share, so no top-N cutoff decides who counts. Bars, not
             // smoothed areas, which drew each band before its generation's first year.
@@ -1746,26 +1700,8 @@
             section.className = 'card';
             section.innerHTML = `<h2>All credits, by generation</h2>
                 <p class="section-subtitle">Each year's credits on Drupal Core, grouped by when each person was first credited, in five-year generations. A generation grows by itself in its first five years as people join, so those years are hatched <span class="hatch-swatch" aria-hidden="true"></span>. In the solid years, a band that holds or grows means newer people are doing more of the work.</p>
-                <div class="chart-container"><canvas></canvas></div>
-                <div class="people-table-slot"></div>`;
+                <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
-
-            // Newer contributors among the year's most-credited, by name. One of the naming
-            // exceptions approved by Dries, worded as a description rather than "rising stars":
-            // the list comes from credit counts alone, and a count is not an endorsement. The
-            // window covers the last five years, aligned to a band boundary, rather than the
-            // newest band, which in a boundary year holds one year and would name nobody.
-            // data.json carries the whole list; this table draws its newer end. Only shown when
-            // the range reaches its year.
-            const since = generationOf(newest.year - (GENERATION_YEARS - 1)).start;
-            const newerPeople = (mostCredited?.people || []).filter(person => person.firstCredited >= since);
-            const mostCreditedCount = mostCredited ? mostCredited.people.length + mostCredited.unlisted : 0;
-            if (newerPeople.length && mostCredited.year === newest.year) {
-                renderGenerationTable(section.querySelector('.people-table-slot'), {
-                    lead: `Thank you to the ${countOf(newerPeople.length, 'newer contributor', 'newer contributors')} among the ${mostCreditedCount} people with the most credits in ${mostCredited.year}, first credited on Core in ${since} or later:`,
-                    people: newerPeople, bands, year: newest.year
-                });
-            }
 
             const options = baseChartOptions({
                 stacked: true,
@@ -1809,7 +1745,7 @@
             });
         }
 
-        function createConcentrationChart(container, contributors, halfOfCreditsPeople) {
+        function createConcentrationChart(container, contributors) {
             // Plots halfOfCredits, not a top-ten share, because "the ten busiest" needs
             // a constant somebody chose; "how few people reach half the credits" picks
             // its own cutoff from the data every year. Starts at 2010 with the rest of
@@ -1818,31 +1754,17 @@
             // concentration is unprecedented. Across the full span it is a U.
             //
             // Plain bars, one color: split by generation, small counts became unreadable
-            // slivers. The table below names the people behind the newest count.
+            // slivers.
             const rows = (contributors || []).filter(entry => entry.halfOfCredits != null);
             if (rows.length < 2) return;
             const sorted = [...rows].sort((first, second) => first.year - second.year);
-            const newest = sorted[sorted.length - 1];
 
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>People with half the credits</h2>
                 <p class="section-subtitle">Each year, the fewest people whose credits add up to half of all credits on Drupal Core. Fewer people means more of Core's work depends on a small group, so lower is riskier.</p>
-                <div class="chart-container"><canvas></canvas></div>
-                <div class="people-table-slot"></div>`;
+                <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
-
-            // The people in the newest year's bar, by name. Generations with credits but
-            // none of these people keep their row. Only shown when the range reaches the
-            // year the names belong to. Anyone who asked not to be listed by name is
-            // still counted, and the table says so.
-            if (halfOfCreditsPeople?.people?.length && halfOfCreditsPeople.year === newest.year) {
-                renderGenerationTable(section.querySelector('.people-table-slot'), {
-                    lead: `Thank you to the ${countOf(newest.halfOfCredits, 'person', 'people')} who earned half of ${newest.year}'s credits:`,
-                    people: halfOfCreditsPeople.people, bands: generationBands([newest]), year: newest.year,
-                    closing: unlistedNote(halfOfCreditsPeople.unlisted)
-                });
-            }
 
             new Chart(section.querySelector('canvas').getContext('2d'), {
                 type: 'bar',
@@ -2242,8 +2164,8 @@
             // half of it.
             addSection('people');
             createContributorsChart(container, data.contributors);
-            createCoreGenerationsChart(container, data.contributors, data.mostCredited);
-            createConcentrationChart(container, data.contributors, data.halfOfCreditsPeople);
+            createCoreGenerationsChart(container, data.contributors);
+            createConcentrationChart(container, data.contributors);
 
             addSection('security');
             createSecurityAdvisoriesChart(container, data.securityAdvisories);

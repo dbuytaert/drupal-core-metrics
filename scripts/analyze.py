@@ -566,15 +566,6 @@ def extract_credits(subject: str, message: str) -> list[str]:
     return names
 
 
-# The core tier: the most-credited people of a year, and everyone tied with the last of
-# them, so who is named never depends on the order the credit history was walked.
-CORE_TIER_SIZE = 50
-
-# People who have asked not to be listed by name on the dashboard. Their credits
-# still count in every chart; only the two name lists leave them out.
-NOT_LISTED_BY_NAME = {"ghost of drupal past"}
-
-
 class CreditHistory(NamedTuple):
     """Everything one walk of the credit history yields.
 
@@ -621,52 +612,6 @@ def collect_credit_history(drupal_dir: Path) -> CreditHistory:
         credit_counts_by_year.setdefault(year, collections.Counter())[name] += 1
         first_seen[name] = min(year, first_seen.get(name, year))
     return CreditHistory(names_by_year, credit_counts_by_year, first_seen)
-
-
-def listed_people(names: list[str], first_seen: dict) -> dict:
-    """The shape both dashboard name lists share: people in alphabetical order with
-    the year each was first credited, leaving out NOT_LISTED_BY_NAME and counting
-    how many were left out."""
-    listed = sorted((name for name in names if name not in NOT_LISTED_BY_NAME), key=str.lower)
-    return {"people": [{"name": name, "firstCredited": first_seen[name]} for name in listed],
-            "unlisted": len(names) - len(listed)}
-
-
-def get_most_credited(credit_history: CreditHistory, running_year: int) -> dict:
-    """The latest complete year's most-credited people, by name: the CORE_TIER_SIZE highest
-    credit counts, and everyone tied with the last of them.
-
-    Returns {year, people, unlisted}, the shape of listed_people plus the year. Each person
-    carries the year they were first credited, so the dashboard bands them into generations
-    without a regeneration. Credit counts are not stored, since no chart draws them, and the
-    names are alphabetical rather than ranked: a credit count is not a ranking of people.
-
-    Ranked across the whole year rather than within each generation: the newest generation is
-    flat, so half of its credits is half of its people, and that version of the table named
-    most of them.
-    """
-    year = running_year - 1
-    credits = credit_history.credit_counts_by_year.get(year, collections.Counter())
-    counts = sorted(credits.values(), reverse=True)
-    cutoff = counts[CORE_TIER_SIZE - 1] if len(counts) >= CORE_TIER_SIZE else 0
-    names = [name for name, count in credits.items() if count >= cutoff]
-    return {"year": year, **listed_people(names, credit_history.first_seen)}
-
-
-def get_half_of_credits_people(credit_history: CreditHistory, running_year: int) -> dict:
-    """The people behind the latest complete year's halfOfCredits count, by name:
-    the most-credited people until their credits reach half the total. People tied
-    on credits at the cutoff fall in the order the credit history was walked, so a
-    tie there names one of them; the number of names always matches the count.
-
-    Returns {year, people, unlisted}, the shape of listed_people plus the year.
-    NOT_LISTED_BY_NAME is left out of the names but not out of the group, so the
-    charted count never changes.
-    """
-    year = running_year - 1
-    credits = credit_history.credit_counts_by_year.get(year, collections.Counter())
-    names = [name for name, _ in credits.most_common(half_of_credits_size(credits))]
-    return {"year": year, **listed_people(names, credit_history.first_seen)}
 
 
 def half_of_credits_size(credits: collections.Counter) -> int:
@@ -858,7 +803,7 @@ def refuse_degraded_write(data: dict, data_file: Path, allow_shrink: bool) -> No
     entries against the committed file. Pass --allow-shrink for the deliberate
     case, such as narrowing a series' start year, where a shrink is the intent.
     """
-    empty = [name for name in (*APPEND_ONLY_SERIES, "mostCredited", "halfOfCreditsPeople", "surfaceArea")
+    empty = [name for name in (*APPEND_ONLY_SERIES, "surfaceArea")
              if not data.get(name)]
     if empty:
         log_error(f"Refusing to write {data_file.name}: empty series {', '.join(empty)}. "
@@ -918,11 +863,7 @@ def main():
 
     credit_history = collect_credit_history(drupal_dir)
     contributors = get_contributors_per_year(credit_history, now.year)
-    mostCredited = get_most_credited(credit_history, now.year)
-    halfOfCreditsPeople = get_half_of_credits_people(credit_history, now.year)
-    log_info(f"Counted contributors across {len(contributors)} years; "
-             f"{len(mostCredited['people'])} people named across the generations; "
-             f"{len(halfOfCreditsPeople['people'])} people with half the credits")
+    log_info(f"Counted contributors across {len(contributors)} years")
 
     if not setup_strategic_repos(repos_dir):
         log_error("Could not obtain every pinned initiative repository. Counting a "
@@ -947,8 +888,6 @@ def main():
         "generatedAt": now.isoformat(),
         "monthlyCommits": monthlyCommits,
         "contributors": contributors,
-        "mostCredited": mostCredited,
-        "halfOfCreditsPeople": halfOfCreditsPeople,
         "securityAdvisories": securityAdvisories,
         "initiatives": initiatives,
         "pagePerformance": pagePerformance,
