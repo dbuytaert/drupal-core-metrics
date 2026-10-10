@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T04:40:22.891448+00:00",
+  "generatedAt": "2026-10-10T04:26:17.536132+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -7639,7 +7639,7 @@
         "2013": 22878,
         "2014": 35707,
         "2015": 25194,
-        "2016": 11428,
+        "2016": 11427,
         "2017": 21836,
         "2018": 12991,
         "2019": 16020,
@@ -7647,9 +7647,9 @@
         "2021": 9735,
         "2022": 7025,
         "2023": 13404,
-        "2024": 32694,
+        "2024": 32688,
         "2025": 24954,
-        "2026": 27296
+        "2026": 27529
       }
     }
   ],
@@ -41524,10 +41524,10 @@
     {
       "date": "2026-10",
       "production": {
-        "lines": 282912,
-        "objectOrientedLines": 274882,
+        "lines": 283138,
+        "objectOrientedLines": 275108,
         "cognitive": {
-          "average": 2.67,
+          "average": 2.68,
           "percentile95": 13
         },
         "lcom4": 2.28,
@@ -41537,16 +41537,16 @@
           "serviceLocators": 2291
         },
         "typeCoverage": {
-          "parameterTotal": 23478,
-          "parameterTyped": 15028,
-          "parameterPrecise": 11056,
-          "returnTotal": 15650,
-          "returnTyped": 2860,
-          "returnPrecise": 2055
+          "parameterTotal": 23491,
+          "parameterTyped": 15041,
+          "parameterPrecise": 11069,
+          "returnTotal": 15653,
+          "returnTyped": 2863,
+          "returnPrecise": 2058
         }
       },
       "test": {
-        "lines": 469973
+        "lines": 470170
       },
       "js": {
         "lines": 20040
@@ -42045,6 +42045,13 @@
             "antipatterns": 7
           },
           {
+            "name": "ModuleInstaller",
+            "file": "lib/Drupal/Core/Extension/ModuleInstaller.php",
+            "cognitive": 208,
+            "cyclomatic": 118,
+            "antipatterns": 54
+          },
+          {
             "name": "ThemePreprocess",
             "file": "lib/Drupal/Core/Theme/ThemePreprocess.php",
             "cognitive": 204,
@@ -42057,13 +42064,6 @@
             "cognitive": 202,
             "cyclomatic": 132,
             "antipatterns": 284
-          },
-          {
-            "name": "ModuleInstaller",
-            "file": "lib/Drupal/Core/Extension/ModuleInstaller.php",
-            "cognitive": 201,
-            "cyclomatic": 114,
-            "antipatterns": 54
           },
           {
             "name": "MenuTreeStorage",
@@ -42262,11 +42262,11 @@
             "antipatterns": 17
           },
           {
-            "name": "Select",
-            "file": "lib/Drupal/Core/Database/Query/Select.php",
-            "cognitive": 122,
-            "cyclomatic": 139,
-            "antipatterns": 1
+            "name": "Container",
+            "file": "lib/Drupal/Component/DependencyInjection/Container.php",
+            "cognitive": 124,
+            "cyclomatic": 96,
+            "antipatterns": 0
           }
         ]
       }
