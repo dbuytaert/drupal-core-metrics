@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-14T03:37:45.657691+00:00",
+  "generatedAt": "2026-10-15T03:18:05.858354+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -7111,6 +7111,47 @@
           "StylesheetBytes": 1075075
         }
       }
+    },
+    {
+      "date": "2026-10-14",
+      "commit": "aeca9d71d8146f611bc7053f9afc6047cded72dd",
+      "issue": null,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 261,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3010195,
+          "StylesheetBytes": 1075075
+        }
+      }
     }
   ],
   "sourceCodeAge": [
@@ -7637,19 +7678,19 @@
         "2011": 1239,
         "2012": 15389,
         "2013": 22878,
-        "2014": 35706,
-        "2015": 25192,
-        "2016": 11427,
-        "2017": 21836,
-        "2018": 12991,
-        "2019": 16020,
+        "2014": 35695,
+        "2015": 25187,
+        "2016": 11426,
+        "2017": 21833,
+        "2018": 12990,
+        "2019": 16019,
         "2020": 3726,
         "2021": 9735,
         "2022": 7025,
-        "2023": 13404,
+        "2023": 13403,
         "2024": 32682,
-        "2025": 24945,
-        "2026": 27598
+        "2025": 24943,
+        "2026": 27829
       }
     }
   ],
@@ -41524,8 +41565,8 @@
     {
       "date": "2026-10",
       "production": {
-        "lines": 283188,
-        "objectOrientedLines": 275118,
+        "lines": 283394,
+        "objectOrientedLines": 275324,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
@@ -41537,19 +41578,19 @@
           "serviceLocators": 2293
         },
         "typeCoverage": {
-          "parameterTotal": 23494,
-          "parameterTyped": 15044,
-          "parameterPrecise": 11069,
-          "returnTotal": 15655,
-          "returnTyped": 2865,
-          "returnPrecise": 2059
+          "parameterTotal": 23512,
+          "parameterTyped": 15062,
+          "parameterPrecise": 11083,
+          "returnTotal": 15660,
+          "returnTyped": 2870,
+          "returnPrecise": 2060
         }
       },
       "test": {
-        "lines": 470269
+        "lines": 470407
       },
       "js": {
-        "lines": 20040
+        "lines": 20050
       },
       "dependencies": {
         "production": 59,
@@ -42047,8 +42088,8 @@
           {
             "name": "ModuleInstaller",
             "file": "lib/Drupal/Core/Extension/ModuleInstaller.php",
-            "cognitive": 208,
-            "cyclomatic": 118,
+            "cognitive": 209,
+            "cyclomatic": 120,
             "antipatterns": 54
           },
           {
@@ -76876,6 +76917,12 @@
           53
         ]
       ],
+      "ModuleInstallerInterface::getModulesToUninstall": [
+        [
+          53,
+          53
+        ]
+      ],
       "OptionsAllowedValuesInterface::getAllowedValues": [
         [
           53,
@@ -76931,6 +76978,12 @@
         ]
       ],
       "ThemeInstallerInterface::getThemesToInstall": [
+        [
+          53,
+          53
+        ]
+      ],
+      "ThemeInstallerInterface::getThemesToUninstall": [
         [
           53,
           53
