@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T03:18:05.858354+00:00",
+  "generatedAt": "2026-10-16T03:13:42.256080+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -7690,7 +7690,7 @@
         "2023": 13403,
         "2024": 32682,
         "2025": 24943,
-        "2026": 27829
+        "2026": 27828
       }
     }
   ],
@@ -41565,16 +41565,16 @@
     {
       "date": "2026-10",
       "production": {
-        "lines": 283394,
-        "objectOrientedLines": 275324,
+        "lines": 283393,
+        "objectOrientedLines": 275323,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
         },
         "lcom4": 2.28,
         "antipatterns": {
-          "magicKeys": 14870,
-          "deepArrays": 6956,
+          "magicKeys": 14869,
+          "deepArrays": 6955,
           "serviceLocators": 2293
         },
         "typeCoverage": {
@@ -42118,7 +42118,7 @@
             "file": "themes/default_admin/src/Hook/FormHooks.php",
             "cognitive": 180,
             "cyclomatic": 136,
-            "antipatterns": 393
+            "antipatterns": 391
           },
           {
             "name": "YamlFileLoader",
