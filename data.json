@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T03:23:12.419890+00:00",
+  "generatedAt": "2026-10-23T03:28:10.054691+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -7678,8 +7678,8 @@
         "2011": 1239,
         "2012": 15389,
         "2013": 22858,
-        "2014": 35669,
-        "2015": 25165,
+        "2014": 35666,
+        "2015": 25162,
         "2016": 11424,
         "2017": 21783,
         "2018": 12990,
@@ -7690,7 +7690,7 @@
         "2023": 13387,
         "2024": 32676,
         "2025": 24940,
-        "2026": 28038
+        "2026": 28048
       }
     }
   ],
@@ -41565,8 +41565,8 @@
     {
       "date": "2026-10",
       "production": {
-        "lines": 283409,
-        "objectOrientedLines": 275389,
+        "lines": 283413,
+        "objectOrientedLines": 275393,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
@@ -41574,7 +41574,7 @@
         "lcom4": 2.28,
         "antipatterns": {
           "magicKeys": 14868,
-          "deepArrays": 6946,
+          "deepArrays": 6948,
           "serviceLocators": 2294
         },
         "typeCoverage": {
@@ -41587,7 +41587,7 @@
         }
       },
       "test": {
-        "lines": 470829
+        "lines": 470941
       },
       "js": {
         "lines": 20062
@@ -41657,18 +41657,18 @@
             "antipatterns": 0
           },
           {
+            "name": "FieldViewsDataProvider::defaultFieldImplementation",
+            "file": "modules/views/src/FieldViewsDataProvider.php",
+            "cognitive": 101,
+            "cyclomatic": 61,
+            "antipatterns": 62
+          },
+          {
             "name": "SystemController::themesPage",
             "file": "modules/system/src/Controller/SystemController.php",
             "cognitive": 99,
             "cyclomatic": 45,
             "antipatterns": 10
-          },
-          {
-            "name": "FieldViewsDataProvider::defaultFieldImplementation",
-            "file": "modules/views/src/FieldViewsDataProvider.php",
-            "cognitive": 99,
-            "cyclomatic": 60,
-            "antipatterns": 60
           },
           {
             "name": "ThemePreprocess::preprocessTable",
