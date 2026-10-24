@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T03:28:10.054691+00:00",
+  "generatedAt": "2026-10-24T03:22:46.870562+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -7678,7 +7678,7 @@
         "2011": 1239,
         "2012": 15389,
         "2013": 22858,
-        "2014": 35666,
+        "2014": 35665,
         "2015": 25162,
         "2016": 11424,
         "2017": 21783,
@@ -7689,8 +7689,8 @@
         "2022": 7021,
         "2023": 13387,
         "2024": 32676,
-        "2025": 24940,
-        "2026": 28048
+        "2025": 24935,
+        "2026": 28071
       }
     }
   ],
@@ -41565,8 +41565,8 @@
     {
       "date": "2026-10",
       "production": {
-        "lines": 283413,
-        "objectOrientedLines": 275393,
+        "lines": 283430,
+        "objectOrientedLines": 275408,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
@@ -41587,7 +41587,7 @@
         }
       },
       "test": {
-        "lines": 470941
+        "lines": 470981
       },
       "js": {
         "lines": 20062
@@ -41727,18 +41727,18 @@
             "antipatterns": 9
           },
           {
+            "name": "ManagedFile::valueCallback",
+            "file": "modules/file/src/Element/ManagedFile.php",
+            "cognitive": 90,
+            "cyclomatic": 30,
+            "antipatterns": 12
+          },
+          {
             "name": "ViewUI::renderPreview",
             "file": "modules/views_ui/src/ViewUI.php",
             "cognitive": 89,
             "cyclomatic": 31,
             "antipatterns": 66
-          },
-          {
-            "name": "ManagedFile::valueCallback",
-            "file": "modules/file/src/Element/ManagedFile.php",
-            "cognitive": 85,
-            "cyclomatic": 29,
-            "antipatterns": 12
           },
           {
             "name": "SqlContentEntityStorage::loadSingleCardinalityFields",
@@ -42177,6 +42177,13 @@
             "antipatterns": 0
           },
           {
+            "name": "ManagedFile",
+            "file": "modules/file/src/Element/ManagedFile.php",
+            "cognitive": 157,
+            "cyclomatic": 77,
+            "antipatterns": 162
+          },
+          {
             "name": "ViewUI",
             "file": "modules/views_ui/src/ViewUI.php",
             "cognitive": 156,
@@ -42196,13 +42203,6 @@
             "cognitive": 153,
             "cyclomatic": 74,
             "antipatterns": 2
-          },
-          {
-            "name": "ManagedFile",
-            "file": "modules/file/src/Element/ManagedFile.php",
-            "cognitive": 152,
-            "cyclomatic": 76,
-            "antipatterns": 162
           },
           {
             "name": "StylePluginBase",
