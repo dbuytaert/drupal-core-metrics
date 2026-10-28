@@ -104,21 +104,23 @@ class SecurityAdvisoryTest(unittest.TestCase):
     """
 
     def advisories_from(self, subjects, running_year=None):
-        """Counts by year. A test about parsing leaves the window alone, where it ends just past
-        the newest advisory named; a test about the window itself names the year."""
+        """Counts by year. A test about parsing leaves the window alone, where it ends in the
+        year of the newest advisory named; a test about the window itself names the year."""
         newest = max(int(year) for year, _ in analyze_module.ADVISORY.findall(subjects))
         return {row["year"]: row["count"]
-                for row in analyze_module.advisories_by_year(subjects, running_year or newest + 1)}
+                for row in analyze_module.advisories_by_year(subjects, running_year or newest)}
 
-    def test_the_running_year_is_left_out(self):
-        # Part-elapsed, it understates its own count and reads as a change in the process.
-        self.assertEqual(self.advisories_from("SA-CORE-2025-001\nSA-CORE-2026-002\n", running_year=2026), {2025: 1})
+    def test_the_running_year_is_counted_so_far(self):
+        # A count can only grow as its year goes on, so the year so far understates nothing
+        # it claims; the chart marks it as still counting.
+        self.assertEqual(self.advisories_from("SA-CORE-2025-001\nSA-CORE-2026-002\n", running_year=2026),
+                         {2025: 1, 2026: 1})
 
     def test_a_finished_year_without_an_advisory_is_still_drawn(self):
         # Every other series stores its empty periods (finished_months). A year missing from
         # this one leaves the chart with no bar at all rather than a quiet year, and the guard
         # before the write cannot catch it, because the series still grew.
-        self.assertEqual(self.advisories_from("SA-CORE-2009-001\nSA-CORE-2011-001\n", running_year=2012),
+        self.assertEqual(self.advisories_from("SA-CORE-2009-001\nSA-CORE-2011-001\n", running_year=2011),
                          {2009: 1, 2010: 0, 2011: 1})
 
     def test_an_advisory_reachable_only_from_a_tag_counts(self):
@@ -130,7 +132,7 @@ class SecurityAdvisoryTest(unittest.TestCase):
             commit_change(repository, "SA-CORE-2025-004 by bob", "2025-03-19")
             run_git(repository, "tag", "11.1.5")
             run_git(repository, "checkout", "--quiet", "main")
-            advisories = analyze_module.get_security_advisories(repository, 2026)
+            advisories = analyze_module.get_security_advisories(repository, 2025)
         self.assertEqual(advisories, [{"year": 2025, "count": 1}])
 
     def test_zero_padding_variants_are_one_advisory(self):
@@ -424,6 +426,12 @@ def synthetic_history(events):
 
 
 class ContributorSeriesTest(unittest.TestCase):
+    def test_the_series_starts_in_the_credit_systems_first_full_year(self):
+        # Earlier years are still read, so alice is not a first-timer in 2016.
+        history = synthetic_history({2015: ["alice"], 2016: ["alice", "bob"]})
+        rows = get_contributors_per_year(history, RUNNING_YEAR)
+        self.assertEqual([(row["year"], row["firstTimeCredited"]) for row in rows], [(2016, 1)])
+
     def test_partial_years_are_not_emitted(self):
         year = RUNNING_YEAR - 1
         history = synthetic_history({
@@ -602,6 +610,13 @@ class ConcentrationTest(unittest.TestCase):
         history = synthetic_history({year: ["a", "b", "c", "d"]})
         row = next(r for r in get_contributors_per_year(history, RUNNING_YEAR) if r["year"] == year)
         self.assertEqual(row["halfOfCredits"], 2)
+
+    def test_people_are_counted_by_how_many_credits_they_earned_that_year(self):
+        year = RUNNING_YEAR - 2
+        # Credits from other years do not count towards this year's total.
+        history = synthetic_history({year - 1: ["heavy"] * 5, year: ["heavy"] * 3 + ["a", "b"]})
+        row = next(r for r in get_contributors_per_year(history, RUNNING_YEAR) if r["year"] == year)
+        self.assertEqual(row["peopleByCreditCount"], {"1": 2, "3": 1})
 
 
 class StoredFieldsAreDrawnTest(unittest.TestCase):

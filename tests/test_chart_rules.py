@@ -104,9 +104,7 @@ class QuarterlyCommitsTest(unittest.TestCase):
 
 class ReleasePositionTest(unittest.TestCase):
     """A release marker sits where the release happened on every card. Drupal 8 shipped
-    in November 2015. Snapping to the next label drew it at 2016 on snapshot charts and at
-    2015 on yearly ones; treating a year label as its middle then dropped a January
-    release from the first yearly bar."""
+    in November 2015; snapping to the next label drew it at 2016 on snapshot charts."""
 
     def test_on_dated_points_a_release_sits_between_the_points_around_it(self):
         self.assertAlmostEqual(rule("releasePosition", ["2015-01", "2015-07", "2016-01"], "2015-11"), 1 + 4 / 6)
@@ -116,12 +114,6 @@ class ReleasePositionTest(unittest.TestCase):
         self.assertAlmostEqual(rule("releasePosition", ["2026-01", "2026-07", "2026-09"], "2026-08"), 1.5)
         self.assertIsNone(rule("releasePosition", ["2015-01", "2015-07"], "2014-12"))
         self.assertIsNone(rule("releasePosition", ["2015-01", "2015-07"], "2015-08"))
-
-    def test_on_yearly_bars_a_release_sits_inside_its_year(self):
-        bars = {"bars": True}
-        self.assertAlmostEqual(rule("releasePosition", ["2011", "2012"], "2011-01", bars), -0.5)
-        self.assertAlmostEqual(rule("releasePosition", ["2021", "2022"], "2022-12", bars), 1 + 5 / 12)
-        self.assertIsNone(rule("releasePosition", ["2016", "2017"], "2015-11", bars))
 
     def test_on_a_day_axis_a_release_sits_on_the_first_day_of_its_month(self):
         # The page performance charts plot days since 1970; Drupal 11 shipped in August 2024.
@@ -138,11 +130,9 @@ class ReleasePositionTest(unittest.TestCase):
 
     def test_an_axis_that_is_not_a_timeline_gets_no_marker(self):
         self.assertIsNone(rule("releasePosition", ["Jan", "Feb", "Mar"], "2015-11"))
-        self.assertIsNone(rule("releasePosition", ["Jan", "Feb", "Mar"], "2015-11", {"bars": True}))
 
     def test_dates_out_of_order_fail_loudly(self):
         self.assertIn("error", rule("pointPosition", ["2016-07", "2016-01"], "2016-03"))
-        self.assertIn("error", rule("yearBarPosition", ["2017", "2016"], "2016-03"))
         self.assertIn("error", rule("pointPosition", ["2016-07", None], "2016-03"))
 
 

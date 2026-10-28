@@ -11,7 +11,7 @@ A dashboard that tracks Drupal core's codebase over time: lines of code, complex
 
 ### Code quality
 - **SLOC**: Source lines of code (excluding blanks and comments)
-- **Complexity**: measured with [cognitive complexity](https://www.sonarsource.com/resources/cognitive-complexity/) (SonarSource) — how hard code is to *read*, weighting deep nesting heavily and forgiving shorthand that reads linearly (a flat `switch`, a `??` chain). It drives the complexity trend chart and ranks the hotspots. Cyclomatic complexity is kept only as a contrast column in the hotspots, not as a standalone metric, because at the codebase aggregate the two are near-identical.
+- **Complexity**: measured with [cognitive complexity](https://www.sonarsource.com/resources/cognitive-complexity/) (SonarSource): how hard code is to *read*, weighting deep nesting heavily and forgiving shorthand that reads linearly (a flat `switch`, a `??` chain). It drives the complexity trend chart and ranks the hotspots. Cyclomatic complexity is kept only as a contrast column in the hotspots, not as a standalone metric, because at the codebase aggregate the two are near-identical.
 - **Code composition**: Share of production lines that are object-oriented PHP, procedural PHP, and JavaScript/TypeScript.
 - **Class cohesion (LCOM4)**: Whether a class's methods form one connected unit or several unrelated groups. Lower is more focused.
 - **Deprecated API surface**: Count of code, services and libraries marked deprecated and awaiting removal at the next major version.
@@ -43,9 +43,10 @@ Distinct extension points in Drupal. A larger surface may correlate with a steep
 | Interface methods | EntityInterface::save, CacheBackendInterface::get |
 
 ### Community
-- **Contributors**: Distinct credited people per year, split into first-time and returning. Parsed from the credit lists in commit messages on every branch, counting a person once per issue as drupal.org's credit system does; coverage begins in 2010.
-- **Credits by generation**: Each year's credits grouped by the year each person was first credited, with a table naming newer contributors among the year's most-credited.
+- **People credited**: Distinct credited people per year, split into first-time and returning. Parsed from the credit lists in commit messages on every branch, counting a person once per issue as drupal.org's credit system does. The people charts start in 2016, the credit system's first full year.
+- **Credits by when people joined**: Each year's credits grouped by the five years in which each person was first credited.
 - **People with half the credits**: How few people account for half of a year's credits.
+- **Credits by contributor percentile**: Each year's credits split by who earned them, counting from the most credited person down: the top 1% of people, the next 9%, the next 40%, and the bottom 50%, with a line at half the credits.
 
 
 ## Running locally

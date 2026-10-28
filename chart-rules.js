@@ -79,25 +79,12 @@ const chartRules = {
             : after - 1 + (target - points[after - 1]) / (points[after] - points[after - 1]);
     },
 
-    // Where a date falls on an axis of yearly bars, or null when no bar covers its year.
-    // A bar spans its whole year, from index - 0.5 in January to index + 0.5 after
-    // December; placing years at their middle dropped a January release from the first bar.
-    yearBarPosition: (years, date) => {
-        if (!years.every(year => YEAR.test(year)) || !increasing(years.map(Number))) {
-            throw new Error('Bar years must be YYYY and increase');
-        }
-        const month = monthNumber(date);
-        const index = years.indexOf(String(Math.floor(month / 12)));
-        return index < 0 ? null : index - 0.5 + (month % 12) / 12;
-    },
-
     // Where a release date sits on a chart's x axis, or null when the axis is not a
     // timeline. A chart whose labels are not its points' dates passes pointDates;
-    // 'YYYY-MM' labels are dated points; 'YYYY' labels are yearly spans on a bar chart.
-    // Year labels on a line chart are not guessed at, and month names get no markers. A
-    // chart on a day axis (days since 1970) passes the axis's { min, max } as dayAxis, and
-    // a release sits on the first day of its month.
-    releasePosition: (labels, date, { bars = false, pointDates = null, dayAxis = null } = {}) => {
+    // 'YYYY-MM' labels are dated points. Year labels are not guessed at, and month names
+    // get no markers. A chart on a day axis (days since 1970) passes the axis's
+    // { min, max } as dayAxis, and a release sits on the first day of its month.
+    releasePosition: (labels, date, { pointDates = null, dayAxis = null } = {}) => {
         if (dayAxis) {
             const month = monthNumber(date);
             const day = Date.UTC(Math.floor(month / 12), month % 12, 1) / 86400000;
@@ -105,7 +92,6 @@ const chartRules = {
         }
         if (pointDates) return chartRules.pointPosition(pointDates, date);
         if (labels.length && labels.every(label => MONTH.test(label))) return chartRules.pointPosition(labels, date);
-        if (bars && labels.length && labels.every(label => YEAR.test(label))) return chartRules.yearBarPosition(labels, date);
         return null;
     },
 

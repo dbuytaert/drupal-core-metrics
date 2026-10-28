@@ -189,7 +189,7 @@ ADVISORY = re.compile(r"SA-CORE-(\d{4})-(\d+)")
 # zero-pad inconsistently, and SA-CORE-2009-03 is the same advisory as
 # SA-CORE-2009-003. Keying on the raw string counted 2009 and 2010 twice.
 def get_security_advisories(drupal_dir: Path, running_year: int) -> list[dict]:
-    """SA-CORE advisories *named in a core commit subject*, per finished year.
+    """SA-CORE advisories *named in a core commit subject*, per year, the running year so far.
 
     This is a floor, not the published total: a fix can land without naming its
     advisory, which loses 2 of 2013's 3 and 2 of 2014's 6. Three richer sources
@@ -211,16 +211,17 @@ def get_security_advisories(drupal_dir: Path, running_year: int) -> list[dict]:
 
 
 def advisories_by_year(subjects: str, running_year: int) -> list[dict]:
-    """Distinct advisories per finished year, from commit subjects. The running year is
-    left out: part-elapsed, it understates its own count and reads as a change in the
-    security process. Every finished year from the first advisory on is stored, zeros
-    included, as the monthly series store their empty months: a year left out draws no
-    bar at all, which reads as missing data rather than as a quiet year."""
+    """Distinct advisories per year, from commit subjects, the running year included so far.
+    A count can only grow as its year goes on, so the year so far understates nothing it
+    claims, and the chart marks it as still counting. Every year from the first
+    advisory on is stored, zeros included, as the monthly series store their empty
+    months: a year left out draws no bar at all, which reads as missing data rather
+    than as a quiet year."""
     advisories = {(int(year), int(number)) for year, number in ADVISORY.findall(subjects)}
-    counts = collections.Counter(year for year, _ in advisories if year < running_year)
+    counts = collections.Counter(year for year, _ in advisories if year <= running_year)
     if not counts:
         return []
-    return [{"year": year, "count": counts[year]} for year in range(min(counts), running_year)]
+    return [{"year": year, "count": counts[year]} for year in range(min(counts), running_year + 1)]
 
 
 # The metrics the Performance charts draw, as core's performance tests pin them for Umami's
@@ -513,14 +514,12 @@ CREDITED_ISSUE = re.compile(r"#(\d+)|SA-CORE-(\d{4})-(\d+)", re.IGNORECASE)
 # boundaries keep names like "sandy" or "b_and_w" intact.
 CREDIT_SEPARATORS = re.compile(r",|\||\band\b")
 
-# The contributors series starts where commit credits become reliable: 96% or more of
-# the commits landed on the main line carry them, every year from 2009. Walking every
-# branch reads lower in 2011-2012 only because the Drupal 8 sandbox histories merged
-# into those branches carry no credit lines. The same convention-start precedent as
-# the SA-CORE advisory series (2009).
+# The contributors series starts in the first full year of drupal.org's credit system.
+# Before it, commits credited fewer people per change. The dashboard drew those years
+# faded with a caveat, and no blind reader could tell which way it bent each chart.
 # Earlier history is still scanned so long-time contributors are not
 # miscounted as first-timers.
-CONTRIBUTORS_SINCE = 2010
+CONTRIBUTORS_SINCE = 2016
 
 # Ceremonial commits credit everyone who helped a whole initiative (the 2017
 # D8-multilingual thank-you commit lists 1,661 people for a 3-line
@@ -632,15 +631,16 @@ def half_of_credits_size(credits: collections.Counter) -> int:
 def get_contributors_per_year(credit_history: CreditHistory, running_year: int) -> list[dict]:
     """Distinct credited contributors per year, from CONTRIBUTORS_SINCE onward.
 
-    Returns [{year, peopleCredited, firstTimeCredited, halfOfCredits, creditsByFirstYear}]:
-    how many distinct people were credited; how many of them were credited for
-    the first time ever; how concentrated the year's credits were; and
+    Returns [{year, peopleCredited, firstTimeCredited, halfOfCredits, creditsByFirstYear,
+    peopleByCreditCount}]: how many distinct people were credited; how many of them
+    were credited for the first time ever; how concentrated the year's credits were;
     creditsByFirstYear: the year's credits grouped by the year each credited
-    person was first credited. Every field feeds a chart - the model carries
+    person was first credited; and peopleByCreditCount: how many people earned
+    each number of credits that year. Every field feeds a chart - the model carries
     nothing that is not drawn.
 
-    creditsByFirstYear mirrors sourceCodeAge's lastTouched: storage per exact
-    year, banding into generations left to the chart, so rebanding never needs a
+    creditsByFirstYear and peopleByCreditCount mirror sourceCodeAge's lastTouched:
+    storage per exact value, banding left to the chart, so rebanding never needs a
     regeneration.
 
     Credits only: uncredited commits are not counted (measured effect: under 3%
@@ -671,6 +671,7 @@ def get_contributors_per_year(credit_history: CreditHistory, running_year: int) 
             "firstTimeCredited": len(first_timers),
             "halfOfCredits": half_of_credits_size(credit_counts_by_year[year]),
             "creditsByFirstYear": {str(first_year): count for first_year, count in sorted(credits_by_first_year.items())},
+            "peopleByCreditCount": {str(credits): people for credits, people in sorted(collections.Counter(credit_counts_by_year[year].values()).items())},
         })
     return series
 

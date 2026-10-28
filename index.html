@@ -157,6 +157,9 @@
         // because of it, and a larger square is closer to the area it names.
         const SQUARE_LEGEND_LABELS = { usePointStyle: false, boxWidth: 14, boxHeight: 14 };
 
+        // Every bar chart's bars: wide, with a thin white seam between stacked segments.
+        const BAR_STYLE = { borderColor: '#ffffff', borderWidth: { top: 1 }, barPercentage: 1, categoryPercentage: 0.82 };
+
         // The font of labels drawn on the chart itself, next to the lines they name.
         const LABEL_FONT = '600 12px -apple-system, sans-serif';
 
@@ -238,12 +241,10 @@
             },
             afterDatasetsDraw: (chart) => {
                 const { ctx: context, chartArea, scales, options } = chart;
-                if (!chartArea) return;
-                // Opt-out for charts whose x axis is not core's timeline. On a
-                // grouped bar chart a release line lands inside a group and reads
-                // as a divider between bars that it has nothing to do with.
-                if (options.plugins?.releaseMarkers?.display === false) return;
-
+                // Bar charts get none: a bar spans its whole period, and where bars reach
+                // the top of the plot the label covers them, which on a 100% chart was
+                // read as data.
+                if (!chartArea || chart.config.type === 'bar') return;
                 const xScale = scales.x;
                 const { left, right, top, bottom } = chartArea;
                 const labels = (chart.data.labels || []).map(String);
@@ -251,7 +252,7 @@
                 // A chart can mark events of its own beside the releases, as { date, text }.
                 const markers = [...RELEASES.map(release => ({ date: release.date, text: 'Drupal ' + release.major })), ...(settings.events || [])]
                     .map(event => ({ text: event.text, position: chartRules.releasePosition(labels, event.date,
-                        { bars: chart.config.type === 'bar', pointDates: settings.pointDates,
+                        { pointDates: settings.pointDates,
                           dayAxis: settings.dayAxis ? { min: xScale.min, max: xScale.max } : null }) }))
                     .filter(marker => marker.position !== null)
                     .map(marker => ({ ...marker, x: xScale.getPixelForValue(marker.position) }));
@@ -369,36 +370,6 @@
         };
         Chart.register(hatchedBarsPlugin);
 
-        // Shades the years before a cutoff on a year-labeled chart and names why, so a
-        // caveat about those years is visible where they are drawn. Blind readers met
-        // the pre-credit-system caveat only as a sentence on one card and asked for it
-        // on every people chart.
-        const earlyYearsShadePlugin = {
-            id: 'earlyYearsShade',
-            afterDatasetsDraw: (chart) => {
-                const shade = chart.options.plugins?.earlyYearsShade;
-                if (!shade || !chart.chartArea) return;
-                const labels = chart.data.labels.map(Number);
-                const lastEarly = labels.findLastIndex(year => year < shade.beforeYear);
-                if (lastEarly < 0) return;
-                const { ctx: context, chartArea, scales } = chart;
-                const right = lastEarly + 1 < labels.length
-                    ? (scales.x.getPixelForValue(lastEarly) + scales.x.getPixelForValue(lastEarly + 1)) / 2
-                    : chartArea.right;
-                context.save();
-                context.fillStyle = 'rgba(255, 255, 255, 0.55)';
-                context.fillRect(chartArea.left, chartArea.top, right - chartArea.left, chartArea.bottom - chartArea.top);
-                // Below the axis, in space reserved for it: inside the plot, full-height
-                // bars left no room, and a blind reader took the label's backing for data.
-                context.font = '10px -apple-system, sans-serif';
-                context.textBaseline = 'bottom';
-                context.fillStyle = 'rgba(51, 65, 85, 0.9)';
-                context.fillText(shade.label, chartArea.left, chart.height - 2);
-                context.restore();
-            }
-        };
-        Chart.register(earlyYearsShadePlugin);
-
         // WCAG relative luminance of a #rrggbb color.
         const luminanceOf = color => {
             const channel = offset => {
@@ -415,15 +386,16 @@
             return (luminance + 0.05) / (luminanceOf(DARK_INK) + 0.05) > 1.05 / (luminance + 0.05) ? DARK_INK : '#ffffff';
         };
 
-        // Writes each segment's value on the newest bar of a stacked bar chart, so its
-        // takeaway can be read without matching segments against gridlines.
+        // Writes each segment's value on the newest bar of every bar chart, so its
+        // takeaway can be read without matching segments against gridlines. A count
+        // unless the chart passes a format, as the share charts do.
         const lastBarLabelsPlugin = {
             id: 'lastBarLabels',
             afterDatasetsDraw: (chart) => {
+                if (chart.config.type !== 'bar') return;
                 // The raw config, because Chart.js calls functions in resolved options
                 // as scriptable options.
-                const format = chart.config.options.plugins?.lastBarLabels?.format;
-                if (!format) return;
+                const format = chart.config.options.plugins?.lastBarLabels?.format || (value => value.toLocaleString());
                 const context = chart.ctx;
                 context.save();
                 context.font = '600 10px -apple-system, sans-serif';
@@ -433,8 +405,17 @@
                     const bar = chart.getDatasetMeta(index).data.at(-1);
                     const value = dataset.data.at(-1);
                     if (!chart.isDatasetVisible(index) || !bar || !value || Math.abs(bar.base - bar.y) < 14) return;
-                    context.fillStyle = inkOn(dataset.backgroundColor);
-                    context.fillText(format(value), bar.x, (bar.y + bar.base) / 2);
+                    const text = format(value);
+                    if (dataset.hatched?.at(-1)) {
+                        // White stripes swallow white text, so dark text with a white halo.
+                        context.strokeStyle = '#ffffff';
+                        context.lineWidth = 3;
+                        context.strokeText(text, bar.x, (bar.y + bar.base) / 2);
+                        context.fillStyle = DARK_INK;
+                    } else {
+                        context.fillStyle = inkOn(dataset.backgroundColor);
+                    }
+                    context.fillText(text, bar.x, (bar.y + bar.base) / 2);
                 });
                 context.restore();
             }
@@ -469,7 +450,7 @@
         // settings, so this builds the common Chart.js options object and folds in
         // the per-chart specifics. The returned object is plain and mutable (the
         // Absolute/Relative toggle mutates scales.y and the tooltip in place).
-        function baseChartOptions({ legend = true, stacked = false, yearTicks = true, yTitle, yMin, yMax, ySuggestedMax, yBeginAtZero = false, yTicksCallback, tooltipCallbacks, thresholdMetric, releaseMarkers = true, layeredLegend = false, earlyYearsShade, lastBarLabels } = {}) {
+        function baseChartOptions({ legend = true, stacked = false, yearTicks = true, yTitle, yMin, yMax, ySuggestedMax, yBeginAtZero = false, yTicksCallback, tooltipCallbacks, thresholdMetric, layeredLegend = false, lastBarLabels } = {}) {
             const y = { stacked, beginAtZero: yBeginAtZero, grid: { color: '#e2e8f0' } };
             if (yMin !== undefined) y.min = yMin;
             if (yMax !== undefined) y.max = yMax;
@@ -486,14 +467,11 @@
             };
             if (tooltipCallbacks) plugins.tooltip.callbacks = tooltipCallbacks;
             if (thresholdMetric) plugins.thresholdBands = { metric: thresholdMetric };
-            if (!releaseMarkers) plugins.releaseMarkers = { display: false };
-            if (earlyYearsShade) plugins.earlyYearsShade = earlyYearsShade;
             if (lastBarLabels) plugins.lastBarLabels = lastBarLabels;
 
             return {
                 responsive: true,
                 maintainAspectRatio: false,
-                ...(earlyYearsShade ? { layout: { padding: { bottom: 16 } } } : {}),
                 interaction: { intersect: false, mode: 'index' },
                 plugins,
                 scales: {
@@ -610,8 +588,8 @@
                 subtitle,
                 labels: sortedData.map(d => d.date),
                 datasets: [
-                    { label: 'Production code', data: sortedData.map(d => d.production?.lines || 0), borderColor: colors.production, backgroundColor: '#0678be' },
-                    { label: 'Tests', data: sortedData.map(d => d.test?.lines || 0), borderColor: colors.test, backgroundColor: '#12897d', borderDash: [5, 5] }
+                    { label: 'Production code', data: sortedData.map(d => d.production?.lines || 0), borderColor: colors.production, backgroundColor: colors.production },
+                    { label: 'Tests', data: sortedData.map(d => d.test?.lines || 0), borderColor: colors.test, backgroundColor: colors.test, borderDash: [5, 5] }
                 ],
                 absoluteStacked: false
             });
@@ -626,10 +604,10 @@
                 subtitle: "Production source lines split into object-oriented PHP (classes, interfaces, traits), procedural PHP (functions and hooks written outside of classes), and JavaScript. Production code only; excludes tests, vendor dependencies, generated data tables and PHP templates.",
                 labels: sortedData.map(d => d.date),
                 datasets: [
-                    { label: 'Object-oriented PHP', data: sortedData.map(d => d.production?.objectOrientedLines || 0), borderColor: '#0678be', backgroundColor: '#0678be' },
+                    { label: 'Object-oriented PHP', data: sortedData.map(d => d.production?.objectOrientedLines || 0), borderColor: CATEGORICAL[0], backgroundColor: CATEGORICAL[0] },
                     // Procedural PHP is what is left over, so it is derived here rather than stored.
-                    { label: 'Procedural PHP', data: sortedData.map(d => (d.production?.lines || 0) - (d.production?.objectOrientedLines || 0)), borderColor: '#5c9a33', backgroundColor: '#5c9a33' },
-                    { label: 'JavaScript', data: sortedData.map(d => d.js?.lines || 0), borderColor: '#8850a6', backgroundColor: '#8850a6' }
+                    { label: 'Procedural PHP', data: sortedData.map(d => (d.production?.lines || 0) - (d.production?.objectOrientedLines || 0)), borderColor: CATEGORICAL[1], backgroundColor: CATEGORICAL[1] },
+                    { label: 'JavaScript', data: sortedData.map(d => d.js?.lines || 0), borderColor: CATEGORICAL[2], backgroundColor: CATEGORICAL[2] }
                 ],
                 absoluteStacked: true
             });
@@ -917,7 +895,7 @@
             // tooltip all name the same three regions, no type, vague and specific, in
             // the chart's top-to-bottom order. They once said "specific" in one place and
             // "precise" in another, and named bands in the key but edges on the plot.
-            const SPECIFIC = '#0678be';
+            const SPECIFIC = colors.production;
             const VAGUE = 'rgba(6, 120, 190, 0.20)';
             const swatch = style => `<span style="display: inline-block; width: 11px; height: 11px; ${style}; border-radius: 2px; vertical-align: -1px; margin-right: 5px"></span>`;
 
@@ -1012,7 +990,7 @@
 
         // The administrator's lines share one color on every card, and the visitor's
         // article page keeps the blue it has on the visitor query chart.
-        const VISITOR_ARTICLE_COLOR = '#0678be';
+        const VISITOR_ARTICLE_COLOR = colors.production;
         const ADMINISTRATOR_COLOR = '#c2734a';
         // A logged-in user with no role, who is neither of the above.
         const LOGGED_IN_COLOR = '#475569';
@@ -1287,8 +1265,8 @@
         // line: purple and blue are nearly the same color under red-green color blindness.
         const VISITOR_PAGE_LINES = [
             { label: 'Article page, cold cache', color: VISITOR_ARTICLE_COLOR, metrics: row => row.metrics.umamiNodePageColdCache },
-            { label: 'Article page, cool cache', color: '#c74d8a', metrics: row => row.metrics.umamiNodePageCoolCache },
-            { label: 'Front page, cold cache', color: '#5c9a33', metrics: row => row.metrics.umamiFrontPageColdCache },
+            { label: 'Article page, cool cache', color: CATEGORICAL[7], metrics: row => row.metrics.umamiNodePageCoolCache },
+            { label: 'Front page, cold cache', color: CATEGORICAL[1], metrics: row => row.metrics.umamiFrontPageColdCache },
         ];
 
         function createVisitorQueriesChart(container, pagePerformance, endDay) {
@@ -1420,9 +1398,9 @@
                 subtitle: "Commits per quarter in Drupal Core and in the strategic initiatives. Core, Canvas and Drupal CMS are each one Git repository. The AI initiative is spread across many, so its band counts all of its modules, themes and recipes with ten commits or more. Drupal CMS and Canvas began as prototypes a few weeks before Starshot was announced, so their bands start before its line.",
                 labels: rows.map(row => row.date),
                 datasets: [
-                    { label: 'Drupal Core', data: sinceItExisted('core'), borderColor: '#0678be', backgroundColor: '#0678be' },
-                    { label: 'Canvas', data: sinceItExisted('canvas'), borderColor: '#5c9a33', backgroundColor: '#5c9a33' },
-                    { label: 'AI initiative', data: sinceItExisted('ai'), borderColor: '#8850a6', backgroundColor: '#8850a6' },
+                    { label: 'Drupal Core', data: sinceItExisted('core'), borderColor: CATEGORICAL[0], backgroundColor: CATEGORICAL[0] },
+                    { label: 'Canvas', data: sinceItExisted('canvas'), borderColor: CATEGORICAL[1], backgroundColor: CATEGORICAL[1] },
+                    { label: 'AI initiative', data: sinceItExisted('ai'), borderColor: CATEGORICAL[2], backgroundColor: CATEGORICAL[2] },
                     { label: 'Drupal CMS', data: sinceItExisted('drupalCms'), borderColor: '#c2734a', backgroundColor: '#c2734a' },
                 ],
                 absoluteStacked: true,
@@ -1440,31 +1418,47 @@
             });
         }
 
-        function createSecurityAdvisoriesChart(container, advisories) {
+        function createSecurityAdvisoriesChart(container, advisories, generatedAt) {
             if (!advisories || advisories.length < 2) return;
-            // Finished years only; the pipeline leaves out the running year.
+            // The pipeline stores the running year so far, hatched here because it is still
+            // counting; a count can only grow, so the bar can only understate its year.
             const sorted = [...advisories].sort((first, second) => first.year - second.year);
+            const runningYear = Number((generatedAt || '').slice(0, 4));
+            const throughDay = generatedAt
+                ? new Date(generatedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'UTC' })
+                : '';
 
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>Security advisories per year</h2>
-                <p class="section-subtitle">Distinct <a href="https://www.drupal.org/security">SA-CORE</a> security advisories per year, counted once even when the fix lands on several branches. One advisory can cover several vulnerabilities.</p>
+                <p class="section-subtitle">Distinct <a href="https://www.drupal.org/security">SA-CORE</a> security advisories per year, counted once even when the fix lands on several branches. One advisory can cover several vulnerabilities. This year is not over yet, so its bar is hatched <span class="hatch-swatch" aria-hidden="true"></span>.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
+            const options = baseChartOptions({
+                legend: false,
+                yearTicks: false,
+                yBeginAtZero: true,
+                yTitle: 'Advisories',
+                tooltipCallbacks: {
+                    label: tooltipContext => sorted[tooltipContext.dataIndex].year === runningYear
+                        ? `${tooltipContext.parsed.y} advisories so far, through ${throughDay}`
+                        : `${tooltipContext.parsed.y} advisories`
+                }
+            });
             new Chart(section.querySelector('canvas').getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: sorted.map(entry => entry.year.toString()),
-                    datasets: [{ label: 'Advisories', data: sorted.map(entry => entry.count), backgroundColor: colors.production, borderColor: '#0678be', borderWidth: 1 }]
+                    labels: sorted.map(entry => entry.year === runningYear ? `${entry.year} so far` : entry.year.toString()),
+                    datasets: [{
+                        label: 'Advisories',
+                        data: sorted.map(entry => entry.count),
+                        backgroundColor: colors.production,
+                        hatched: sorted.map(entry => entry.year === runningYear),
+                        ...BAR_STYLE
+                    }]
                 },
-                options: baseChartOptions({
-                    legend: false,
-                    yearTicks: false,
-                    yBeginAtZero: true,
-                    yTitle: 'Advisories',
-                    tooltipCallbacks: { label: tooltipContext => `${tooltipContext.parsed.y} advisories` }
-                })
+                options
             });
         }
 
@@ -1588,14 +1582,6 @@
             });
         }
 
-        // Yearly bars on the people cards: touching, with a thin white seam
-        // between stacked segments.
-        const BAR_STYLE = { borderColor: '#ffffff', borderWidth: { top: 1 }, barPercentage: 1, categoryPercentage: 0.82 };
-
-        // Credits became more generous when drupal.org's credit system launched in
-        // 2015, so every people chart shades the years through 2015.
-        const EARLY_CREDITS_SHADE = { beforeYear: 2016, label: 'Faded years: before the credit system, fewer people were credited per change' };
-
         function createContributorsChart(container, contributors) {
             const rows = contributors || [];
             if (rows.length < 2) return;
@@ -1605,8 +1591,8 @@
             // renewal signal. A credit is defined here, on the first card that counts them.
             const section = document.createElement('div');
             section.className = 'card';
-            section.innerHTML = `<h2>Contributors per year</h2>
-                <p class="section-subtitle">People credited in Drupal Core commits each year, first-time contributors at the bottom and returning contributors on top. The faded years come before drupal.org's credit system made crediting more generous, so they undercount contributors.</p>
+            section.innerHTML = `<h2>People credited</h2>
+                <p class="section-subtitle">People credited in Drupal Core commits each year, first-time contributors at the bottom and returning contributors on top. Higher is better for both.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -1616,9 +1602,6 @@
                 yBeginAtZero: true,
                 yTitle: 'People credited',
                 layeredLegend: true,
-                earlyYearsShade: EARLY_CREDITS_SHADE,
-                // No release markers: a release line would run through the middle of a bar.
-                releaseMarkers: false,
                 tooltipCallbacks: {
                     label: tooltipContext => `${tooltipContext.dataset.label}: ${tooltipContext.parsed.y.toLocaleString()}`,
                     footer: tooltipItems => `${sorted[tooltipItems[0].dataIndex].peopleCredited.toLocaleString()} people credited in total`
@@ -1630,8 +1613,8 @@
                 data: {
                     labels: sorted.map(entry => entry.year.toString()),
                     datasets: [
-                        { label: 'First-time contributors', data: sorted.map(entry => entry.firstTimeCredited), backgroundColor: '#5c9a33', ...BAR_STYLE },
-                        { label: 'Returning contributors', data: sorted.map(entry => entry.peopleCredited - entry.firstTimeCredited), backgroundColor: '#0678be', ...BAR_STYLE }
+                        { label: 'First-time contributors', data: sorted.map(entry => entry.firstTimeCredited), backgroundColor: CATEGORICAL[1], ...BAR_STYLE },
+                        { label: 'Returning contributors', data: sorted.map(entry => entry.peopleCredited - entry.firstTimeCredited), backgroundColor: colors.production, ...BAR_STYLE }
                     ]
                 },
                 options
@@ -1647,8 +1630,8 @@
         const GENERATION_YEARS = 5;
         const generationOf = firstYear =>
             firstYear < GENERATION_ORIGIN
-                ? { key: 'pre', label: `First credited before ${GENERATION_ORIGIN}`, start: null, end: GENERATION_ORIGIN - 1 }
-                : (start => ({ key: String(start), label: `First credited ${start}-${start + GENERATION_YEARS - 1}`, start, end: start + GENERATION_YEARS - 1 }))
+                ? { key: 'pre', label: `Joined before ${GENERATION_ORIGIN}`, start: null, end: GENERATION_ORIGIN - 1 }
+                : (start => ({ key: String(start), label: `Joined ${start}-${start + GENERATION_YEARS - 1}`, start, end: start + GENERATION_YEARS - 1 }))
                     (GENERATION_ORIGIN + Math.floor((firstYear - GENERATION_ORIGIN) / GENERATION_YEARS) * GENERATION_YEARS);
 
         // One fixed color per generation, so a generation keeps its color whatever
@@ -1698,8 +1681,8 @@
 
             const section = document.createElement('div');
             section.className = 'card';
-            section.innerHTML = `<h2>All credits, by generation</h2>
-                <p class="section-subtitle">Each year's credits on Drupal Core, grouped by when each person was first credited, in five-year generations. A generation grows by itself in its first five years as people join, so those years are hatched <span class="hatch-swatch" aria-hidden="true"></span>. In the solid years, a band that holds or grows means newer people are doing more of the work.</p>
+            section.innerHTML = `<h2>Credits by when people joined</h2>
+                <p class="section-subtitle">Each year's credits on Drupal Core, split by when each person joined, meaning their first credit, in five-year groups. A group keeps taking in newcomers until its five years are up, so in those years its band includes people who just arrived, and those years are hatched <span class="hatch-swatch" aria-hidden="true"></span>. After that nobody new joins it, so its band shows whether its people do a larger or smaller share of the work from year to year. The more of the work newer groups do, the less Core depends on people who joined long ago.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -1710,10 +1693,8 @@
                 yMax: 100,
                 yTitle: "Share of the year's credits",
                 layeredLegend: true,
-                earlyYearsShade: EARLY_CREDITS_SHADE,
                 lastBarLabels: { format: value => `${Math.round(value)}%` },
-                yTicksCallback: value => value + '%',
-                releaseMarkers: false
+                yTicksCallback: value => value + '%'
             });
             // Legend and tooltip both list the top band (newest) first, the order the
             // eye reads the stack.
@@ -1729,9 +1710,9 @@
                 data: {
                     labels: sorted.map(entry => entry.year.toString()),
                     datasets: bands.map(band => ({
-                        // A generation still arriving is named by its first year, not by years that
-                        // have not happened yet.
-                        label: band.end > newest.year ? `First credited ${band.start} or later` : band.label,
+                        // A generation still arriving is named by the years it covers so far, not by
+                        // years that have not happened yet.
+                        label: band.end <= newest.year ? band.label : band.start === newest.year ? `Joined ${band.start}` : `Joined ${band.start}-${newest.year}`,
                         data: shares.map(byBand => byBand[band.key] || 0),
                         backgroundColor: band.color,
                         // Two blind readers took the newest band's growth for newcomers taking a
@@ -1745,16 +1726,110 @@
             });
         }
 
+        // A year's people ranked by their credits that year, in four groups from the most
+        // credited at the bottom of the stack to the least on top. Shares of the ranking
+        // rather than fixed credit counts, because a year with more credits moves people
+        // up a fixed band by itself. A share of the people moves with headcount instead,
+        // so the top 1% is fewer people in a year with fewer people credited.
+        // Darker means more credits, every other step of the dashboard's ramp so the
+        // middle bands stay apart.
+        const CREDIT_RANK_BANDS = [
+            { label: 'Top 1% of people', from: 0, to: 0.01, color: AGE_RAMP[7] },
+            { label: 'Next 9%', from: 0.01, to: 0.10, color: AGE_RAMP[5] },
+            { label: 'Next 40%', from: 0.10, to: 0.50, color: AGE_RAMP[3] },
+            { label: 'Bottom 50%', from: 0.50, to: 1, color: AGE_RAMP[1] }
+        ];
+
+        function createCreditCountChart(container, contributors) {
+            const rows = (contributors || []).filter(entry => entry.peopleByCreditCount);
+            if (rows.length < 2) return;
+            const sorted = [...rows].sort((first, second) => first.year - second.year);
+
+            // Per year and band: how many people, and their share of the year's credits.
+            // People with equal credits may fall on either side of a cut; the shares do
+            // not depend on which.
+            const bandsByYear = sorted.map(entry => {
+                const credits = Object.entries(entry.peopleByCreditCount)
+                    .flatMap(([count, people]) => Array(people).fill(Number(count)))
+                    .sort((first, second) => second - first);
+                const allCredits = credits.reduce((sum, count) => sum + count, 0);
+                return CREDIT_RANK_BANDS.map(band => {
+                    const group = credits.slice(Math.floor(band.from * credits.length), Math.floor(band.to * credits.length));
+                    const groupCredits = group.reduce((sum, count) => sum + count, 0);
+                    return { people: group.length, share: allCredits ? groupCredits / allCredits * 100 : 0 };
+                });
+            });
+
+            const section = document.createElement('div');
+            section.className = 'card';
+            section.innerHTML = `<h2>Credits by contributor percentile</h2>
+                <p class="section-subtitle">Each year's credits on Drupal Core, split by who earned them, counting from the most credited person down: the top 1% of people, the next 9%, the next 40%, and the bottom 50%. The dashed line marks half the credits (see People with half the credits). The larger the darkest band, the more Core depends on a few people.</p>
+                <div class="chart-container"><canvas></canvas></div>`;
+            container.appendChild(section);
+
+            const options = baseChartOptions({
+                stacked: true,
+                yearTicks: false,
+                yBeginAtZero: true,
+                yMax: 100,
+                yTitle: "Share of the year's credits",
+                layeredLegend: true,
+                lastBarLabels: { format: value => `${Math.round(value)}%` },
+                yTicksCallback: value => value + '%'
+            });
+            options.plugins.legend.reverse = true;
+            options.plugins.tooltip.itemSort = (first, second) => second.datasetIndex - first.datasetIndex;
+            options.plugins.tooltip.callbacks = {
+                label: tooltipContext => {
+                    const band = bandsByYear[tooltipContext.dataIndex][tooltipContext.datasetIndex];
+                    const people = `${band.people.toLocaleString()} ${band.people === 1 ? 'person' : 'people'}`;
+                    return `${tooltipContext.dataset.label} (${people}): ${band.share.toFixed(1)}% of the credits`;
+                }
+            };
+
+            new Chart(section.querySelector('canvas').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: sorted.map(entry => entry.year.toString()),
+                    datasets: CREDIT_RANK_BANDS.map((band, index) => ({
+                        label: band.label,
+                        data: bandsByYear.map(bands => bands[index].share),
+                        backgroundColor: band.color,
+                        ...BAR_STYLE
+                    }))
+                },
+                options,
+                // Half the credits, the cut People with half the credits makes, drawn over
+                // the bars because a gridline would sit behind them.
+                plugins: [{
+                    id: 'halfCreditsLine',
+                    afterDatasetsDraw: chart => {
+                        const { ctx: context, chartArea, scales } = chart;
+                        const y = scales.y.getPixelForValue(50);
+                        context.save();
+                        context.strokeStyle = DARK_INK;
+                        context.lineWidth = 1.5;
+                        context.setLineDash([6, 4]);
+                        context.beginPath();
+                        context.moveTo(chartArea.left, y);
+                        context.lineTo(chartArea.right, y);
+                        context.stroke();
+                        context.restore();
+                    }
+                }]
+            });
+        }
+
         function createConcentrationChart(container, contributors) {
             // Plots halfOfCredits, not a top-ten share, because "the ten busiest" needs
             // a constant somebody chose; "how few people reach half the credits" picks
-            // its own cutoff from the data every year. Starts at 2010 with the rest of
-            // the contributor series, and that start is load-bearing: 2016's count is
-            // the highest in the record, so a chart beginning there would imply
-            // concentration is unprecedented. Across the full span it is a U.
+            // its own cutoff from the data every year. Its first year is its highest; the
+            // rise into it crossed the credit system's start (CONTRIBUTORS_SINCE in
+            // analyze.py), so the years before could not say whether that year was unusual.
             //
             // Plain bars, one color: split by generation, small counts became unreadable
-            // slivers.
+            // slivers. The color is the top band's on the percentile card below, so the few
+            // people both cards are about look the same on each.
             const rows = (contributors || []).filter(entry => entry.halfOfCredits != null);
             if (rows.length < 2) return;
             const sorted = [...rows].sort((first, second) => first.year - second.year);
@@ -1762,7 +1837,7 @@
             const section = document.createElement('div');
             section.className = 'card';
             section.innerHTML = `<h2>People with half the credits</h2>
-                <p class="section-subtitle">Each year, the fewest people whose credits add up to half of all credits on Drupal Core. Fewer people means more of Core's work depends on a small group, so lower is riskier.</p>
+                <p class="section-subtitle">Each year, how many people it takes to reach half of all credits on Drupal Core, counting from the most credited person down. Fewer people means more of Core's work depends on a small group, so lower is riskier.</p>
                 <div class="chart-container"><canvas></canvas></div>`;
             container.appendChild(section);
 
@@ -1770,15 +1845,13 @@
                 type: 'bar',
                 data: {
                     labels: sorted.map(entry => entry.year.toString()),
-                    datasets: [{ label: 'People', data: sorted.map(entry => entry.halfOfCredits), backgroundColor: colors.production, ...BAR_STYLE }]
+                    datasets: [{ label: 'People', data: sorted.map(entry => entry.halfOfCredits), backgroundColor: AGE_RAMP[7], ...BAR_STYLE }]
                 },
                 options: baseChartOptions({
                     legend: false,
                     yearTicks: false,
                     yBeginAtZero: true,
                     yTitle: 'People with half the credits',
-                    earlyYearsShade: EARLY_CREDITS_SHADE,
-                    releaseMarkers: false,
                     // The tooltip always names the whole population, so the bar can never
                     // be read as the number of people contributing.
                     tooltipCallbacks: {
@@ -1829,13 +1902,7 @@
                 type: 'bar',
                 data: {
                     labels,
-                    datasets: [{
-                        label: 'Commits',
-                        data,
-                        backgroundColor: '#0678be',
-                        borderColor: '#0678be',
-                        borderWidth: 1
-                    }]
+                    datasets: [{ label: 'Commits', data, backgroundColor: colors.production, ...BAR_STYLE }]
                 },
                 options: baseChartOptions({
                     legend: false,
@@ -1996,6 +2063,23 @@
                 return total > 0 ? (d[field] / total) * 100 : 0;
             };
 
+            const options = baseChartOptions({
+                stacked: true,
+                yearTicks: false,
+                yBeginAtZero: true,
+                yMax: 100,
+                yTitle: "Share of the month's commits",
+                layeredLegend: true,
+                lastBarLabels: { format: value => `${Math.round(value)}%` },
+                yTicksCallback: (value) => value + '%',
+                tooltipCallbacks: {
+                    label: (tooltipContext) => `${tooltipContext.dataset.label}: ${tooltipContext.parsed.y.toFixed(1)}%`
+                }
+            });
+            // Legend and tooltip list the top band first, the order the eye reads the stack.
+            options.plugins.legend.reverse = true;
+            options.plugins.tooltip.itemSort = (first, second) => second.datasetIndex - first.datasetIndex;
+
             new Chart(context, {
                 type: 'bar',
                 data: {
@@ -2004,44 +2088,33 @@
                         {
                             label: 'Features',
                             data: filtered.map(d => getPercent(d, 'features')),
-                            backgroundColor: '#0678be',
-                            borderColor: '#0678be',
-                            borderWidth: 1
+                            backgroundColor: CATEGORICAL[0],
+                            ...BAR_STYLE
                         },
                         {
                             label: 'Tasks',
                             data: filtered.map(d => getPercent(d, 'maintenance')),
-                            backgroundColor: '#8850a6',
-                            borderColor: '#8850a6',
-                            borderWidth: 1
+                            backgroundColor: CATEGORICAL[2],
+                            ...BAR_STYLE
                         },
                         {
                             label: 'Bugs',
                             data: filtered.map(d => getPercent(d, 'bugs')),
-                            backgroundColor: '#d2495a',
-                            borderColor: '#d2495a',
-                            borderWidth: 1
+                            backgroundColor: CATEGORICAL[3],
+                            ...BAR_STYLE
                         },
                         {
                             label: 'Uncategorized',
                             data: filtered.map(d => getPercent(d, 'uncategorized')),
                             backgroundColor: '#e2e8f0',
-                            borderColor: '#cbd5e1',
-                            borderWidth: 1
+                            // A gray edge rather than the white seam: the band is the top of
+                            // the stack and nearly as pale as the card behind it.
+                            ...BAR_STYLE,
+                            borderColor: '#cbd5e1'
                         }
                     ]
                 },
-                options: baseChartOptions({
-                    stacked: true,
-                    yearTicks: false,
-                    yBeginAtZero: true,
-                    yMax: 100,
-                    yTitle: 'Percentage',
-                    yTicksCallback: (value) => value + '%',
-                    tooltipCallbacks: {
-                        label: (tooltipContext) => `${tooltipContext.dataset.label}: ${tooltipContext.parsed.y.toFixed(1)}%`
-                    }
-                })
+                options
             });
         }
 
@@ -2161,14 +2234,15 @@
             createCommitTypeDistributionChart(container, allCommitsMonthly);
 
             // Everyone first, then the generations doing the work, then the few who do
-            // half of it.
+            // half of it, then how the work spreads across everyone.
             addSection('people');
             createContributorsChart(container, data.contributors);
             createCoreGenerationsChart(container, data.contributors);
             createConcentrationChart(container, data.contributors);
+            createCreditCountChart(container, data.contributors);
 
             addSection('security');
-            createSecurityAdvisoriesChart(container, data.securityAdvisories);
+            createSecurityAdvisoriesChart(container, data.securityAdvisories, data.generatedAt);
 
             addSection('codebase');
             createLocChart(container, snapshots, 'Lines of code',
