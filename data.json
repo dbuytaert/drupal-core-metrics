@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T04:05:28.496066+00:00",
+  "generatedAt": "2026-10-29T04:28:58.920927+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -3460,14 +3460,14 @@
       "core": 179,
       "canvas": 87,
       "drupalCms": 31,
-      "ai": 245
+      "ai": 251
     },
     {
       "date": "2026-09",
       "core": 162,
       "canvas": 89,
       "drupalCms": 54,
-      "ai": 310
+      "ai": 311
     }
   ],
   "pagePerformance": [
@@ -8179,18 +8179,18 @@
         "2012": 15389,
         "2013": 22858,
         "2014": 35665,
-        "2015": 25162,
+        "2015": 25155,
         "2016": 11424,
         "2017": 21783,
-        "2018": 12989,
+        "2018": 12988,
         "2019": 16003,
         "2020": 3725,
         "2021": 9703,
-        "2022": 7021,
+        "2022": 7020,
         "2023": 13309,
-        "2024": 32664,
+        "2024": 32663,
         "2025": 24896,
-        "2026": 28527
+        "2026": 28546
       }
     }
   ],
@@ -42065,8 +42065,8 @@
     {
       "date": "2026-10",
       "production": {
-        "lines": 283737,
-        "objectOrientedLines": 275715,
+        "lines": 283746,
+        "objectOrientedLines": 275724,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
@@ -42087,7 +42087,7 @@
         }
       },
       "test": {
-        "lines": 472008
+        "lines": 471912
       },
       "js": {
         "lines": 20062
@@ -42157,18 +42157,18 @@
             "antipatterns": 0
           },
           {
-            "name": "FieldViewsDataProvider::defaultFieldImplementation",
-            "file": "modules/views/src/FieldViewsDataProvider.php",
-            "cognitive": 101,
-            "cyclomatic": 61,
-            "antipatterns": 62
-          },
-          {
             "name": "SystemController::themesPage",
             "file": "modules/system/src/Controller/SystemController.php",
             "cognitive": 99,
             "cyclomatic": 45,
             "antipatterns": 10
+          },
+          {
+            "name": "FieldViewsDataProvider::defaultFieldImplementation",
+            "file": "modules/views/src/FieldViewsDataProvider.php",
+            "cognitive": 99,
+            "cyclomatic": 60,
+            "antipatterns": 60
           },
           {
             "name": "ThemePreprocess::preprocessTable",
@@ -49778,6 +49778,18 @@
       "#with_size": [
         [
           51,
+          53
+        ]
+      ],
+      "#error_links": [
+        [
+          53,
+          53
+        ]
+      ],
+      "#form_id": [
+        [
+          53,
           53
         ]
       ]
