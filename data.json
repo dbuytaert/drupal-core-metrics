@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T05:13:49.259547+00:00",
+  "generatedAt": "2026-11-07T04:44:44.642524+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -8191,8 +8191,8 @@
         "2010": 585,
         "2011": 1225,
         "2012": 15268,
-        "2013": 22483,
-        "2014": 34909,
+        "2013": 22467,
+        "2014": 34903,
         "2015": 24543,
         "2016": 11115,
         "2017": 21540,
@@ -8202,9 +8202,9 @@
         "2021": 9531,
         "2022": 6940,
         "2023": 13239,
-        "2024": 32540,
-        "2025": 24829,
-        "2026": 32655
+        "2024": 32532,
+        "2025": 24822,
+        "2026": 32767
       }
     }
   ],
@@ -42079,8 +42079,8 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283632,
-        "objectOrientedLines": 275610,
+        "lines": 283707,
+        "objectOrientedLines": 275643,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
@@ -42101,7 +42101,7 @@
         }
       },
       "test": {
-        "lines": 472147
+        "lines": 472275
       },
       "js": {
         "lines": 20062
@@ -42127,6 +42127,13 @@
             "cognitive": 377,
             "cyclomatic": 194,
             "antipatterns": 89
+          },
+          {
+            "name": "HookCollectorPass::collectModuleHookImplementations",
+            "file": "lib/Drupal/Core/Hook/HookCollectorPass.php",
+            "cognitive": 128,
+            "cyclomatic": 38,
+            "antipatterns": 2
           },
           {
             "name": "ViewsThemeHooks::preprocessViewsViewTable",
@@ -42155,13 +42162,6 @@
             "cognitive": 109,
             "cyclomatic": 31,
             "antipatterns": 9
-          },
-          {
-            "name": "HookCollectorPass::collectModuleHookImplementations",
-            "file": "lib/Drupal/Core/Hook/HookCollectorPass.php",
-            "cognitive": 108,
-            "cyclomatic": 32,
-            "antipatterns": 2
           },
           {
             "name": "UpdateCalculator::updateProjectStatus",
@@ -42374,6 +42374,13 @@
             "antipatterns": 2
           },
           {
+            "name": "ThemeHookCollectorPass::collectThemeHookImplementations",
+            "file": "lib/Drupal/Core/Hook/ThemeHookCollectorPass.php",
+            "cognitive": 65,
+            "cyclomatic": 22,
+            "antipatterns": 0
+          },
+          {
             "name": "CommentLinkBuilder::buildCommentedEntityLinks",
             "file": "modules/comment/src/CommentLinkBuilder.php",
             "cognitive": 65,
@@ -42385,13 +42392,6 @@
             "file": "modules/filter/src/Entity/FilterFormat.php",
             "cognitive": 65,
             "cyclomatic": 25,
-            "antipatterns": 0
-          },
-          {
-            "name": "ThemeHookCollectorPass::collectThemeHookImplementations",
-            "file": "lib/Drupal/Core/Hook/ThemeHookCollectorPass.php",
-            "cognitive": 64,
-            "cyclomatic": 22,
             "antipatterns": 0
           },
           {
@@ -42635,6 +42635,13 @@
             "antipatterns": 391
           },
           {
+            "name": "HookCollectorPass",
+            "file": "lib/Drupal/Core/Hook/HookCollectorPass.php",
+            "cognitive": 176,
+            "cyclomatic": 83,
+            "antipatterns": 2
+          },
+          {
             "name": "YamlFileLoader",
             "file": "lib/Drupal/Core/DependencyInjection/YamlFileLoader.php",
             "cognitive": 175,
@@ -42709,13 +42716,6 @@
             "file": "lib/Drupal/Core/Entity/Query/Sql/Tables.php",
             "cognitive": 153,
             "cyclomatic": 75,
-            "antipatterns": 2
-          },
-          {
-            "name": "HookCollectorPass",
-            "file": "lib/Drupal/Core/Hook/HookCollectorPass.php",
-            "cognitive": 153,
-            "cyclomatic": 74,
             "antipatterns": 2
           },
           {
