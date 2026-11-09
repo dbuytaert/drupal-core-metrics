@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T04:33:32.260238+00:00",
+  "generatedAt": "2026-11-09T04:45:19.314200+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -7666,6 +7666,47 @@
           "StylesheetBytes": 1075075
         }
       }
+    },
+    {
+      "date": "2026-11-08",
+      "commit": "acfffb4307a5c15c97b2d5082ef41464bb957259",
+      "issue": 3633459,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 261,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 63603
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 49486
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3041415,
+          "StylesheetBytes": 1087696
+        }
+      }
     }
   ],
   "sourceCodeAge": [
@@ -8203,8 +8244,8 @@
         "2022": 6940,
         "2023": 13238,
         "2024": 32532,
-        "2025": 24822,
-        "2026": 32778
+        "2025": 24821,
+        "2026": 32782
       }
     }
   ],
@@ -42079,8 +42120,8 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283716,
-        "objectOrientedLines": 275652,
+        "lines": 283719,
+        "objectOrientedLines": 275655,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
@@ -42092,16 +42133,16 @@
           "serviceLocators": 2294
         },
         "typeCoverage": {
-          "parameterTotal": 23512,
-          "parameterTyped": 15062,
-          "parameterPrecise": 11087,
+          "parameterTotal": 23513,
+          "parameterTyped": 15063,
+          "parameterPrecise": 11088,
           "returnTotal": 15656,
           "returnTyped": 2870,
           "returnPrecise": 2061
         }
       },
       "test": {
-        "lines": 472336
+        "lines": 472316
       },
       "js": {
         "lines": 20062
