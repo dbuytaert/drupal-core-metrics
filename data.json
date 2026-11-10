@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T04:45:19.314200+00:00",
+  "generatedAt": "2026-11-10T06:00:02.224508+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -7707,6 +7707,88 @@
           "StylesheetBytes": 1087696
         }
       }
+    },
+    {
+      "date": "2026-11-09",
+      "commit": "5a04931089993f49c16ef83b706dd5366a67f058",
+      "issue": 3615654,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 261,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 73614
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 44791
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 40149
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3041415,
+          "StylesheetBytes": 923472
+        }
+      }
+    },
+    {
+      "date": "2026-11-09",
+      "commit": "3875e93cfd93e32ea6c77e497d1a62189b090ff0",
+      "issue": 3578936,
+      "metrics": {
+        "umamiNodePageColdCache": {
+          "QueryCount": 194,
+          "CacheGetCount": 221,
+          "CacheSetCount": 229,
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 34483
+        },
+        "umamiNodePageCoolCache": {
+          "QueryCount": 61,
+          "CacheGetCount": 164,
+          "CacheSetCount": 58
+        },
+        "umamiFrontPageColdCache": {
+          "QueryCount": 178,
+          "CacheGetCount": 225,
+          "CacheSetCount": 240
+        },
+        "administratorNodePage": {
+          "QueryCount": 261,
+          "ScriptBytes": 187160,
+          "StylesheetBytes": 78251
+        },
+        "umamiFrontAndRecipePages": {
+          "ScriptBytes": 12091,
+          "StylesheetBytes": 44791
+        },
+        "umamiFrontAndRecipePagesAuthenticated": {
+          "ScriptBytes": 60671,
+          "StylesheetBytes": 40149
+        },
+        "umamiNodeAddEditor": {
+          "ScriptBytes": 3041415,
+          "StylesheetBytes": 926958
+        }
+      }
     }
   ],
   "sourceCodeAge": [
@@ -8232,20 +8314,20 @@
         "2010": 585,
         "2011": 1225,
         "2012": 15268,
-        "2013": 22467,
-        "2014": 34903,
+        "2013": 22464,
+        "2014": 34901,
         "2015": 24543,
         "2016": 11114,
-        "2017": 21540,
+        "2017": 21539,
         "2018": 12527,
-        "2019": 15289,
-        "2020": 3619,
+        "2019": 15288,
+        "2020": 3617,
         "2021": 9531,
         "2022": 6940,
-        "2023": 13238,
-        "2024": 32532,
-        "2025": 24821,
-        "2026": 32782
+        "2023": 13237,
+        "2024": 32531,
+        "2025": 24820,
+        "2026": 32811
       }
     }
   ],
@@ -42120,15 +42202,15 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283719,
-        "objectOrientedLines": 275655,
+        "lines": 283736,
+        "objectOrientedLines": 275672,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
         },
         "lcom4": 2.28,
         "antipatterns": {
-          "magicKeys": 14871,
+          "magicKeys": 14875,
           "deepArrays": 6948,
           "serviceLocators": 2294
         },
@@ -42142,7 +42224,7 @@
         }
       },
       "test": {
-        "lines": 472316
+        "lines": 472395
       },
       "js": {
         "lines": 20062
@@ -46823,7 +46905,7 @@
       "hook_extension": [
         [
           29,
-          53
+          52
         ]
       ],
       "hook_field_purge_field_storage": [
@@ -46877,7 +46959,7 @@
       "hook_render_template": [
         [
           29,
-          53
+          52
         ]
       ],
       "hook_themes_installed": [
@@ -49837,6 +49919,12 @@
         ]
       ],
       "#error_links": [
+        [
+          53,
+          53
+        ]
+      ],
+      "#field_label": [
         [
           53,
           53
