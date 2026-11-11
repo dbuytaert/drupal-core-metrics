@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T06:00:02.224508+00:00",
+  "generatedAt": "2026-11-11T04:48:08.484033+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -8315,8 +8315,8 @@
         "2011": 1225,
         "2012": 15268,
         "2013": 22464,
-        "2014": 34901,
-        "2015": 24543,
+        "2014": 34900,
+        "2015": 24541,
         "2016": 11114,
         "2017": 21539,
         "2018": 12527,
@@ -8325,9 +8325,9 @@
         "2021": 9531,
         "2022": 6940,
         "2023": 13237,
-        "2024": 32531,
-        "2025": 24820,
-        "2026": 32811
+        "2024": 32530,
+        "2025": 24819,
+        "2026": 32814
       }
     }
   ],
@@ -42202,8 +42202,8 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283736,
-        "objectOrientedLines": 275672,
+        "lines": 283734,
+        "objectOrientedLines": 275670,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
@@ -42224,10 +42224,10 @@
         }
       },
       "test": {
-        "lines": 472395
+        "lines": 472588
       },
       "js": {
-        "lines": 20062
+        "lines": 20069
       },
       "dependencies": {
         "production": 59,
@@ -42352,8 +42352,8 @@
           {
             "name": "Renderer::doRender",
             "file": "lib/Drupal/Core/Render/Renderer.php",
-            "cognitive": 91,
-            "cyclomatic": 66,
+            "cognitive": 90,
+            "cyclomatic": 65,
             "antipatterns": 97
           },
           {
@@ -42795,8 +42795,8 @@
           {
             "name": "Renderer",
             "file": "lib/Drupal/Core/Render/Renderer.php",
-            "cognitive": 165,
-            "cyclomatic": 133,
+            "cognitive": 164,
+            "cyclomatic": 132,
             "antipatterns": 136
           },
           {
