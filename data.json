@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T04:48:08.484033+00:00",
+  "generatedAt": "2026-11-12T05:50:34.098070+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -8313,8 +8313,8 @@
         "2009": 198,
         "2010": 585,
         "2011": 1225,
-        "2012": 15268,
-        "2013": 22464,
+        "2012": 15266,
+        "2013": 22463,
         "2014": 34900,
         "2015": 24541,
         "2016": 11114,
@@ -8325,9 +8325,9 @@
         "2021": 9531,
         "2022": 6940,
         "2023": 13237,
-        "2024": 32530,
-        "2025": 24819,
-        "2026": 32814
+        "2024": 32519,
+        "2025": 24817,
+        "2026": 32879
       }
     }
   ],
@@ -42202,8 +42202,8 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283734,
-        "objectOrientedLines": 275670,
+        "lines": 283783,
+        "objectOrientedLines": 275719,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
@@ -42211,20 +42211,20 @@
         "lcom4": 2.28,
         "antipatterns": {
           "magicKeys": 14875,
-          "deepArrays": 6948,
-          "serviceLocators": 2294
+          "deepArrays": 6950,
+          "serviceLocators": 2295
         },
         "typeCoverage": {
           "parameterTotal": 23513,
           "parameterTyped": 15063,
           "parameterPrecise": 11088,
-          "returnTotal": 15656,
+          "returnTotal": 15659,
           "returnTyped": 2870,
           "returnPrecise": 2061
         }
       },
       "test": {
-        "lines": 472588
+        "lines": 472755
       },
       "js": {
         "lines": 20069
@@ -42247,9 +42247,9 @@
           {
             "name": "SystemRequirementsHooks::checkRequirements",
             "file": "modules/system/src/Hook/SystemRequirementsHooks.php",
-            "cognitive": 377,
-            "cyclomatic": 194,
-            "antipatterns": 89
+            "cognitive": 381,
+            "cyclomatic": 197,
+            "antipatterns": 92
           },
           {
             "name": "HookCollectorPass::collectModuleHookImplementations",
@@ -42620,9 +42620,9 @@
           {
             "name": "SystemRequirementsHooks",
             "file": "modules/system/src/Hook/SystemRequirementsHooks.php",
-            "cognitive": 380,
-            "cyclomatic": 201,
-            "antipatterns": 90
+            "cognitive": 384,
+            "cyclomatic": 204,
+            "antipatterns": 93
           },
           {
             "name": "PreprocessHooks",
