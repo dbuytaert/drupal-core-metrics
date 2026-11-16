@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T04:54:18.470519+00:00",
+  "generatedAt": "2026-11-16T04:50:44.863706+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -8324,10 +8324,10 @@
         "2020": 3617,
         "2021": 9531,
         "2022": 6940,
-        "2023": 13235,
+        "2023": 13234,
         "2024": 32515,
         "2025": 24816,
-        "2026": 32917
+        "2026": 32923
       }
     }
   ],
@@ -42202,8 +42202,8 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283792,
-        "objectOrientedLines": 275728,
+        "lines": 283797,
+        "objectOrientedLines": 275733,
         "cognitive": {
           "average": 2.68,
           "percentile95": 13
@@ -42224,7 +42224,7 @@
         }
       },
       "test": {
-        "lines": 472888
+        "lines": 472897
       },
       "js": {
         "lines": 20069
@@ -42718,8 +42718,8 @@
           {
             "name": "LibraryDiscoveryParser",
             "file": "lib/Drupal/Core/Asset/LibraryDiscoveryParser.php",
-            "cognitive": 218,
-            "cyclomatic": 92,
+            "cognitive": 221,
+            "cyclomatic": 93,
             "antipatterns": 7
           },
           {
