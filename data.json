@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T05:47:55.905100+00:00",
+  "generatedAt": "2026-11-21T05:43:03.044769+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -8327,7 +8327,7 @@
         "2023": 13232,
         "2024": 32509,
         "2025": 24806,
-        "2026": 32966
+        "2026": 32955
       }
     }
   ],
@@ -42202,16 +42202,16 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283814,
-        "objectOrientedLines": 275718,
+        "lines": 283803,
+        "objectOrientedLines": 275707,
         "cognitive": {
           "average": 2.69,
           "percentile95": 13
         },
         "lcom4": 2.28,
         "antipatterns": {
-          "magicKeys": 14876,
-          "deepArrays": 6953,
+          "magicKeys": 14874,
+          "deepArrays": 6947,
           "serviceLocators": 2300
         },
         "typeCoverage": {
@@ -42224,7 +42224,7 @@
         }
       },
       "test": {
-        "lines": 472924
+        "lines": 472891
       },
       "js": {
         "lines": 20069
