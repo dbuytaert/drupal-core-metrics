@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-23T05:52:08.568019+00:00",
+  "generatedAt": "2026-11-24T08:29:51.827619+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -8309,25 +8309,25 @@
         "2005": 17,
         "2006": 163,
         "2007": 212,
-        "2008": 182,
+        "2008": 179,
         "2009": 198,
         "2010": 585,
-        "2011": 1225,
-        "2012": 15266,
-        "2013": 22463,
-        "2014": 34879,
-        "2015": 24539,
-        "2016": 11114,
-        "2017": 21534,
-        "2018": 12527,
-        "2019": 15288,
-        "2020": 3615,
-        "2021": 9531,
-        "2022": 6940,
-        "2023": 13232,
-        "2024": 32509,
-        "2025": 24806,
-        "2026": 32955
+        "2011": 1220,
+        "2012": 15252,
+        "2013": 22443,
+        "2014": 34843,
+        "2015": 24522,
+        "2016": 11100,
+        "2017": 21520,
+        "2018": 12516,
+        "2019": 15268,
+        "2020": 3610,
+        "2021": 9521,
+        "2022": 6939,
+        "2023": 13226,
+        "2024": 32496,
+        "2025": 24793,
+        "2026": 33126
       }
     }
   ],
@@ -42202,29 +42202,29 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283803,
-        "objectOrientedLines": 275707,
+        "lines": 283772,
+        "objectOrientedLines": 275676,
         "cognitive": {
           "average": 2.69,
           "percentile95": 13
         },
         "lcom4": 2.28,
         "antipatterns": {
-          "magicKeys": 14874,
+          "magicKeys": 14873,
           "deepArrays": 6947,
           "serviceLocators": 2300
         },
         "typeCoverage": {
-          "parameterTotal": 23517,
-          "parameterTyped": 15067,
-          "parameterPrecise": 11088,
-          "returnTotal": 15660,
-          "returnTyped": 2874,
-          "returnPrecise": 2065
+          "parameterTotal": 23515,
+          "parameterTyped": 15065,
+          "parameterPrecise": 11087,
+          "returnTotal": 15659,
+          "returnTyped": 2873,
+          "returnPrecise": 2064
         }
       },
       "test": {
-        "lines": 472891
+        "lines": 472892
       },
       "js": {
         "lines": 20069
@@ -42234,7 +42234,7 @@
         "development": 81
       },
       "deprecations": {
-        "classes": 15,
+        "classes": 13,
         "methods": 38,
         "functions": 200,
         "properties": 6,
