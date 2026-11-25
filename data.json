@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T08:29:51.827619+00:00",
+  "generatedAt": "2026-11-25T07:04:08.724154+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -8314,20 +8314,20 @@
         "2010": 585,
         "2011": 1220,
         "2012": 15252,
-        "2013": 22443,
+        "2013": 22441,
         "2014": 34843,
         "2015": 24522,
         "2016": 11100,
-        "2017": 21520,
+        "2017": 21519,
         "2018": 12516,
         "2019": 15268,
         "2020": 3610,
         "2021": 9521,
-        "2022": 6939,
+        "2022": 6938,
         "2023": 13226,
         "2024": 32496,
         "2025": 24793,
-        "2026": 33126
+        "2026": 33229
       }
     }
   ],
@@ -42202,8 +42202,8 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283772,
-        "objectOrientedLines": 275676,
+        "lines": 283871,
+        "objectOrientedLines": 275775,
         "cognitive": {
           "average": 2.69,
           "percentile95": 13
@@ -42215,16 +42215,16 @@
           "serviceLocators": 2300
         },
         "typeCoverage": {
-          "parameterTotal": 23515,
-          "parameterTyped": 15065,
-          "parameterPrecise": 11087,
-          "returnTotal": 15659,
-          "returnTyped": 2873,
-          "returnPrecise": 2064
+          "parameterTotal": 23523,
+          "parameterTyped": 15073,
+          "parameterPrecise": 11091,
+          "returnTotal": 15661,
+          "returnTyped": 2875,
+          "returnPrecise": 2066
         }
       },
       "test": {
-        "lines": 472892
+        "lines": 473153
       },
       "js": {
         "lines": 20069
