@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T06:56:24.903206+00:00",
+  "generatedAt": "2026-11-27T06:49:51.028055+00:00",
   "monthlyCommits": [
     {
       "date": "2000-05",
@@ -8312,22 +8312,22 @@
         "2008": 179,
         "2009": 198,
         "2010": 585,
-        "2011": 1220,
+        "2011": 1219,
         "2012": 15252,
-        "2013": 22440,
+        "2013": 22438,
         "2014": 34840,
         "2015": 24522,
-        "2016": 11100,
-        "2017": 21519,
+        "2016": 11098,
+        "2017": 21509,
         "2018": 12509,
-        "2019": 15265,
-        "2020": 3609,
-        "2021": 9521,
+        "2019": 15264,
+        "2020": 3608,
+        "2021": 9500,
         "2022": 6938,
-        "2023": 13224,
-        "2024": 32495,
-        "2025": 24789,
-        "2026": 33263
+        "2023": 13216,
+        "2024": 32494,
+        "2025": 24747,
+        "2026": 33482
       }
     }
   ],
@@ -42202,8 +42202,8 @@
     {
       "date": "2026-11",
       "production": {
-        "lines": 283883,
-        "objectOrientedLines": 275775,
+        "lines": 284013,
+        "objectOrientedLines": 275905,
         "cognitive": {
           "average": 2.69,
           "percentile95": 13
@@ -42215,16 +42215,16 @@
           "serviceLocators": 2303
         },
         "typeCoverage": {
-          "parameterTotal": 23523,
-          "parameterTyped": 15073,
-          "parameterPrecise": 11091,
-          "returnTotal": 15661,
-          "returnTyped": 2875,
-          "returnPrecise": 2066
+          "parameterTotal": 23530,
+          "parameterTyped": 15080,
+          "parameterPrecise": 11097,
+          "returnTotal": 15663,
+          "returnTyped": 2877,
+          "returnPrecise": 2068
         }
       },
       "test": {
-        "lines": 473188
+        "lines": 473363
       },
       "js": {
         "lines": 20069
@@ -42234,7 +42234,7 @@
         "development": 81
       },
       "deprecations": {
-        "classes": 13,
+        "classes": 14,
         "methods": 38,
         "functions": 200,
         "properties": 6,
